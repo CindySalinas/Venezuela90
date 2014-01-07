@@ -54,7 +54,7 @@ function fichaTecnica(){
 	if(val1 == "año"){
 		val1 = "year";
 	}
-	var url = "http://127.0.0.1:8080/JsonVenezuela90/libros.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/libros.php?jsoncallback=?";
 	var ficha = $('#fichaTecnia');
 	$('.tecLibros, #numCant,.prestamo,.tec').remove();
 	$('br + br').remove();
@@ -82,7 +82,7 @@ function ingresarLibro(){
 	 var edic = $('#edic').val();
 	 var cant = $('#cant').val();
 	 var añadir = $("#msj");
- 	 var url = "http://127.0.0.1:8080/JsonVenezuela90/ingresarLibro.php?jsoncallback=?";
+ 	 var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarLibro.php?jsoncallback=?";
 
  	 $.getJSON(url,{
  	 		val1:nom,
@@ -220,7 +220,7 @@ function registroLibros(){
 }
 // Muestra todos los libros 
 function mostrarEliminar(){
-	var url = "http://127.0.0.1:8080/JsonVenezuela90/eliminarVisible.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarVisible.php?jsoncallback=?";
 	var ficha = $('#fichaTecnia');
 	$('.tecLibros, #numCant,.prestamo,.tec').remove();
 	$('br + br').remove();
@@ -277,7 +277,7 @@ function datosPrestamo(){
 	var lista= $('#selectForm');
 	var val1 ="nombre";
 	var val2 = $('#formuOpcion').val();
-	var url = "http://127.0.0.1:8080/JsonVenezuela90/libros.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/libros.php?jsoncallback=?";
 		$.getJSON(url, {val1:val1,val2:val2}).done(function(data){
 		if(data.num != 0){
 			$.each(data, function(i,item){
@@ -298,7 +298,7 @@ function datosPrestamo(){
 // se añaden los datos a los input  con los datos de la busqueda
 function datosPrestamo2(){
 	var lista= $('#selectForm');
-	var url = "http://127.0.0.1:8080/JsonVenezuela90/libros.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/libros.php?jsoncallback=?";
 	var val1="id";
 	var val2=  $('#selectForm option:selected').attr("id");
 	$('.alert').remove();
@@ -410,7 +410,7 @@ function insertarPrestamo(){
 
 	$('#msjPres').remove();
 	var nCan = cant - 1;
-	var url = "http://127.0.0.1:8080/JsonVenezuela90/prestarLibro.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/prestarLibro.php?jsoncallback=?";
 	if(a2 > a1){
 	 $.getJSON(url,{
  	 		val1:cedE,
@@ -441,7 +441,7 @@ function insertarPrestamo(){
 //Buscar PRestamo de Libro
 function buscarPrestamo(tipo,dato){
 	var otroBlocK = $('.otroBlock');
-  	var url = "http://127.0.0.1:8080/JsonVenezuela90/buscarPrestamoLibro.php?jsoncallback=?";
+  	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/buscarPrestamoLibro.php?jsoncallback=?";
   	$('.prestamo2, .otroTec').remove();
  	$.getJSON(url,{val0:tipo,val1:dato}).done(function(data){
 			$.each(data, function(i,item){
@@ -458,7 +458,7 @@ function buscarPrestamo(tipo,dato){
 function eliminarPrestamo(data){
 	var num = data.currentTarget.name;
 	var canti = $('#canti').attr("name");
-  	var url = "http://127.0.0.1:8080/JsonVenezuela90/eliminarPrestamo.php?jsoncallback=?";
+  	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarPrestamo.php?jsoncallback=?";
   	var añadir = $('.otroBlock #msj3');
   	alert(canti);
   /*	añadir.hide();

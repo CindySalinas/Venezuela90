@@ -185,7 +185,7 @@ function inscripcion(){
 	// Obtiene automaticamente los valores del form
 	var datos = $('form').serialize();
 	//alert(datos)
- 	var url = "http://127.0.0.1:8080/JsonVenezuela90/inscribir.php?jsoncallback=?";
+ 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/inscribir.php?jsoncallback=?";
  		$.getJSON(url, datos).done(function(respuestaServer){
 			$('form').hide();
 			$('#tabControl').hide();
