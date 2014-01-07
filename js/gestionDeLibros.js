@@ -438,7 +438,7 @@ function insertarPrestamo(){
 		alert("Seleccione una Fecha Valida");
 	}
 }
-
+//Buscar PRestamo de Libro
 function buscarPrestamo(tipo,dato){
 	var otroBlocK = $('.otroBlock');
   	var url = "http://127.0.0.1:8080/JsonVenezuela90/buscarPrestamoLibro.php?jsoncallback=?";
@@ -454,7 +454,7 @@ function buscarPrestamo(tipo,dato){
 			});
 	});
 }
-//Nuevo Cambio
+//Eliminar Prestamo de Libro
 function eliminarPrestamo(data){
 	var num = data.currentTarget.name;
 	var canti = $('#canti').attr("name");
