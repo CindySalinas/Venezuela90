@@ -1,0 +1,625 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Venezuela 90 | Gestion De Libros</title>
+	<link rel="stylesheet" href="../css/genericons.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/todoEstilo.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/script.min.js"></script>
+	<script src="../js/swipe.min.js"></script>
+
+</head>
+<body class="p-admision">
+
+	<!-- HEADERRRRRRRRRR -->
+	<header class="site-header">
+		<div class="header-image-container estilo-header">
+			<a href="../index.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
+		</div>
+		<div class="nav-wrap">
+			<nav>
+				<span class="toggle-menu">Menú</span>
+				<a href="#" class="search-form" id="nombreUsuario">
+					Cindy Yarimar Salinas Zambrano
+				</a>
+				<ul>
+					<li><a href="../index.html">Inicio</a></li>
+					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
+					<li><a href="../contacto.html">Contacto</a></li>
+					<li><a href="../institucion.html">La Institución</a></li>
+					<li><a href="../propuesta.html">Propuesta Educativa</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="main-wrap estilo-main-wrap">
+		<!-- LADOOOO IZQUIERDAOOOO -->
+		<div class="article-wrap estilo-article-wrap">
+			<!-- Navegación -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Navegación</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content" >
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<ul class="navegacion">
+						<li><a href="#">Inscripción</a></li>
+						<li><a href="reinscripcion.html">Reiscripcion</a></li>
+						<li><a href="#">Mensajeria</a></li>
+						<li><a href="#">Usuarios</a></li>
+						<li><a href="gestion.html">Procesos De Gestión</a></li>
+						<li><a href="#">Tramitacion De Documentos</a></li>
+					</ul>
+				</div>
+			</article>
+			<!-- Perfil -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Perfil</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content">
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<ul class="navegacion">
+						<li><a href="#">Mi Perfil</a></li>
+						<li><a href="#">Editar</a></li>
+						<li><a href="#">Mis Notificaciones</a></li>
+					</ul>
+				</div>
+			</article>
+			<!-- Ultimos Usuarios En Linea -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Ultimos Usuarios En Linea</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content">
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<p>Ultimos Conectanos</p>
+					<ul class="navegacion">
+						<li><a href="#">(Ninguno)</a></li>
+					</ul>
+				</div>
+			</article>
+			<!-- Calendario -->
+			<aside class="widget widget_calendar">
+				<h3 class="widget-title">Calendario</h3>
+				<div id="calendar_wrap">
+					<table id="wp-calendar">
+						<caption>Diciembre 2013</caption>
+						<thead>
+							<tr>
+								<th scope="col" title="Lunes">L</th>
+								<th scope="col" title="Martes">M</th>
+								<th scope="col" title="Miércoles">X</th>
+								<th scope="col" title="Jueves">J</th>
+								<th scope="col" title="Viernes">V</th>
+								<th scope="col" title="Sábado">S</th>
+								<th scope="col" title="Domingo">D</th>
+							</tr>
+						</thead>									
+						<tbody>
+							<tr>
+								<td colspan="6" class="pad">&nbsp;</td><td>1</td>
+							</tr>
+							<tr>
+								<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+							</tr>
+							<tr>
+								<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+							</tr>
+							<tr>
+								<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+							</tr>
+							<tr>
+								<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+							</tr>
+							<tr>
+								<td>30</td><td>31</td>
+								<td class="pad" colspan="5">&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>		
+			</aside>
+		</div>
+		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
+		<div class="sidebar-wrap estilo-sidebar-wrap">
+			<article id="intranetPrincipal">
+				<header><h2>Gestión Del Calendario Escolar</h2></header>
+				<hr />
+			</article>
+			<article id="noticias">
+				<header><h3>Calendario</h3></header>
+				<div class="centrar">
+
+					<table id="calenPrincipal">
+						<caption id="calenCap">Calendario <span>2014</span></caption>
+						<tr class="primera">
+							<td>
+								<table id="tabEnero" class="tablaCalendario">
+								<caption>ENERO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td><table id="tabEnero" class="tablaCalendario">
+								<caption>FEBRERO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+								<td>
+									<table id="tabEnero" class="tablaCalendario">
+								<caption>MARZO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+								</td>
+							</tr>
+							<tr>
+							<td>
+								<table id="tabFebrero" class="tablaCalendario">
+								<caption>ABRIL</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td><table id="tabFebrero" class="tablaCalendario">
+								<caption>MAYO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+								<td><table id="tabFebrero" class="tablaCalendario">
+								<caption>JUNIO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+							</tr>
+							
+						
+						<tr class="primera">							
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>JULIO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>AGOSTO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>SEPTIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>OCTUBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>NOVIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>DICIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td colspan="6" >&nbsp;</td><td>1</td>
+									</tr>
+									<tr>
+										<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+									</tr>
+									<tr>
+										<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+									</tr>
+									<tr>
+										<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+									</tr>
+									<tr>
+										<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+									</tr>
+									<tr>
+										<td>30</td><td>31</td>
+										<td colspan="5">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>	
+						<tfoot>
+							<tr>
+								<td colspan=3>Leyenda</td>
+							</tr>
+						</tfoot>
+					</table>
+
+				</div>
+					
+			</article>
+		</div>
+	</section>
+
+
+
+<footer class="site-footer" role="contentinfo">
+	<div class="site-info">
+		<span class="v90-logo"></span>
+		<b>Unidad Educativa Venezuela 90</b><br>
+		<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
+	</div><!-- .site-info -->
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1501 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+#atras, #siguiente, #otrosiguiente, #nuevoForo
+{
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+}
+#atras:hover
+{
+	transform: scale(1.08) rotate(60deg);
+	-webkit-transform: scale(1.08) rotate(60deg);
+	-moz-transition: all 0.5s ease;
+}
+#atr, #sig
+{
+
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#at, #atras, #siguiente, #sit, #otrosiguiente
+{
+	color: black;
+	font-weight: bold;
+}
+#siguiente
+{
+	color: #00b09b;
+}
+#atras
+{
+	color: #CA5200;
+}
+.ott
+{
+	color: black;
+}
+
+#labelcedula
+{
+	font-weight: bold;
+	margin-right: 0.3em;
+}
+#ced:after
+{
+	font-family: 'icomoon';
+	font-size: 30px;
+	content: "\e612";
+}
+
+#numerocedula, #formularioIngresarLibro
+{
+	text-align: center;
+}
+.textoAbajo
+{
+	font-weight: bold;
+}
+.separar
+{
+	border: 1px solid black;
+	border-radius: 7px;
+	margin: 0 auto 15px auto;
+	padding: 15px;
+	width: 40%;
+}
+.otroBlock
+{
+	display: inline-block;
+	margin: 0 auto;
+	width: 49%;
+}
+#atr
+{
+	margin-right: 60%;
+}
+#ced
+{
+	margin-left: 5px;
+}
+#ingresa,#ingresare
+{
+	font-family: 'icomoon';
+	font-size: 25px;
+	vertical-align: middle;
+}
+#linkIngresa
+{
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 6px;
+	vertical-align: middle;
+}
+#bloque, #bloque2, #bloque3, #bloque4, #bloque5, #bloque6, #bloque7, #iconomodificar, #iconoconsultar, #atras, #siguiente, .ad, #otrosiguiente, #nuevoForo
+{
+	display: block;
+	margin-bottom: 8px;
+	font-family: 'icomoon';
+	font-size: 50px;
+}
+#nuevoForo:before
+{
+	content: "\e614";
+}
+#ingresa:before
+{
+	content: "\e61d";
+}
+#ingresare:before
+{
+	content: "\e620";
+}
+#selectForm
+{
+	display: block;
+	margin: 15px auto;		
+}
+/*Icono Pagina Gestion De Libros*/
+#icon1:before
+{
+	content: "\e614";
+}
+#icon2:before
+{
+	content: "\e616";
+}
+/*Iconos Pagina Gestion*/
+#bloque:before {
+
+	content: "\e601";
+}
+#bloque2:before {
+
+	content: "\e604";
+}
+#bloque3:before {
+
+	content: "\e60a";
+}
+#bloque4:before {
+
+	content: "\e606";
+}
+#bloque5:before {
+
+	content: "\e605";
+}
+#bloque6:before {
+
+	content: "\e609";
+}
+#bloque7:before {
+
+	content: "\e608";
+}
+#iconomodificar:before {
+
+	content: "\e60e";
+}
+#iconoconsultar:before {
+
+	content: "\e60d";
+}
+#atras:before
+{
+	content: "\e611";
+}
+#siguiente:before, #otrosiguiente:before
+{
+	content: "\e613";
+}
+#otrosiguiente
+{
+	color: green;
+}
+/*Gestion*/
+#siguiente:hover, #otrosiguiente:hover
+{
+	transform: scale(1.08) rotate(-60deg);
+	-webkit-transform: scale(1.08) rotate(-60deg);
+}
+#formuOpcion
+{
+	margin: 15px auto;
+	width: 60%;
+}
+
+/*Informacion General Intranet*/
+#info
+{
+	margin-top: 2em;
+	padding-top: 2em;
+}
+/*Lista Pagina Gestion*/
+
+#listaGestion
+{
+	list-style: none;
+	text-align: center;
+}
+#listaGestion a
+{	
+	color: #CA5200;
+}
+#listaGestion li
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 1em;
+	padding: 0.5em;
+	width: 20%;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#linkNuevoForo
+{
+	color: black;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#linkNuevoForo:hover
+{
+	color: red;
+	transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+}
+#listaGestion li:hover, #nuevoForo:hover
+{
+	transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+}
+/*Nombre Arriba Del Usuario Intranet*/
+#nombreUsuario
+{
+	color: black;
+	position: absolute;
+	right: 1rem;
+	top: 14px;
+	font-weight: bold;
+	font-size: 15px;
+}
+/*Articulos Noticias Intranet*/
+#noticias header{
+	color: white;
+	background-color: #00b09b;
+	padding: 10px;
+}
+#noticias header h3{
+	color: white;
+	margin:0; 
+}
+
+/*Contenido De Las Noticias Intranet*/
+.contenidoNoticias
+{
+	margin-top: 1em;
+}
+.contenidoNoticias p
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	margin-left: 10px;
+	width: 85%;
+}
+.contenidoNoticias figure
+{
+	display: inline-block;
+}
+.contenidoNoticias figure img
+{
+	height: 100px;
+	width: 100px;
+}
+/*Barra Lateral Izquierdo Intranet*/
+.estilo-article-wrap
+{
+	width: 25%;
+}
+/*Estilo de las categorias Intranet*/
+.estilo-entry-content
+{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+/*Titulo de los article -de las categorias Intranet*/
+.estilo-entry-title
+{
+	margin: 0;
+	font-size: 20px;
+	background-color: orange;
+	height: 40px;	
+	line-height: 40px;
+	padding-left: 10px;
+}
+.estilo-entry-title a
+{
+	color: white;
+}
+/*Contenido Intranet*/
+.estilo-main-wrap
+{
+	max-width: 1400px;
+}
+/*Barra Derecha*/
+.estilo-sidebar-wrap
+{
+	background-color: white;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-bottom: 1.5em;
+	width: 70%;
+}
+/*Navegacion Intranet*/
+.navegacion
+{
+	list-style: none;
+}
+
+/*GESTIONNN DE LIBROSSSSSSSSSSS*/
+
+#formularioIngresarLibro 
+{
+}
+#botonIngresarLibro, #botonBuscarLibro
+{
+	margin-top: 1em;
+}
+#formulario, #formulario2
+{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 0 auto;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	width: 40%;
+}
+#formulario2
+{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 0 auto;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	width: 60%;
+}
+.formularios
+{
+	border: 2px solid orange;
+	border-radius: 5px;
+}
+.aba
+{
+	margin-bottom: 1em;
+}
+.paRig
+{
+	padding-left: 15px;
+}
+#forBusGiE
+{
+	margin: 1em auto;
+	width: 30%;
+}
+#forBusGiE2
+{
+	margin: 1em auto;
+	width: 50%;
+}
+#forBusGiE table, #forBusGiE2 table
+{
+	margin-top: 1em;
+}
+#divFormNewEvento
+{
+	margin-top: 0.8em;
+}
+.asistE
+{
+	width: 60%;
+}
+.asistEvaFor
+{
+	width: 30%;
+}
+#tablaCalid
+{
+	margin: 1em auto;
+	width: 80%;
+}
+.tam
+{
+	padding-bottom: 1em;
+	width: 100px;
+}
+.tam2
+{
+}
+.bbb
+{
+	width: 100px;
+}
+.butM
+{
+	margin-top: 1.5em;
+}
+#posiAb
+{
+	position: absolute;
+	top: 42em;
+	right: 15.8em;
+	padding-left: 1.5em;
+	padding-right: 1em;
+	width: 40%;
+}
+.tam3
+{
+	width: 70px;
+}
+.tdIn
+{
+	width: 40px;
+}
+#divCen div
+{
+	display: inline-block;	
+	margin-top: 2em;
+	vertical-align: top;
+	width: 25%;
+}
+#cce
+{
+	text-align: center;
+}
+.rrr
+{
+	margin-right: 6em; 
+}
+.espacioP
+{
+	line-height: 2px;
+	text-align: center;
+	vertical-align: bottom;
+}
+.tam1
+{
+	width: 30px;
+}
+.tam2
+{
+	width: 250px;
+}
+#canMensualidades
+{
+	border: 3px solid orange;
+	border-radius: 10px;
+	margin: 1em auto;
+	padding: 0.6em;
+	width: 90%;
+}
+.diCom
+{
+	margin: 1em auto;
+	text-align: center;
+	width: 100%;
+}
+.in1
+{
+	width: 80%;
+}
+.kkk
+{
+	width: 50px;
+}
+.mmL
+{
+	margin-top: 0.3em;
+}
+.jjj
+{
+	width: 80px;
+}
+#figMen1
+{
+}
+#val
+{
+	margin-left: 1.3em;
+	margin-right: 3.4em;
+}
+.left
+{
+	text-align: left;
+}
+.oodiv div
+{
+	display: inline-block;
+	vertical-align: top;
+}
+.floatRight
+{
+	float: right;
+	margin-right: 0.7em;
+}
+.tabReSol
+{
+	margin: 1em auto;
+	text-align: center;
+}
+.tabReSol thead
+{
+	font-weight: bold;
+}
+#figMen1 img
+{
+	width: 100px;
+}
+#divMen1, #divMen2, #figMen1
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#divMen1
+{
+	text-align: center;
+	width: 40%;
+}
+#divMen1 p
+{
+	margin: 0;
+	padding: 0;
+
+}
+#divMen2
+{
+	float: right;
+	text-align: center;
+}
+.inputOtro
+{
+	margin: 0 auto;
+	height: 28px;
+	width: 32px;
+}
+.tamaCol
+{
+	width: 40px;
+}
+#verAli
+{
+	font-size: 20px;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+#colCen p
+{
+	line-height: 5px;
+}
+#sectionAsistEv
+{
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: 5em;
+	max-width: 1500px;
+	width: 100%;
+}
+#asd
+{
+}
+#divCompleto
+{
+	background-color: white;
+	padding: 2em;
+	margin-top: 0;
+	width: 100%;
+}
+.inputPeque
+{
+	padding: 0;
+	width: 22px;
+}
+#tabFecha
+{
+	line-height: 0.8em;
+}
+#tablaAsisEva
+{
+	margin: 1em auto;
+}
+.textFormulario
+{
+	border-radius: 5px;
+}
+.artAmp
+{
+	width: 100%;
+}
+#textNewEvent, #divFormNewEvento label
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#formularioIngresarCalendario
+{
+
+}
+#textNewEvent
+{
+	height: 80px;
+	width: 70%;
+}
+#margenBotonEvent
+{
+	padding-top: 0.5em;
+}
+#numCant
+{
+	font-weight: bold;
+}
+.right
+{
+	text-align: right;
+}
+#iz, #de
+{ 
+	font-weight: bold;
+}
+.leftEvent
+{
+	padding-left: 1.2em;
+}
+.linkOtroEvent
+{
+	margin-left: 0.8em;
+}
+#ladIz
+{
+	margin-right: 52%;
+}
+#ladIz a
+{
+	color: green;
+}
+.ad, #de, #iz, #sit, #at
+{
+	text-align: center;
+	display: block;	
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+.ad:hover, #de:hover, #iz:hover, #sit:hover, #at:hover
+{
+	transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+}
+.prestamo
+{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 55%;
+	text-align: center;
+}
+.prestamo2
+{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+.prestamo div, .prestamo2 div
+{
+	display: inline-block;
+}
+.tecLibros
+{
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	width: 40%;
+}
+.otroTec
+{
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	width: 80%;
+}
+.estiloGestionLibros
+{
+	text-align: center;
+}
+.labelGestionLibro
+{
+	display: block;
+	margin: 0 auto;
+}
+.margenLibro
+{
+	margin-top: 10px;
+}
+.margenLibro header 
+{
+	text-align: left;
+	margin-bottom: 20px;
+}
+.ladoIz
+{
+	display: inline-block;
+}
+.ladoDer
+{
+	display: block;
+}
+.tec
+{
+	
+	padding: 5px;
+}
+.tec div
+{
+	display: inline-block;
+}
+.titulosLibros
+{
+	font-weight: bold;
+	padding-right: 10px;
+}
+.otro
+{
+	margin-top: 10px;
+}
+#holas a 
+{
+	color: green;
+}
+#holas #at
+{
+	color: black;
+}
+#botonOtro
+{
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+#divFormulario
+{
+	background-color: #CA5200;
+	padding: 10px;
+	text-align: left;
+}
+#divFormulario a
+{
+	color: white;
+}
+.formulario3
+{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom: 20px;
+	width: 40%;
+}
+#formPres
+{
+	padding: 15px;
+}
+.noDisable
+{
+
+}
+/*FIN GESTION DE LIBROS*/
+
+/*Recepcion y Gestion De Solicitudes*/
+#tablaSolicitudes thead
+{
+	font-weight: bold;
+}
+.formSolicitud
+{
+	margin-top: 1em;
+}
+
+/* FIINNN Recepcion y Gestion De Solicitudes*/
+
+/*Forosss*/
+#foroTodo
+{
+	border-bottom: 3px solid #00b0b9;
+	margin: 0 auto;
+	width: 95%;
+}
+#foroTema, #nombreTema, #insForm, #areaText2
+{
+	display:inline-block;
+}
+#areaText2
+{
+	width: 75%;
+}
+#textarea2
+{
+	width: 100%;
+}
+#nombreTema
+{
+	vertical-align: top;
+}
+#nombreTema p
+{
+	font-weight: bold;
+}
+#tex
+{
+	margin: 0.5em auto;
+	padding-left: 85px;
+	width: 95%;
+}
+#tex2
+{
+	margin-right: 5px;
+	padding-left: 75px;
+}
+#foroTema figure
+{
+	display: inline-block;
+	padding: 0;
+}
+#foroTema figure img
+{
+	width: 85px;
+}
+#noForos
+{
+}
+#respo
+{
+	margin: 0 auto;
+	text-align: right;
+	width: 95%;
+}
+#arr
+{
+	border-top: 3px solid #b93207;
+	margin-top: 1em;
+	padding-top: 0.5em;
+}
+#arr figure img
+{
+	width: 75px;
+}
+#arr2
+{
+	margin-top: 0.5em;
+}
+#arr2 figure img
+{
+	width: 75px;
+}
+#eAsunto
+{
+	width: 60%;
+}
+#formularioResponder
+{
+	border: solid 2px orange;
+	border-radius: 5px;
+	margin: 1em auto;
+	padding: 10px;
+	text-align: left;
+	width: 80%;
+}
+.oo
+{
+	margin: 0 auto;
+}
+#marEvent
+{
+	margin-top: 0.8em;
+}
+.formularioEvent
+{
+	border: solid 2px orange;
+	border-radius: 5px;
+	margin: 1em auto;
+	padding: 10px;
+	width: 80%;
+}
+.divFormRes
+{
+	margin-top: 1em;
+}
+#respuestasForos
+{
+	margin: 0 auto;
+	padding-left: 85px;
+	width: 95%;
+}
+#textarea1, #textarea2
+{
+	width: 100%;
+	height: 150px;
+}
+#titNot
+{
+	margin-right:38px; 
+}
+.divFormIns
+{
+	margin-top: 1em;
+}
+#textarea2, #inputNot, #forImg
+{
+	border-radius: 6px;
+}
+#insImg
+{
+	margin-right: 15px;
+}
+#inputNot
+{
+	width: 55%;
+}
+#insForm
+{
+	margin-right: 7px;
+}
+#asunt
+{
+	margin-right: 10px;
+}
+#colorTab
+{
+	background-color: #e9612c;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 5px;
+	padding-left: 20px;
+}
+#tablaNoticias
+{
+	margin: 0 auto;
+	text-align: left;
+	width: 70%;
+}
+#areaText
+{
+	width: 90%;
+}
+#enviarResponder, #enviarInfoIns
+{
+	margin: 1em auto;
+	text-align: center;
+}
+#cent
+{
+	text-align: center;
+}
+#labmensaje
+{
+	margin-right: 2px;
+}
+#labmensaje, #areaText
+{	
+	display: inline-block;
+	vertical-align: top;
+}
+#respuestasForos hr
+{
+	margin-left: 75px;
+}
+#tablaForos thead
+{
+	background-color: orange;
+	font-weight: bold;
+}
+.centrar
+{
+	text-align: center;
+}
+#butEvent
+{
+	margin: 1em auto;
+}
+
+/* FIINNN Foross*/
+/*Calendario Escolar*/
+#calenPrincipal
+{
+	text-align: center;	
+}
+#calenPrincipal #calenCap
+{
+	font-size: 40px;
+	padding-right: 5rem;
+	text-align: right;
+}
+#tabEnero caption, #tabFebrero caption, #tabMarzo caption, #tabAbril caption, #tabMayo caption, #tabJunio caption, #tabJulio caption, #tabAgosto caption, #tabSeptiembre caption, #tabOctubre caption, #tabNoviembre caption, #tabDiciembre caption 
+{
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+#tabEnero thead 
+{
+	background-color: #00b09b;
+}
+#tabEneroAct thead
+{
+	background-color: #b93207;
+	color: white;
+}
+#tabFebrero thead
+{
+	background-color: #fff600;
+}
+#tabMarzo thead
+{
+	background-color: #F53C30;
+}
+#tabAbril thead
+{
+	background-color: #53D11D;
+}
+#tabMayo thead
+{
+	background-color: #F0870F;
+}
+#tabJunio thead
+{
+	background-color: #1FB4DE;
+}
+#tabJulio thead
+{
+	background-color: #FF79B2;
+}
+#tabAgosto thead
+{
+	background-color: #B05B2C;
+}
+#tabSeptiembre thead
+{
+	background-color: #F5DAE8;
+}
+#tabOctubre thead
+{
+	background-color: #F53C30;
+}
+#tabNoviembre thead
+{
+	background-color: #F53C30;
+}
+#tabDiciembre thead
+{
+	background-color: #F53C30;
+}
+#tabEnero, #tabEnero caption
+{
+	background-color: #e9612c;
+}
+#tabFebrero, #tabFebrero caption 
+{
+	background-color: #50ABFF;
+}
+#tabMarzo, #tabMarzo caption
+{
+	background-color: #6EE84C;
+}
+#tabAbril, #tabAbril caption
+{
+	background-color: #9D2EF5;
+}
+#tabMayo, #tabMayo caption 
+{
+	background-color: #007A3D;
+}/*0FCAFF*/
+#tabJunio, #tabJunio caption
+{
+	background-color: #F5308C;
+}
+#tabJulio, #tabJulio caption
+{
+	background-color: #2F8D91;
+}/*274391*/
+#tabAgosto, #tabAgosto caption 
+{
+	background-color: #FFBD59;
+}
+#tabSeptiembre, #tabSeptiembre caption
+{
+	background-color: #931A1E;
+}
+#tabOctubre, #tabOctubre caption
+{
+	background-color: #e9612c;
+}
+#tabNoviembre, #tabNoviembre caption 
+{
+	background-color: #50ABFF;
+}
+#tabDiciembre, #tabDiciembre caption
+{
+	background-color: #6EE84C;
+}
+#tabEneroAct
+{
+	background-color: #EBEBEB;
+	font-weight: bold;
+	width: 80%;
+}
+#tabEneroAct caption
+{
+	color: #188310;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: left;
+}
+#yearr
+{
+	float: left;
+	position: absolute;
+	margin-top: 1.8em;
+}
+#calenPrincipal #calenCap span
+{
+	color: orange;
+	font-weight: bold;
+}
+#calenPrincipal td
+{	
+	
+	border: 10px solid white;
+	text-align: center;
+}
+#calenPrincipal .tablaCalendario td
+{
+	border: none;
+}
+.calenDisplay
+{
+	display: inline-block;
+}
+.tablaCalendario
+{
+	margin: 1em auto;
+	text-align: center;
+	width: 250px;
+}
+.displayInTop
+{
+	margin-top: 1em;
+}
+.displayInTop a
+{
+	display: inline-block;
+	vertical-align: top;
+}
+.formulario-InA
+{
+	border: 2px solid orange;
+	border-radius: 5px;
+	margin: 1em auto;
+	padding: 1em;
+	text-align: center;
+	width: 60%;
+}
+#divInCeInA, #divInMesInA, #busInA
+{
+	margin-top: 1em;
+}
+
+/*----------------Paginas Docentes--------------*/
+
+.espacioLe
+{
+	padding-left: 2em;
+}
+.espacioRi
+{
+	padding-right: 2em;
+}
+.tablaPerfilDocente
+{
+	margin: 1.5em auto;
+	width: 60%;
+}
+.tablaPerfilDocente td
+{
+	width: 50%;
+}
+.tablaPerfilDocente thead, .tabMenNav thead, .tabMenTodo thead
+{
+	background-color: #e9612c;
+	color: white;	
+	text-align: center;
+}
+.tabMenTodo, .tabMenNav
+{
+	display: inline-block;
+	margin-top: 1.5em;
+	vertical-align: top;
+}
+.tabMenNav
+{
+	border-right: 0px solid white;
+	text-align: center;
+	width: 20%;
+}
+.tabMenNav td, .tabMenNav tr
+{
+	width: 200px;
+}
+#sinLeer thead tr, #sinLeer thead td
+{
+	width: 900px;
+}
+.tabMenTodo
+{
+	border-top: 1px solid #808080;
+	border-right: 0px solid white;
+	float: right;
+	width: 75%;
+}
+.borAba
+{
+	border-bottom: 1px solid #808080;
+}
+.asunt
+{
+	padding-left: 0.7em;
+}
+.floatRight
+{
+	float: right;
+}
+.menmen
+{
+	padding: 0.7em;
+}
+.tabMenTodo td, .tabMenTodo tr
+{
+}
+.fotoMenDoc
+{
+	padding-top: 0.5em;
+	width: 100px;
+}
+.nomMenDoc
+{
+	width: 800px;
+}
+#tabFoto
+{
+	text-align: center;
+	width: 20%;
+}
+#tabMenNew thead
+{
+}
+#tabMenNew td, #tabMenNew tr
+{
+	width: 1000px;
+}
+#tabMenNew input, #tabMenNew textarea
+{
+	width: 100%;
+}
+#tabMenNew textarea
+{
+
+}
+#tabFoto figure
+{
+	margin-top: 0.6em;
+}
+.tabReSolDet
+{
+	border-top: 1px solid #808080;
+	border-left: 1px solid #ededed;
+	border-right: 0px solid white;
+	margin: 1em auto;
+}
+.tabReSolDet thead
+{
+	font-weight: bold;
+	border-bottom: 1px solid #808080;
+}
+.formReSol
+{
+	border: 2px solid orange; 
+	border-radius: 5px;
+	margin: 1em auto;
+	padding: 1em;
+	width: 60%;
+}
+.inReSol
+{
+	margin-bottom: 0.6em;
+}
+.inReSol, .textReSol
+{
+	width: 90%;
+}
+.buEnReSol
+{
+	margin-top: 0.6em;
+}
+.planSem
+{
+	margin-top: 1em;
+}
+.disIn
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.disInUno, .disInDos
+{
+	width: 25%;
+}
+.disMe
+{
+	width: 45%;
+}
+.bold
+{
+	font-weight: bold;
+}
+.marLef
+{
+	padding-left: 1em;
+}
+.marRig
+{
+	padding-right: 1em;
+}
+.tablaCarCon
+{
+	margin: 1em auto;
+}
+.guardarCarCon
+{
+	margin-top: 1.3em;
+}
+.tablaCarCon thead
+{
+	font-weight: bold;
+}
+.tablaCarCon tbody
+{
+	line-height: 20px;
+}
+.heLin
+{
+	line-height: 15px;
+}
+.marObEs
+{
+	width: 170px;
+}
+.marCon
+{
+	width: 160px;
+}
+.marEsMe
+{
+	width: 190px;
+}
+.marRe
+{
+	width: 130px;
+}
+.marTecE
+{
+	width: 160px;
+}
+.marPon
+{
+	width: 100px;
+}
+.textAr textarea
+{
+	width: 100%;
+}
+.marAA
+{
+	margin-right: 1.5em;
+}
+.tabPlanEs
+{
+	margin: 1em auto;
+	width: 60%;
+}
+.tabPlanEs thead
+{
+	background-color: #e9612c;
+	color: white;
+}
+.tabPlanEs td, .tabtab td
+{
+
+	width: 50%;
+}
+.widTab
+{
+	border-left: 0px solid white;
+	border-right: 0px solid white;
+	border-top: 0px solid white;
+}
+.widTab td
+{
+	width: 50%;
+}
+#tabCC, #formCC
+{
+	width: 70%;
+}
+.conBoton
+{
+	text-align: center;
+	padding-top: 1.5em;
+}
+.bbbv
+{
+	margin-top: 0.6em;
+}
+/*Responsive Intranet*/
+
+@media screen and (min-width: 1350px) {
+	.estilo-header a img
+	{
+		height: 300px;
+	}
+}
+@media screen and (max-width: 1161px) {
+	.contenidoNoticias p
+	{
+		width: 83%;
+	}
+}
+@media screen and (max-width: 1035px) {
+	.contenidoNoticias p
+	{
+		width: 80%;
+	}
+}
+
+
+
+/* GESTION DE LIBROS - EDICION MANUEL*/
+.hideLista,.hideLista2, #at, #atras,#formularioIngresarLibro,#fichaTecnia,#fichaTecnica,.modificar,#formuOpcion,#selectForm,#sig,#formPres,.ocultaLista,#b2,#b3,.buscCel,.buscNom,.buscYear,.prestamo2,#buscarPrestamo{
+	display: none;
+}
+#fichaTecnia .otroBlock{
+	display: block;
+}
+
+.alert-success {
+    color: rgb(70, 136, 71);
+    background-color: rgb(223, 240, 216);
+    border-color: rgb(214, 233, 198);
+}
+.alert-danger {
+    color: rgb(169, 68, 66);
+    background-color: rgb(242, 222, 222);
+    border-color: rgb(235, 204, 209);
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+a{
+	cursor: pointer;
+}
+
+
+/* FIN EDICION MANUEL*/

@@ -1,0 +1,150 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#listaGestion
+{
+	list-style: none;
+	text-align: center;
+}
+#listaGestion a
+{	
+	color: #CA5200;
+}
+#listaGestion li
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 1em;
+	padding: 0.5em;
+	width: 20%;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#listaGestion li:hover
+{
+	transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+}
+#atras:hover
+{
+	transform: scale(1.08) rotate(60deg);
+	-webkit-transform: scale(1.08) rotate(60deg);
+}
+#siguiente:hover
+{
+	transform: scale(1.08) rotate(-60deg);
+	-webkit-transform: scale(1.08) rotate(-60deg);
+}
+#atras, #siguiente
+{
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#bloque, #bloque2, #bloque3, #bloque4, #bloque5, #bloque6, #bloque7, #iconomodificar, #iconoconsultar, #atras, #siguiente
+{
+	display: block;
+	margin-bottom: 8px;
+	font-family: 'icomoon';
+	font-size: 50px;
+}
+#atr, #sig
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+#at, #atras, #siguiente, #sit
+{
+	color: black;
+	font-weight: bold;
+}
+#siguiente
+{
+	color: #00b09b;
+}
+#atras
+{
+	color: #CA5200;
+}
+#labelcedula
+{
+	font-weight: bold;
+	margin-right: 0.3em;
+}
+#ced:after
+{
+	font-family: 'icomoon';
+	font-size: 30px;
+	content: "\e612";
+}
+
+#bloque:before {
+
+	content: "\e601";
+}
+#bloque2:before {
+
+	content: "\e604";
+}
+#bloque3:before {
+
+	content: "\e60a";
+}
+#bloque4:before {
+
+	content: "\e606";
+}
+#bloque5:before {
+
+	content: "\e605";
+}
+#bloque6:before {
+
+	content: "\e609";
+}
+#bloque7:before {
+
+	content: "\e608";
+}
+#iconomodificar:before {
+
+	content: "\e60e";
+}
+#iconoconsultar:before {
+
+	content: "\e60d";
+}
+#atras:before
+{
+	content: "\e611";
+}
+#siguiente:before
+{
+	content: "\e613";
+}
+#numerocedula
+{
+	text-align: center;
+}
+.textoAbajo
+{
+	font-weight: bold;
+}
+#atr
+{
+	margin-right: 60%;
+}
+#ced
+{
+	margin-left: 5px;
+}

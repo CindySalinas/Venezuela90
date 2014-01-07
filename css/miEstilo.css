@@ -1,0 +1,126 @@
+body{
+
+}
+#as{
+	color: black;
+}
+#bienvenido header{
+	color: white;
+	background-color: #00b09b;
+	padding: 10px;
+}
+#bienvenido header h3{
+	color: white;
+	margin:0; 
+}
+#contenido
+{
+	margin-top: 1em;
+}
+#contenido p
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	margin-left: 10px;
+	width: 85%;
+}
+#contenido figure
+{
+	display: inline-block;
+}
+#contenido figure img
+{
+	height: 100px;
+	width: 100px;
+}
+#intranetPrincipal header h2
+{
+
+}
+#navegacion
+{
+	list-style: none;
+}
+.search-form
+{
+	position: absolute;
+	right: 1rem;
+	top: 14px;
+	font-weight: bold;
+	font-size: 15px;
+}
+/*Barra Lateral Izquierdo*/
+.article-wrap {
+	width: 25%;
+}
+
+.blogpost {
+	padding: 0;
+}
+/*Titulo de los article -de las categorias*/
+.entry-title
+{
+	margin: 0;
+	font-size: 20px;
+	background-color: orange;
+	height: 40px;	
+	line-height: 40px;
+	padding-left: 10px;
+}
+.entry-title a{
+	color: white;
+}
+.entry-content
+{	
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+/*Todo el contenido*/
+.main-wrap {
+	max-width: 1400px;
+}
+
+.nav-wrap {
+	
+}
+
+/*Barra Lateral Derecha*/
+.sidebar-wrap
+{
+	background-color: white;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-bottom: 1.5em;
+	width: 70%;
+}
+
+.nav-wrap {
+}
+.site-header nav ul li a:hover {
+}
+#hola
+{
+	margin-top: 2em;
+	padding-top: 2em;
+}
+@media screen and (min-width: 1350px) {
+	.header-image-container a img
+	{
+		height: 300px;
+	}
+}
+@media screen and (max-width: 1161px) {
+	#contenido p
+	{
+		width: 83%;
+	}
+}
+@media screen and (max-width: 1035px) {
+	#contenido p
+	{
+		width: 80%;
+	}
+}

@@ -1,0 +1,105 @@
+body{
+	width: 800px;
+	height: 850px;
+	margin: 10px auto;
+}
+
+h3{
+	margin: 0 auto;
+	width:70%;
+	height: 155px;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: pre-line;
+}
+header img{
+	position: absolute;
+	right:1%;
+	top: 0;
+	width: 190px;
+}
+header small{
+	margin: 0 auto;
+}
+
+.content{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+.titulo h2{
+	font-size: 19px;
+	margin: 1px auto;
+	width: 50%;
+	text-decoration:underline;
+	text-transform: uppercase;
+	white-space: pre-line;
+}
+.constancia-estudio{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: justify;
+	line-height: 150%;
+}
+.firma{		
+	margin-top: 30px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+hr{
+	width: 200px;
+	margin-bottom: 30px;
+}
+.firma-2{
+	text-align: center;
+	text-transform: uppercase;
+	white-space: pre-line;
+}
+.prints {
+	margin: 50px auto;
+	text-align: center;
+	color: red;
+}
+#btn{
+	background :linear-gradient(to bottom, rgb(237, 106, 49) 0%, rgb(229, 86, 39) 100%) repeat scroll 0% 0% transparent;
+	    border-width: medium medium 3px;
+    border-style: none none solid;
+    border-color: -moz-use-text-color -moz-use-text-color rgb(185, 50, 7);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 11px 24px 10px;
+    text-decoration: none;
+}
+
+.up{
+	text-transform: uppercase;
+}
+.boxHead{
+    border: 1px solid black;
+    padding: 0;
+    box-shadow: -6px -4px 1px rgb(136, 136, 136);
+    width: 50%;
+   
+}
+#firma-sello{
+	display: inline-block;
+}
+.sello{
+	margin-top: 90px !important;
+
+}
+.inss{
+	position: relative;
+	left: 45%;
+	top: -51px;
+	width: 60% !important;
+
+}

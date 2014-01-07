@@ -1,0 +1,73 @@
+@page { 
+/* declaraciones Css */ 
+ size: A4 portrait; 
+ margin-top: 2cm;
+ top: none;
+ margin: 0mm;  /* this affects the margin in the printer settings */
+}
+
+body{
+  float: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  color: #000; 
+  border: 0;
+}
+header{
+	margin-top: 2cm;
+}
+h3{
+	margin-right: 5px;
+	margin-top: 17px;
+	font-size: 17px !important;
+	width: 70% !important; 
+	height: 155px;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: pre-line;
+}
+header img{
+	position: absolute;
+	right: 2% !important;
+	top: 2cm !important;
+	width: 130px;
+	height: 130px;
+}
+.content{
+	width: 100% !important;
+	margin: 0 auto;
+	text-align: center;
+}
+.titulo h2{
+	
+	margin: 1px auto;
+	margin-top: 20px !important;
+	margin-bottom: 40px !important;
+	width: 80% !important;
+	text-decoration: underline;
+	text-transform: uppercase;
+	white-space: pre-line;
+}
+.constancia-estudio{
+	width: 78% !important;
+	margin: 0 auto;
+	text-align: justify !important;
+	line-height: 200% !important;
+}
+.prints{
+	display: none;
+}
+a #btn{
+	display: none;
+}
+.boxHead{
+	margin: 0 auto!;
+}
+#consImg{
+	right: 115px !important;
+}
+
+.sello{
+	position: relative;
+	left: 70px !important;
+}

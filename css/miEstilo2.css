@@ -1,0 +1,82 @@
+body{
+
+}
+#navegacion
+{
+	list-style: none;
+}
+.search-form
+{
+	position: absolute;
+	right: 1rem;
+	top: 14px;
+	font-weight: bold;
+	font-size: 15px;
+}
+#as{
+	color: yellow;
+}
+/*Barra Lateral Izquierdo*/
+.article-wrap {
+	width: 25%;
+}
+
+.blogpost {
+	padding: 0;
+}
+/*Titulo de los article -de las categorias*/
+.entry-title
+{
+	margin: 0;
+	font-size: 20px;
+	background-color: #5ebf59;
+	height: 40px;	
+	line-height: 40px;
+	padding-left: 10px;
+}
+.entry-title a{
+	color: white;
+}
+.entry-content
+{	
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+/*Todo el contenido*/
+.main-wrap {
+	max-width: 1400px;
+}
+
+.nav-wrap {
+	background-color: #ff9a49;
+	border-bottom: 5px solid #e9612c;
+}
+
+/*Barra Lateral Derecha*/
+.sidebar-wrap
+{
+	width: 70%;
+}
+
+.nav-wrap {
+}
+/*Hover de la barra de navegacion*/
+.site-header nav ul li a:hover {
+	background-color: #e9612c;
+}
+body.p-inicio .a-inicio,
+body.p-admision .a-admision,
+body.p-contacto .a-contacto,
+body.p-institucion .a-institucion,
+body.p-propuesta .a-propuesta {
+  background: #e9612c;
+  
+}
+@media screen and (max-width: 1000px) {
+	.header-image-container a img
+	{
+		height: 300px;
+	}
+}
