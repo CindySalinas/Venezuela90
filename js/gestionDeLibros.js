@@ -454,7 +454,7 @@ function buscarPrestamo(tipo,dato){
 			});
 	});
 }
-
+//Nuevo Cambio
 function eliminarPrestamo(data){
 	var num = data.currentTarget.name;
 	var canti = $('#canti').attr("name");
