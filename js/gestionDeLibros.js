@@ -34,7 +34,7 @@ function busqueda(){
 //Eliminar Libros por id
 function eliminarLibro(data){
 	var num = data.currentTarget.name;
-  	var url = "http://127.0.0.1:8080/JsonVenezuela90/eliminarLibro.php?jsoncallback=?";
+  	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarLibro.php?jsoncallback=?";
   	var añadir = $('#fichaTecnia #msj');
   	añadir.hide();
   	$.getJSON(url,{val1:num}).done(function(data){
