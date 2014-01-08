@@ -1469,6 +1469,7 @@
 
 
 
+
 /* GESTION DE LIBROS - EDICION MANUEL*/
 .hideLista,.hideLista2, #at, #atras,#formularioIngresarLibro,#fichaTecnia,#fichaTecnica,.modificar,#formuOpcion,#selectForm,#sig,#formPres,.ocultaLista,#b2,#b3,.buscCel,.buscNom,.buscYear,.prestamo2,#buscarPrestamo{
 	display: none;
@@ -1499,3 +1500,23 @@ a{
 
 
 /* FIN EDICION MANUEL*/
+/* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
+iframe{
+	width: 100%;
+	height: 1500px;
+	border:0;
+	overflow: hidden;
+}
+table input {
+	border:0;
+}
+@media screen and (min-width: 1035px) {
+	table .centrar{
+		width: 15px;
+	}
+	table .asistEvaFor{
+		width: 25%;
+	}
+}
+
+/* FIN DE IFRAME  */

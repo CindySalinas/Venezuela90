@@ -1,0 +1,26 @@
+@page { 
+/* declaraciones Css */
+ size: A3 landscape; 
+ top: none;
+ margin: 0mm;  /* this affects the margin in the printer settings */
+
+}
+#intranetPrincipal,header{display: none;}
+
+table { page-break-after:auto;
+	line-height: 1.5;
+}
+table .asistEvaFor{
+		width: 25% !important;
+	}
+table .centrar{
+		width: 15px !important;
+	}
+#modify{
+	display: none;
+}
+
+#divCen,.centrar{
+	page-break-after:auto;
+	line-height: 1;
+}
