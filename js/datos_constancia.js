@@ -15,7 +15,7 @@ function inicio(){
   $('.center-button #cambiar').on("click",changeTab);
 }    
 // Variables  de las constancias
-    var nombre = getQueryVariable('nombre');
+    var nombre = getQueryVariable('nombre').replace(/\+/g, ' ');
     var cedula = getQueryVariable('cedula');
     var year   = getQueryVariable('year');
     var conducta = getQueryVariable('conducta');
