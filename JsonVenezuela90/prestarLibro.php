@@ -16,7 +16,7 @@ $val7 = $_GET["val7"];
 
 $sql1 = "INSERT INTO prestamo_libro(cedulaEstudiante,id_libro,fecha_salida,fecha_entrega) VALUES ('$val1','$val2','$val3','$val4')";
 $result = mysql_query($sql1) or die ("Error de Consulta". mysql_error());
-if(mysql_affected_rows() != -1){
+if(mysql_affected_rows() !=0){
 	$estado["con"]=1;
 	$estado["mensaje"] = "El Libro se ha prestado con exito";
 }else{
@@ -26,7 +26,7 @@ if(mysql_affected_rows() != -1){
 $sql2 = "INSERT INTO estudiante_prestamo(cedula,nombre,grado,id_libro,dateP) VALUES('$val1','$val5','$val6','$val2','$val3')";
 $result2 = mysql_query($sql2) or die ("Error de Consulta". mysql_error());
 
-if(mysql_affected_rows() != -1){
+if(mysql_affected_rows() !=0){
 	$estado["con"]=1;
 	$estado["mensaje"] = "El Libro se ha prestado con exito";
 }
@@ -36,7 +36,7 @@ else{
 
 $sql3 = "UPDATE libros SET cantidad_libro = '$val7' WHERE id_libro = '$val2'";
 $result3 = mysql_query($sql3) or die ("Error de Consulta". mysql_error());
-if(mysql_affected_rows() != -1){
+if(mysql_affected_rows() !=0){
 	$estado["con"]=1;
 	$estado["mensaje"] = "El Libro se ha prestado con exito";
 }else{

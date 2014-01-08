@@ -3,11 +3,6 @@
 include("conex.php");
 //formato JSON
 header('Content-type: application/json');
-/*
-$val1= $_GET["val1"];
-$val2= $_GET["val2"];
-$arr= $val1."_libro";
-*/
 
 $sql = "SELECT id_libro,nombre_libro,autor_libro,materia_libro,year_libro,edit_libro,edicion_libro,cantidad_libro FROM libros";
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());

@@ -56,25 +56,15 @@ $sql2 = "INSERT INTO prueba2(id, a_nom, a_ap, a_fecha, a_lugar_n, a_entidad, a_c
 
 $result = mysql_query($sql2) or die ("Query error: " . mysql_error());
 
-$estado["mensaje"] = "La inscripcion se ha realizado con correctamente";
-/*
 // Verifica que la consulta no tenga error
-while($row = mysql_fetch_assoc($result)){
-	$records[] = $row;
-	$cons++;
+if(mysql_affected_rows() != -1){
+	$estado["con"]=1;
+	$estado["mensaje"] = "La inscripcion se ha realizado correctamente";
 }
-
-$estado["valid"]= $cons;
-
-
-if($cons == 0){
-	$estado["mensaje"] = "La inscripcion se ha realizado con correctamente";
+else{
+	$estado["con"]=0;
+	$estado["mensaje"] = "No se pudo inscribir al alumno";
 }
-else
-	if($con >0){
-		$estado["mensaje"]= "Lo sentimos algo salio mal :(";
-	}
-
 /*Convierte los resultados a formato json*/
 $resultadosJson = json_encode($estado);
 
