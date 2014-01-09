@@ -1470,7 +1470,8 @@
 
 
 
-/* GESTION DE LIBROS - EDICION MANUEL*/
+/* GESTION DE LIBROS -CALENDARIO ESCOLAR-IFRAME EDICION MANUEL*/
+/* GESTION DE LIBROS*/
 .hideLista,.hideLista2, #at, #atras,#formularioIngresarLibro,#fichaTecnia,#fichaTecnica,.modificar,#formuOpcion,#selectForm,#sig,#formPres,.ocultaLista,#b2,#b3,.buscCel,.buscNom,.buscYear,.prestamo2,#buscarPrestamo{
 	display: none;
 }
@@ -1497,9 +1498,15 @@
 a{
 	cursor: pointer;
 }
+/* FIN GESTION DE LIBROS*/
 
+/* GESTION CALENDARIO*/ 
+ .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2{
+	display: none;
+}
 
-/* FIN EDICION MANUEL*/
+/* FIN GESTION CALENDARIO*/
+
 /* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
 iframe{
 	width: 100%;
@@ -1507,7 +1514,7 @@ iframe{
 	border:0;
 	overflow: hidden;
 }
-table input {
+#tablaAsisEva input {
 	border:0;
 }
 @media screen and (min-width: 1035px) {
@@ -1520,3 +1527,6 @@ table input {
 }
 
 /* FIN DE IFRAME  */
+
+
+/* FIN EDICION MANUEL*/

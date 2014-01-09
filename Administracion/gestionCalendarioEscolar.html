@@ -12,6 +12,7 @@
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
+	<script src="../js/gestionCalendarioEscolar.js"></script>
 
 </head>
 <body class="p-admision">
@@ -24,7 +25,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a  class="search-form" id="nombreUsuario">
 					Cindy Yarimar Salinas Zambrano
 				</a>
 				<ul>
@@ -44,7 +45,7 @@
 			<!-- Navegación -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Navegación</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Navegación</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content" >
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
@@ -52,36 +53,36 @@
 						<li><a href="inscripcion.html">Inscripción</a></li>
 						<li><a href="reinscripcion.html">Reiscripcion</a></li>
 						<li><a href="mensajeriaAdministracion.html">Mensajeria</a></li>
-						<li><a href="#">Usuarios</a></li>
+						<li><a >Usuarios</a></li>
 						<li><a href="gestion.html">Procesos De Gestión</a></li>
-						<li><a href="#">Tramitacion De Documentos</a></li>
+						<li><a >Tramitacion De Documentos</a></li>
 					</ul>
 				</div>
 			</article>
 			<!-- Perfil -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Perfil</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Perfil</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="#">Mi Perfil</a></li>
-						<li><a href="#">Editar</a></li>
-						<li><a href="#">Mis Notificaciones</a></li>
+						<li><a >Mi Perfil</a></li>
+						<li><a >Editar</a></li>
+						<li><a >Mis Notificaciones</a></li>
 					</ul>
 				</div>
 			</article>
 			<!-- Ultimos Usuarios En Linea -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Ultimos Usuarios En Linea</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Ultimos Usuarios En Linea</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<p>Ultimos Conectanos</p>
 					<ul class="navegacion">
-						<li><a href="#">(Ninguno)</a></li>
+						<li><a >(Ninguno)</a></li>
 					</ul>
 				</div>
 			</article>
@@ -146,19 +147,19 @@
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
+						<li><a id="iconoconsultar" class="ingresar"></a><a class="textoAbajo" >Ingresar</a></li>
+						<li><a id="iconomodificar" class="consultar"></a><a class="textoAbajo" >Consultar</a></li>
+						<li><a id="iconoconsultar" class="modificar"></a><a class="textoAbajo" >Modificar</a></li>
 					</ul>						
 				</div>				
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="ingresoCalendario">
 				<header><h3>Ingresar</h3></header>
-				<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Nuevo Evento</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Nueva Actividad</a></li>
+				<ul id="listaGestion" class="hideLista">
+						<li><a id="iconoconsultar" class="nuevoEvento"></a><a class="textoAbajo" >Nuevo Evento</a></li>
+						<li><a id="iconomodificar" class="nuevoActividad"></a><a class="textoAbajo" >Nueva Actividad</a></li>
 					</ul>
-				<form class="formularioEvent" >
+				<div class="formularioEvent" id="nuevoIngreso">
 					<table>
 						<tr>
 							<td class="right">
@@ -199,19 +200,19 @@
 									<option>Evento 2</option>
 									<option>Evento 3</option>
 								</select>
-								<a class="linkOtroEvent" href="#">Nuevo</a>
+								<a class="linkOtroEvent" >Nuevo</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="right"><label>Nuevo Tipo De Evento</label></td>
-							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" href="#">Seleccionar</a></td>
+							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" >Seleccionar</a></td>
 						</tr>		
 					</table>
 					<div class="centrar">
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
-				</form>	
-				<form class="formularioEvent">
+				</div>	
+				<div class="formularioEvent" id="nuevoActividad">
 					<table>
 						<tr>
 							<td class="right">
@@ -258,18 +259,18 @@
 					<div class="centrar">
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
-				</form>		
+				</div>		
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="consultarCalendario">
 				<header><h3>Consultar</h3></header>
 				<ul id="listaGestion">
 					<li><a id="iconoconsultar" href="viewCalendarioEscolar2.html"></a><a class="textoAbajo" href="viewCalendarioEscolar2.html">Caledario Escolar</a></li>
 					<li><a id="iconomodificar" href="viewCalendarioActividades.html"></a><a class="textoAbajo" href="viewCalendarioActividades.html">Calendario De Actividades</a></li>
 					</ul>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="calActividades">
 				<header><h3>Calendario De Actividades</h3></header>
-				<form class="centrar formularioEvent" >
+				<div class="centrar formularioEvent" >
 					<div class="centrar">
 						<div>
 							<label>Seleccionar Grado</label>
@@ -283,23 +284,23 @@
 					</select>
 				</div>
 					<div id="sig" class="centrar">
-						<a  id="otrosiguiente" class="ott"href="#"></a>
-						<a id="sit" href="#">Siguiente</a>
+						<a  id="otrosiguiente" class="ott"></a>
+						<a id="sit" >Siguiente</a>
 					</div>
-				</form>
+				</div>
 
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="modificarActividades">
 				<header><h3>Modificar</h3></header>
 				<ul id="listaGestion">
-					<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Caledario Escolar</a></li>
-					<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Calendario De Actividades</a></li>
+					<li><a id="iconoconsultar" class="modCalEsc"></a><a class="textoAbajo" >Caledario Escolar</a></li>
+					<li><a id="iconomodificar" class="modCalAct"></a><a class="textoAbajo" >Calendario De Actividades</a></li>
 					</ul>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="modCalEscolar">
 				<header><h3>Modificar Calendario Escolar</h3></header>
 
-			<form class="formularioEvent" >
+			<div class="formularioEvent" id="mod1">
 					<table>
 						<tr>
 							<td class="right">
@@ -323,7 +324,7 @@
 							<option>2015</option>
 							<option>2016</option>
 						</select>
-						<a href="#">Buscar</a>
+						<a >Buscar</a>
 						</td>
 						</tr>
 						<tr>
@@ -348,7 +349,7 @@
 							<option>2015</option>
 							<option>2016</option>
 						</select>
-						<a href="#">Buscar</a>
+						<a >Buscar</a>
 						</td>
 						</tr>
 						<tr>
@@ -366,22 +367,22 @@
 									<option>Evento 2</option>
 									<option>Evento 3</option>
 								</select>
-								<a class="linkOtroEvent" href="#">Nuevo</a>
+								<a class="linkOtroEvent" >Nuevo</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="right"><label>Nuevo Tipo De Evento</label></td>
-							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" href="#">Seleccionar</a></td>
+							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" >Seleccionar</a></td>
 						</tr>		
 					</table>
 					<div class="centrar">
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
-				</form>	
+				</div>	
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="modCalActividades">
 				<header><h3>Modificar Calendario De Actividades</h3></header>
-				<form class="formularioEvent">
+				<div class="formularioEvent" id="mod2">
 					<table>
 						<tr>
 							<td class="right">
@@ -418,7 +419,7 @@
 									<option>2do Año</option>
 									<option>3er Año</option>
 								</select>
-								<a href="#">Buscar</a>
+								<a >Buscar</a>
 							</td>
 						</tr>
 						<tr>
@@ -467,7 +468,7 @@
 					<div class="centrar">
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
-				</form>	
+				</div>	
 			</article>
 		</div>
 	</section>
