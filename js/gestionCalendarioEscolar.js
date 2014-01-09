@@ -79,11 +79,11 @@ function gestionBotonesMenu(){
 }
 
 
-
+/*
 function prueba(){
 	var textArea = $('.nicEdit-main').html();
 	var asunto = $('#eAsunto').val();
 	var fecha = $('input[name=date]').val();
 	alert("Asunto: "+ asunto +"\n"+"texarea: "+ textArea+"\n"+"fecha: "+fecha);
 	//<script type="text/javascript">bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
-}
+}*/

@@ -53,7 +53,8 @@ function fecha()
 function ingresarForo()
 {
 	var nom = $('#asuntoFn').val();
-	var men = $('#mensajeFN').val();
+	//var men = $('#mensajeFN').val();
+	var men = $('.nicEdit-main').html();
 	var nomUser = "21029953";
 	var fec = fecha();
 	var hor = hora();
