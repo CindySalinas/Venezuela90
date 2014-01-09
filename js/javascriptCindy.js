@@ -3,6 +3,8 @@ $(document).on("ready", inicio);
 function inicio()
 {
 	$('#enviarNuevoForo').on("click",ingresarForo);
+	$("#linkprobando").attr("href","foroResponder.html?"+"hola=5");
+	alert($.get("hola").val);
 }
 
 function hora(){
