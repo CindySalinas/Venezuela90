@@ -87,3 +87,26 @@ function prueba(){
 	alert("Asunto: "+ asunto +"\n"+"texarea: "+ textArea+"\n"+"fecha: "+fecha);
 	//<script type="text/javascript">bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
 }*/
+<<<<<<< HEAD
+=======
+
+
+//Llamas a la funcion que lee la url
+function linksCambio2(){
+	alert(getQueryVariable("nom") + "\n"+ getQueryVariable("app"));
+}
+
+//Lee las Variables que se mandan por GET
+function getQueryVariable2(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+
+}
+>>>>>>> 5b2546125a73c701b8a43c603ee30be3367b3455
