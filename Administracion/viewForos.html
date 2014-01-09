@@ -12,6 +12,7 @@
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
+	<script src="../js/javascriptViewForo.js"></script>
 
 </head>
 <body class="p-admision">
@@ -145,13 +146,14 @@
 			<article id="noticias">
 				<div id="todoForo">
 					<div id="foroTodo">
-						<div id="foroTema">						
+						<div id="foroTema">	
 							<figure>
 								<img src="user2.png">			
 							</figure>
+
 							<div id="nombreTema">
-								<p>Nombre Del Tema</p>		
-								<span>De Nombre Del Creador - Martes, 5 de Noviembre de 2013, 15:00</span>
+								<p id="nomTemaP">Nombre Del Tema</p>		
+								<span id="nomCreadorP">De Nombre Del Creador - Martes, 5 de Noviembre de 2013, 15:00</span>
 							</div>
 						</div>
 					</div>
@@ -162,7 +164,7 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					<div id="respo">
-						<a href="#">Responder</a>
+						<a id="responderForo">Responder</a>
 					</div>
 				</div>
 				<div id="respuestasForos">
@@ -171,7 +173,7 @@
 							<figure>
 								<img src="user.png">			
 							</figure>
-							<div id="nombreTema">
+							<div class="nombreTemaRes">
 								<p>RE: Nombre Del Tema</p>
 								<span>De Nombre Del Creador - Martes, 5 de Noviembre de 2013, 15:00</span>
 							</div>

@@ -29,7 +29,7 @@
 	transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 }
-#at, #atras, #siguiente, #sit, #otrosiguiente
+#at, #atras, #siguiente, #sit, #otrosiguiente, #atForo
 {
 	color: black;
 	font-weight: bold;
@@ -653,7 +653,7 @@
 {
 	color: green;
 }
-.ad, #de, #iz, #sit, #at
+.ad, #de, #iz, #sit, #at, #atForo
 {
 	text-align: center;
 	display: block;	
@@ -805,13 +805,24 @@
 /* FIINNN Recepcion y Gestion De Solicitudes*/
 
 /*Forosss*/
+.none
+{
+	display: none;
+}
+#newForo
+{
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: 3em;
+}
 #foroTodo
 {
 	border-bottom: 3px solid #00b0b9;
 	margin: 0 auto;
 	width: 95%;
 }
-#foroTema, #nombreTema, #insForm, #areaText2
+#foroTema, #nombreTema, .nombreTemaRes, #insForm, #areaText2
 {
 	display:inline-block;
 }
@@ -823,11 +834,11 @@
 {
 	width: 100%;
 }
-#nombreTema
+#nombreTema, .nombreTemaRes
 {
 	vertical-align: top;
 }
-#nombreTema p
+#nombreTema p, .nombreTemaRes p
 {
 	font-weight: bold;
 }
@@ -878,7 +889,7 @@
 {
 	width: 75px;
 }
-#eAsunto, .elAsunto
+#eAsunto, .elAsunto, .asuntoResponder
 {
 	width: 60%;
 }
@@ -991,7 +1002,7 @@
 {
 	margin-left: 75px;
 }
-#tablaForos thead
+#tablaForos thead, #laTablaForos thead
 {
 	background-color: orange;
 	font-weight: bold;

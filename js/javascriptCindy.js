@@ -1,13 +1,18 @@
+
 $(document).on("ready", inicio);
 
 function inicio()
 {
 	$('#enviarNuevoForo').on("click",ingresarForo);
-	/*$("#linkprobando").attr("href","foroResponder.html?"+"hola=5");
-	alert($.get("hola").val);*/
-	$('#linkprobando').on("click",linksCambio);
+	consultarForos();
+	$('.linkIrForo').on("click",cargarForoResponder);
+	
 }
-
+function cargarForoResponder()
+{
+	alert("Esta es la pagina foro responder");
+}
+/*Funcion para obtener la hora actual*/
 function hora(){
 
 	var Digital=new Date();
@@ -35,8 +40,8 @@ function hora(){
 	+seconds+dn;
 
 	return hora;
- }
-
+}
+/*Funcion para obtener la fecha actual*/
 function fecha()
 {
 	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -50,7 +55,7 @@ function fecha()
 
 	return fecha;
 }
-
+/*Funcion para insertar un nuevo foro*/
 function ingresarForo()
 {
 	var nom = $('#asuntoFn').val();
@@ -64,15 +69,19 @@ function ingresarForo()
 	{
 		$("#asuntoFn").attr("placeholder", "Ingrese Un Asunto").blur();
 		$("#asuntoFn").css("border-color","#b93207");
+		$(".alert").hide("slide");
 	}
-	else if(men=="" || men==" ")
+	else if(men=="<br>")
 	{
+		$(".nicEdit-main").val(",,")
 		$("#asuntoFn").css("border-color","#ededed");
-		$("#mensajeFN").attr("placeholder", "Ingrese Un Mensaje").blur();
-		$("#mensajeFN").css("border-color","#b93207");
+		$(".nicEdit-main").attr("placeholder", "Ingrese Un Mensaje").blur();
+		$(".nicEdit-main").css("border-color","#b93207");
+		$(".alert").hide("slide");
 	}
 	else
 	{
+		$(".alert").hide("slide");
 		$("#asuntoFn").css("border-color","#ededed");
 		$("#mensajeFN").css("border-color","#ededed");
 		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarForo.php?jsoncallback=?";
@@ -86,15 +95,33 @@ function ingresarForo()
 		}).done(function(data){
 	 	 	$("#cent").append("<div class='alert  alert-success'>"+data.mensaje+"</div>");
 	 	 	$("#asuntoFn").val("");
-			$("#mensajeFN").val("");
+			$(".nicEdit-main").text("");
 		});
 	}
 }
 
 function linksCambio(){
-	
-	var url = "foroResponder.html";
-	window.location=url+"?nom=Manuel";
-	//asi de simple xD
+	var url = "viewForos.html";
+	window.location=url+"?foro="+"idForo";
+}
+/*Funcion para ver todos los foros creados*/
+function consultarForos()
+{		
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarForos.php?jsoncallback=?";
+		$.getJSON(url,{
+		}).done(function(data){
+	 	 	if(data.num != 0){
+	 	 		$("#laTablaForos").removeClass("none");
+				$.each(data, function(i,item){
+					$("#tbodyForos").append("<tr><td><a class='linkIrForo' id='"+item.idForo+"'>"+item.nombreTema+"</a></td><td><a class='linkIrPerfil' id='"+item.cedula+"'>"+item.nombre+" "+item.apellido+"</a></td><td><a class='linkIrForo' id='res"+item.idForo+"'>14</a></td><td>"+item.fecha+"</td></tr>");
+						$('#'+item.idForo).attr("href","viewForos.html?foro="+item.idForo);
+						$('#res'+item.idForo).attr("href","viewForos.html?foro="+item.idForo);
+						$('#'+item.cedula).attr("href","viewForos.html?cedula="+item.cedula);
+				});
+			}
+			else
+				$("#noForos").removeClass("none");
+		});
 
 }
+

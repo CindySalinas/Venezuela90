@@ -12,7 +12,7 @@
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
-
+	<script src="../js/javascriptCindy.js"></script>
 </head>
 <body class="p-admision">
 
@@ -143,14 +143,14 @@
 				<hr />
 			</article>
 			<article id="noticias" class="centrar">	
-				<div id="noForos">	
+				<div id="noForos" class="none">	
 					<h4>Actualmente no hay foros creados.</h4>
 					<div>
-						<a id="nuevoForo" href="#"></a>
-						<a id="at" href="#">Crear Nuevo Foro</a>
+						<a id="nuevoForo" href="foroNuevo.html"></a>
+						<a id="atForo" class="negro"href="foroNuevo.html">Crear Nuevo Foro</a>
 					</div>
 				</div>
-				<table id="tablaForos">
+				<table id="laTablaForos" class="none">
 					<thead>
 						<tr>
 							<td>Tema</td>
@@ -159,22 +159,13 @@
 							<td>Fecha</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>Tema 1</td>
-							<td>Nombre y Apellido</td>
-							<td><a href="#">14</a></td>
-							<td>25/06/2012</td>
-						</tr>
-						<tr>
-							<td>Tema 2</td>
-							<td>Nombre y Apellido</td>
-							<td><a href="#">14</a></td>
-							<td>01/08/2012</td>
-						</tr>
+					<tbody id="tbodyForos">
+						
 					</tbody>
-				</table>
-				<a href="#" id="at">Nuevo Foro</a>
+				</table>	
+				<div id="newForo">			
+					<a  href="foroNuevo.html">Crear Nuevo Foro</a>
+				</div>
 			</article>
 		</div>
 	</section>

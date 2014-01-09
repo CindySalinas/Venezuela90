@@ -14,9 +14,10 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-<script src="../js/gestionCalendarioEscolar.js"></script>
+<script src="../js/javascriptForoResponder.js"></script>
+
 </head>
-<body class="p-admision">
+<body id="bodyForoResponder" class="p-admision">
 
 	<!-- HEADERRRRRRRRRR -->
 	<header class="site-header">
@@ -150,7 +151,7 @@
 				<form id="formularioResponder">
 					<div class="divFormRes">
 						<label id="asunt" name="asunto">Asunto</label>
-						<input id="eAsunto" name="asunto" type="text" value="RE: Foro 1">
+						<input id="inputResForo" class=".asuntoResponder" name="asunto" type="text" value="RE: Foro 1">
 					</div>
 					<div class="divFormRes">
 						<label id="labmensaje"name="mensaje">Mensaje</label>
@@ -159,7 +160,7 @@
 						</div>
 					</div>
 					<div id="cent">
-						<button id="enviarResponder" type="submit">Enviar</button>
+						<button class="enviarResponder" type="submit">Enviar</button>
 					</div>
 				</form>			
 			</article>
