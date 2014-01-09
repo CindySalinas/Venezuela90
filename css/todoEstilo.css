@@ -878,11 +878,11 @@
 {
 	width: 75px;
 }
-#eAsunto
+#eAsunto, .elAsunto
 {
 	width: 60%;
 }
-#formularioResponder
+#formularioResponder, .formFN
 {
 	border: solid 2px orange;
 	border-radius: 5px;
@@ -917,7 +917,7 @@
 	padding-left: 85px;
 	width: 95%;
 }
-#textarea1, #textarea2
+#textarea1, #textarea2, #mensajeFN
 {
 	width: 100%;
 	height: 150px;
@@ -946,7 +946,7 @@
 {
 	margin-right: 7px;
 }
-#asunt
+#asunt, .asunt2
 {
 	margin-right: 10px;
 }
@@ -969,7 +969,7 @@
 {
 	width: 90%;
 }
-#enviarResponder, #enviarInfoIns
+.enviarResponder, #enviarInfoIns
 {
 	margin: 1em auto;
 	text-align: center;
