@@ -91,12 +91,11 @@ function prueba(){
 
 //Llamas a la funcion que lee la url
 function linksCambio2(){
-	alert(getQueryVariable("nom"));
-
+	alert(getQueryVariable("nom") + "\n"+ getQueryVariable("app"));
 }
 
 //Lee las Variables que se mandan por GET
-function getQueryVariable(variable)
+function getQueryVariable2(variable)
 {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
