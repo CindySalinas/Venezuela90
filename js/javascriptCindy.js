@@ -3,8 +3,9 @@ $(document).on("ready", inicio);
 function inicio()
 {
 	$('#enviarNuevoForo').on("click",ingresarForo);
-	$("#linkprobando").attr("href","foroResponder.html?"+"hola=5");
-	alert($.get("hola").val);
+	/*$("#linkprobando").attr("href","foroResponder.html?"+"hola=5");
+	alert($.get("hola").val);*/
+	$('#linkprobando').on("click",linksCambio);
 }
 
 function hora(){
@@ -90,3 +91,10 @@ function ingresarForo()
 	}
 }
 
+function linksCambio(){
+	
+	var url = "foroResponder.html";
+	window.location=url+"?nom=Manuel";
+	//asi de simple xD
+
+}

@@ -2,7 +2,7 @@ $(document).on("ready",iniciar);
 
 function iniciar(){
 gestionBotonesMenu();
-$('#enviarResponder').on("click",prueba);
+linksCambio2();
 }
 
 function gestionBotonesMenu(){
@@ -87,3 +87,24 @@ function prueba(){
 	alert("Asunto: "+ asunto +"\n"+"texarea: "+ textArea+"\n"+"fecha: "+fecha);
 	//<script type="text/javascript">bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
 }*/
+
+
+//Llamas a la funcion que lee la url
+function linksCambio2(){
+	alert(getQueryVariable("nom"));
+
+}
+
+//Lee las Variables que se mandan por GET
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+
+}
