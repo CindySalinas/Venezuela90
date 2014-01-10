@@ -10,7 +10,7 @@ $val1= $_GET["val1"];
 
 $sql1= "SELECT id_e_prestamo,nombre,cedula,grado,id_libro FROM estudiante_prestamo WHERE $val0 LIKE '%$val1%'";
 $result1 = mysql_query($sql1) or die("Error de Consulta". mysql_error());
-$records = array();
+
 $e =0;
 $i=0;
 $cantidad = mysql_num_rows($result1);

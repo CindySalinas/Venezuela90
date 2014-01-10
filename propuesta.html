@@ -11,6 +11,7 @@
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/script.min.js"></script>
 	<script src="js/swipe.min.js"></script>
+	<script src="js/login.js"></script>
 
 </head>
 <body class="p-propuesta">
@@ -61,9 +62,9 @@
 
 		<h3 class="widget-title">Inicio de sesión</h3>
 
-		<form name="loginform" id="loginform" action="" method="post">		
+		<div name="loginform">		
 			<p class="login-username">
-				<label for="user_login">Usuario</label>
+				<label for="user_login">Usuario</label><br>
 				<input type="text" name="log" id="user_login" class="input" value="" size="20">
 			</p>
 
@@ -81,7 +82,7 @@
 				<input type="submit" name="submit" id="submit" class="button-primary" value="Iniciar sesión →">
 				<input type="hidden" name="redirect_to" value="">
 			</p>		
-		</form>
+		</div>
 
 		<ul class="pagenav sidebar_login_links">
 			<li class="lost_password-link">

@@ -79,25 +79,13 @@ function gestionBotonesMenu(){
 }
 
 
-/*
-function prueba(){
-	var textArea = $('.nicEdit-main').html();
-	var asunto = $('#eAsunto').val();
-	var fecha = $('input[name=date]').val();
-	alert("Asunto: "+ asunto +"\n"+"texarea: "+ textArea+"\n"+"fecha: "+fecha);
-	//<script type="text/javascript">bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
-}*/
-<<<<<<< HEAD
-=======
-
-
 //Llamas a la funcion que lee la url
 function linksCambio2(){
 	alert(getQueryVariable("nom") + "\n"+ getQueryVariable("app"));
 }
 
 //Lee las Variables que se mandan por GET
-function getQueryVariable2(variable)
+function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
@@ -109,4 +97,4 @@ function getQueryVariable2(variable)
        return(false);
 
 }
->>>>>>> 5b2546125a73c701b8a43c603ee30be3367b3455
+

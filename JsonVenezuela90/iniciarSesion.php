@@ -20,24 +20,26 @@ while($row = mysql_fetch_row($result)) {
 	$app= $row[2];
 
 }
-
 $resultados["validacion"] = $cantidad;
 $resultados["T"] = $tipo;
 
 if($cantidad>0 && $tipo== 1){
-	setcookie("usuario",$c,time()+36000);
+	setcookie("cedulaAdmin",$c,time()+36000,"/");
+	setcookie("adminName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Admin $nom $app";
 }
 else
 if($cantidad>0 && $tipo== 2){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
-	setcookie("usuario",$c,time()+36000);
+	setcookie("cedulaProf",$c,time()+36000,"/");
+	setcookie("profName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Profesor $nom $app";
 }
 else
 	if($cantidad>0 && $tipo== 3){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
-	setcookie("usuario",$c,time()+36000);
+	setcookie("cedulaStudent",$c,time()+36000,"/");
+	setcookie("studentName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
 }
 else
