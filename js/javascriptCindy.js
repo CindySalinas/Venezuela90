@@ -5,8 +5,6 @@ function inicio()
 {
 	$('#enviarNuevoForo').on("click",ingresarForo);
 	consultarForos();
-	$('.linkIrForo').on("click",cargarForoResponder);
-	
 }
 function cargarForoResponder()
 {
@@ -113,7 +111,7 @@ function consultarForos()
 	 	 	if(data.num != 0){
 	 	 		$("#laTablaForos").removeClass("none");
 				$.each(data, function(i,item){
-					$("#tbodyForos").append("<tr><td><a class='linkIrForo' id='"+item.idForo+"'>"+item.nombreTema+"</a></td><td><a class='linkIrPerfil' id='"+item.cedula+"'>"+item.nombre+" "+item.apellido+"</a></td><td><a class='linkIrForo' id='res"+item.idForo+"'>14</a></td><td>"+item.fecha+"</td></tr>");
+					$("#tbodyForos").append("<tr><td><a class='linkIrForo' id='"+item.idForo+"'>"+item.nombreTema+"</a></td><td><span id='"+item.cedula+"'>"+item.nombre+" "+item.apellido+"</span></td><td><a class='linkIrForo' id='res"+item.idForo+"'>"+item.resp+"</a></td><td>"+item.fecha+"</td></tr>");
 						$('#'+item.idForo).attr("href","viewForos.html?foro="+item.idForo);
 						$('#res'+item.idForo).attr("href","viewForos.html?foro="+item.idForo);
 						$('#'+item.cedula).attr("href","viewForos.html?cedula="+item.cedula);

@@ -10,8 +10,9 @@ $nombreTema= $_GET["nombre"];
 $mensajeTema= $_GET["tema"];
 $fecha= $_GET["fecha"];
 $hora= $_GET["hora"];
+$idfor= $_GET["idf"];
 
-$sql = "INSERT INTO foros (Id_Usuario,Nombre_Tema,Tema,Fecha,Hora) VALUES ('$nomUsuario','$nombreTema','$mensajeTema','$fecha','$hora')";
+$sql = "INSERT INTO respuestasforos (Id_Foro, Id_Usuario,Titulo,Mensaje,Fecha,Hora) VALUES ('$idfor','$nomUsuario','$nombreTema','$mensajeTema','$fecha','$hora')";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 

@@ -5,7 +5,7 @@ function inicio()
 {	
 	obtenerValores();
 	consultarForo();
-	
+	consultarForosRespuestas();
 	
 }
 function linksCambio(nom){
@@ -56,3 +56,34 @@ function consultarForo()
 			}
 		});
 }
+
+/*Funcion para ver todos las respuestas del foro seleccionado*/
+function consultarForosRespuestas()
+{	
+	
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarRespuestasForos.php?jsoncallback=?";
+		$.getJSON(url,{idf:iddelforo
+		}).done(function(data){
+	 	 	if(data.num != 0){
+	 	 		var cant=0;
+	 	 		var iddd;
+				$.each(data, function(i,item){
+					cant++;
+					if(cant==1)
+					{
+						iddd="arr";
+					}
+					else
+					{
+						iddd="arr2";
+					}
+					$("#respuestasForos").append("<div id='"+iddd+"'><div id='foroTema'><figure><img src='user.png'></figure><div id='nombreTema'><p>"+item.titulo+"</p><span>De "+item.nombre+" "+item.apellido+" - "+item.fecha + ", "+item.hora+"</span></div></div><p id='tex2'>"+item.mensaje+"</p></div><hr>");
+						
+				});
+			}
+			else
+				$("#noForos").removeClass("none");
+		});
+
+}
+
