@@ -24,12 +24,13 @@ while($row = mysql_fetch_row($result1)){
 	$estado[$i]["cedPres"]= $row[1];
 	$estado[$i]["graPres"]= $row[4];
 	$estado[$i]["idLibroPRes"]= $row[5];
+	$algo = $row[5];
 	
-	$sql2 = "SELECT id_libro,nombre_libro,autor_libro,materia_libro,year_libro,edit_libro,edicion_libro,cantidad_libro FROM libros WHERE id_libro= '$row[4]'";
+	//$sql2 = "SELECT id_libro,nombre_libro,autor_libro,materia_libro,year_libro,edit_libro,edicion_libro,cantidad_libro FROM libros WHERE id_libro= '$algo'";
 
-	$result2 = mysql_query($sql2) or die("Error de Consulta". mysql_error());
+	//$result2 = mysql_query($sql2) or die("Error de Consulta". mysql_error());
 
-	$cantidad2 = mysql_num_rows($result2);
+	//$cantidad2 = mysql_num_rows($result2);
 	
 	$estado[$i]["idLibro"]= $row[8];
 	$estado[$i]["nom"]= $row[9];

@@ -7,7 +7,7 @@ include("conex.php");
 $val1= $_GET["val1"];
 $val2= $_GET["val2"];
 $val3= $_GET["val3"];
-$sql = "DELETE FROM estudiante_prestamo WHERE id_e_prestamo ='$val1'";
+$sql = "DELETE FROM prestamo_libro WHERE id_prestamoLibro ='$val1'";
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 
 if(mysql_affected_rows() !=0){

@@ -23,17 +23,6 @@ if(mysql_affected_rows() !=0){
 	$estado["con"]=0;
 }
 
-$sql2 = "INSERT INTO estudiante_prestamo(cedula,nombre,grado,id_libro,dateP) VALUES('$val1','$val5','$val6','$val2','$val3')";
-$result2 = mysql_query($sql2) or die ("Error de Consulta". mysql_error());
-
-if(mysql_affected_rows() !=0){
-	$estado["con"]=1;
-	$estado["mensaje"] = "El Libro se ha prestado con exito";
-}
-else{
-	$estado["con"]=0;
-}
-
 $sql3 = "UPDATE libros SET cantidad_libro = '$val7' WHERE id_libro = '$val2'";
 $result3 = mysql_query($sql3) or die ("Error de Consulta". mysql_error());
 if(mysql_affected_rows() !=0){
