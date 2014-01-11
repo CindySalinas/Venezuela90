@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/gestionInformacionAdministrativa.js"></script>
 
 </head>
 <body class="p-admision">
@@ -26,7 +27,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a  href="perfilAdministracion.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
@@ -46,7 +47,7 @@
 			<!-- Navegación -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Navegación</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Navegación</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content" >
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
@@ -54,36 +55,36 @@
 						<li><a href="inscripcion.html">Inscripción</a></li>
 						<li><a href="reinscripcion.html">Reiscripcion</a></li>
 						<li><a href="mensajeriaAdministracion.html">Mensajeria</a></li>
-						<li><a href="#">Usuarios</a></li>
+						<li><a >Usuarios</a></li>
 						<li><a href="gestion.html">Procesos De Gestión</a></li>
-						<li><a href="#">Tramitacion De Documentos</a></li>
+						<li><a >Tramitacion De Documentos</a></li>
 					</ul>
 				</div>
 			</article>
 			<!-- Perfil -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Perfil</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Perfil</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="#">Mi Perfil</a></li>
-						<li><a href="#">Editar</a></li>
-						<li><a href="#">Mis Notificaciones</a></li>
+						<li><a >Mi Perfil</a></li>
+						<li><a >Editar</a></li>
+						<li><a >Mis Notificaciones</a></li>
 					</ul>
 				</div>
 			</article>
 			<!-- Ultimos Usuarios En Linea -->
 			<article class="blogpost">
 				<header>
-					<h1 class="entry-title estilo-entry-title"><a href="#">Ultimos Usuarios En Linea</a></h1>
+					<h1 class="entry-title estilo-entry-title"><a >Ultimos Usuarios En Linea</a></h1>
 				</header>
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<p>Ultimos Conectanos</p>
 					<ul class="navegacion">
-						<li><a href="#">(Ninguno)</a></li>
+						<li><a >(Ninguno)</a></li>
 					</ul>
 				</div>
 			</article>
@@ -148,14 +149,14 @@
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Registro De Cancelación De Mensualidades</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Información Administrativa</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Control De Mensualidades</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Reporte</a></li>
+						<li><a id="iconoconsultar" class="registroC"></a><a class="textoAbajo" >Registro De Cancelación De Mensualidades</a></li>
+						<li><a id="iconomodificar" class="informA"></a><a class="textoAbajo" >Información Administrativa</a></li>
+						<li><a id="iconoconsultar" class="controlM"></a><a class="textoAbajo" >Control De Mensualidades</a></li>
+						<li><a id="iconomodificar" class="reportesC"></a><a class="textoAbajo" >Reporte</a></li>
 					</ul>					
 				</div>				
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="registroCancelacion">
 				<header><h3>Registro De Cancelación De Mensualidades</h3></header>
 				<div id="canMensualidades">
 					<figure id="figMen1">
@@ -172,7 +173,7 @@
 						<p>POR Bs. <input type="text"></p>
 					</div>
 					<div class="diCom">
-						<form>
+						<div>
 							<label>He recibido de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							<input class="in1 mmL" type="text">
 							<div>
@@ -191,7 +192,7 @@
 							<label class="mmLL">20</label>
 							<input class="mmL jjj" type="text">
 						</div>
-						</form>				
+						</div>				
 					</div>
 					<div class="oodiv">
 						<div>NOTA: NO EFECTUAMOS DEVOLUCIÓN DE DINERO</div>
@@ -200,20 +201,20 @@
 				</div>
 				<div class="displayInTop centrar">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Guardar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Pre-Visualizar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Imprimir</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Atras</a></li>
+						<li><a id="iconoconsultar" class="guardarP"></a><a class="textoAbajo" >Guardar</a></li>
+						<li><a id="iconomodificar" class="preVerP"></a><a class="textoAbajo" >Pre-Visualizar</a></li>
+						<li><a id="iconoconsultar" class="imprimirP"></a><a class="textoAbajo" >Imprimir</a></li>
+						<li><a id="iconomodificar" class="atrasP"></a><a class="textoAbajo" >Atras</a></li>
 					</ul>
 				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="informaAdm">
 				<header><h3>Información Administrativa - Consultar</h3></header>
 				<div>a</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="mensControl">
 				<header><h3>Control De Mensualidades</h3></header>
-				<form class="formulario-InA">
+				<div class="formulario-InA">
 					<label>Buscar Por:</label>
 					<select>
 						<option>Alumno</option>
@@ -242,7 +243,7 @@
 						</select>
 					</div>
 					<button id="busInA">Buscar</button>					
-				</form>
+				</div>
 				<table id="tablaInA" class="centrar">
 					<thead>
 						<tr>
@@ -262,7 +263,7 @@
 					</tbody>
 				</table>
 				<div class="centrar">
-					<a href="#">Enviar Reporte</a>
+					<a >Enviar Reporte</a>
 				</div>
 			</article>
 		</div>

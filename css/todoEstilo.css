@@ -1547,7 +1547,11 @@ a{
 }
 
 /* FIN GESTION CALENDARIO*/
-
+/* GESTION INFORMACION MENSUALIDADES*/
+.registroCancelacion,.informaAdm,.mensControl{
+	display: none;
+}
+/*FIn GESTION INFORMACION MENSUALIDADES */
 /* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
 iframe{
 	width: 100%;
