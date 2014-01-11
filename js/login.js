@@ -15,8 +15,7 @@ function logged(){
     $.getJSON(url,{ user:user1,pass:pass1}).done(function(datos) {
         if(datos.validacion > 0 && datos.T== 1){       
             /// Si La Validacion Es Correcta, Muestra La Página Principal de Administracion 
-              
-          window.location='Administracion/intranetAdministracion.html'; 
+          window.location='Administracion/intranetAdministracion.html';
 
         }
         else
