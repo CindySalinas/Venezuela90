@@ -2,6 +2,7 @@ $(document).on("ready", empezar);
 
 function empezar(){
    admins();
+   perfil();
 } 
 
 function admins(){
