@@ -1,12 +1,7 @@
 $(document).on("ready", empezar);
 
 function empezar(){
-<<<<<<< HEAD
-   /*admins();*/
-=======
    admins();
-   perfil();
->>>>>>> e52329258fe4d3fab64d1ee8901662365c08119c
 } 
 
 function admins(){
