@@ -146,9 +146,9 @@
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
+				<header class="titulo"><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
-					<ul id="listaGestion">
+					<ul id="listaGestion" class="listaPrincipal">
 						<li><a id="iconoconsultar" class="ingresar"></a><a class="textoAbajo" >Ingresar</a></li>
 						<li><a id="iconomodificar" class="consultar"></a><a class="textoAbajo" >Consultar</a></li>
 						<li><a id="iconoconsultar" class="modificar"></a><a class="textoAbajo" >Modificar</a></li>
@@ -160,8 +160,12 @@
 				<ul id="listaGestion" class="hideLista">
 						<li><a id="iconoconsultar" class="nuevoEvento"></a><a class="textoAbajo" >Nuevo Evento</a></li>
 						<li><a id="iconomodificar" class="nuevoActividad"></a><a class="textoAbajo" >Nueva Actividad</a></li>
-					</ul>
-				<div class="formularioEvent" id="nuevoIngreso">
+				</ul>
+				<div id="atr" class="atras1">
+						<a id="atras" name="1"></a>
+						<a id="at" name="1">Atrás</a>
+				</div>
+				<div class="formularioEvent nuevoIngr" id="nuevoIngreso" >
 					<table>
 						<tr>
 							<td class="right">
@@ -214,7 +218,7 @@
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
 				</div>	
-				<div class="formularioEvent" id="nuevoActividad">
+				<div class="formularioEvent nuevoAct" id="nuevoActividad">
 					<table>
 						<tr>
 							<td class="right">
@@ -269,6 +273,11 @@
 					<li><a id="iconoconsultar" href="viewCalendarioEscolar2.html"></a><a class="textoAbajo" href="viewCalendarioEscolar2.html">Caledario Escolar</a></li>
 					<li><a id="iconomodificar" href="viewCalendarioActividades.html"></a><a class="textoAbajo" href="viewCalendarioActividades.html">Calendario De Actividades</a></li>
 					</ul>
+
+					<div id="atr" class="atras2">
+						<a id="atras" name="2"></a>
+						<a id="at" name="2">Atrás</a>
+					</div>
 			</article>
 			<article id="noticias" class="calActividades">
 				<header><h3>Calendario De Actividades</h3></header>
@@ -298,6 +307,11 @@
 					<li><a id="iconoconsultar" class="modCalEsc"></a><a class="textoAbajo" >Caledario Escolar</a></li>
 					<li><a id="iconomodificar" class="modCalAct"></a><a class="textoAbajo" >Calendario De Actividades</a></li>
 					</ul>
+				<div id="atr" class="atras3">
+						<a id="atras" name="2"></a>
+						<a id="at" name="2">Atrás</a>
+				</div>
+			<div class="centrar">
 			</article>
 			<article id="noticias" class="modCalEscolar">
 				<header><h3>Modificar Calendario Escolar</h3></header>
@@ -380,6 +394,10 @@
 					<div class="centrar">
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
+				</div>
+				<div id="atr" class="atras4">
+						<a id="atras" name="2"></a>
+						<a id="at" name="2">Atrás</a>
 				</div>	
 			</article>
 			<article id="noticias" class="modCalActividades">
@@ -467,9 +485,13 @@
 						</tr>	
 							
 					</table>
-					<div class="centrar">
+
 						<button id="butEvent" class="centrar" type="submit">Guardar</button>
 					</div>
+						<div id="atr" class="atras5">
+						<a id="atras" name="2"></a>
+						<a id="at" name="2">Atrás</a>
+				</div>
 				</div>	
 			</article>
 		</div>

@@ -2,83 +2,71 @@ $(document).on("ready",iniciar);
 
 function iniciar(){
 gestionBotonesMenu();
-linksCambio2();
+//linksCambio2();
 }
-
 function gestionBotonesMenu(){
-	//Primer Boton Ingresar
-	var ingresar = $('.ingresar').click(function(){
-		if($('.consultarCalendario').is(":visible") || $('.modificarActividades').is(":visible")){
-			$('#nuevoIngreso ,#nuevoActividad,.consultarCalendario,.modificarActividades,.modCalActividades,#mod2,.modCalEscolar,#mod1').hide("slide");
-			$('.ingresoCalendario,.hideLista').toggle("slide");
-		}
-		else{
-			$('.ingresoCalendario,.hideLista').toggle("slide");
-			
-		}
+	$('.ingresar').on("click",function(){gestionesBoton("ingresoCalendario,.hideLista","titulo,.listaPrincipal");$('.atras1').show();});
 
-		//Boton Nuevo Ingreso de Evento
-		var ingresarEvento = $('.nuevoEvento').click(function(){
-			if($('#nuevoActividad').is(":visible")){
-				$('#nuevoActividad').hide("slide");
-				$('#nuevoIngreso').show("slide");
-			}
-			else
-				$('#nuevoIngreso').show("slide");
-		});
-		// Boton Nueva Actividad 
-		var ingresarActividad = $('.nuevoActividad').click(function(){
-			if($('#nuevoIngreso').is(":visible")){
-				$('#nuevoIngreso').hide("slide");
-				$('#nuevoActividad').show("slide");
-			}
-			else
-				$('#nuevoActividad').show("slide");
-		});
+	$('.consultar').on("click",function(){gestionesBoton('consultarCalendario,.hideLista',"titulo,.listaPrincipal");});
+
+	$('.modificar').on("click",function(){gestionesBoton('modificarActividades,hideLista',"titulo,.listaPrincipal");});
+
+	$('.nuevoEvento').on("click",function(){gestionesBoton('nuevoIngr',"nuevoAct");$('.atras1').show();resetear()});
+
+	$('.nuevoActividad').on("click",function(){gestionesBoton('nuevoAct',"nuevoIngr");$('.atras1').show();resetear()});
+
+	$('.modCalEsc').on("click",function(){gestionesBoton('modCalEscolar,#mod1',"titulo,.modificarActividades");});
+
+	$('.modCalAct').on("click",function(){gestionesBoton('modCalActividades,#mod2',"titulo,.modificarActividades");});
+
+	$('.atras1 > #atras,#at').on("click",function(){
+		resetear();
+		atrasEvento("listaPrincipal,.titulo","nuevoAct,.nuevoIngr,.ingresoCalendario"); 
+
+	});
+	$('.atras1 > #atras,#at').on("click",function(){
+		atrasEvento("listaPrincipal,.titulo","nuevoAct,.nuevoIngr,.ingresoCalendario"); 
+
+	});
+	$('.atras2 > #atras,#at').on("click",function(){
+		atrasEvento("listaPrincipal,.titulo","consultarCalendario"); 
+
+	});
+	$('.atras3 > #atras,#at').on("click",function(){
+		atrasEvento("listaPrincipal,.titulo","modificarActividades"); 
+
 	});
 
-	//Primer Boton Consultar
-	var consultar = $('.consultar').click(function(){
-		if($('.ingresoCalendario').is(":visible")||$('.modificarActividades').is(":visible")){
-				$('.ingresoCalendario,.hideLista,.modificarActividades,.modCalActividades,#mod2,.modCalEscolar,#mod1').hide("slide");
-				$('.consultarCalendario').toggle("slide");
-		}
-		else{
-			$('.consultarCalendario').toggle("slide");
-		}
-	});	
+	$('.atras4 > #atras,#at').on("click",function(){
+		resetear();
+		atrasEvento("modificarActividades","modCalEscolar,#mod1"); 
 
-	//Primer Boton Modificar
-	var modificar= $('.modificar').click(function(){
-		if($('.ingresoCalendario').is(":visible")||$('.consultarCalendario').is(":visible")){
-				$('.ingresoCalendario,hideLista,.consultarCalendario').hide("slide");
-				$('.modificarActividades').toggle("slide");
-		}
-		else{
-			$('.modificarActividades').toggle("slide");
-		}
-		//Boton Modificar Calendario de Evento
-		var modiCalEscolar = $('.modCalEsc').click(function(){
-		if($('#mod2').is(":visible")){
-				$('.modCalActividades,#mod2').hide("slide");
-				$('.modCalEscolar,#mod1').show("slide");
-			}
-			else
-				$('.modCalEscolar,#mod1').show("slide");
-		});
-		// Boton Modificar  Actividad 
-		var modciCalActi = $('.modCalAct').click(function(){
-			if($('#mod1').is(":visible")){
-				$('.modCalEscolar,#mod1').hide("slide");
-				$('.modCalActividades,#mod2').show("slide");
-			}
-			else
-				$('.modCalActividades,#mod2').show("slide");
-		});
+	});
+	$('.atras5 > #atras,#at').on("click",function(){
+		resetear();
+		atrasEvento("modificarActividades","modCalActividades,#mod2"); 
+
 	});
 }
 
+function gestionesBoton(mostrar,ocultar)
+{
+	$('.'+mostrar).show("slide");
+	$('.'+ocultar).hide("slow");
+	$('.atras1').hide();
+}
 
+function atrasEvento(mostrar,ocultar)
+{
+	$("."+mostrar).show("slide");
+	$("."+ocultar).hide("slow");
+	$(".atras1").show();
+}
+
+function resetear(){
+		$('input[type=text]').val("");
+		$('textarea').val("");
+}
 //Llamas a la funcion que lee la url
 function linksCambio2(){
 	alert(getQueryVariable("nom") + "\n"+ getQueryVariable("app"));
