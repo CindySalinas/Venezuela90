@@ -1,11 +1,11 @@
 $(document).on("ready", empezar);
 
 function empezar(){
-   admins();
+   /*admins();*/
 } 
 
 function admins(){
-	var galleta = $.cookie("adminName")
+	var galleta = $.cookie("adminName");
 	if(galleta == undefined){
 		window.location = "../index.html";
 	}

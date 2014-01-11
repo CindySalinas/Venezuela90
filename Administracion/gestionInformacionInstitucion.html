@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/javascriptCindy.js"></script>
 
 </head>
 <body class="p-admision">
@@ -57,6 +58,7 @@
 						<li><a href="#">Usuarios</a></li>
 						<li><a href="gestion.html">Procesos De Gestión</a></li>
 						<li><a href="#">Tramitacion De Documentos</a></li>
+						<li><a href="foros.html">Foros</a></li>
 					</ul>
 				</div>
 			</article>
@@ -145,106 +147,99 @@
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
-				<div id="contenidoNoticias" class="estiloGestionLibros">
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Carga De Noticias</a></li>
-						<li><a id="iconomodificar" href="gestionCalendarioEscolar.html"></a><a class="textoAbajo" href="gestionCalendarioEscolar.html">Gestión Del Calendario Escolar</a></li>
-					</ul>							
-				</div>		
-				<article class="margenLibro">
+				<div id="divSelectOpcionInfoIns">
+					<header><h3>Seleccionar Una Opción</h3></header>
+					<div id="contenidoNoticias" class="estiloGestionLibros">
+						<ul class="listaGestionClass">
+							<li><a class="linkCarNot iconoconsultarclass"></a><a class="linkCarNot textoAbajo">Carga De Noticias</a></li>
+							<li><a class="iconomodificarclass" href="gestionCalendarioEscolar.html"></a><a class="textoAbajo" href="gestionCalendarioEscolar.html">Gestión Del Calendario Escolar</a></li>
+						</ul>							
+					</div>	
+				</div>	
+				<article id="artCargaNotInfoIns" class="margenLibro">
 					<header>
 						<h3>Carga De Noticias</h3>
 					</header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>	
+					<ul class="listaGestionClass">
+						<li><a class="linkIngNot iconoconsultarclass"></a><a class="linkIngNot textoAbajo">Ingresar</a></li>
+						<li><a class="linkModNot iconomodificarclass"></a><a class="linkModNot textoAbajo">Modificar</a></li>
+					</ul>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasInfoIns linkAtrasInfoIns1"></a>
+						<a class="textoAbajoAtras linkAtrasInfoIns1">Atras</a>
+					</div>
 				</article>	
-				<article class="margenLibro">
+				<article id="artIngresarNotInfoIns" class="margenLibro">
 					<header>
-						<h3>Ingresar Noticias</h3>
+						<h3>Ingresar Noticia</h3>
 					</header>
-					<form id="formularioResponder">
-					<div >
-						<label id="titNot">Titulo De La Noticia</label>
-						<input id="inputNot" type="text">
-					</div>
-					<div class="divFormIns">
-						<label id="insForm" name="mensaje">Contenido De La Noticia</label>
-						<div id="areaText2">
-							<textarea maxlength="120" id="textarea2" name="mensaje"></textarea>
+					<div class="formFN">
+						<div >
+							<label class="titNotClass">Titulo De La Noticia</label>
+							<input id="inpIngNot" class="inputNotClass" type="text">
 						</div>
+						<div class="divFormIns">
+							<label class="insFormClass" name="mensaje">Contenido De La Noticia</label>
+							<div class="areaText2Class">
+								<textarea maxlength="400" id="textContIngNot"class="textarea2Class" name="mensaje"></textarea>
+							</div>
+						</div>
+						<div class="divFormIns">
+							<label class="insImgClass" name="mensaje">Imagen Para La Noticia</label>
+							<input id="archivoIngNot" class="forImgClass" type="file" name="imagen">
+						</div>
+						<div id="cent">
+							<button id="enviarIngresarNoticia" class="botonParaEnviar">Enviar</button>
+						</div>
+					</div>	
+					<div id="divAtrasAgregar" class="divAtrasInfoIns centrar">
+						<a class="linkAtrasInfoIns linkAtrasInfoIns2"></a>
+						<a class="textoAbajoAtras linkAtrasInfoIns2">Atras</a>
 					</div>
-					<div class="divFormIns">
-						<label id="insImg" name="mensaje">Imagen Para La Noticia</label>
-						<input id="forImg" type="file" name="imagen">
-					</div>
-					<div id="cent">
-						<button id="enviarInfoIns" type="submit">Enviar</button>
-					</div>
-				</form>	
 				</article>	
-				<article class="margenLibro">
+				<article id="artModInfoIns1" class="margenLibro">
 					<header>
 						<h3>Modificar</h3>
 					</header>
 					<table id="tablaNoticias">
 						<thead>
 							<tr>
-								<td id="colorTab" colspan=3>Noticias</td>
+								<td class="colorTabClass" colspan=3>Noticias</td>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>								
-								<td >
-									<figure>
-										<img width="80px" src="user.png">
-									</figure>
-								</td>
-								<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</td>
-								<td><a href="#">>></a></td>	
-							</tr>
-							<tr>
-								<td colspan="3"><hr></td>
-							</tr>
-							<tr>								
-								<td >
-									<figure>
-										<img width="80px" src="user.png">
-									</figure>
-								</td>
-								<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</td>
-								<td><a href="#">>></a></td>
-							</tr>
+						<tbody id="tbodyNoticiasModificar">
+							
 						</tbody>
-					</table>					
-				</article>	
-				<article class="margenLibro">
+					</table>	
+					<div id="divAtrasModifi" class="divAtrasInfoIns centrar">
+						<a class="linkAtrasInfoIns linkAtrasInfoIns3"></a>
+						<a class="textoAbajoAtras linkAtrasInfoIns3">Atras</a>
+					</div>				
+				</article>
+
+				<article id="artModInfoIns2" class="margenLibro">
 					<header>
 						<h3>Modificar Noticia</h3>
 					</header>
-					<form id="formularioResponder">
-					<div >
-						<label id="titNot">Titulo De La Noticia</label>
-						<input id="inputNot" type="text">
-					</div>
-					<div class="divFormIns">
-						<label id="insForm" name="mensaje">Contenido De La Noticia</label>
-						<div id="areaText2">
-							<textarea maxlength="120" id="textarea2" name="mensaje"></textarea>
+					<div class="formFN">
+						<div >
+							<label class="titNotClass">Titulo De La Noticia</label>
+							<input id="inputNotModificar1" class="inputNotClass" type="text">
 						</div>
+						<div class="divFormIns">
+							<label class="insFormClass" name="mensaje">Contenido De La Noticia</label>
+							<div class="areaText2Class">
+								<textarea maxlength="120" id="contNoticiaMod2" class="textarea2Class" name="mensaje"></textarea>
+							</div>
+						</div>
+						<div id="cent">
+							<button id="botonModificarNoticia2"class="botonParaEnviar">Modificar</button>
+						</div>
+					</div>	
+					<div id="divAtrasModifi2" class="divAtrasInfoIns centrar">
+						<a class="linkAtrasInfoIns linkAtrasInfoIns4"></a>
+						<a class="textoAbajoAtras linkAtrasInfoIns4">Atras</a>
 					</div>
-					<div id="cent">
-						<button id="enviarInfoIns" type="submit">Modificar</button>
-					</div>
-				</form>	
 			</article>
 
 		</div>

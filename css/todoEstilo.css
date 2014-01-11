@@ -8,16 +8,16 @@
 	font-weight: normal;
 	font-style: normal;
 }
-#atras, #siguiente, #otrosiguiente, #nuevoForo
+#atras, #siguiente, #otrosiguiente, #nuevoForo, .linkAtrasInfoIns
 {
 	transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 }
-#atras:hover
+#atras:hover, .linkAtrasInfoIns:hover
 {
-	transform: scale(1.08) rotate(60deg);
-	-webkit-transform: scale(1.08) rotate(60deg);
+	transform: scale(1.08) rotate(40deg);
+	-webkit-transform: scale(1.08) rotate(40deg);
 	-moz-transition: all 0.5s ease;
 }
 #atr, #sig
@@ -67,6 +67,11 @@
 {
 	font-weight: bold;
 }
+.textoAbajoAtras
+{	
+	color: black;
+	font-weight: bold;
+}
 .separar
 {
 	border: 1px solid black;
@@ -102,12 +107,18 @@
 	margin-left: 6px;
 	vertical-align: middle;
 }
-#bloque, #bloque2, #bloque3, #bloque4, #bloque5, #bloque6, #bloque7, #iconomodificar, #iconoconsultar, #atras, #siguiente, .ad, #otrosiguiente, #nuevoForo
+#bloque, #bloque2, #bloque3, #bloque4, #bloque5, #bloque6, #bloque7, #iconomodificar, .iconomodificarclass, #iconoconsultar, .iconoconsultarclass, #atras, #siguiente, .ad, #otrosiguiente, #nuevoForo, .linkAtrasInfoIns
 {
 	display: block;
 	margin-bottom: 8px;
 	font-family: 'icomoon';
 	font-size: 50px;
+}
+/*Flecha Atras Verde*/
+.linkAtrasInfoIns:before
+{
+	color: green;
+	content: "\e611";
 }
 #nuevoForo:before
 {
@@ -164,11 +175,11 @@
 
 	content: "\e608";
 }
-#iconomodificar:before {
+#iconomodificar:before, .iconomodificarclass:before {
 
 	content: "\e60e";
 }
-#iconoconsultar:before {
+#iconoconsultar:before, .iconoconsultarclass:before {
 
 	content: "\e60d";
 }
@@ -204,16 +215,16 @@
 }
 /*Lista Pagina Gestion*/
 
-#listaGestion
+#listaGestion, .listaGestionClass
 {
 	list-style: none;
 	text-align: center;
 }
-#listaGestion a
+#listaGestion a, .listaGestionClass a
 {	
 	color: #CA5200;
 }
-#listaGestion li
+#listaGestion li, .listaGestionClass li
 {
 	display: inline-block;
 	vertical-align: top;
@@ -235,7 +246,7 @@
 	transform: scale(1.08);
 	-webkit-transform: scale(1.08);
 }
-#listaGestion li:hover, #nuevoForo:hover
+#listaGestion li:hover, #nuevoForo:hover, .listaGestionClass li:hover
 {
 	transform: scale(1.08);
 	-webkit-transform: scale(1.08);
@@ -822,15 +833,15 @@
 	margin: 0 auto;
 	width: 95%;
 }
-#foroTema, #nombreTema, .nombreTemaRes, #insForm, #areaText2
+#foroTema, #nombreTema, .nombreTemaRes, #insForm, .insFormClass, #areaText2, .areaText2Class
 {
 	display:inline-block;
 }
-#areaText2
+#areaText2, .areaText2Class
 {
 	width: 75%;
 }
-#textarea2
+#textarea2, .textarea2Class
 {
 	width: 100%;
 }
@@ -928,12 +939,12 @@
 	padding-left: 85px;
 	width: 95%;
 }
-#textarea1, #textarea2, #mensajeFN
+#textarea1, #textarea2, #mensajeFN, .textarea2Class
 {
 	width: 100%;
 	height: 150px;
 }
-#titNot
+#titNot, .titNotClass
 {
 	margin-right:38px; 
 }
@@ -941,19 +952,19 @@
 {
 	margin-top: 1em;
 }
-#textarea2, #inputNot, #forImg
+#textarea2, #inputNot, #forImg, .forImgClass, .inputNotClass, .textarea2Class
 {
 	border-radius: 6px;
 }
-#insImg
+#insImg, .insImgClass
 {
 	margin-right: 15px;
 }
-#inputNot
+#inputNot, .inputNotClass
 {
 	width: 55%;
 }
-#insForm
+#insForm, .insFormClass
 {
 	margin-right: 7px;
 }
@@ -961,7 +972,7 @@
 {
 	margin-right: 10px;
 }
-#colorTab
+#colorTab, .colorTabClass
 {
 	background-color: #e9612c;
 	color: white;
@@ -973,6 +984,7 @@
 #tablaNoticias
 {
 	margin: 0 auto;
+	margin-bottom: 1.4em;
 	text-align: left;
 	width: 70%;
 }
@@ -980,7 +992,7 @@
 {
 	width: 90%;
 }
-.enviarResponder, #enviarInfoIns
+.enviarResponder, .botonParaEnviar
 {
 	margin: 1em auto;
 	text-align: center;
@@ -1457,6 +1469,24 @@
 {
 	margin-top: 0.6em;
 }
+
+/*Varias Paginas*/
+
+.divAtrasInfoIns
+{
+	margin: 0 auto;
+	width: 20%;
+}
+.colFigod
+{
+	padding-top: 0.5em;
+	width: 85px;
+}
+.colConMod
+{
+	width: 714px;
+}
+
 /*Responsive Intranet*/
 
 @media screen and (min-width: 1350px) {
