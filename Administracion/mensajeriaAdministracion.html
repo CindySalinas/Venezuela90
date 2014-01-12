@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/mensajeria.js"></script>
 
 </head>
 <body class="p-admision">
@@ -146,38 +147,52 @@
 			</article>
 			<article id="noticias">
 				<header><h3>Mis Mensajes</h3></header>
-				<table border=1 class="tabMenNav">		<thead>
+				<table border=1 class="tabMenNav">		
+					<thead>
 						<tr>
 							<td>Carpetas</td>
 						</tr>
 					</thead>	
 					<tr>
-						<td><a href="#">Nuevo Mensaje</a></td>	
+						<td><a id="linkNewMensaje">Nuevo Mensaje</a></td>	
 					</tr>		
 					<tr>
-						<td><a href="#">Recibidos</a></td>	
+						<td><a id="linkMensajesRecibidos">Recibidos</a></td>	
 					</tr>
 					<tr>
-						<td><a href="#">Mensajes Sin Leer</a></td>	
+						<td><a id="linkMensajesSinLeer">Mensajes Sin Leer</a></td>	
 					</tr>
 					<tr>
-						<td><a href="#">Enviados</a></td>
+						<td><a id="linkMensajesEnviados">Enviados</a></td>
 					</tr>
 					<tr>
-						<td><a href="#">Favoritos</a></td>
-					</tr>	
-					<tr>
-						<td><a href="#">Eliminados</a></td>
+						<td><a id="linkMensajeFavoritos">Favoritos</a></td>
 					</tr>
 				</table>
 
-				<table border=1 class="tabMenTodo">		
+				<table border=1 id="sinLeer" class="tablaMenRecibidos tabMenTodo">		
 					<thead>
 						<tr>
 							<td colspan=2>Recibidos</td>
 						</tr>
 					</thead>	
 					<!-- Filas Dinamicas -->
+					<tbody id="tbodyMenRecibidos">
+						
+					</tbody>
+					<!--  -->
+				</table>
+				<!-- <div id="divMenRec" class="divVerAlert">
+
+				</div> -->
+				<table border=1 id="sinLeer" class=" tablaMenFavoritos tabMenTodo">		
+					<thead>
+						<tr>
+							<td colspan=2>Favoritos</td>
+						</tr>
+					</thead>	
+					<!-- Filas Dinamicas -->
+					<tbody>
 					<tr >
 						<td class="borAba fotoMenDoc" rowspan=2>
 							<figure class="centrar">
@@ -235,103 +250,112 @@
 					<tr>
 						<td class="menMenDoc"><label>Mensaje 3. </label><a href="#">Ver Más</a></td>
 					</tr>
+					</tbody>
 					<!--  -->
 				</table>
 
-				<table border=1 class="tabMenTodo">		
+				<table border=1 id="sinLeer" class="tablaMensajes tabMenTodo">		
 					<thead>
 						<tr>
 							<td colspan=2>Mensaje</td>
 						</tr>
 					</thead>	
 					<!-- Filas Dinamicas -->
-					<tr>
-						<td colspan=2 class="asunt">Asunto</td>
-					</tr>
-					<tr >
-						<td class="fotoMenDoc" rowspan=2>
-							<figure class="centrar">
-								<img width=60 src="../images/user.png">
-							</figure>
-						</td>
-						<td class="nomMenDoc">
-							<label>Keily Yoselin Salinas Zambrano</label>
-							<a class="floatRight" href="#">Eliminar</a>
-							<a class="floatRight" href="#">Favorito</a>
-							<a class="floatRight" href="#">Responder</a>
-						</td>		
-					</tr>
-					<tr>
-						<td class="menMenDoc"><label>keily424@hotmail.com </label></td>
-					</tr>
-					<!--  -->
-					<!-- Dinamica -->
-					<tr>
-						<td colspan=2 class="menmen">	
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-						</td>
-					</tr>
+					<tbody>
+						<tr>
+							<td colspan=2 class="asunt"><span id="textAsunto"></span></td>
+						</tr>
+						<tr >
+							<td class="fotoMenDoc" rowspan=2>
+								<figure class="centrar">
+									<img width=60 src="../images/user.png">
+								</figure>
+							</td>
+							<td class="nomMenDoc">
+								<label id="nombreRemit"></label>
+								<a id="menElimiar" class="floatRight">Eliminar</a>
+								<a id="menFav" class="floatRight">Favorito</a>
+								<a id="menRes" class="floatRight">Responder</a>
+							</td>		
+						</tr>
+						<tr>
+							<td class="menMenDoc"><label id="correoRemit"></label></td>
+						</tr>
+						<tr>
+							<td colspan=2 class="menmen">	
+								<p id="pMensaje">			
+								</p>
+							</td>
+						</tr>
+					</tbody>
 					<!--  -->
 				</table>
 
-				<table border=1 id="sinLeer" class="tabMenTodo">		
+				<table border=1 id="sinLeer" class="tablaSinLeer tabMenTodo">		
 					<thead>
 						<tr>
 							<td colspan=2>Mensajes Sin Leer</td>
 						</tr>
 					</thead>	
+					<tbody>
+
+					</tbody>
 						
 					<!--  -->
 				</table>
-				<table border=1 class="tabMenTodo">		<thead>
+
+				<table border=1 id="sinLeer" class="tablaEnviados tabMenTodo">		
+					<thead>
 						<tr>
 							<td colspan=2>Enviados</td>
 						</tr>
 					</thead>	
 					<!-- Filas Dinamicas -->
-					<tr >
-						<td class="fotoMenDoc" rowspan=2>
-							<figure class="centrar">
-								<img width=60 src="../images/user.png">
-							</figure>
-						</td>
-						<td class="nomMenDoc">Para: Cindy Yarimar Salinas Zambrano
-							<a class="floatRight" href="#">Eliminar</a>	
-						</td>		
-					</tr>
-					<tr>
-						<td class=" menMenDoc"><label>Mensaje 1. </label><a href="#">Ver Más</a></td>
-					</tr>
+					<tbody>
+						<tr >
+							<td class="fotoMenDoc" rowspan=2>
+								<figure class="centrar">
+									<img width=60 src="../images/user.png">
+								</figure>
+							</td>
+							<td class="nomMenDoc">Para: Cindy Yarimar Salinas Zambrano
+								<a class="floatRight" href="#">Eliminar</a>	
+							</td>		
+						</tr>
+						<tr>
+							<td class=" menMenDoc"><label>Mensaje 1. </label><a href="#">Ver Más</a></td>
+						</tr>
+					</tbody>
 					<!--  -->				
 				</table>
 
-				<table border=1 id="tabMenNew" class="tabMenTodo">		<thead>
+				<table border=1 id="tabMenNew" class="tablaNewMensaje tabMenTodo">		
+					<thead>
 						<tr>
 							<td colspan=2>Nuevo Mensaje</td>
 						</tr>
 					</thead>	
 					<!-- Filas Dinamicas -->
 					<tr >
-						<td><input type="text" placeholder="Destinatario"></td>
+						<td><input id="destinatario" type="text" placeholder="Destinatario"></td>
 					</tr>
 					<tr >
-						<td><input type="text" placeholder="Asunto"></td>
+						<td><input id="asunto" type="text" placeholder="Asunto"></td>
 					</tr>
 					<tr >
-						<td><textarea rows=10></textarea></td>
+						<td><textarea id="texmensaje" rows=10></textarea></td>
 					</tr>
 					<tr >
-						<td><button>Enviar</button></td>
+						<td>
+							<button id="enviarNuevoMensaje">Enviar</button>
+							<div id="hola"class="divOcultoDes textoRojo floatRight">Ingrese Un Correo Valido (Destinatario)</div>
+						</td>
 					</tr>
 					<!--  -->				
 				</table>
+				<div id="divVerAlert">
+
+				</div>
 			</article>
 		</div>
 	</section>

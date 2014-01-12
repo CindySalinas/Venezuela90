@@ -1486,6 +1486,23 @@
 {
 	width: 714px;
 }
+/*Mensaje*/
+.textoRojo
+{
+	color: #b93207;
+	font-weight: bold;
+}
+
+#espacioTD
+{
+	padding-top: 1em;
+}
+
+#divVerAlert, .divVerAlert
+{
+	float: right;
+	width: 75%;
+}
 
 /*Responsive Intranet*/
 
