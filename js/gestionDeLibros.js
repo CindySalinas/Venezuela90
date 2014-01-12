@@ -11,15 +11,7 @@ $('.otroBlock').on("click",'.ad',eliminarPrestamo);
 $('.tipoB').on("change",tipoBusqueda);
 $('#buscEl').on("change",eliminarBusqueda);
 $('#botonIngresarLibro').on("click",insertarPrestamo);
-//$('#formuOpcion').on("Change",mostrarFlecha);
-//$('.eliminar').on("click",mostrarEliminar)
-//$('#buscarPrestamo').on("click",buscarPrestamo)
-}
 
-//$('#at,#atras,.atrasLibro');
-function atras(data){
-	 var num = data.currentTarget.name;
-  	 $("article[name='"+num+"']").hide('slide');
 }
 
 //muestra la fichaTecnica()
@@ -200,9 +192,9 @@ function ingresarLibro(){
  	 		val6:edic,
  	 		val7:cant
  	 }).done(function(data){
- 	 	$('#formulario').hide("slide");
- 	 	$('#at,#atras').hide();
- 	 	$('#ingresarLibro').hide();
+ 	 	$('#formulario,#ingresarLibro').hide("slide");
+ 	 	//$('#at,#atras').hide();
+ 	 //	$('#ingresarLibro').hide();
  	 	añadir.append("<div class='alert alert-success'>"+data.mensaje+"</div>");
  	 });
 }
@@ -280,12 +272,11 @@ function nuevoPrestamo(){
 
 		$('#formuOpcion').on("change", function(){
 			if($('#formuOpcion').val()==""){
-				$('.ocultaLista').hide("slide");
-				$('#selectForm').hide("slide");
-				$('#formPres').hide("slide");
+				$('.ocultaLista,#selectForm,#formPres').hide("slide");
+			
 			}else{
-				$('.alert').remove();
-				$('#selectForm option').remove();
+				$('.alert,#selectForm option').remove();
+				//$('#selectForm option').remove();
 				$('.ocultaLista').show("slide");
 				datosPrestamo();
 				$('#sig').show();
@@ -307,139 +298,13 @@ function nuevoPrestamo(){
 
 	})
 }
-// Funcionalidad del boton "registrar libros"
-function registroLibros(){
-	// boton registro de libros
-	var mostrarOcultar = $('#iconoconsultar').click(function(event){
-		$('.modificar').css({display:"none"});
-		if($('.consult').is(":visible") || $('.delete').is(":visible")|| $('#formularioIngresarLibro').is(":visible") || $('.hideLista, #at,#atras').is(":visible")){
-			$('.consult').hide("slide");
-			$('.delete').hide("slide");
-			$('#formularioIngresarLibro').hide("slide");	
-			$('.hideLista, #at,#atras').hide("slide");
-			$('.hideLista2, #at,#atras').hide("slide");
-			$('.consult2').hide("slide");
-			$('#fichaTecnica').hide("slide");
-			$('.delete2').hide("slide");
-			$('.otroTec, .ad, #de').hide("slide");
-		}
-		else
-			$('.hideLista, #at,#atras').show("slide");
-	});
-	//boton ingresar- registro libros
-	var ingresar =  $('.ingresar').click(function(){
-		
-		if($('.consult').is(":visible") || $('.delete').is(":visible") || $('#msj').is(":visible")){
-			$('.consult').hide("slide");
-			$('.delete').hide("slide");
-			$('#formulario').show();
-			$('#ingresarLibro').css("display","inline-block");
-			$('#msj').hide();
-			$('#formularioIngresarLibro').fadeToggle();	
-		//	$('.tecLibros, #numCant,.prestamo,.tec, #msj').hide();
-			//$('#fichaTecnia #msj').hide();	
-		}
-		else
-			$('#formularioIngresarLibro').fadeToggle();
-	});
-	//boton consultar- registro libros
-	var consultar = $('.consultar').click(function(){
-		if($('#formularioIngresarLibro').is(":visible") || $('.delete').is(":visible")){
-			$('.delete').hide("slide");
-			$('#formularioIngresarLibro').hide("slide");	
-			//$('.tecLibros, #numCant,.prestamo,.tec, #msj').hide();
-			//$('#fichaTecnia #msj').hide();		
-			$('.consult').fadeToggle();
-		}
-		else
-			$('.consult').fadeToggle();
-	});
-	//boton eliminar- registro libros
-	var eliminar = $('.eliminar').click(function(){
-		if($('.consult').is(":visible") || $('#formularioIngresarLibro').is(":visible") || $('.delete').is(":visible")){
-			$('.consult').hide("slide");
-			$('#formularioIngresarLibro').hide("slide");
-			//$('.tecLibros, #numCant,.prestamo,.tec, #msj').
-			//$('#fichaTecnia #msj').empty();
-			$('.delete').fadeToggle();
-			mostrarEliminar();
-		}
-		else
-			{
-				//$('.tecLibros, #numCant,.prestamo,.tec').remove();
-				mostrarEliminar();
-				$('.delete').fadeToggle();	
-		}
-		
-	});
-/* ------------------------------------Prestamos de Libro------------------------------------------*/
-	var mostrarPrestamo = $('#iconomodificar').click(function(event){
-		$('.modificar2').css({display:"none"});
-		$('.eliminar2').css({display:"none"});
-		if($('.consult2').is(":visible") || $('.delete2').is(":visible")|| $('#fichaTecnica').is(":visible") || $('.hideLista2, #at,#atras').is(":visible")){
-			$('.consult').hide("slide");
-			$('.consult2').hide("slide");
-			$('.delete').hide("slide");
-			$('.delete2').hide("slide");
-			$('#fichaTecnica').hide("slide");	
-			$('#formularioIngresarLibro').hide("slide");	
-			$('.hideLista, #at,#atras').hide("slide");
-			$('.hideLista2, #at,#atras').hide("slide");
-			$('.formulario3 #formPres').hide("slide");
-			$('.otroTec, .ad, #de').hide("slide");
-		}
-		else
-			$('.hideLista2, #at,#atras').show("slide");
-
-	});
-	var ingresarPrestamo =  $('.ingresar2').click(function(){
-		if($('.consult2').is(":visible") || $('.delete2').is(":visible")){
-			$('.consult2').hide("slide");
-			$('.delete2').hide("slide");
-			$('#formulario3').hide();
-			//$('#msj').hide();
-			$('#fichaTecnica').fadeToggle();	
-			$('.otroTec, .ad, #de').hide("slide");
-
-		}
-		else
-			$('#fichaTecnica').fadeToggle();
-	});
-	var consultarPrestamo = $('.consultar2').click(function(){
-		if($('#fichaTecnica').is(":visible") || $('.delete2').is(":visible")){
-			$('.delete2').hide("slide");
-			$('#fichaTecnica').hide("slide");	
-			$('#fichaTecnia').hide("slide");	
-			$('.consult2').show("slide");
-		$('.otroTec, .ad, #de').hide("slide");
-		}
-		else
-			$('.consult2').show("slide");
-	});
-	/*
-	var eliminarPrestamo = $('.eliminar2').click(function(){
-		if($('.consult2').is(":visible") || $('#formularioIngresarLibro').is(":visible")){
-			$('.consult2').hide("slide");
-			$('#fichaTecnica').hide("slide");
-			//$('#fichaTecnia #msj').remove();	
-			$('.delete2').fadeToggle();
-		}
-		else
-			$('.delete2').fadeToggle();
-	});
-*/
-}
-
-
 // Muestra los input para la busqueda de prestamos.
 function tipoBusqueda(){
 	var tipo = $('.tipoB option:selected').val();
 	if(tipo == "Cedula"){
 		$('#b3').hide();
-		$('#b2').show("slide");
-		$('#buscarPrestamo').show();
-		$('.prestamo2').remove();
-  		$('.otroTec').remove();
+		$('#b2,#buscarPrestamo').show("slide");
+		$('.prestamo2,.otroTec').remove();
 		$('#buscarPrestamo').click(function(){
 
 				buscarPrestamo("cedula",$('#cedPres').val());
@@ -448,8 +313,7 @@ function tipoBusqueda(){
 	else
 		if(tipo == "Fecha"){
 			$('#b2').hide();
-			$('#b3').show("slide");
-			$('#buscarPrestamo').show();
+			$('#b3,#buscarPrestamo').show("slide");
 			//$('.otroTec').remove();
 			$('.prestamo2 ,.otroTec').remove();
 
@@ -461,9 +325,13 @@ function tipoBusqueda(){
 	else
 		if(tipo == "Todos"){
 			$('.consult2 .alert .alert-danger').remove();
-			$('#b2').show("slide");
-			$('#b3').show("slide");
+			$('#b2,#b3').hide("slide");
 			$('#buscarPrestamo').show();
+			$('.prestamo2 ,.otroTec').remove();
+			$('#buscarPrestamo').click(function(){
+				$('.prestamo2 ,.otroTec').remove();
+				buscarPrestamo("todo",'');
+			});
 		}
 	else{
 		$('#b2').hide();
@@ -475,3 +343,65 @@ function tipoBusqueda(){
 }
 
 
+function registroLibros(){
+	$('#iconoconsultar').on("click",function(){gestionesBoton("hideLista","listaPrincipal");
+		$('.modificar').css({display:"none"});
+		 $('.atras1').show();});
+
+	$('.ingresar').on("click",function(){gestionesBoton("ingresarPanel","titulo,.hideLista");});
+
+	$('.consultar').on("click",function(){gestionesBoton('consult',"titulo,.hideLista");});
+
+	$('.eliminar').on("click",function(){gestionesBoton('delete',"titulo,.hideLista"); mostrarEliminar();});
+
+	$('#iconomodificar').on("click",function(){gestionesBoton('hideLista2',"listaPrincipal");
+		$('.modificar2,.eliminar2').css({display:"none"});$('.atras1').show();});
+
+	$('.ingresar2').on("click",function(){gestionesBoton('ingresars2',"titulo,.hideLista2");});
+
+	$('.consultar2').on("click",function(){gestionesBoton('consult2',"titulo,.hideLista2");});
+
+	$('.atras1 > #atras,#at').on("click",function(){
+		resetear();
+		$('#formulario,#ingresarLibro').show("slide");$('.alert').remove();
+		atrasEvento("listaPrincipal","hideLista,.hideLista2"); 
+
+	});
+	$('.atras2 > #atras,#at').on("click",function(){
+		resetear();
+		atrasEvento("hideLista,.titulo","ingresarPanel");
+	});
+	$('.atras3 > #atras,#at').on("click",function(){
+		atrasEvento("hideLista,.titulo","consult");
+	})
+	$('.atras4 > #atras,#at').on("click",function(){
+		atrasEvento("hideLista,.titulo","delete");
+	});
+	$('.atras5 > #atras,#at').on("click",function(){
+		resetear();
+		$('.ocultaLista,#selectForm,#formPres,#sig').hide("slide");
+		atrasEvento("hideLista2,.titulo","ingresars2");
+	})
+	$('.atras6 > #atras,#at').on("click",function(){
+		resetear();
+		atrasEvento("hideLista2,.titulo","consult2");
+		$('.prestamo2, .otroTec').remove();
+	})
+
+}
+
+function gestionesBoton(mostrar,ocultar)
+{
+	$('.'+mostrar).show("slide");
+	$('.'+ocultar).hide("slow");
+	$('.atras1').hide();
+}
+function atrasEvento(mostrar,ocultar)
+{
+	$("."+mostrar).show("slide");
+	$("."+ocultar).hide("slow");
+	$(".atras1").show();
+}
+function resetear(){
+		$('input[type=text]').val("");
+}

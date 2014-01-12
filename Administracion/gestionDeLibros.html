@@ -145,10 +145,11 @@
 				<header><h2>Gestión De Libros</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
+			<article id="noticias" >
 				<div id="contenidoNoticias" class="estiloGestionLibros">
-					<ul id="listaGestion">
+				<header class="titulo"><h3>Seleccionar Una Opción</h3></header>
+			<!--	<div id="contenidoNoticias" class="estiloGestionLibros">-->
+					<ul id="listaGestion" class="listaPrincipal ocultarXClick">
 						<li><a id="iconoconsultar" ></a><a class="textoAbajo" >Registro De Libros</a></li>
 						<li><a id="iconomodificar" ></a><a class="textoAbajo" >Registro De Prestamos De Libros</a></li>
 					</ul>					
@@ -164,11 +165,11 @@
 						<li class="modificar2"><a id="iconoconsultar"></a><a class="textoAbajo">Modificar</a></li>
 						<li class="eliminar2"><a id="iconomodificar"></a><a class="textoAbajo">Eliminar</a></li>
 					</ul>
-					<div id="holas">
-							<a id="atras" name="1"></a>
-							<a id="at" name="1">Atrás</a>
+					<div id="holas" class="atras1">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
 						</div>
-					<article id="formularioIngresarLibro" class="margenLibro" title="ingresar" name="2">
+					<article id="formularioIngresarLibro" class="margenLibro ingresarPanel"  name="2">
 						<header>
 							<h3>Ingreso De Libros</h3>
 						</header>
@@ -187,13 +188,12 @@
 								<input class="labelGestionLibro" type="text" placeholder="Ej.: Libro 1" name="nombreAutor" id="edic">
 								<label class="labelGestionLibro" id="autor" name="nombreLibro">Cantidad: </label>
 								<input class="labelGestionLibro" type="text" placeholder="Ej.: Libro 1" name="nombreLibro" id="cant">
-								<!--<button id="botonIngresarLibro" >Ingresar </button>-->
 								<br>
-								
+								<input type="button" value="Ingresar -->" id="ingresarLibro">
 						</div>
-						<input type="button" value="Ingresar -->" id="ingresarLibro">
+						
 						<div id="msj"></div>
-						<div id="atr">
+						<div id="atr" class="atras2">
 							<a id="atras" name="2"></a>
 							<a id="at" name="2">Atrás</a>
 						</div>
@@ -216,7 +216,7 @@
 							<br>
 							<input type="button" class="labelGestionLibro" id="botonBuscarLibro" value="Buscar">
 						</div>
-						<div id="atr">
+						<div id="atr" class="atras3">
 							<a id="atras" name="3" ></a>
 							<a id="at" name="3" >Atrás</a>
 						</div><!-- 
@@ -269,7 +269,12 @@
 								<a id="de" >Eliminar</a>
 							</div>
 						</div>-->	
+
 						<div id="msj"></div>
+						<div id="atr" class="atras4">
+							<a id="atras" name="3" ></a>
+							<a id="at" name="3" >Atrás</a>
+						</div>
 					</article>	
 					<article id="fichaTecnica" class="margenLibro ingresars2" name="5">
 						<header>
@@ -316,6 +321,12 @@
 							<input id="fechaE" class="labelGestionLibro" type="date" placeholder="Ej.: Libro 1" name="nombreAutor" >
 							<button id="botonIngresarLibro" >Aceptar</button>
 							<div id="msjPres"></div>
+
+
+						</div>
+						<div id="atr" class="atras5">
+							<a id="atras" name="3" ></a>
+							<a id="at" name="3" >Atrás</a>
 						</div>
 					</article>	
 					<article id="formularioIngresarLibro" class="margenLibro delete2">
@@ -345,7 +356,7 @@
 								<input type="text" placeholder="Ej.: Libro 1" name="nombreLibro">
 								<button id="botonIngresarLibro" >Aceptar</button>
 						</div>
-						<div id="atr">
+						<div id="atr" class="atras5">
 							<a id="atras" ></a>
 							<a id="at" >Atrás</a>
 						</div>
@@ -430,8 +441,11 @@
 								<input type="date" id="datePres">
 							</div>	
 							<input type="button" value="Buscar" id="buscarPrestamo">
-							
-						</div>					
+						</div>	
+						<div id="atr" class="atras6">
+							<a id="atras" name="3" ></a>
+							<a id="at" name="3" >Atrás</a>
+						</div>				
 					</article>	
 				   <article id="fichaTecnia" class="margenLibro otroBlock">
 						<!--<div class="otroTec">

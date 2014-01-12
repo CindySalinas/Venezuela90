@@ -1530,7 +1530,7 @@
 
 /* GESTION DE LIBROS -CALENDARIO ESCOLAR-IFRAME EDICION MANUEL*/
 /* GESTION DE LIBROS*/
-.hideLista,.hideLista2, #at, #atras,#formularioIngresarLibro,#fichaTecnia,#fichaTecnica,.modificar,#formuOpcion,#selectForm,#sig,#formPres,.ocultaLista,#b2,#b3,.buscCel,.buscNom,.buscYear,.prestamo2,#buscarPrestamo{
+.hideLista,.hideLista2,#formularioIngresarLibro,#fichaTecnia,#fichaTecnica,.modificar,#formuOpcion,#selectForm,#sig,#formPres,.ocultaLista,#b2,#b3,.buscCel,.buscNom,.buscYear,.prestamo2,#buscarPrestamo{
 	display: none;
 }
 #fichaTecnia .otroBlock{
@@ -1559,7 +1559,7 @@ a{
 /* FIN GESTION DE LIBROS*/
 
 /* GESTION CALENDARIO*/ 
- .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2{
+ .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2,.atras1{
 	display: none;
 }
 
