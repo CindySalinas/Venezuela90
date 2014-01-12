@@ -1,0 +1,20 @@
+@page { 
+/* declaraciones Css */ 
+ size: A4 landscape; 
+ margin-top: 2cm;
+ top: none;
+ margin: 0mm;  /* this affects the margin in the printer settings */
+}
+
+.site-header,.estilo-article-wrap,footer,.intranetPrincipal,.titulo,.estiloGestionLibros,.displayInTop,hr{
+	display: none;
+}
+#canMensualidades{
+	width: 800px !important;
+	margin-left: 10%;
+}
+#monto,#ced,#personaPago,#monto2,#conceptoP,#dia,#mes,#year{
+	text-transform: uppercase;
+	font-weight: bold;
+	border:0;
+}

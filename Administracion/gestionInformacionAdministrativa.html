@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
+	<link rel="stylesheet" href="../css/printRecibo.css" media="print">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
@@ -142,11 +143,11 @@
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article id="intranetPrincipal">
-				<header><h2>Gestión De Información Administrativa</h2></header>
+				<header class="titulo"><h2>Gestión De Información Administrativa</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
+				<header class="titulo"><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
 						<li><a class="registroC iconoconsultarclass"></a><a class="textoAbajo" >Registro De Cancelación De Mensualidades</a></li>
@@ -157,7 +158,7 @@
 				</div>				
 			</article>
 			<article id="noticias" class="registroCancelacion">
-				<header><h3>Registro De Cancelación De Mensualidades</h3></header>
+				<header class="titulo"><h3>Registro De Cancelación De Mensualidades</h3></header>
 				<div id="canMensualidades">
 					<figure id="figMen1">
 						<img src="../images/v90logo.png">
@@ -170,27 +171,29 @@
 					<div id="divMen2">
 						Recibo N° 
 						<span>038201</span>
-						<p>POR Bs. <input type="text"></p>
+						<p>POR Bs. <input type="text" id="monto"></p>
+						<p>CEDULA <input type="text" id="ced"></p>
 					</div>
 					<div class="diCom">
 						<div>
+							<br>
 							<label>He recibido de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-							<input class="in1 mmL" type="text">
+							<input class="in1 mmL" type="text" id="personaPago">
 							<div>
 							<label class="mmL">La cantidad de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-							<input class="in1 mmL" type="text">
+							<input class="in1 mmL" type="text" id="monto2">
 						</div>
 						<div>
 							<label class="mmL">Por concepto de:&nbsp;</label>
-							<input class="in1 mmL"type="text">
+							<input class="in1 mmL"type="text" id="conceptoP">
 						</div>
 						<div class="left">
 							<label id="val" class="mmL">Valencia,&nbsp;</label>
-							<input class="mmL kkk" type="text">
+							<input class="mmL kkk" type="text" id="dia">
 							<label class="mmLL">de</label>
-							<input class="mmL" type="text">
+							<input class="mmL" type="text" id="mes">
 							<label class="mmLL">20</label>
-							<input class="mmL jjj" type="text">
+							<input class="mmL jjj" type="text" id="year">
 						</div>
 						</div>				
 					</div>
@@ -199,15 +202,23 @@
 						<div class="floatRight">__________________________</div>
 					</div>
 				</div>
-				<div class="displayInTop centrar">
+					<div class="displayInTop centrar">
 					<ul id="listaGestion">
 						<li><a id="iconoconsultar" class="guardarP"></a><a class="textoAbajo" >Guardar</a></li>
 						<li><a id="iconomodificar" class="preVerP"></a><a class="textoAbajo" >Pre-Visualizar</a></li>
-						<li><a id="iconoconsultar" class="imprimirP"></a><a class="textoAbajo" >Imprimir</a></li>
+						<li><a id="iconoconsultar" class="imprimirP" onclick="window.print(); void 0;"></a><a class="textoAbajo" >Imprimir</a></li>
 						<li><a id="iconomodificar" class="atrasP"></a><a class="textoAbajo" >Atras</a></li>
 					</ul>
 				</div>
 			</article>
+			<article id="noticias" class="registroCancelacion2">
+				<header><h3>Previsualizacion de Recibo</h3></header>
+				<div id="atr" class="atras1">
+						<a id="atras" name="1"></a>
+						<a id="at" name="1">Atrás</a>
+				</div>
+				</article>
+
 			<article id="noticias" class="informaAdm">
 				<header><h3>Información Administrativa - Consultar</h3></header>
 				<div>a</div>

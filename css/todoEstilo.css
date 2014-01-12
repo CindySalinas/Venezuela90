@@ -473,7 +473,7 @@
 {
 	width: 250px;
 }
-#canMensualidades
+#canMensualidades,#canMensualidades2
 {
 	border: 3px solid orange;
 	border-radius: 10px;
@@ -1565,9 +1565,21 @@ a{
 
 /* FIN GESTION CALENDARIO*/
 /* GESTION INFORMACION MENSUALIDADES*/
-.registroCancelacion,.informaAdm,.mensControl{
+.registroCancelacion,.registroCancelacion2,.informaAdm,.mensControl{
 	display: none;
 }
+
+#monto21,#ced2,#personaPago2,#monto22,#conceptoP2,#dia2,#mes2,#year2{
+	text-transform: uppercase;
+	font-weight: bold;
+	border:0;
+}
+.canMensualidades2> .diCom >div{
+	border:1px solid red;
+	text-align: left;
+	margin-left: 20px;
+}
+
 /*FIn GESTION INFORMACION MENSUALIDADES */
 /* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
 iframe{
