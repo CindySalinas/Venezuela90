@@ -14,7 +14,11 @@ function inicio()
 
 	$("#linkMensajesSinLeer").on("click", function(){navMensajes('.tablaSinLeer');});
 
+	$("#linkMensajesSinLeer").on("click", mensajesNoLeidos);
+
 	$("#linkMensajesEnviados").on("click", function(){navMensajes('.tablaEnviados');});
+
+	$("#linkMensajesEnviados").on("click", mensajesEnviados);
 
 	$("#linkMensajeFavoritos").on("click", function(){navMensajes('.tablaMenFavoritos');});
 	
@@ -156,11 +160,11 @@ function mensajesRecibidos()
 					
 					if(i==(item.cantMensajes-1))
 					{
-						$("#tbodyMenRecibidos").append("<tr class='trMensajesRecibidos'><td class='fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight'>Favorito</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class=' menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");
+						$("#tbodyMenRecibidos").append("<tr class='trMensajesRecibidos'><td class='fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class=' menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");
 					}
 					else
 					{
-						$("#tbodyMenRecibidos").append("<tr class='trMensajesRecibidos'><td class='borAba fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight'>Favorito</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class='borAba menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");				
+						$("#tbodyMenRecibidos").append("<tr class='trMensajesRecibidos'><td class='borAba fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class='borAba menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");				
 					}
 					$("#"+item.idMensaje).on("click", function(){linkVerMas(item.idMensaje, item.correoRemitente, item.correoDestino, item.asuntoMensaje, item.mensaje, item.nombresDestino);});
 
@@ -184,6 +188,13 @@ function linkVerMas(idMensaje, correoRemitente, correoDestino, asuntoMensaje, me
 	$("#menRes").on("click", function(){responderMensaje(correoRemitente, asuntoMensaje);});
 	$("#menElimiar").on("click", function(){eliminarMensaje(idMensaje);});
 	navMensajes(".tablaMensajes");
+
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajeLeido.php?jsoncallback=?";
+	$.getJSON(url,{
+			leer:idMensaje
+		}).done(function(data){
+	 	 	
+		});
 }
 
 function responderMensaje(correoRemitente, asuntoMensaje)
@@ -191,6 +202,14 @@ function responderMensaje(correoRemitente, asuntoMensaje)
 	navMensajes(".tablaNewMensaje");
 	$("#destinatario").val(correoRemitente);
 	$("#asunto").val("RE: " + asuntoMensaje);
+}
+
+function reenviarMensaje(correoRemitente, asuntoMensaje, mensaje)
+{
+	navMensajes(".tablaNewMensaje");
+	$("#destinatario").val(correoRemitente);
+	$("#asunto").val("RE: " + asuntoMensaje);
+	$("#texmensaje").val(mensaje);
 }
 
 function eliminarMensaje(id)
@@ -204,6 +223,68 @@ function eliminarMensaje(id)
 	 	 	navMensajes(".tablaMenRecibidos");
 		});
 	
+}
+
+function mensajesNoLeidos()
+{
+	$(".trMensajesRecibidos").remove();
+
+	var cedulaRemitente = $.cookie("cedulaAdmin");
+
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarMensajesNoLeidos.php?jsoncallback=?";
+
+		$.getJSON(url,{cedula:cedulaRemitente
+		}).done(function(data){
+	 	 	if(data.num != 0){
+				$.each(data, function(i,item){
+					
+					if(i==(item.cantMensajes-1))
+					{
+						$("#tbodyNoLeido").append("<tr class='trMensajesRecibidos'><td class='fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class=' menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");
+					}
+					else
+					{
+						$("#tbodyNoLeido").append("<tr class='trMensajesRecibidos'><td class='borAba fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>"+item.nombresDestino+"<a class='floatRight' id='e"+item.idMensaje+"'>Eliminar</a><a class='floatRight' id='r"+item.idMensaje+"'>Responder</a></td></tr><tr class='trMensajesRecibidos'><td class='borAba menMenDoc'><label>"+item.asuntoMensaje+" </label><a id='"+item.idMensaje+"'> Ver Más</a></td></tr>");				
+					}
+					$("#"+item.idMensaje).on("click", function(){linkVerMas(item.idMensaje, item.correoRemitente, item.correoDestino, item.asuntoMensaje, item.mensaje, item.nombresDestino);});
+
+					$("#r"+item.idMensaje).on("click", function(){responderMensaje(item.correoRemitente, item.asuntoMensaje);});
+
+					$("#e"+item.idMensaje).on("click", function(){eliminarMensaje(item.idMensaje);});
+				});
+			}
+			else
+				$("#tbodyNoLeido").append("<tr id='divMenRec'><td id='espacioTD'><div class='alert  alert-success'>"+data.mensaje+"</div></td></tr>");
+		});
+}
+
+function mensajesEnviados()
+{	
+	$(".trMensajesRecibidos").remove();
+
+	var cedulaRemitente = $.cookie("cedulaAdmin");
+
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajesEnviados.php?jsoncallback=?";
+
+		$.getJSON(url,{cedula:cedulaRemitente
+		}).done(function(data){
+	 	 	if(data.num != 0){
+				$.each(data, function(i,item){
+					
+					if(i==(item.cantMensajes-1))
+					{
+						$("#tbodyEnviados").append("<tr class='trMensajesRecibidos'><td class='fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>Para: "+item.nombresDestino+"<a class='floatRight' id='rr"+item.idMensaje+"'>Reenviar</a></td></tr><tr class='trMensajesRecibidos'><td class=' menMenDoc'><div><b>"+item.asuntoMensaje+" </b></div>"+item.mensaje+"</td></tr>");
+					}
+					else
+					{
+						$("#tbodyEnviados").append("<tr class='trMensajesRecibidos'><td class='borAba fotoMenDoc' rowspan=2><figure class='centrar'><img width=60 src='../images/user.png'></figure></td><td class='nomMenDoc'>Para: "+item.nombresDestino+"<a class='floatRight' id='rr"+item.idMensaje+"'>Reenviar</a></td></tr><tr class='trMensajesRecibidos'><td class='borAba menMenDoc'><div><b>"+item.asuntoMensaje+" </b></div>"+item.mensaje+"</td></tr>");				
+					}
+					$("#rr"+item.idMensaje).on("click", function(){reenviarMensaje(item.correoDestino, item.asuntoMensaje, item.mensaje);});
+				});
+			}
+			else
+				$("#tbodyNoLeido").append("<tr id='divMenRec'><td id='espacioTD'><div class='alert  alert-success'>"+data.mensaje+"</div></td></tr>");
+		});
 }
 
 function hora(){

@@ -22,7 +22,7 @@ while($row = mysql_fetch_row($result2)){
 	$correo= $row[0];
 }
 
-$sql = "INSERT INTO mensajes (Correo_Remitente,Correo_Destinatario,Asunto_Mensaje, Mensaje,Fecha,Hora, Favorito, Leido) VALUES ('$correo','$correoDestinatario','$asuntoMensaje','$mensaje','$fecha','$hora','false', 'true')";
+$sql = "INSERT INTO mensajes (Correo_Remitente,Correo_Destinatario,Asunto_Mensaje, Mensaje,Fecha,Hora, Favorito, Leido) VALUES ('$correo','$correoDestinatario','$asuntoMensaje','$mensaje','$fecha','$hora','false', 'false')";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 

@@ -165,9 +165,6 @@
 					<tr>
 						<td><a id="linkMensajesEnviados">Enviados</a></td>
 					</tr>
-					<tr>
-						<td><a id="linkMensajeFavoritos">Favoritos</a></td>
-					</tr>
 				</table>
 
 				<table border=1 id="sinLeer" class="tablaMenRecibidos tabMenTodo">		
@@ -274,7 +271,6 @@
 							<td class="nomMenDoc">
 								<label id="nombreRemit"></label>
 								<a id="menElimiar" class="floatRight">Eliminar</a>
-								<a id="menFav" class="floatRight">Favorito</a>
 								<a id="menRes" class="floatRight">Responder</a>
 							</td>		
 						</tr>
@@ -297,7 +293,7 @@
 							<td colspan=2>Mensajes Sin Leer</td>
 						</tr>
 					</thead>	
-					<tbody>
+					<tbody id="tbodyNoLeido">
 
 					</tbody>
 						
@@ -311,20 +307,8 @@
 						</tr>
 					</thead>	
 					<!-- Filas Dinamicas -->
-					<tbody>
-						<tr >
-							<td class="fotoMenDoc" rowspan=2>
-								<figure class="centrar">
-									<img width=60 src="../images/user.png">
-								</figure>
-							</td>
-							<td class="nomMenDoc">Para: Cindy Yarimar Salinas Zambrano
-								<a class="floatRight" href="#">Eliminar</a>	
-							</td>		
-						</tr>
-						<tr>
-							<td class=" menMenDoc"><label>Mensaje 1. </label><a href="#">Ver Más</a></td>
-						</tr>
+					<tbody id="tbodyEnviados">
+						
 					</tbody>
 					<!--  -->				
 				</table>
