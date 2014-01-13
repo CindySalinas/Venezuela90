@@ -183,7 +183,8 @@ function linkVerMas(idMensaje, correoRemitente, correoDestino, asuntoMensaje, me
 	$("#textAsunto").text(asuntoMensaje);
 	$("#nombreRemit").text(nombresDestino);
 	$("#correoRemit").text(correoRemitente);
-	$("#pMensaje").text(mensaje);
+	$("#pMensaje").text('');
+	$("#pMensaje").append(mensaje);
 
 	$("#menRes").on("click", function(){responderMensaje(correoRemitente, asuntoMensaje);});
 	$("#menElimiar").on("click", function(){eliminarMensaje(idMensaje);});

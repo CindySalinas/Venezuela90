@@ -559,11 +559,16 @@
 	float: right;
 	text-align: center;
 }
-.inputOtro
+.inputOtro, .inputOtroClass
 {
 	margin: 0 auto;
 	height: 28px;
 	width: 32px;
+}
+.inputOtroClass
+{
+	padding: 0;
+	text-align: center;
 }
 .tamaCol
 {
@@ -725,11 +730,11 @@
 	display: block;
 	margin: 0 auto;
 }
-.margenLibro
+.margenLibro, .margenLibroClass
 {
 	margin-top: 10px;
 }
-.margenLibro header 
+.margenLibro header, .margenLibroClass header
 {
 	text-align: left;
 	margin-bottom: 20px;
