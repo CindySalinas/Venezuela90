@@ -4,7 +4,7 @@ include("conex.php");
 //formato JSON
 header('Content-type: application/json');
 
-$tipo =$_GET["tipo"];
+/*$tipo =$_GET["tipo"];
 $datoB = $_GET["datoB"];
 
 if($tipo == "tipoSolicitud"){
@@ -21,14 +21,15 @@ else if($tipo == "todo"){
 else{
 	$estado["mensaje"]="No se puede realizar la busqueda";
 }
-
+*/
+$sql = "SELECT id_solicitud,tipo_solicitud,fecha_solicitud,fechaRespuesta,respuesta from solicitudes";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 
 
 $cantidad = mysql_num_rows($result);
 $i =0;
-while($row = mysql_fetch_row($result)){
+while($row = mysql_fetch_array($result)){
 	$estado[$i]["numSoli"]= $row[0];
 	$estado[$i]["tipoSolic"]= $row[1];
 	$estado[$i]["fechaSoli"]= $row[2];
@@ -36,13 +37,7 @@ while($row = mysql_fetch_row($result)){
 	$estado[$i]["respSoli"]= $row[4];
 	$i++;	
 }
-if($cantidad != 0){
-	$estado["num"]= 1;
-	$estado["mensaje"] = "Busqueda Realizada Satisfactoriamente";
-}else{
-	$estado["num"]= 0 ;
-	$estado["mensaje"] = "No se puede realizar la busqueda";
-}
+
 
 
 $estadoJson = json_encode($estado);

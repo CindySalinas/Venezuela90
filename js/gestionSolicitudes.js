@@ -41,26 +41,51 @@ function funcionesSelect1(){
 	}
 }
 
-function realizarBusqueda(type,datas){
+function realizarBusqueda(){
 	var tablas = $('#tablaSolicitudes thead');
-	var resp;
-	type="tipoSolicitud";
-	datas = "Constancia de Buena Conducta";
+	/*var resp;*/
+	var type="tipoSolicitud";
+	var datas = "Constancia de Buena Conducta";
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?";
+	var resp;
+		$.getJSON(url,{
+		}).done(function(data){
+	 	 	if(data.num != 0){
+				
+				$.each(data, function(i,item){
+					if(item.respSoli == "false"){
+					resp = "No Respondida";
+				}else{
+					resp = "Respondida";
+				}
+					tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+item.resFechaSoli+"</td><td>"+resp+" " +item.respSoli+"</td></tr>");
+					gestionesSelect('mostrarSoli','buscarSolicitud');
+					
+				});
+			}
+			else
+				alert('ddd');
+		});
+
+	/*var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?";
 	$.getJSON(url,{tipo:type,datoB:datas}).done(function(data){
 		if(data.num != 0){
 			$.each(data,function(i,item){
+				alert(i.length);
 				if(item.respSoli == "false"){
 					resp = "No Respondida";
 				}else{
 					resp = "Respondida";
 				}
-				tablas.before("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+resp+"&nbsp; "+item.resFechaSoli+"</td><td><a href='#'>>></a></td></tr>");
+				//console.log(i.numSoli + "" + item.fechaSoli);
+				//console.log(item);
+				tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+resp+"&nbsp; "+item.resFechaSoli+"</td><td><a href='#'>>></a></td></tr>");
 				gestionesSelect('mostrarSoli','buscarSolicitud');
+				$('#tbodyGS').append("<tr><td>hol</td></tr>");
 			});
 		}
 		else{alert(data.mensaje);}
-	});
+	});*/
 }
 
 
