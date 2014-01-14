@@ -1650,6 +1650,11 @@ iframe{
 }
 
 /* FIN DE IFRAME  */
+/* Gestion de solicitudes*/ 
+#sinNom,#fechaSolicitud,#estadoSolicitud,#mostrarSoli,#buscarSolicitud{
+	display: none;
+}
 
+/*fin gestion de solicidutes*/
 
 /* FIN EDICION MANUEL*/
