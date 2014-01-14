@@ -385,9 +385,35 @@
 	margin: 1em auto;
 	width: 30%;
 }
-#forBusGiE2
+.tablaTamTd td
+{
+	width: 40%;
+}
+.formRPD
 {
 	margin: 1em auto;
+	padding-top: 1em;
+	width: 60%;
+}
+.heightTr
+{
+	height: 130px;
+}
+.borderDivPS
+{
+	border: 1px solid black;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}
+#buscarRPD
+{
+	margin-top: 1em;
+}
+
+#forBusGiE2
+{
+	margin: 1.5em auto;
 	width: 50%;
 }
 #forBusGiE table, #forBusGiE2 table
@@ -1418,6 +1444,24 @@
 .marTecE
 {
 	width: 160px;
+}
+.marTecEClass
+{
+	font-weight: bold;
+	padding: 0.3em;
+	width: 160px;
+}
+.weiDiv
+{
+	width: 500px;
+}
+.ppad
+{
+	padding: 1em;
+}
+.fontBold
+{
+	font-weight: bold;
 }
 .marPon
 {
