@@ -1667,22 +1667,36 @@ iframe{
 
 }
 /* responder oslicitud*/
-#solicDatos,fieldset{
-	margin-top: 20px;
+.containerDatos{
+	width: 100%;
+}
+.solicDatos fieldset{
 	width: 40%;
 }
-#solicDatos input{
+.solicDatos input{
  	display: block;
 	margin-top: 0.5%;
 }
-#solicDetalles #textArea{
+.solicDetalles #textArea{
 	resize :none;
+	width: 500px;
+	height: 110px;
 	
 }
-#solicDetalles{
-	position: relative;
-	top: -20%;
-	
+.solicDetalles,.solicDatos{
+	display: inline-block;
+	margin-top: 20px;
+}
+.solicDatos{
+	margin: 0 40px 7px 40px;
+}
+.solicRespuesta #textArea{
+	resize :none;
+	width: auto;
+	height: 125px;
+}
+.solicRespuesta{
+	display: inline;
 }
  /* fin responder solicitud*/ 
 /* FIN GESTION INFORMACION*/
