@@ -262,12 +262,12 @@
 	font-size: 15px;
 }
 /*Articulos Noticias Intranet*/
-#noticias header{
+#noticias header, .noticiasClass header,.noticiasClass2 header,.noticiasClass3 header{
 	color: white;
 	background-color: #00b09b;
 	padding: 10px;
 }
-#noticias header h3{
+#noticias header h3, .noticiasClass header,.noticiasClass2 header,.noticiasClass3 header{
 	color: white;
 	margin:0; 
 }
@@ -1656,5 +1656,12 @@ iframe{
 }
 
 /*fin gestion de solicidutes*/
+/* GESTION INFORMACION ESTUDIANTIL / CARGA/DESCARGA RECURSOS */
 
+.reportesCa,.noticiasClass,.noticiasClass2,.noticiasClass3,#tipoConstRegistro,#permisoCons,#contenidoSolic{
+	display: none;
+
+}
+
+/* FIN GESTION INFORMACION*/
 /* FIN EDICION MANUEL*/

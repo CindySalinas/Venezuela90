@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/docente.js"></script>
+	<script src="../js/cargaArchivos.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -25,7 +26,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
 				
 				</a>
 				<ul>
@@ -143,17 +144,17 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Carga y Descarga De Recursos</h2></header>
+				<header class="titulo"><h2>Carga y Descarga De Recursos</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Recursos</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Cargar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Descargar</a></li>
+				<header class="titulo" ><h3>Recursos</h3></header>
+					<ul id="listaGestion" class="listaPrincipal">
+						<li><a id="iconoconsultar"  class="cargarR"></a><a class="textoAbajo" class="t1">Cargar</a></li>
+						<li><a id="iconomodificar" class="descargarR"></a><a class="textoAbajo" class="t2">Descargar</a></li>
 					</ul>					
 			</article>	
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass">
 				<header><h3>Cargar Recursos</h3></header>
 					<form class="formReSol tabtab" enctype="multipart/form-data">
 						<table border=1 class="widTab">
@@ -205,13 +206,23 @@
 								<td class="centrar" colspan=2><button class="bbbv">Subir</button></td>
 							</tr>	
 						</table>
-					</form>					
+					</form>	
+					<div id="atr" class="atras">
+						<a id="atras"></a>
+						<a id="at">Atrás</a>
+					</div>				
 			</article>	
 
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass2">
 				<header><h3>Descargar Recursos</h3></header>
 				<a href="InvestigacionDeOperaciones-Corte3.docx" target="_blank">Imagen</a>
-			</article>					
+				<br><br><br>
+				<div id="atr" class="atras2">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>	
+			</article>	
+
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->

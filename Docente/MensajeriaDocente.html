@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/docente.js"></script>
+	<script src="../js/mensajeriaDocente.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -25,7 +26,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
@@ -154,26 +155,23 @@
 						</tr>
 					</thead>	
 					<tr>
-						<td><a href="#">Nuevo Mensaje</a></td>	
+						<td><a href="linkNewMensaje">Nuevo Mensaje</a></td>	
 					</tr>		
 					<tr>
-						<td><a href="#">Recibidos</a></td>	
+						<td><a href="linkMensajesRecibidos">Recibidos</a></td>	
 					</tr>
 					<tr>
-						<td><a href="#">Mensajes Sin Leer</a></td>	
+						<td><a href="linkMensajesSinLeer">Mensajes Sin Leer</a></td>	
 					</tr>
 					<tr>
-						<td><a href="#">Enviados</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">Favoritos</a></td>
+						<td><a href="linkMensajesEnviados">Enviados</a></td>
 					</tr>	
 					<tr>
 						<td><a href="#">Eliminados</a></td>
 					</tr>
 				</table>
 
-				<table border=1 class="tabMenTodo">		
+				<table border=1 id="sinLeer" class="tablaMenRecibidos tabMenTodo">			
 					<thead>
 						<tr>
 							<td colspan=2>Recibidos</td>
