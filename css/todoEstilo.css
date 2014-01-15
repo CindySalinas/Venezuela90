@@ -1666,6 +1666,24 @@ iframe{
 	display: none;
 
 }
-
+/* responder oslicitud*/
+#solicDatos,fieldset{
+	margin-top: 20px;
+	width: 40%;
+}
+#solicDatos input{
+ 	display: block;
+	margin-top: 0.5%;
+}
+#solicDetalles #textArea{
+	resize :none;
+	
+}
+#solicDetalles{
+	position: relative;
+	top: -20%;
+	
+}
+ /* fin responder solicitud*/ 
 /* FIN GESTION INFORMACION*/
 /* FIN EDICION MANUEL*/
