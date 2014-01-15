@@ -14,6 +14,9 @@
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/docente.js"></script>
+	<script src="../js/registroSolicitudes.js"></script>
+	
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -24,7 +27,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
@@ -145,14 +148,14 @@
 				<header><h2>Registro De Solicitudes</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Solicitudes</h3></header>
+			<article id="noticias" class="listaPrincipal">
+				<header class="titulo"><h3>Solicitudes</h3></header>
 				<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Nueva Solicitud</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Mis Solicitudes</a></li>
+						<li><a id="iconoconsultar" class="nuevaSolicitud"></a><a class="textoAbajo" class="t1">Nueva Solicitud</a></li>
+						<li><a id="iconomodificar" class="misSolicitudes"></a><a class="textoAbajo" class="t2">Mis Solicitudes</a></li>
 					</ul>					
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass" >
 				<header><h3>Mis Solicitudes</h3></header>
 				<table class="tabReSol">
 					<thead>
@@ -166,24 +169,28 @@
 					<tbody>
 						<tr>
 							<td>13090</td>
-							<td><a href="#">Constancia 1</a></td>
+							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
 							<td>Respondida</td>
 						</tr>
 						<tr>
 							<td>13090</td>
-							<td><a href="#">Constancia 1</a></td>
+							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
 							<td>Respondida</td>
 						</tr>
 					</tbody>
 				</table>	
 				<div class="centrar">
-					<button>Nueva Solicitud</button>
+					<button id="nuevaSolic">Nueva Solicitud</button>
+				</div>
+				<div id="atr" class="atras">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
 				</div>			
 			</article>
 			<p></p>
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass2">
 				<header><h3>Solicitud</h3></header>
 				<table border=1 class="tabReSolDet">
 					<thead>
@@ -258,43 +265,47 @@
 							</td>
 						</tr>
 					</tbody>	
-				</table>	
+				</table>
+				<div id="atr" class="atras2">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>	
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass3">
 				<header><h3>Nueva Solicitud</h3></header>
 				<form class="formReSol centrar">
 					<div>
 						<label>Seleccione</label>
-						<select>
-							<option>------------------------------------------------------------</option>
-							<option>Constancias</option>
-							<option>Permisos Para Usos De Equipos e Instalaciones</option>
+						<select id="primerSelect">
+							<option value="0">------------------------------------------------------------</option>
+							<option value="1">Constancias</option>
+							<option value="2">Permisos Para Usos De Equipos e Instalaciones</option>
 						</select>
 					</div>
 				</form>
-				<form class="formReSol centrar">
+				<form class="formReSol centrar" id="tipoConstRegistro">
 					<div>
 						<label>Tipo De Constancia</label>
-						<select>	
-							<option>------------------</option>		
+						<select id="registroTipoCons">	
+							<option value="0">------------------</option>		
 							<option>De Trabajo</option>
 							<option>De Sueldo</option>
 							<option>De Permiso</option>
 						</select>
 					</div>
 				</form>
-				<form class="formReSol centrar">
+				<form class="formReSol centrar" id="permisoCons">
 					<div>
 						<label>Permiso Para Uso De:</label>
-						<select>
-							<option>------------------------------------------</option>
+						<select id="permisoRegistro">
+							<option value="0">------------------------------------------</option>
 							<option>Aulas Para Eventos Estudiantiles</option>
 							<option>Equipos Audiovisuales</option>
 						</select>
 					</div>
 				</form>
-				<form class="formReSol centrar">
+				<form class="formReSol centrar" id="contenidoSolic">
 					<table>
 						<tr>
 							<td>
@@ -311,6 +322,10 @@
 						</tr>		
 					</table>
 				</form>
+				<div id="atr" class="atras3">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>
 			</article>
 		</div>
 	</section>

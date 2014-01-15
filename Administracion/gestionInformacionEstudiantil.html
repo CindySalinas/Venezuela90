@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/gestionInfoAdmin.js"></script>
 
 </head>
 <body class="p-admision">
@@ -145,19 +146,24 @@
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
+				<header class="titulo"><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Calificaciones</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Reportes</a></li>
+					<ul id="listaGestion" class="listaPrincipal">
+						<li><a id="iconoconsultar" class="calificaciones"></a><a class="textoAbajo" id="t1">Calificaciones</a></li>
+						<li><a id="iconomodificar" class="reportesCa"></a><a class="textoAbajo" id="t2">Reportes</a></li>
 					</ul>							
 				</div>
-				<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>					
+				<ul id="listaGestion" class="hideLista">
+						<li><a id="iconoconsultar" class="consultarCali"></a><a class="textoAbajo" id="t3">Consultar</a></li>
+						<li><a id="iconomodificar" class="modificarCali"></a><a class="textoAbajo" id="t4">Modificar</a></li>
+						<br><br><br>
+						<div id="holas">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
+						</div>
+				</ul>					
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass">
 				<header><h3>Consultar</h3></header>
 				<form id="forBusGiE" class="formularios">
 					<table id="tablaBuscarGeI">
@@ -250,8 +256,12 @@
 						</tr>
 					</table>				
 				</form>	
+				<div id="atr" class="atras2">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass2">
 				<header><h3>Modificar</h3></header>
 				<form id="forBusGiE" class="formularios">
 					<table id="tablaBuscarGeI">
@@ -345,8 +355,12 @@
 						</tr>
 					</table>				
 				</form>	
+				<div id="atr" class="atras3">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="noticiasClass3">
 				<header><h3>Seleccionar Una Opción</h3></header>				
 				<ul id="listaGestion">
 					<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
