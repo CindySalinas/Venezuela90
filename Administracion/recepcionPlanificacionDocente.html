@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/recepPlanificacionDocente.js"></script>
 </head>
 <body class="p-admision">
 
@@ -152,9 +153,9 @@
 								<td class="prim right espacioRi">Buscar Por: </td>
 								<td class="left">
 									<select id="selectBuscarPor">
-										<option>----------</option>	
-										<option>Docente</option>	
-										<option>Materia</option>	
+										<option name="nada">----------</option>	
+										<option name="docente">Docente</option>	
+										<option name="materia">Materia</option>	
 									</select>
 								</td>
 							</tr>							
@@ -170,9 +171,9 @@
 								<td class="right espacioRi">Materia: </td>
 								<td class="left">
 									<select id="asignaturaRPD">
-										<option>----------</option>	
-										<option>Matematica</option>	
-										<option>Castellano</option>	
+										<option name="nada2">----------</option>	
+										<option name="matematica">Matematica</option>	
+										<option name="castellano">Castellano</option>	
 									</select>
 								</td>
 							</tr>							
@@ -180,37 +181,75 @@
 								<td class="right espacioRi">Grado: </td>
 								<td class="left">
 									<select id="gradoRPD">
-										<option>----------</option>	
-										<option>1er Año</option>	
-										<option>2do Año</option>	
+										<option name="nada3">----------</option>	
+										<option name="1">1er Año</option>	
+										<option name="2">2do Año</option>	
+										<option name="3">3er Año</option>	
+										<option name="4">4to Año</option>	
+										<option name="5">5to Año</option>	
 									</select>
 								</td>
+							</tr>
+							<tr>
+								<td colspan=2 class="centrar"><a id="buscaMM">Buscar</a></td>
 							</tr>
 						</tbody>
 					</table>							
 					</div>		
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasInfoIns linkAtrasInfoIns1"></a>
-						<a class="textoAbajoAtras linkAtrasInfoIns1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasInfoIns1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasInfoIns1">Atras</a>
 					</div>			
 				</div>	
 				
 				<div id="buscarPorDocente">
 					<div  class="formRPD formularios">
-						<table class="tablaTamTd">
+						<table id="tablaDocent" class="tablaTamTd">
 							<tbody>							
 								<tr>
-									<td class="right espacioRi">Docente: </td>
+									<td id="wwtd" class="right espacioRi">Docente: </td>
 									<td class="left">
 										<input id="docenteCedRPD" type="text" placeholder="21029953">
+										<a  id="linkMatBus">Buscar</a>
 									</td>
-								</tr>
+								</tr>						
+							</tbody>
+						</table>
+						<table id="tablagmd" class="tablaTamTd">
+							<tbody>							
+								<tr>
+									<td class="right espacioRi">Materia: </td>
+									<td class="left">
+										<select id="asignaturaDocent">
+											<option name="nada5">----------</option>	
+											<option name="matematica">Matematica</option>	
+											<option name="castellano">Castellano</option>	
+										</select>
+									</td>
+								</tr>							
+								<tr>
+									<td class="right espacioRi">Grado: </td>
+									<td class="left">
+										<select id="gradoDocent">
+											<option name="nada6">----------</option>	
+											<option name="1">1er Año</option>	
+											<option name="2">2do Año</option>	
+											<option name="3">3er Año</option>	
+											<option name="4">4to Año</option>	
+											<option name="5">5to Año</option>	
+										</select>
+									</td>
+								</tr>	
+								<tr>
+									<td colspan=2 class="centrar">
+									<a id="busDocent">Buscar</a></td>
+								</tr>					
 							</tbody>
 						</table>	
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasInfoIns linkAtrasInfoIns1"></a>
-						<a class="textoAbajoAtras linkAtrasInfoIns1">Atras</a>
+						<a class="linkAtrasParaBuscar2 linkAtrasInfoIns linkAtrasInfoIns1"></a>
+						<a class="linkAtrasParaBuscar2 textoAbajoAtras linkAtrasInfoIns1">Atras</a>
 					</div>	
 				</div>		
 				<div id="buscarSelectPlanilla">
@@ -221,9 +260,9 @@
 									<td class="right espacioRi">Seleccione Planilla: </td>
 									<td class="left">
 										<select id="selectPlanillaRPD">
-											<option>-------------------------</option>	
-											<option>Planificacion Por Lapso</option>	
-											<option>Planificacion Semanal</option>	
+											<option name="nada4">-------------------------</option>	
+											<option name="pLapso">Planificacion Por Lapso</option>	
+											<option name="pSemanal">Planificacion Semanal</option>
 										</select>
 									</td>
 								</tr>
@@ -236,8 +275,8 @@
 						</table>	
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasInfoIns linkAtrasInfoIns1"></a>
-						<a class="textoAbajoAtras linkAtrasInfoIns1">Atras</a>
+						<a class="linkAtrasParaBuscar3 linkAtrasInfoIns linkAtrasInfoIns1"></a>
+						<a class="linkAtrasParaBuscar3 textoAbajoAtras linkAtrasInfoIns1">Atras</a>
 					</div>	
 				</div>
 							
