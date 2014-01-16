@@ -2,7 +2,7 @@ $(document).on("ready", empezar);
 
 function empezar(){
  $('#tipoSolicitud').on("change",funcionesSelect1);
- $('#buscarSolicitud').on("click",realizarBusqueda);
+ //$('#buscarSolicitud').on("click",realizarBusqueda);
 } 
 
 function funcionesSelect1(){
@@ -11,81 +11,57 @@ function funcionesSelect1(){
 	//alert(select1);
 	if(select1 == 2){
 		gestionesSelect('sinNom,#buscarSolicitud','fechaSolicitud,#estadoSolicitud');
-		/*$('#buscarSolicitud').on("click",function(){ 
-		var das = $('#tipoSoli option:selected').text();
-		var tipo1 ="tipoSolicitud";
-		realizarBusqueda(tipo1,das);});*/
+		$('#buscarSolicitud').on("click",function(){ 
+			var das = $('#tipoSoli option:selected').text();
+			var tipo1 ="tipoSolicitud";
+			$('#tbodyGS > tr').remove();
+		realizarBusqueda(tipo1,das);});
 		}
 	else 
 		if(select1 ==3){
 			gestionesSelect('fechaSolicitud,#buscarSolicitud','sinNom,#estadoSolicitud');
-			/*$('#buscarSolicitud').on("click",function(){ 
-				var das2 = $('#FechaS2').val();
-				var tipo2 ="fecha";
-				realizarBusqueda(tipo2,das2);});*/
+			$('#buscarSolicitud').on("click",function(){ 
+			var das2 = $('#FechaS2').val();
+			var tipo2 ="fecha";
+				$('#tbodyGS > tr').remove();
+				realizarBusqueda(tipo2,das2);});
 	}
 	else
 		 if(select1 ==4){
 			gestionesSelect('estadoSolicitud,#buscarSolicitud','fechaSolicitud,#sinNom');
-		/*	$('#buscarSolicitud').on("click",function(){ 
+			$('#buscarSolicitud').on("click",function(){ 
 				var das3 = $('#estadoSoli option:selected').text();
 				var tipo3 ="estado";
-				realizarBusqueda(tipo3,das3);});*/
+				$('#tbodyGS > tr').remove();
+				realizarBusqueda(tipo3,das3);});
 	}
 	else
 		 if(select1 ==5){
 			gestionesSelect('buscarSolicitud','fechaSolicitud,#sinNom,#estadoSolicitud');
+			$('#buscarSolicitud').on("click",function(){ 
+				var das4="";
+				var tipo4 ="todo";
+				$('#tbodyGS > tr').remove();
+				realizarBusqueda(tipo4,das4);});
 	}
 	else{
 		gestionesSelect('','fechaSolicitud,#sinNom,#estadoSolicitud,#buscarSolicitud');
 	}
 }
 
-function realizarBusqueda(){
-	var tablas = $('#tablaSolicitudes thead');
+function realizarBusqueda(tipo,valor){
+	var tablas = $('#tbodyGS');
 	/*var resp;*/
-	var type="tipoSolicitud";
-	var datas = "Constancia de Buena Conducta";
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?";
-	var resp;
-		$.getJSON(url,{
-		}).done(function(data){
-	 	 	if(data.num != 0){
-				
-				$.each(data, function(i,item){
-					if(item.respSoli == "false"){
-					resp = "No Respondida";
-				}else{
-					resp = "Respondida";
-				}
-					tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+item.resFechaSoli+"</td><td>"+resp+" " +item.respSoli+"</td></tr>");
-					gestionesSelect('mostrarSoli','buscarSolicitud');
-					
-				});
-			}
-			else
-				alert('ddd');
-		});
-
-	/*var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?";
-	$.getJSON(url,{tipo:type,datoB:datas}).done(function(data){
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?"; 
+	$.getJSON(url,{tipo:tipo,datoB:valor}).done(function(data){
 		if(data.num != 0){
 			$.each(data,function(i,item){
-				alert(i.length);
-				if(item.respSoli == "false"){
-					resp = "No Respondida";
-				}else{
-					resp = "Respondida";
-				}
-				//console.log(i.numSoli + "" + item.fechaSoli);
-				//console.log(item);
-				tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+resp+"&nbsp; "+item.resFechaSoli+"</td><td><a href='#'>>></a></td></tr>");
-				gestionesSelect('mostrarSoli','buscarSolicitud');
-				$('#tbodyGS').append("<tr><td>hol</td></tr>");
+				tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+item.estadoSoli+"</td><td><a href='responderSolicitudes.html?type=resp&val="+item.numSoli+"'>>></a></td></tr>");
+				gestionesSelect('mostrarSoli','');
 			});
 		}
 		else{alert(data.mensaje);}
-	});*/
+	});
 }
 
 
