@@ -1710,7 +1710,7 @@ fieldset{
 /* FIN GESTION INFORMACION*/
 
 /* GESTION CALIF*/ 
-#guar{
+#guar,#calc{
 	display: none;
 }
 

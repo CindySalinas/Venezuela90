@@ -4,6 +4,7 @@ function empezar(){
 $('.inputOtroClass').prop('disabled',true).addClass("disabled");
 $('#modif').on("click",modificar);
 $('input').on("change",cambiarCalifPorc);
+$('#calc').on("click",calcular);
 } 
 
 function botonesGestionAction(){
@@ -12,7 +13,7 @@ function botonesGestionAction(){
 function modificar(){
 	$('.inputOtroClass').prop('disabled',false);
 	$('#califP1,#califP2,#califP3,#califP4,#califP5,#califP6,#califP7').prop('disabled',true);
-	actionBotones('guar','modif');
+	actionBotones('guar,#calc','modif');
 
 }
 function actionBotones(mostrar,ocultar)
@@ -40,6 +41,21 @@ function cambiarCalifPorc(){
 	var porc6 = $('#porcP6').val();
 	var cPorc6 = $('.porc6').val(porc6);
 
+}
 
+function calcular(){
+
+	var obj[1] = $( ".calif1" ).val();
+	var arr;// = $.makeArray( obj );
+	for(var i =0 ; i <= 5; i++){
+			obj[i];
+			arr = $.makeArray(obj);
+			console.log(arr);
+	}
+	/*$.each(data, function(i,v) {
+		console.log(i+":"+$('.calif1').val());
+	});*/
+	
+	
 	
 }
