@@ -57,7 +57,7 @@
 						<li><a href="mensajeriaAdministracion.html">Mensajeria</a></li>
 						<li><a href="#">Usuarios</a></li>
 						<li><a href="gestion.html">Procesos De Gestión</a></li>
-						<li><a href="#">Tramitacion De Documentos</a></li>
+						
 					</ul>
 				</div>
 			</article>
@@ -285,7 +285,20 @@
 								<label>Nombre De La Materia:</label>
 							</td>
 							<td class="paRig">
-								<input type="text" placeholder="Matematica">
+								<!--<input type="text" placeholder="Matematica">-->
+								<select id="materias">
+									<option value="0">-------------------</option>
+									<option value="1">Castellano</option>
+									<option value="2">Educacion para la Salud</option>
+									<option value="3">Fisica</option>
+									<option value="4">Geografia de Venezuela</option>
+									<option value="5"> Ingles</option>
+									<option value="6">Historia Universal</option>
+									<option value="7">Historia Venezuela</option>
+									<option value="8">Educacion para la Salud</option>
+									<option value="9">Matematica</option>
+									<option value="10">Quimica</option>
+								</select>
 							</td>
 						</tr>						
 						<tr>
@@ -293,12 +306,13 @@
 								<label>Grado</label>
 							</td>
 							<td class="paRig">
-								<select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
-									<option>4to Año</option>
-									<option>5to Año</option>
+								<select id="grado">
+									<option value="0">--------</option>
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
 								</select>
 							</td>
 						</tr>
@@ -307,22 +321,11 @@
 								<label>Sección</label>
 							</td>
 							<td class="paRig">
-								<select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td class="right">
-								<label>Año Escolar</label>
-							</td>
-							<td class="paRig">
-								<select>
-									<option>2013</option>
-									<option>2014</option>
-									<option>2015</option>
+								<select id="seccion">
+									<option value="0">---</option>
+									<option value="1">A</option>
+									<option value="2">B</option>
+									<option value="3">U</option>
 								</select>
 							</td>
 						</tr>
@@ -331,10 +334,24 @@
 								<label>Lapso</label>
 							</td>
 							<td class="paRig">
-								<select>
-									<option>I</option>
-									<option>II</option>
-									<option>III</option>
+								<select id="lapso">
+									<option value="0">---</option>
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="right">
+								<label>Año Escolar</label>
+							</td>
+							<td class="paRig">
+								<select id="yearEs">
+									<option value="0">-----</option>
+									<option value="1">2013</option>
+									<option value="2">2014</option>
+									<option value="3">2015</option>
 								</select>
 							</td>
 						</tr>
@@ -343,15 +360,16 @@
 								<label>Seleccionar Planilla</label>
 							</td>
 							<td class="paRig">
-								<select>
-									<option>Planilla De Calificaciones</option>
-									<option>Planilla De Asistencia De Evaluación
+								<select id="tipo">
+									<option value="0">-----------------</option>
+									<option value="1">Planilla De Calificaciones</option>
+									<option value="2">Planilla De Asistencia De Evaluación
 									</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td  class="centrar"colspan=2><a href="#">Modificar</a></td>
+							<td  class="centrar"colspan=2><a id="EnviarDatos">Modificar</a></td>
 						</tr>
 					</table>				
 				</form>	

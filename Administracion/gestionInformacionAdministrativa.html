@@ -172,7 +172,7 @@
 						Recibo N° 
 						<span>038201</span>
 						<p>POR Bs. <input type="text" id="monto"></p>
-						<p>CEDULA <input type="text" id="ced"></p>
+						<p class="ocul">CEDULA <input type="text" id="ced"></p>
 					</div>
 					<div class="diCom">
 						<div>
@@ -187,13 +187,16 @@
 							<label class="mmL">Por concepto de:&nbsp;</label>
 							<input class="in1 mmL"type="text" id="conceptoP">
 						</div>
-						<div class="left">
-							<label id="val" class="mmL">Valencia,&nbsp;</label>
+						<div class="left" id="algoOcul">
+							<label id="val" class="mmL centrar">Valencia,&nbsp;</label>
 							<input class="mmL kkk" type="text" id="dia">
 							<label class="mmLL">de</label>
 							<input class="mmL" type="text" id="mes">
 							<label class="mmLL">20</label>
 							<input class="mmL jjj" type="text" id="year">
+						</div>
+						<div id="mostOcul" class="centrar">
+							
 						</div>
 						</div>				
 					</div>
@@ -202,11 +205,12 @@
 						<div class="floatRight">__________________________</div>
 					</div>
 				</div>
+					<div id="msj"></div>
 					<div class="displayInTop centrar">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" class="guardarP"></a><a class="textoAbajo" >Guardar</a></li>
-						<li><a id="iconomodificar" class="preVerP"></a><a class="textoAbajo" >Pre-Visualizar</a></li>
-						<li><a id="iconoconsultar" class="imprimirP" onclick="window.print(); void 0;"></a><a class="textoAbajo" >Imprimir</a></li>
+						<li class="asd"><a id="iconoconsultar" class="guardarP"></a><a class="textoAbajo asd" >Guardar</a></li>
+						<li class="asd"><a id="iconomodificar" class="preVerP"></a><a class="textoAbajo asd" >Pre-Visualizar</a></li>
+						<li class="asd"><a id="iconoconsultar" class="imprimirP" ></a><a class="textoAbajo asd" >Imprimir</a></li>
 						<li><a id="iconomodificar" class="atrasP"></a><a class="textoAbajo" >Atras</a></li>
 					</ul>
 				</div>
@@ -227,18 +231,18 @@
 				<header><h3>Control De Mensualidades</h3></header>
 				<div class="formulario-InA">
 					<label>Buscar Por:</label>
-					<select>
-						<option>Alumno</option>
-						<option>Mes</option>
-						<option>Todos</option>
+					<select id="tipoBusc">
+						<option value="0">Alumno</option>
+						<option value="1">Mes</option>
+						<option value="2">Todos</option>
 					</select>
-					<div id="divInCeInA">
+					<div id="divInCeInA" class="divInCeInAClass">
 						<label>Ingrese Cedula</label>
-						<input type="text">
+						<input type="text" id="cedulaBusc">
 					</div>
-					<div id="divInMesInA">
+					<div id="divInMesInA" class="divInMesInAClass">
 						<label>Seleccione Mes</label>
-						<select>
+						<select id="meses">
 							<option>Enero</option>
 							<option>Febrero</option>
 							<option>Marzo</option>
@@ -253,7 +257,7 @@
 							<option>Diciembre</option>
 						</select>
 					</div>
-					<button id="busInA">Buscar</button>					
+					<button id="busInA" class="busInAClass">Buscar</button>					
 				</div>
 				<table id="tablaInA" class="centrar">
 					<thead>
@@ -273,7 +277,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<div class="centrar">
+				<div id="links" class="centrar" >
 					<a >Enviar Reporte</a>
 				</div>
 			</article>

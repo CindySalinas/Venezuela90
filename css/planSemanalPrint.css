@@ -1,0 +1,22 @@
+@page { 
+/* declaraciones Css */ 
+ size: A4 landscape; 
+ margin-top: 2cm;
+ top: none;
+ margin: 0mm;  
+ 	page-break-after:avoid;
+} 
+
+.site-header,.estilo-article-wrap,footer,.intranetPrincipal,.titulo,.estiloGestionLibros,.displayInTop,hr,#bloque2,.textoAbajo{
+	display: none;
+}
+#noticias{
+	width: 100% !important;
+}
+.planSem{
+	margin-left: 1cm;
+	margin-right: 1cm;
+	width: 900px !important;
+	page-break-after:avoid;
+
+}

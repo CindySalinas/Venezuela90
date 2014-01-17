@@ -1240,7 +1240,7 @@
 	text-align: center;
 	width: 60%;
 }
-#divInCeInA, #divInMesInA, #busInA
+#divInCeInA, #divInMesInA, #busInA ,.divInCeInAClass, .divInMesInAClass, .busInAClass
 {
 	margin-top: 1em;
 }
@@ -1618,7 +1618,7 @@ a{
 
 /* FIN GESTION CALENDARIO*/
 /* GESTION INFORMACION MENSUALIDADES*/
-.registroCancelacion,.registroCancelacion2,.informaAdm,.mensControl{
+.registroCancelacion,.registroCancelacion2,.informaAdm,.mensControl,.divInCeInAClass, .divInMesInAClass, .busInAClass,#tablaInA,#links{
 	display: none;
 }
 
@@ -1632,7 +1632,9 @@ a{
 	text-align: left;
 	margin-left: 20px;
 }
-
+#monto21:disabled,#ced2:disabled,#personaPago2:disabled,#monto22:disabled,#conceptoP2:disabled,#dia2:disabled,#mes2:disabled,#year2:disabled{
+	background: white;
+}
 /*FIn GESTION INFORMACION MENSUALIDADES */
 /* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
 iframe{
@@ -1706,4 +1708,11 @@ fieldset{
 }
  /* fin responder solicitud*/ 
 /* FIN GESTION INFORMACION*/
+
+/* GESTION CALIF*/ 
+#guar{
+	display: none;
+}
+
+/* FIN GESTION CALIF*/
 /* FIN EDICION MANUEL*/

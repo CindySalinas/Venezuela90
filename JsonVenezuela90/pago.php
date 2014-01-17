@@ -11,16 +11,17 @@ $val4= $_GET["val4"];
 $val5= $_GET["val5"];
 $val6= $_GET["val6"];
 
-$sql = "INSERT INTO pago (cedula_estudiante, monto_Bs, monto_texto, pago_nombre, pago_concepto, fecha) VALUES ('$val2','$val1','$val4','$val3','$val5','$val6')";
-echo $sql;
+//$sql = "INSERT INTO cancelacion_mensualidades (cedula_estudiante, monto_Bs, monto_texto, pago_nombre, pago_concepto, fecha) VALUES ('$val2','$val1','$val4','$val3','$val5','$val6')";
+
+$sql = "INSERT INTO cancelacion_mensualidades (monto_Bs,monto_txt,nombre_pago,concepto_pago,fecha,cedula) VALUES('$val1','$val4','$val3','$val5','$val6','$val2')";
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 
 if(mysql_affected_rows() !=0){
 	$estado["con"]=1;
-	$estado["mensaje"] = "Factura realizada con Exito";
+	$estado["mensaje"] = "Pago efectuado con Exito";
 	
-	$sql2 = "UPDATE usuario U SET id_pago = (SELECT id_pago FROM pago WHERE cedula_estudiante = U.Cedula)";
-$result2 = mysql_query($sql2) or die("Error de Consulta". mysql_error());
+	/*$sql2 = "UPDATE usuario U SET id_pago = (SELECT id_pago FROM pago WHERE cedula_estudiante = U.Cedula)";
+$result2 = mysql_query($sql2) or die("Error de Consulta". mysql_error());*/
 }else{
 	$estado["con"]=0;
 	$estado["mensaje"] = "Error en generar Factura";

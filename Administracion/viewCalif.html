@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Gestion De Libros</title>
+	<title>Venezuela 90 | Gestion De Calificaciones</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/calif.js"></script>
 </head>
 <body id="asd" class="p-admision">
 
@@ -141,39 +142,39 @@
 					<tr class="centrar">
 						<td class="tam1">N°</td>
 						<td class="tam2">APELLIDOS Y NOMBRES</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
+						<td><input type="text" id="califP1"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP1"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP2"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP2"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP3"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP3"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP4"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP4"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP5"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP6"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP7"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP7"class="inputOtroClass" placeholder="%"></td>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
 					</tr>
-					<tr>
+					<tr class="modif">
 						<td class="centrar">01</td>
 						<td>SALAZAR INAGA, LUINDER JESUS</td>
-						<td class="centrar"><input type="text" class="inputOtroClass"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
@@ -184,18 +185,18 @@
 					<tr>
 						<td class="centrar">02</td>
 						<td>PEREZ APONTE, DENGER JESUS</td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
@@ -206,18 +207,18 @@
 					<tr>
 						<td class="centrar">03</td>
 						<td>CABRERA GONZALEZ, EDWARD</td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
-						<td class="centrar"><input class="inputOtroClass"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass calif6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
 						<td class="centrar"><input class="inputOtroClass"type="text"></td>
@@ -226,7 +227,8 @@
 					</tr>
 				</table>	
 				<div class="centrar">
-					<button class="butM">Modificar</button>
+					<button id="modif" class="butM">Modificar</button>
+					<button id="guar"  class="butM">Guardar</button>
 				</div>
 			</article>
 
