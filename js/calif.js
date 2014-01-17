@@ -44,10 +44,17 @@ function cambiarCalifPorc(){
 }
 
 function calcular(){
+	var algo;
+	$( ".calif1" ).each(function(i, v){
+		$('#porc1').each(function(x,c){
+			algo = v - c;
+		
+		});
+});
 
-	var obj[1] = $( ".calif1" ).val();
-	var arr;// = $.makeArray( obj );
-	for(var i =0 ; i <= 5; i++){
+
+	/*var arr;// = $.makeArray( obj );
+	/*for(var i =0 ; i <= 5; i++){
 			obj[i];
 			arr = $.makeArray(obj);
 			console.log(arr);
