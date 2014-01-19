@@ -2,6 +2,8 @@ $(document).on("ready", aaaaa);
 
 function aaaaa(){
 	$('form #enviarDatos').on("click",inscripcion);
+	 //tabs 
+  	$('.center-button #cambiar').on("click",changeTab);
 	$('form').validate({
 		errorElement: "span",
 		rules: {
@@ -31,6 +33,18 @@ function aaaaa(){
 		    	minlength: 6,
 		    	number : true,
 		    	required: true
+		    },
+		    email:{
+		    	required: true,
+		    	email:true
+		    },
+		     emailPadre:{
+		    	required: true,
+		    	email:true
+		    },
+		     emailMadre:{
+		    	required: true,
+		    	email:true
 		    },
 		    addres:{
 		    	minlength: 10,
@@ -198,6 +212,10 @@ function inscripcion(){
  	
 	
 }	
+function changeTab(data){
+  var num = data.currentTarget.name;
+  $('#tabControl li:eq('+num+') a').tab('show') 
+}
 
 function soloLetras(e){
        key = e.keyCode || e.which;

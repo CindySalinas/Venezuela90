@@ -159,17 +159,16 @@ function ponerDatos(){
 	var nomP = $('#nomPro').val();
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/datosCalif.php?jsoncallback=?";
 	var cont= 1 ;
-	var algo = $("#tablaCalid")
+	var algo = $("#tablaCalid");
 	$.getJSON(url,{mat : materia}).done(function(data){
-		if(data.mensaje != 0 ){
+		if(data.num != 0 ){
 			$('#nomPro').val(data.profNom);
 			$('#asig').val(data.NombreMateria);
 			$.each(data,function(i,item){
-				algo.append('<tr class="modif"><td class="centrar">'+cont+'</td><td id='+item.cedulaAlumno+'>'+item.nombreAlumno+" "+item.apellidoAlumno+'</td><td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td><td class="centrar"><input class="inputOtroClass porc1"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td><td class="centrar"><input class="inputOtroClass porc2"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td><td class="centrar"><input class="inputOtroClass porc3"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td><td class="centrar"><input class="inputOtroClass porc4"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td><td class="centrar"><input class="inputOtroClass porc5"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td><td class="centrar"><input class="inputOtroClass porc6"type="text"></td><td class="centrar"><input class="inputOtroClass tot71"type="text"></td><td class="centrar"><input class="inputOtroClass pLapso"type="text"></td><td class="centrar"><input class="inputOtroClass tot30"type="text"></td><td class="centrar"><input class="inputOtroClass masPt"type="text"></td><td class="centrar"><input class="inputOtroClass totF"type="text"></td></tr>');
+				algo.append('<tr class="modif"><td class="centrar">'+cont+'</td><td id='+item.cedulaAlumno+'>'+item.apellidoAlumno+" "+item.nombreAlumno+'</td><td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td><td class="centrar"><input class="inputOtroClass porc1"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td><td class="centrar"><input class="inputOtroClass porc2"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td><td class="centrar"><input class="inputOtroClass porc3"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td><td class="centrar"><input class="inputOtroClass porc4"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td><td class="centrar"><input class="inputOtroClass porc5"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td><td class="centrar"><input class="inputOtroClass porc6"type="text"></td><td class="centrar"><input class="inputOtroClass tot71"type="text"></td><td class="centrar"><input class="inputOtroClass pLapso"type="text"></td><td class="centrar"><input class="inputOtroClass tot30"type="text"></td><td class="centrar"><input class="inputOtroClass masPt"type="text"></td><td class="centrar"><input class="inputOtroClass totF"type="text"></td></tr>');
 				$('#Toculta tbody').after('<tr class="col"><td class="centrar"><input class="inputOtroClass esc rows"></td><td class="centrar"><input class="inputOtroClass esc2 rows"></td><td class="centrar"><input class="inputOtroClass esc3 rows"></td><td class="centrar"><input class="inputOtroClass esc4 rows"></td><td class="centrar"><input class="inputOtroClass esc5 rows"></td><td class="centrar"><input class="inputOtroClass esc6 rows"></td><td class="centrar"><input class="inputOtroClass tot"></td><td class="centrar"><input class="inputOtroClass tot7"></td><td class="centrar"><input class="inputOtroClass tot32"></td><td class="centrar"><input class="inputOtroClass totF2"></td></tr>');
 				$('.inputOtroClass').prop('disabled',true).addClass("disabled");
-				cont++;
-			});
+				cont++;  });
 		}
 		else{
 			alert(data.mensaje);
