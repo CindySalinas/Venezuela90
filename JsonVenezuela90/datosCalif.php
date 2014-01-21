@@ -16,19 +16,12 @@ $cantidad = mysql_num_rows($result);
 while($row = mysql_fetch_row($result)){
 
 	$estado[$i]["cedulaAlumno"]= $row[0];
-	//$estado[$i]["cedulaProf"]= $row[2];
-	$estado["NombreMateria"]= $row[1];
+	$estado[$i]["cedulaProf"]= $row[2];
+	$estado[$i]["NombreMateria"]= $row[1];
 	$estado[$i]["nombreAlumno"]= $row[3];	
 	$estado[$i]["apellidoAlumno"]= $row[4];	
-	$cedProf = $row[2];
+	//$cedProf = $row[2];
 	$i++;	
-}
-
-$sql2 = "SELECT U.Nombre, U.Apellido,M.Nombre_Materia FROM usuario U INNER JOIN docente D ON D.Cedula = U.Cedula INNER JOIN materia_docente MD ON MD.Id_Docente = D.Id_Docente INNER JOIN materia M ON M.Id_Materia = MD.Id_Materia WHERE D.Cedula = '$cedProf'";
-$result2 = mysql_query($sql2) or die("Error de Consulta". mysql_error());
-	
-while ($row2 = mysql_fetch_row($result2)) {
-		$estado["profNom"] = $row2[0]." ".$row2[1];
 }
 
 if($cantidad == 0){
