@@ -19,7 +19,7 @@ function getQueryVariable(variable)
 }
 
 function actualizarEstado(){
-	var idS = getQueryVariable("val1");
+	var idS = getQueryVariable("val");
 	var fechaRes = $('#fechaSoli').val();
 	var estado = $('#estado').val();
 	var respS = $('#textArea2').val();
@@ -41,6 +41,9 @@ function colocarDatos(){
 	var type = getQueryVariable("type");
 	var ids = getQueryVariable("val");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?";
+	var ruta = window.location.pathname.split("/");
+	console.log(ruta);
+	if(ruta[3] == "responderSolicitudes.html"){
 		$.getJSON(url,{tipo:type,datoB:ids}).done(function(data){
 			$.each(data,function(i,item){
 				var nomb = $('#nomb').val("Nombre Solicitante: "+item.nomSoli);
@@ -49,8 +52,28 @@ function colocarDatos(){
 				var fechaSoli = $('#fechaSoli').val(GetTodayDate());
 				var textA  = $('#textArea').text(item.comentSoli);
 				var mail = $('#mail').val("Email Solicitante: "+item.mailSoli);
+				
 			});
 	});
+
+	}
+	else 
+		if(ruta[3] =="responderSolicitudRespondida.html"){
+		$.getJSON(url,{tipo:type,datoB:ids}).done(function(data){
+			$.each(data,function(i,item){
+				var nomb = $('#nomb').val("Nombre Solicitante: "+item.nomSoli);
+				var cedI = $('#cedI').val("Cedula Solicitante: "+item.cedSoli);
+				var tipoS = $('#tipoS').val("Tipo Solicitud: "+item.tipoSolic);
+				var fechaSoli = $('#fechaSoli').val(GetTodayDate());
+				var textA  = $('#textArea').text(item.comentSoli);
+				var textB  = $('#textArea2').text(item.respSoli);
+				var mail = $('#mail').val("Email Solicitante: "+item.mailSoli);
+				
+			});
+	});
+		}
+
+		
 }
 function enviarResp(){
 

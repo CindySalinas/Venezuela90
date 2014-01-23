@@ -53,10 +53,19 @@ function realizarBusqueda(tipo,valor){
 	var tablas = $('#tbodyGS');
 	/*var resp;*/
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/gestionSolicitud.php?jsoncallback=?"; 
+	var rutaP;
 	$.getJSON(url,{tipo:tipo,datoB:valor}).done(function(data){
 		if(data.num != 0){
 			$.each(data,function(i,item){
-				tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+item.estadoSoli+"</td><td><a href='responderSolicitudes.html?type=resp&val="+item.numSoli+"'>>></a></td></tr>");
+				var ruta1 = "responderSolicitudes.html?type=resp&val="+item.numSoli;
+				var ruta2 = "responderSolicitudRespondida.html?type=resp&val="+item.numSoli;
+				if(item.estadoSoli == "Respondida"){
+					rutaP = ruta2;
+				}
+				else{
+					rutaP = ruta1;
+				}
+				tablas.append("<tr><td>"+item.numSoli+"</td><td>"+item.tipoSolic+"</td><td>"+item.fechaSoli+"</td><td>"+item.estadoSoli+"</td><td><a href="+rutaP+">>></a></td></tr>");
 				gestionesSelect('mostrarSoli','');
 			});
 		}
@@ -66,7 +75,9 @@ function realizarBusqueda(tipo,valor){
 
 
 function gestionesSelect(mostrar,ocultar)
-{
+{	
+	$('#buscarSolicitud').css({"display":"block", "margin": "10px auto"});
+
 	$('#'+mostrar).show("slide");
 	$('#'+ocultar).hide("slow");
 	

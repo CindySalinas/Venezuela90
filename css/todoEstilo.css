@@ -1612,7 +1612,7 @@ a{
 /* FIN GESTION DE LIBROS*/
 
 /* GESTION CALENDARIO*/ 
- .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2,.atras1{
+ .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2,.atras1,.tablasAdministrativa{
 	display: none;
 }
 
@@ -1634,6 +1634,29 @@ a{
 }
 #monto21:disabled,#ced2:disabled,#personaPago2:disabled,#monto22:disabled,#conceptoP2:disabled,#dia2:disabled,#mes2:disabled,#year2:disabled{
 	background: white;
+}
+.tablasAdministrativa{
+	margin-top:  2%;
+}
+.tablaMeses{
+	border-radius: 10px;
+}
+.tablaMeses td{
+	border: 1px solid black;
+
+}
+.mesesFieldset{
+	width: 20%;
+}
+.mesesFieldset label{
+	display: block;
+}
+.mesesFieldset legend{
+	background-color: orange;
+	width: 100%;
+	padding: 1%;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 /*FIn GESTION INFORMACION MENSUALIDADES */
 /* IFRAME IMPRESION DE ASISTENCIA EVALUACION*/
