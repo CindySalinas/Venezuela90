@@ -20,7 +20,7 @@
 	-webkit-transform: scale(1.08) rotate(40deg);
 	-moz-transition: all 0.5s ease;
 }
-#atr, #sig
+#atr, #sig, .atr
 {
 
 	display: inline-block;
@@ -86,7 +86,7 @@
 	margin: 0 auto;
 	width: 49%;
 }
-#atr
+#atr, .atr
 {
 	margin-right: 60%;
 }
@@ -380,7 +380,7 @@
 {
 	padding-left: 15px;
 }
-#forBusGiE
+#forBusGiE, .listForm
 {
 	margin: 1em auto;
 	width: 30%;
@@ -419,6 +419,16 @@
 #forBusGiE table, #forBusGiE2 table
 {
 	margin-top: 1em;
+}
+.listaFFF
+{
+	margin: 1em auto;
+	padding-top: 1em;
+	width: 40%;
+}
+.listaFFF table
+{
+
 }
 #divFormNewEvento
 {
@@ -540,6 +550,18 @@
 .left
 {
 	text-align: left;
+}
+.espDEr
+{
+	margin-right: 2em;
+}
+.topBB
+{
+	margin: 1em auto;
+}
+.espLeft
+{
+	margin-left: 1em;
 }
 .oodiv div
 {
@@ -1555,6 +1577,15 @@
 {
 	float: right;
 	width: 75%;
+}
+
+#atrasGL1, #atrasGL2, #atrasGL3, #atrasGL4, #atrasGL5, #atrasGL6, #atrasGL7, #atrasGL8, #atrasGL9
+{
+	width: 100%;
+}
+#atrasGL1 #atras, #atrasGL2 #atras, #atrasGL3 #atras,#atrasGL4 #atras,#atrasGL5 #atras,#atrasGL6 #atras,#atrasGL7 #atras,#atrasGL8 #atras,#atrasGL9 #atras
+{
+	color: green;
 }
 
 /*Responsive Intranet*/
