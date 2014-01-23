@@ -2,6 +2,7 @@ $(document).on("ready", empezar);
 
 function empezar(){
 	$("#submit").on("click", logged);
+    escucharEnter();
 }    
 function prueba(){
   alert(document.cookie);
@@ -13,7 +14,8 @@ function logged(){
     var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/iniciarSesion.php?jsoncallback=?";
     
     $.getJSON(url,{ user:user1,pass:pass1}).done(function(datos) {
-        if(datos.validacion > 0 && datos.T== 1){       
+
+    if(datos.validacion > 0 && datos.T== 1){       
             /// Si La Validacion Es Correcta, Muestra La Página Principal de Administracion 
           window.location='Administracion/intranetAdministracion.html';
 
@@ -29,9 +31,14 @@ function logged(){
            /// Si La Validacion Es Correcta, Muestra La Página Principal de Alumnos 
            location.href='Alumno/IntranetAlumno.html';             
         }
-  
+
+     if(datos.validacion == 0)
+         {
+            alert(datos.mensaje);
+            
+         }
     });
-    return false;
+  //  return false;
 }
 
 // Cookies
@@ -64,3 +71,11 @@ function logged(){
             createCookie(name, "", -1);
         }
 
+function escucharEnter(){
+    $(document).keypress(function(e) {
+    if(e.which == 13) {
+       // alert('You pressed enter!');
+       logged();
+    }
+});
+}

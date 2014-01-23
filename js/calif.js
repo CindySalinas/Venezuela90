@@ -8,6 +8,7 @@ $('input').on("change",cambiarCalifPorc);
 $('#calc').on("click",pruebaMetodo);
 $('.valid').on("change",validarPtos);
 $('#guar').on("click",guardar);
+$('#porcP6').on("change",sumaPorcentaje());
 } 
 
 
@@ -81,7 +82,18 @@ function sumaPts(){
 		}
 	}
 }
-
+function sumaPorcentaje(){
+	 var p1 = $('#porcP1').val();
+	 var p2 = $('#porcP2').val();
+	 var p3 = $('#porcP3').val();
+	 var p4 = $('#porcP4').val();
+	 var p5 = $('#porcP5').val();
+	 var p6 = $('#porcP6').val();
+	 sumaPor = Number(p1) + Number(p2) +Number(p3) +Number(p4) + Number(p5) + Number(p6);
+	 if(sumaPor > 100){ 
+	 	alert(sumaPor);
+	 }
+}
 function SetentaPorC(){
 		var reult = new Array();
 		var tot70 = $('.tot7');
