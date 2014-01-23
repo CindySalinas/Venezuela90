@@ -8,7 +8,7 @@ $('input').on("change",cambiarCalifPorc);
 $('#calc').on("click",pruebaMetodo);
 $('.valid').on("change",validarPtos);
 $('#guar').on("click",guardar);
-$('#porcP6').on("change",sumaPorcentaje());
+ValidNum();
 } 
 
 
@@ -25,9 +25,10 @@ function pruebaMetodo(){
 	NotaFinal();
 }
 function modificar(){
-	$('.inputOtroClass').prop('disabled',false);
-	$('#califP1,#califP2,#califP3,#califP4,#califP5,#califP6,#califP7,.porc1,.porc2,.porc3,.porc4,.porc5,.porc6,.tot71,.tot30,.totF').prop('disabled',true);
-
+	 //$('.inputOtroClass').prop('disabled',false);
+	 $('#porcP1,#porcP2,#porcP3,#porcP4,#porcP5,#porcP6').prop('disabled',false);
+	 $('#califP1,#califP2,#califP3,#califP4,#califP5,#califP6,#califP7,.porc1,.porc2,.porc3,.porc4,.porc5,.porc6,.tot71,.tot30,.totF').prop('disabled',true);
+	 $('#calc,#guar').prop('disabled',true).addClass("disabled");
 	actionBotones('guar,#calc','modif');
 
 }
@@ -43,6 +44,7 @@ function cambiarCalifPorc(){
 	 cambiar("porcP4","porc4");
 	 cambiar("porcP5","porc5");
 	 cambiar("porcP6","porc6");
+	 sumaPorcentaje();
 }
 
 function  cambiar(porc,fila){
@@ -82,6 +84,7 @@ function sumaPts(){
 		}
 	}
 }
+
 function sumaPorcentaje(){
 	 var p1 = $('#porcP1').val();
 	 var p2 = $('#porcP2').val();
@@ -90,8 +93,20 @@ function sumaPorcentaje(){
 	 var p5 = $('#porcP5').val();
 	 var p6 = $('#porcP6').val();
 	 sumaPor = Number(p1) + Number(p2) +Number(p3) +Number(p4) + Number(p5) + Number(p6);
-	 if(sumaPor > 100){ 
-	 	alert(sumaPor);
+	 if(p1 == "" || p2 == "" || p3 == "" || p4 == ""|| p5 == "" ||p6 == ""){
+	 	$('.califa1,.califa2,.califa3,.califa4,.califa5,.califa6,.pLapso,.masPt').prop('disabled',true)
+	 	actionBotones("msjss3","");
+	 	
+
+	 }else
+		 if(sumaPor > 100 || sumaPor <100){ 
+		 	$('.califa1,.califa2,.califa3,.califa4,.califa5,.califa6,.pLapso,.masPt').prop('disabled',true)
+		 	actionBotones("msjss2","msjss3");
+		 }
+	 else{
+	 	$('.califa1,.califa2,.califa3,.califa4,.califa5,.califa6,.pLapso,.masPt').prop('disabled',false);
+	 	$('#guar,#calc').prop('disabled',false);
+	 	actionBotones("","msjss2,#msjss3");
 	 }
 }
 function SetentaPorC(){
@@ -139,13 +154,14 @@ function NotaFinal(){
 		}
 	}
 }
-
 function validarPtos(){
 	var a = $('.valid');
-	a.each(function(i,item){
+	
+	
+		a.each(function(i,item){
 		if(item.value > 20){
 			//alert("inserte una nota valida");
-			//a.css("border-color","#ededed");
+			a.css("border-color","#ededed");
 			a[i].style.border ="1px solid #DC0F0F";
 			actionBotones('msjss','');
 			$('#calc').prop('disabled',true).addClass("disabled");
@@ -156,10 +172,11 @@ function validarPtos(){
 			$('#calc').prop('disabled',false);
 		}
 	});
-}
 
-function guardar(){
+
 	
+}
+function guardar(){
 	$('.inputOtroClass').prop('disabled',true);
 		actionBotones('modif','guar,#calc');
 }
@@ -180,8 +197,6 @@ function ponerDatos(){
 				algo.append('<tr class="modif"><td class="centrar">'+cont+'</td><td id='+item.cedulaAlumno+'>'+item.apellidoAlumno+" "+item.nombreAlumno+'</td><td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td><td class="centrar"><input class="inputOtroClass porc1"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td><td class="centrar"><input class="inputOtroClass porc2"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td><td class="centrar"><input class="inputOtroClass porc3"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td><td class="centrar"><input class="inputOtroClass porc4"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td><td class="centrar"><input class="inputOtroClass porc5"type="text"></td><td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td><td class="centrar"><input class="inputOtroClass porc6"type="text"></td><td class="centrar"><input class="inputOtroClass tot71"type="text"></td><td class="centrar"><input class="inputOtroClass pLapso"type="text"></td><td class="centrar"><input class="inputOtroClass tot30"type="text"></td><td class="centrar"><input class="inputOtroClass masPt"type="text"></td><td class="centrar"><input class="inputOtroClass totF"type="text"></td></tr>');
 				$('#Toculta tbody').after('<tr class="col"><td class="centrar"><input class="inputOtroClass esc rows"></td><td class="centrar"><input class="inputOtroClass esc2 rows"></td><td class="centrar"><input class="inputOtroClass esc3 rows"></td><td class="centrar"><input class="inputOtroClass esc4 rows"></td><td class="centrar"><input class="inputOtroClass esc5 rows"></td><td class="centrar"><input class="inputOtroClass esc6 rows"></td><td class="centrar"><input class="inputOtroClass tot"></td><td class="centrar"><input class="inputOtroClass tot7"></td><td class="centrar"><input class="inputOtroClass tot32"></td><td class="centrar"><input class="inputOtroClass totF2"></td></tr>');
 				$('.inputOtroClass').prop('disabled',true).addClass("disabled");
-				console.log(item);
-
 				cont++;  });
 		}
 		else{
@@ -191,7 +206,6 @@ function ponerDatos(){
 }
 
 function buscarProf(ced){
-	//var ced = $('#nomPro').attr('value');
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/datosCalif2.php?jsoncallback=?";
 	$.getJSON(url,{ced: ced}).done(function(data){
 		$('#nomPro').val(data.profNom);
@@ -209,4 +223,10 @@ function getQueryVariable(variable)
        }
        return(false);
 
+}
+function ValidNum() {
+	$(".inputOtroClass").attr("onkeypress", "return ValidNum(event);")
+    if (event.keyCode < 48 || event.keyCode > 57) {
+        event.returnValue = false;
+    }
 }

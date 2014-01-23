@@ -34,8 +34,9 @@ function logged(){
 
      if(datos.validacion == 0)
          {
-            alert(datos.mensaje);
-            
+             $('#user_login, #user_pass').css({"border":"2px solid rgb(242,20,20)"});
+             $('#user_login').val("").attr("placeholder","usuario incorrector");
+             $('#user_pass').val("").attr("placeholder","password incorrector");
          }
     });
   //  return false;
