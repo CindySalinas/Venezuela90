@@ -7,6 +7,8 @@ function iniciar(){
 	printRecibo();
 	$('#tipoBusc').on("change",buscReporte);
 	$('.busInAClass').on("click",cargarTabla);
+	$('#BuscarConsulta').css({"display":"block","margin":"10px auto"});
+	$('#BuscarConsulta').on("click",consultarInfoAdmin);
 }
 
 function gestionAdministrativa(){
@@ -143,15 +145,21 @@ function buscReporte(){
 	var select1 = $('#tipoBusc option:selected').val();
 	//.divInCeInAClass,.divInMesInAClass, .busInAClass,#tablaInA,#links
 	if(select1 == 0){
+		$('#busInA').css({"display":"block","margin":"10px auto"});
 		actionBotones('divInCeInAClass,.busInAClass','divInMesInAClass')
 	}else
 		if(select1 == 1){
+			$('#busInA').css({"display":"block","margin":"10px auto"});
 			actionBotones('divInMesInAClass,.busInAClass','divInCeInAClass')
 	}
 	else 
 		if(select1 ==2){
+			$('#busInA').css({"display":"block","margin":"10px auto"});
 			actionBotones('busInAClass','divInCeInAClass,.divInMesInAClass')
 		}
+	else{
+		actionBotones('','divInCeInAClass,.divInMesInAClass,.busInAClass,#busInA');
+	}
 }
 function actionBotones(mostrar,ocultar)
 {
@@ -160,4 +168,9 @@ function actionBotones(mostrar,ocultar)
 }
 function cargarTabla(){
 	$('#tablaInA,#links').show();
+}
+
+function consultarInfoAdmin(){
+	$('.atras2 > #atras, #at').on("click",function(){ actionBotones('buscQ','tablasAdministrativa')})
+	$('#BuscarConsulta').on("click",function(){actionBotones('tablasAdministrativa','buscQ')});
 }
