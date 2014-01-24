@@ -137,6 +137,20 @@
 	display: block;
 	margin: 15px auto;		
 }
+.tamaTable
+{
+	margin: 0 auto;
+	width: 70%;
+}
+.tamaTable td, .tamaTable th
+{
+	border-left: 1px solid #808080;
+}
+.tamaTable th
+{
+	border-bottom: 1px solid #808080;
+}
+
 /*Icono Pagina Gestion De Libros*/
 #icon1:before
 {
@@ -1579,11 +1593,11 @@
 	width: 75%;
 }
 
-#atrasGL1, #atrasGL2, #atrasGL3, #atrasGL4, #atrasGL5, #atrasGL6, #atrasGL7, #atrasGL8, #atrasGL9
+#atrasGL1, #atrasGL2, #atrasGL3, #atrasGL4, #atrasGL5, #atrasGL6, #atrasGL7, #atrasGL8, #atrasGL9, #atrasGL10
 {
 	width: 100%;
 }
-#atrasGL1 #atras, #atrasGL2 #atras, #atrasGL3 #atras,#atrasGL4 #atras,#atrasGL5 #atras,#atrasGL6 #atras,#atrasGL7 #atras,#atrasGL8 #atras,#atrasGL9 #atras
+#atrasGL1 #atras, #atrasGL2 #atras, #atrasGL3 #atras,#atrasGL4 #atras,#atrasGL5 #atras,#atrasGL6 #atras,#atrasGL7 #atras,#atrasGL8 #atras,#atrasGL9 #atras, #atrasGL10 #atras
 {
 	color: green;
 }
