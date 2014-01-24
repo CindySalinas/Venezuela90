@@ -1,6 +1,6 @@
 <?php 
 include("conex.php");
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 $user = $_GET["user"];
 $pass = $_GET["pass"];
@@ -15,35 +15,46 @@ $cantidad=0;
 while($row = mysql_fetch_row($result)) {
 	$cantidad++;
 	$c =$row[0];
-	$tipo = $row[3];
+	//$tipo = $row[3];
 	$nom = $row[1];
 	$app= $row[2];
-
+	//echo $tipo;
+	$resultados["T"] = $row[3];
 }
 $resultados["validacion"] = $cantidad;
-$resultados["T"] = $tipo;
+/*if($tipo !=0){
+	$resultados["T"] = $tipo;
+}
+else {
+	$tipo =0;
+}*/
 
-if($cantidad>0 && $tipo== 1){
+
+if($cantidad>0 && $resultados["T"] == 1){
 	setcookie("cedulaAdmin",$c,time()+36000,"/");
 	setcookie("adminName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Admin $nom $app";
 }
 else
-if($cantidad>0 && $tipo== 2){
+if($cantidad>0 &&  $resultados["T"]== 2){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
 	setcookie("cedulaProf",$c,time()+36000,"/");
 	setcookie("profName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Profesor $nom $app";
 }
 else
-	if($cantidad>0 && $tipo== 3){
+	if($cantidad>0 &&  $resultados["T"]== 3){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
 	setcookie("cedulaStudent",$c,time()+36000,"/");
 	setcookie("studentName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
 }
-else
+else{
 	$resultados["mensaje"] = "Usuario o Password Incorrectos";
+	//$resultados["validacion"] = 0;
+	//$resultados["T"] = 0;
+}
+	
 
 /*Convierte los resultados a formato json*/
 $resultadosJson = json_encode($resultados);
