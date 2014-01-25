@@ -20,6 +20,9 @@ function iniciar(){
 	$('#linkBuscarActEven').on("click", buscarFechaActivi);
 	$('#guardaModCA').on("click", guardarCambiosCA);
 
+	$('#linkEliminarActEven').on("click", eliminarCA);
+	$('#linkEliminarModCE').on("click", eliminarCE);
+
 	$("#inputColor").on("change", color);
 	$("#inputColor3").on("change", color3);
 
@@ -32,6 +35,50 @@ function iniciar(){
 	$("#diaGCE11").attr("disabled", true);
 	$("#mesGCE11").attr("disabled", true);
 	$("#yearGCE11").attr("disabled", true);
+}
+
+function eliminarCA() 
+{
+	var dia=$("#diaGCE10").val();
+	var mes=$("#mesGCE10 option:selected").val();
+	var year=$("#yearGCE10").val();
+
+	if(dia != "dia10" && mes != "mes10" && year != "year10")
+	{
+		fecha = dia + "/" + mes + "/" + year;
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarCalendarioActividades.php?jsoncallback=?";
+		$.getJSON(url,{fe:fecha
+		}).done(function(data){
+				alert("Se Ha Eliminado La Fecha");
+				resett();
+		});
+	}
+	else
+	{
+		alert("Ingrese Fecha Valida");
+	}
+}
+
+function eliminarCE() 
+{
+	var dia=$("#diaGCE3").val();
+	var mes=$("#mesGCE3 option:selected").val();
+	var year=$("#yearGCE3").val();
+
+	if(dia != "dia3" && mes != "mes3" && year != "year3")
+	{
+		fecha = dia + "/" + mes + "/" + year;
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarCalendarioEscolar.php?jsoncallback=?";
+			$.getJSON(url,{fe:fecha
+			}).done(function(data){
+					alert("Se Ha Eliminado La Fecha");
+					resett();
+			});
+	}
+	else
+	{
+		alert("Ingrese Fecha Valida");
+	}
 }
 
 function guardarCambiosCA() {

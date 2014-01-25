@@ -4,7 +4,9 @@ include("conex.php");
 //formato JSON
 header('Content-type: application/json');
 
-$sql = "Select Id_Tipo_Evento, Nombre_Evento, Color_Tipo_Evento FROM tipo_evento Order By Id_Tipo_Evento Asc";
+$idGrado= $_GET["grado"];
+
+$sql = "Select Descripcion, Fecha FROM calendario_evento_grado WHERE Id_Grado_Calendario_Evento='$idGrado'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();
@@ -13,10 +15,9 @@ $i =0;
 $cantidad = mysql_num_rows($result);
 //$estado["num"]= $cantidad;
 while($row = mysql_fetch_row($result)){
-			
-	$estado[$i]["idTipoEvento"]= $row[0];	
-	$estado[$i]["nomTipoEvento"]= $row[1];	
-	$estado[$i]["colorTipoEvento"]= $row[2];	
+		
+	$estado[$i]["descripcion"]= $row[0];
+	$estado[$i]["fecha"]= $row[1];
 	$i++;	
 }
 //Convertir los resultados a formato json

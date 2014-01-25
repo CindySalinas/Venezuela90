@@ -1793,3 +1793,30 @@ fieldset{
 }
  /*FIN GESTION LISTADOS */ 
 /* FIN EDICION MANUEL*/
+
+.divDisInVer
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.esc
+{
+	margin-right: 1em;
+	display: inline-block;
+	vertical-align: middle;
+}
+.www
+{
+	margin-right: 0.3em;
+	width: 15px;
+	height: 15px;
+}
+.tabtrtd:hover
+{
+	cursor: help;
+}
+
+#linkEliminarModCE, #linkEliminarActEven
+{
+	margin-left: 2em;
+}
