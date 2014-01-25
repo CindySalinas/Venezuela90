@@ -1593,11 +1593,11 @@
 	width: 75%;
 }
 
-#atrasGL1, #atrasGL2, #atrasGL3, #atrasGL4, #atrasGL5, #atrasGL6, #atrasGL7, #atrasGL8, #atrasGL9, #atrasGL10
+#atrasGL1, #atrasGL2, #atrasGL3, #atrasGL4, #atrasGL5, #atrasGL6, #atrasGL7, #atrasGL8, #atrasGL9, #atrasGL10,#atrasGL11
 {
 	width: 100%;
 }
-#atrasGL1 #atras, #atrasGL2 #atras, #atrasGL3 #atras,#atrasGL4 #atras,#atrasGL5 #atras,#atrasGL6 #atras,#atrasGL7 #atras,#atrasGL8 #atras,#atrasGL9 #atras, #atrasGL10 #atras
+#atrasGL1 #atras, #atrasGL2 #atras, #atrasGL3 #atras,#atrasGL4 #atras,#atrasGL5 #atras,#atrasGL6 #atras,#atrasGL7 #atras,#atrasGL8 #atras,#atrasGL9 #atras, #atrasGL10 #atras,#atrasGL11 #atras
 {
 	color: green;
 }
@@ -1786,4 +1786,10 @@ fieldset{
 }
 
 /* FIN GESTION CALIF #110DFB*/
+/*GESTION LISTADOS */
+
+.listaMat1,.listaMat2,.cedAlumno,.nuevaLista,.ingresarAlumnoLista,.ingresarGradoLista,.gradoSeccionLista,.titulo1,.buscarLista,.listado1,.listado2,.titulo2,.listado3{
+	display: none;
+}
+ /*FIN GESTION LISTADOS */ 
 /* FIN EDICION MANUEL*/
