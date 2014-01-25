@@ -25,8 +25,9 @@ function busqueda(){
 function buscarPrestamo(tipo,dato){
 	var otroBlocK = $('.otroBlock');
   	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/buscarPrestamoLibro.php?jsoncallback=?";
-  	$('.prestamo2, .otroTec').remove();
+  	$('.prestamo2, .otroTec,.alert-danger').remove();
  	$.getJSON(url,{val0:tipo,val1:dato}).done(function(data){
+ 		if(data.num != 0){
 			$.each(data, function(i,item){
 				otroBlocK.append("<div class='otroTec'><article class='tec'><div class='titulosLibros'>Cedula De Identidad: </div><div>"+item.cedPres+"</div></article><article class='tec'><div class='titulosLibros'>Nombre Del Estudiante: </div><div>"+item.nomPres+"</div></article><article class='tec'><div class='titulosLibros'>Grado: </div><div>"+item.graPres+"</div></article><article class='tec'><div class='titulosLibros'>Sección: </div><div>"+"manuel"+"</div></article><article class='tec'><div class='titulosLibros'>Nombre Del Libro: </div><div>"+item.nom+"</div></article><article class='tec'><div class='titulosLibros'>Autor: </div><div>"+item.aut+"</div></article><article class='tec'><div class='titulosLibros'>Materia: </div><div>"+item.mat+"</div></article><article class='tec'><div class='titulosLibros'>Año: </div><div>"+item.year+"</div></article><article class='tec'><div class='titulosLibros'>Editorial: </div><div>"+item.edit+"</div></article>	<article class='tec'><div class='titulosLibros'>Edición: </div><div>"+item.edic+"</div></article></div><div class='prestamo2'><div><a id='icon2'class='ad' name="+item.idPres+" rel="+item.idLibro+" rev="+item.cant+"></a><a id='de'>Eliminar</a></div></div>");
 				
@@ -35,6 +36,11 @@ function buscarPrestamo(tipo,dato){
 				$('.prestamo2').show();
 				otroBlocK.show("slide");
 			});
+		}
+		else{
+			$('#msj3').append("<div class='alert alert-danger'>"+data.mensaje+"</div>");
+			//alert(data.mensaje);
+		}
 	});
 }
 
@@ -315,10 +321,11 @@ function tipoBusqueda(){
 			$('#b2').hide();
 			$('#b3,#buscarPrestamo').show("slide");
 			//$('.otroTec').remove();
-			$('.prestamo2 ,.otroTec').remove();
+			$('.prestamo2 ,.otroTec,.alert-danger').remove();
 
 			$('#buscarPrestamo').click(function(){
-				$('.prestamo2 ,.otroTec').remove();
+				$('.prestamo2 ,.otroTec,.alert-danger').remove();
+
 				buscarPrestamo("dateP",$('#datePres').val());
 			});
 		}
@@ -327,7 +334,7 @@ function tipoBusqueda(){
 			$('.consult2 .alert .alert-danger').remove();
 			$('#b2,#b3').hide("slide");
 			$('#buscarPrestamo').show();
-			$('.prestamo2 ,.otroTec').remove();
+			$('.prestamo2 ,.otroTec,.alert-danger').remove();
 			$('#buscarPrestamo').click(function(){
 				$('.prestamo2 ,.otroTec').remove();
 				buscarPrestamo("todo",'');
