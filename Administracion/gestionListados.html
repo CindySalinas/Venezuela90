@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/gestionListados.js"></script>
 </head>
 <body class="p-admision">
 
@@ -143,28 +144,30 @@
 				<header><h2>Gestión De Libros</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="tituloPrincipal">
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Eliminar</a></li>
+						<li><a id="iconoconsultar" class="ingresarListado" ></a><a class="textoAbajo ingresarListado" >Ingresar</a></li>
+						<li><a id="iconomodificar" class="consultarListado"></a><a class="textoAbajo consultarListado" >Consultar</a></li>
+						<li><a id="iconoconsultar" class="eliminarListado"></a><a class="textoAbajo eliminarListado" >Eliminar</a></li>
 					</ul>							
 				</div>				
 			</article>
 
 			<article id="noticias">
-				<header class="titulo"><h3>Ingresar</h3></header>
-
+				<header class="titulo1"><h3>Ingresar</h3></header>
+				<div class="ocultaLista">
 				<ul id="listaGestion">
-					<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Seleccionar Lista</a></li>
-					<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Nueva Lista</a></li>
+					<li><a id="iconoconsultar" class="selectList"></a><a class="textoAbajo selectList" >Seleccionar Lista</a></li>
+					<li><a id="iconomodificar" class="nuevaList"></a><a class="textoAbajo nuevaList">Nueva Lista</a></li>
 				</ul>
 				<div id="atrasGL1" class="atras2 atr centrar">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+				</div>
+		<div class="listaMat1">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -173,10 +176,10 @@
 								<label>Seleccione Lista</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>---------------------</option>
-										<option>Materia Pendiente</option>
-										<option>Aula De Clases 7mo</option>
+									<select class="espLeft" id="listTipo1">
+										<option value="0">---------------------</option>
+										<option value="1">Materia Pendiente</option>
+										<option value="1">Aula De Clases 7mo</option>
 									</select>
 								</td>
 							</tr>
@@ -187,6 +190,8 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+		</div>
+		<div class="cedAlumno">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -210,6 +215,8 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+		</div>
+		<div class="listaMat2">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -233,6 +240,8 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+		</div>
+		<div class="nuevaLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -246,7 +255,7 @@
 							</tr>
 							<tr>
 								<td colspan=2 class="centrar">
-									<button class="topBB">Aceptar</button>
+									<button class="topBB" id="aceptarNuevaLista">Aceptar</button>
 								</td>
 							</tr>
 						</tbody>
@@ -255,16 +264,20 @@
 				<div id="atrasGL5" class="atras2 atr centrar">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
-				</div>		
+				</div>
+		</div>
+				<div class="hideLista">	
 				<ul id="listaGestion">
-					<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar Por alumno</a></li>
-					<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Ingresar Por Grado</a></li>
-					<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar Por Grado y Sección</a></li>
+					<li><a id="iconoconsultar" class="ingresarPorAl"></a><a class="textoAbajo ingresarPorAl" >Ingresar Por alumno</a></li>
+					<li><a id="iconomodificar" class="ingresarPorGra"></a><a class="textoAbajo ingresarPorGra" >Ingresar Por Grado</a></li>
+					<li><a id="iconoconsultar" class="ingresarPorGraAl"></a><a class="textoAbajo ingresarPorGraAl" >Ingresar Por Grado y Sección</a></li>
 				</ul>
 				<div id="atrasGL6" class="atras2 atr centrar">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>	
+				</div>
+		<div class="ingresarAlumnoLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -289,6 +302,8 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+		</div>		
+		<div class="ingresarGradoLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -318,6 +333,8 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+		</div>
+		<div class="gradoSeccionLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -359,9 +376,11 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
+			</div>
 			</article>
 			<article id="noticias">
-				<header class="titulo"><h3>Consultar</h3></header>
+				<header class="titulo2"><h3>Consultar</h3></header>
+			<div class="buscarLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -370,18 +389,25 @@
 								<label>Seleccionar Lista</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>---------------</option>
-										<option>Materia Pendiente 1</option>
-										<option>Materia Pendiente 2</option>
-										<option>Aula De Clase 7mo</option>
-										<option>Todas</option>
+									<select class="espLeft" id="listTipo2">
+										<option value="0">---------------</option>
+										<option value="1">Materia Pendiente 1</option>
+										<option value="1">Materia Pendiente 2</option>
+										<option value="2">Aula De Clase 7mo</option>
+										<option value="3">Todas</option>
 									</select>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+				<div id="atrasGL10" class="atras2 atr centrar">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>
+			</div>
+
+			<div class="listado1">
 				<table class="centrar">					
 					<thead>
 						<tr>
@@ -409,7 +435,9 @@
 						</tr>
 					</tbody>
 				</table>
-
+			</div>
+			<br>
+			<div class="listado2">
 				<table class="centrar tamaTable">					
 					<thead>
 						<tr>
@@ -440,13 +468,11 @@
 						</tr>
 					</tbody>
 				</table>
-				<div id="atrasGL10" class="atras2 atr centrar">
-					<a id="atras"></a>
-					<a id="at">Atrás</a>
-				</div>
+			</div>
+				
 			</article>
-			<article id="noticias">
-				<header class="titulo"><h3>Eliminar</h3></header>
+			<article id="noticias" class="listado3">
+				<header class="titulo3"><h3>Eliminar</h3></header>
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -471,6 +497,10 @@
 							</tr>
 						</tbody>
 					</table>
+				</div>
+				<div id="atrasGL11" class="atras2 atr centrar">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
 				</div>
 			</article>
 		</div>
