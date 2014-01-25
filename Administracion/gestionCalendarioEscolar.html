@@ -171,51 +171,62 @@
 							<td class="right">
 						<label>Elegir Fecha</label></td>
 						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
+						<select id="diaGCE">
+							<option value="dia1">Día</option>
+							<option>01</option>
+							<option>02</option>
+							<option>03</option>
 						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
+						<select id="mesGCE">
+							<option value="mes1">Mes</option>
+							<option value="01">Enero</option>
+							<option value="02">Febrero</option>
+							<option value="03">Marzo</option>
+							<option value="04">Abril</option>
+							<option value="05">Mayo</option>
+							<option value="06">Junio</option>
+							<option value="07">Julio</option>
+							<option value="08">Agosto</option>
+							<option value="09">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
 						</select>
-						<select>
-							<option>Año</option>
+						<select id="yearGCE">
+							<option value="year1">Año</option>
 							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
 						</select>
 						</td>
 						</tr>
 						<tr>
 							<td class="right">
 							<label>Descripción Del Evento</label></td>
-							<td class="leftEvent"><textarea id="textNewEvent" class="textFormulario" maxlength="120"></textarea></td>
+							<td class="leftEvent"><textarea id="ingresarDescNE" class="textFormulario textNewEventClass" maxlength="120"></textarea></td>
 						</tr>	
-						<tr>
+						<tr class="trVisibleINE">
 							<td class="right">
 								<label>Seleccionar Tipo De Evento</label>
 							</td>
 							<td class="leftEvent">
-								<select>
-									<option>Evento 1</option>
-									<option>Evento 2</option>
-									<option>Evento 3</option>
+								<select id="selectTipoEvent">
+									<option name="nada1">-----------------------</option>
 								</select>
-								<a class="linkOtroEvent" >Nuevo</a>
+								<a id="ingresarLinkNuevo" class="linkOtroEvent" >Nuevo</a>
 							</td>
 						</tr>
-						<tr>
+						<tr class="none trOculto">
 							<td class="right"><label>Nuevo Tipo De Evento</label></td>
-							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" >Seleccionar</a></td>
+							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento" id="ingNTE"><a id="ingresarLinkSelect"class="linkOtroEvent" >Seleccionar</a></td>
+						</tr>		
+						<tr class="none trOculto">
+							<td class="right"><label>Color Para El Evento</label></td>
+							<td class="leftEvent"><input id="inputColor" type="color" ></td>
 						</tr>		
 					</table>
+					<div id="paraAlerta">
+					</div>
 					<div class="centrar">
-						<button id="butEvent" class="centrar" type="submit">Guardar</button>
+						<button id="ingresarNE" class="centrar butEventClass" type="submit">Guardar</button>
 					</div>
 				</div>	
 				<div class="formularioEvent nuevoAct" id="nuevoActividad">
@@ -224,46 +235,84 @@
 							<td class="right">
 						<label>Elegir Fecha</label></td>
 						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
+						<select id="diaGCE2">
+							<option value="dia2">Día</option>
+							<option>01</option>
+							<option>02</option>
+							<option>03</option>
+							<option>04</option>
+							<option>05</option>
+							<option>06</option>
+							<option>07</option>
+							<option>08</option>
+							<option>09</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+							<option>21</option>
+							<option>22</option>
+							<option>23</option>
+							<option>24</option>
+							<option>25</option>
+							<option>26</option>
+							<option>27</option>
+							<option>28</option>
+							<option>29</option>
+							<option>30</option>
+							<option>31</option>
 						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
+						<select id="mesGCE2">
+							<option value="mes2">Mes</option>
+							<option value="01">Enero</option>
+							<option value="02">Febrero</option>
+							<option value="03">Marzo</option>
+							<option value="04">Abril</option>
+							<option value="05">Mayo</option>
+							<option value="06">Junio</option>
+							<option value="07">Julio</option>
+							<option value="08">Agosto</option>
+							<option value="09">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
 						</select>
-						<select>
-							<option>Año</option>
+						<select id="yearGCE2">
+							<option value="year2">Año</option>
 							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
 						</select>
 						</td>
 						</tr>
 						<tr>
 							<td class="right">
 							<label>Descripción De La Actividad</label></td>
-							<td class="leftEvent"><textarea id="textNewEvent" class="textFormulario" maxlength="120"></textarea></td>
+							<td class="leftEvent"><textarea id="ingresarDescNE2" class="textFormulario textNewEventClass" maxlength="120"></textarea></td>
 						</tr>	
 						<tr>
 							<td class="right">
 								<label>Seleccionar Grado</label>
 							</td>
 							<td class="leftEvent">
-								<select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
+								<select id="selectGrado">
+									<option name="nada2">------------</option>
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
 								</select>
 							</td>
 						</tr>	
 					</table>
 					<div class="centrar">
-						<button id="butEvent" class="centrar" type="submit">Guardar</button>
+						<button id="ingresarNE2" class="centrar butEventClass" type="submit">Guardar</button>
 					</div>
 				</div>		
 			</article>
@@ -317,82 +366,217 @@
 				<header><h3>Modificar Calendario Escolar</h3></header>
 
 			<div class="formularioEvent" id="mod1">
+				<table>
+					<tr>
+						<td class="right">
+							<label>Elegir Fecha</label>
+						</td>
+						<td class="leftEvent">
+							<select id="diaGCE3">
+								<option value="dia3">Día</option>
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+								<option>04</option>
+								<option>05</option>
+								<option>06</option>
+								<option>07</option>
+								<option>08</option>
+								<option>09</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+							</select>
+							<select id="mesGCE3">
+								<option value="mes3">Mes</option>
+								<option value="01">Enero</option>
+								<option value="02">Febrero</option>
+								<option value="03">Marzo</option>
+								<option value="04">Abril</option>
+								<option value="05">Mayo</option>
+								<option value="06">Junio</option>
+								<option value="07">Julio</option>
+								<option value="08">Agosto</option>
+								<option value="09">Septiembre</option>
+								<option value="10">Octubre</option>
+								<option value="11">Noviembre</option>
+								<option value="12">Diciembre</option>
+							</select>
+							<select id="yearGCE3">
+								<option value="year3">Año</option>
+								<option>2014</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<div class="centrar">
+					<a id="linkBuscarModCE" class="centrar butEventClass" >Buscar</a>
+				</div>
+			</div>
+
+			<div id="divModiCE" class="formularioEvent none">
 					<table>
 						<tr>
 							<td class="right">
-						<label>Elegir Fecha</label></td>
+						<label>Fecha Seleccionada</label></td>
 						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
+						<select id="diaGCED">
+							<option value="diaD">Día</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
 						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
+						<select id="mesGCED">
+							<option value="mesD">Mes</option>
+							<option value="01">Enero</option>
+							<option value="02">Febrero</option>
+							<option value="03">Marzo</option>
+							<option value="04">Abril</option>
+							<option value="05">Mayo</option>
+							<option value="06">Junio</option>
+							<option value="07">Julio</option>
+							<option value="08">Agosto</option>
+							<option value="09">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
 						</select>
-						<select>
-							<option>Año</option>
-							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
+						<select id="yearGCED">
+							<option value="yearD">Año</option>
+							<option value="2014">2014</option>
 						</select>
-						<a >Buscar</a>
 						</td>
 						</tr>
 						<tr>
 							<td class="right">
 						<label>Cambiar Fecha</label></td>
 						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
+						<select id="diaGCE4">
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
 						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
+						<select id="mesGCE4">
+							<option value="01">Enero</option>
+							<option value="02">Febrero</option>
+							<option value="03">Marzo</option>
+							<option value="04">Abril</option>
+							<option value="05">Mayo</option>
+							<option value="06">Junio</option>
+							<option value="07">Julio</option>
+							<option value="08">Agosto</option>
+							<option value="09">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
 						</select>
-						<select>
-							<option>Año</option>
-							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
+						<select id="yearGCE4">
+							<option value="2014">2014</option>
 						</select>
-						<a >Buscar</a>
 						</td>
 						</tr>
 						<tr>
 							<td class="right">
 							<label>Descripción Del Evento</label></td>
-							<td class="leftEvent"><textarea id="textNewEvent" class="textFormulario" maxlength="120"></textarea></td>
+							<td class="leftEvent"><textarea id="ingresarDescNE3" class="textFormulario textNewEventClass" maxlength="120"></textarea></td>
 						</tr>	
-						<tr>
+						<tr class="trVisibleINE3">
 							<td class="right">
 								<label>Seleccionar Tipo De Evento</label>
 							</td>
 							<td class="leftEvent">
-								<select>
-									<option>Evento 1</option>
-									<option>Evento 2</option>
-									<option>Evento 3</option>
+								<select id="selectTipoEvent2">
+									
 								</select>
-								<a class="linkOtroEvent" >Nuevo</a>
-							</td>
+								<a id="ingresarLinkNuevo3" class="linkOtroEvent" >Nuevo</a>
+							</td>						
 						</tr>
-						<tr>
-							<td class="right"><label>Nuevo Tipo De Evento</label></td>
-							<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento"><a class="linkOtroEvent" >Seleccionar</a></td>
-						</tr>		
+						<tr class="none trOculto2">
+								<td class="right"><label>Nuevo Tipo De Evento</label></td>
+								<td class="leftEvent"><input type="text" placeholder="Ingresar Nuevo Tipo De Evento" id="ingNTE3"><a id="ingresarLinkSelect3"class="linkOtroEvent" >Seleccionar</a></td>
+							</tr>
+						<tr class="none trOculto2">
+								<td class="right"><label>Color Para El Evento</label></td>
+								<td class="leftEvent"><input id="inputColor3" type="color" ></td>
+						</tr>						
 					</table>
 					<div class="centrar">
-						<button id="butEvent" class="centrar" type="submit">Guardar</button>
+						<button id="guardarModificadoCE" class="centrar butEventClass">Guardar</button>
 					</div>
 				</div>
 				<div id="atr" class="atras4">
@@ -402,96 +586,222 @@
 			</article>
 			<article id="noticias" class="modCalActividades">
 				<header><h3>Modificar Calendario De Actividades</h3></header>
+
 				<div class="formularioEvent" id="mod2">
 					<table>
 						<tr>
 							<td class="right">
-						<label>Elegir Fecha</label></td>
-						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
-						</select>
-						<select>
-							<option>Año</option>
-							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
-						</select>
-						</td>
+								<label>Elegir Fecha</label></td>
+								<td class="leftEvent">
+									<select id="diaGCE10">
+									<option value="dia10">Día</option>
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+								</select>
+								<select id="mesGCE10">
+									<option value="mes10">Mes</option>
+									<option value="01">Enero</option>
+									<option value="02">Febrero</option>
+									<option value="03">Marzo</option>
+									<option value="04">Abril</option>
+									<option value="05">Mayo</option>
+									<option value="06">Junio</option>
+									<option value="07">Julio</option>
+									<option value="08">Agosto</option>
+									<option value="09">Septiembre</option>
+									<option value="10">Octubre</option>
+									<option value="11">Noviembre</option>
+									<option value="12">Diciembre</option>
+								</select>
+								<select id="yearGCE10">
+									<option value="year10">Año</option>
+									<option value="2014">2014</option>
+								</select>
+							</td>
 						</tr>
-						
+					</table>
+					<div class="centrar">
+						<a id="linkBuscarActEven" class="centrar butEventClass">Buscar</a>
+					</div>
+				</div>
+
+				<div id="divModificarCA" class="formularioEvent none">
+					<table>
 						<tr>
 							<td class="right">
-								<label>Seleccionar Grado</label>
+								<label>Fecha Seleccionada</label></td>
+								<td class="leftEvent">
+									<select id="diaGCE11">
+									<option value="dia11">Día</option>
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+								</select>
+								<select id="mesGCE11">
+									<option value="mes11">Mes</option>
+									<option value="01">Enero</option>
+									<option value="02">Febrero</option>
+									<option value="03">Marzo</option>
+									<option value="04">Abril</option>
+									<option value="05">Mayo</option>
+									<option value="06">Junio</option>
+									<option value="07">Julio</option>
+									<option value="08">Agosto</option>
+									<option value="09">Septiembre</option>
+									<option value="10">Octubre</option>
+									<option value="11">Noviembre</option>
+									<option value="12">Diciembre</option>
+								</select>
+								<select id="yearGCE11">
+									<option value="year11">Año</option>
+									<option value="2014">2014</option>
+								</select>
+							</td>
+						</tr>									
+						<tr>
+							<td class="right">
+								<label>Cambiar Fecha</label>
 							</td>
 							<td class="leftEvent">
-								<select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
+								<select id="diaGCE12">
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
 								</select>
-								<a >Buscar</a>
+								<select id="mesGCE12">
+									<option value="01">Enero</option>
+									<option value="02">Febrero</option>
+									<option value="03">Marzo</option>
+									<option value="04">Abril</option>
+									<option value="05">Mayo</option>
+									<option value="06">Junio</option>
+									<option value="07">Julio</option>
+									<option value="08">Agosto</option>
+									<option value="09">Septiembre</option>
+									<option value="10">Octubre</option>
+									<option value="11">Noviembre</option>
+									<option value="12">Diciembre</option>
+								</select>
+								<select id="yearGCE12">
+									<option value="2014">2014</option>
+								</select>
 							</td>
-						</tr>
-						<tr>
-							<td class="right">
-						<label>Cambiar Fecha</label></td>
-						<td class="leftEvent">
-						<select>
-							<option>Día</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<select>
-							<option>Mes</option>
-							<option>Enero</option>
-							<option>Febrero</option>
-							<option>Marzo</option>
-						</select>
-						<select>
-							<option>Año</option>
-							<option>2014</option>
-							<option>2015</option>
-							<option>2016</option>
-						</select>
-						</td>
 						</tr>
 						<tr>
 							<td class="right">
 								<label>Cambiar Grado</label>
 							</td>
 							<td class="leftEvent">
-								<select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
+								<select id="selectGradoModif">
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td class="right">
 							<label>Actividad</label></td>
-							<td class="leftEvent"><textarea id="textNewEvent" class="textFormulario" maxlength="120"></textarea></td>
+							<td class="leftEvent"><textarea id="textActiModif" class="textFormulario textNewEventClass" maxlength="120"></textarea></td>
 						</tr>	
 							
 					</table>
 
-						<button id="butEvent" class="centrar" type="submit">Guardar</button>
+						<div class="centrar">
+						<button id="guardaModCA" class="centrar butEventClass">Guardar</button>
+					</div>
 					</div>
 						<div id="atr" class="atras5">
 						<a id="atras" name="2"></a>
 						<a id="at" name="2">Atrás</a>
-				</div>
+					</div>
 				</div>	
 			</article>
 		</div>

@@ -685,7 +685,7 @@
 {
 	width: 100%;
 }
-#textNewEvent, #divFormNewEvento label
+#textNewEvent, #divFormNewEvento label, .textNewEventClass
 {
 	display: inline-block;
 	vertical-align: middle;
@@ -694,7 +694,7 @@
 {
 
 }
-#textNewEvent
+#textNewEvent, .textNewEventClass
 {
 	height: 80px;
 	width: 70%;
@@ -1090,7 +1090,7 @@
 {
 	text-align: center;
 }
-#butEvent
+#butEvent, .butEventClass
 {
 	margin: 1em auto;
 }
@@ -1660,7 +1660,10 @@ a{
  .ingresoCalendario,.consultarCalendario,.calActividades,.modificarActividades,.modCalEscolar,.modCalActividades,#nuevoIngreso,#nuevoActividad,#mod1,#mod2,.atras1,.tablasAdministrativa{
 	display: none;
 }
-
+#mod1, #mod2
+{
+	width: 350px;
+}
 /* FIN GESTION CALENDARIO*/
 /* GESTION INFORMACION MENSUALIDADES*/
 .registroCancelacion,.registroCancelacion2,.informaAdm,.mensControl,.divInCeInAClass, .divInMesInAClass, .busInAClass,#tablaInA,#links{

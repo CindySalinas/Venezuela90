@@ -29,7 +29,7 @@ function actualizarEstado(){
 		$.getJSON(url,{resp:respS,fecha:fechaRes,id:idS,est:estado}).done(function(data){
 			enviarResp();
 		$('#noticias').hide("slow");
-		$('#msj').append("<div class='alert alert-success'>"+data.mensaje+"</di>");
+		$('#msj').append("<div class='alert alert-success'>"+data.mensaje+"</div>");
 		$('#otroDiv').append("<div id='atr' class='atras2'><a id='atras' href='recepcionGestionSolicitudes.html'></a><a id='at' href='recepcionGestionSolicitudes.html'>Atrás</a></div>");
 	});
 		
