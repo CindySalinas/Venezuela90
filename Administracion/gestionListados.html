@@ -141,7 +141,7 @@
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article id="intranetPrincipal">
-				<header><h2>Gestión De Libros</h2></header>
+				<header><h2>Gestión De Listados</h2></header>
 				<hr />
 			</article>
 			<article id="noticias" class="tituloPrincipal">
@@ -177,9 +177,13 @@
 								</td>
 								<td>
 									<select class="espLeft" id="listTipo1">
-										<option value="0">---------------------</option>
+										<!--<option value="0">---------------------</option>
 										<option value="1">Materia Pendiente</option>
-										<option value="1">Aula De Clases 7mo</option>
+										<option value="2">Aula de Clase 1er  año</option>
+										<option value="3">Aula de Clase 2do año</option>
+										<option value="4">Aula de Clase 3er año</option>
+										<option value="5">Aula de Clase 4to año</option>
+										<option value="6">Aula de Clase 5to año</option>-->
 									</select>
 								</td>
 							</tr>
@@ -200,23 +204,23 @@
 								<label>Cedula Del Alumno</label>
 								</td>
 								<td>
-									<input type="text" class="espLeft">
+									<input type="text" class="espLeft" id="cedAInsertar">
 								</td>
 							</tr>
-							<tr>
 								<td colspan=2 class="centrar">
-									<button class="topBB">Ingresar Alumno</button>
+									<button class="topBB" id="ingresarAlumnoCed">Ingresar Alumno</button>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+					
 				</div>
 				<div id="atrasGL3" class="atras2 atr centrar">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
 		</div>
-		<div class="listaMat2">
+		<!--<div class="listaMat2">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
 						<tbody>
@@ -240,7 +244,7 @@
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
 				</div>
-		</div>
+		</div>-->
 		<div class="nuevaLista">
 				<div class="formularios listaFFF">
 					<table id="tabGL">
@@ -250,9 +254,23 @@
 								<label>Nombre De La Nueva Lista</label>
 								</td>
 								<td>
-									<input type="text" class="espLeft">
+									<input type="text" class="espLeft" id="nuevaListaNom">
 								</td>
 							</tr>
+								<tr>
+								<td class="right">
+								<label>Seleccione Tipo De Lista</label>
+								</td>
+								<td>
+									<select class="espLeft" id="listaTipo3">
+										<option value="0">---------------------</option>
+										<option value="1">Materia Pendiente</option>
+										<option value="2">Aula De Clases</option>
+										<option value="3">Alumnos Graduandos</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
 							<tr>
 								<td colspan=2 class="centrar">
 									<button class="topBB" id="aceptarNuevaLista">Aceptar</button>
@@ -286,13 +304,13 @@
 								<label>Cedula Del Alumno</label>
 								</td>
 								<td>
-									<input type="text" class="espLeft">
+									<input type="text" class="espLeft" id="cedAlumno2">
 								</td>
 							</tr>
 							<tr>
 								<td colspan=2 class="centrar">
-									<a class="espDEr">Ingresar Alumno</a>
-									<a class="topBB">Generar Lista</a>
+									<a class="espDEr" id="ingresarAlumnoLista2">Ingresar Alumno</a>
+									<a class="topBB" id="genrarLista">Generar Lista</a>
 								</td>
 							</tr>
 						</tbody>
@@ -390,11 +408,11 @@
 								</td>
 								<td>
 									<select class="espLeft" id="listTipo2">
-										<option value="0">---------------</option>
+										<!--<option value="0">---------------</option>
 										<option value="1">Materia Pendiente 1</option>
 										<option value="1">Materia Pendiente 2</option>
 										<option value="2">Aula De Clase 7mo</option>
-										<option value="3">Todas</option>
+										<option value="T1">Todas</option>-->
 									</select>
 								</td>
 							</tr>
@@ -438,7 +456,7 @@
 			</div>
 			<br>
 			<div class="listado2">
-				<table class="centrar tamaTable">					
+				<table class="centrar tamaTable" id="listados2">					
 					<thead>
 						<tr>
 							<th>N°</th>
@@ -447,8 +465,8 @@
 							<th></th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
+					<tbody id="del">
+						<!--<tr>
 							<td>01</td>
 							<td>Salinas Zambrano, Cindy Yarimar</td>
 							<td>F</td>
@@ -465,7 +483,7 @@
 							<td>Salinas Zambrano, Keily Yoselin</td>
 							<td>F</td>
 							<td><a href="#">Eliminar</a></td>
-						</tr>
+						</tr>-->
 					</tbody>
 				</table>
 			</div>
@@ -481,18 +499,18 @@
 								<label>Seleccionar Lista</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>---------------</option>
+									<select class="espLeft" id="listTipo4">
+										<!--<option value="0">---------------</option>
 										<option>Materia Pendiente 1</option>
 										<option>Materia Pendiente 2</option>
 										<option>Aula De Clase 7mo</option>
-										<option>Todas</option>
+										<option value="T2">Todas</option>-->
 									</select>
 								</td>
 							</tr>
 							<tr >
 								<td colspan="2" class="centrar">
-									<button class="topBB">Eliminar</button>
+									<button class="topBB" id="eliminarLista">Eliminar</button>
 								</td>
 							</tr>
 						</tbody>
