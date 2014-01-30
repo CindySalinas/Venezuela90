@@ -351,9 +351,10 @@ function tipoBusqueda(){
 
 
 function registroLibros(){
-	$('#iconoconsultar').on("click",function(){gestionesBoton("hideLista","listaPrincipal");
+	$('#iconoconsultar ,.iconoconsultar').on("click",function(){gestionesBoton("hideLista","listaPrincipal");
 		$('.modificar').css({display:"none"});
-		 $('.atras1').show();});
+		 $('.atras1').show();
+		});
 
 	$('.ingresar').on("click",function(){gestionesBoton("ingresarPanel","titulo,.hideLista");});
 
@@ -361,7 +362,7 @@ function registroLibros(){
 
 	$('.eliminar').on("click",function(){gestionesBoton('delete',"titulo,.hideLista"); mostrarEliminar();});
 
-	$('#iconomodificar').on("click",function(){gestionesBoton('hideLista2',"listaPrincipal");
+	$('#iconomodificar,.iconomodificar').on("click",function(){gestionesBoton('hideLista2',"listaPrincipal");
 		$('.modificar2,.eliminar2').css({display:"none"});$('.atras1').show();});
 
 	$('.ingresar2').on("click",function(){gestionesBoton('ingresars2',"titulo,.hideLista2");});
@@ -371,16 +372,16 @@ function registroLibros(){
 	$('.atras1 > #atras ').on("click",function(){
 		resetear();
 		$('#formulario,#ingresarLibro').show("slide");$('.alert').remove();
-		atrasEvento("listaPrincipal","hideLista,.hideLista2"); 
+		atrasEvento("listaPrincipal","hideLista,.hideLista2,.atras1"); 
 
 	});
 	$('.atras1 > #at').on("click",function(){
 		resetear();
 		$('#formulario,#ingresarLibro').show("slide");$('.alert').remove();
-		atrasEvento("listaPrincipal","hideLista,.hideLista2"); 
+		atrasEvento("listaPrincipal","hideLista,.hideLista2,.atras1"); 
 
 	});
-	$('.atras2 >  #at').on("click",function(){
+	$('.atras2 >  #atras').on("click",function(){
 		resetear();
 		atrasEvento("hideLista,.titulo","ingresarPanel");
 	});
@@ -391,7 +392,7 @@ function registroLibros(){
 	$('.atras3 > #atras').on("click",function(){
 		atrasEvento("hideLista,.titulo","consult");
 	})
-	$('.atras3 > #at').on("click",function(){
+	$('.atras3 > #atras').on("click",function(){
 		atrasEvento("hideLista,.titulo","consult");
 	})
 	$('.atras4 > #at').on("click",function(){
