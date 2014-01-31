@@ -12,12 +12,15 @@ function empezar(){
 	$('#nuevaListaNom').on("change",comprobarLista);
 	$('#ingresarAlumnoLista2').on("click",agregarAlumoCed2);
 	$('#eliminarLista').on("click",eliminarList);
+	$('#genLista').on('click',agregarPorAño);
+	$('#genLista2').on('click',agregarPorSeccionA);
+	$('.listado2').on("click",'#delteAlum',eliminarAlumnoLista);
+	$('.listado1').on("click",'#verLista',mostrarListass);
 	ValidNum();
 	llenarLista();
-	
 }
 // ------------------------ Variables Globales ------------------//
-	var opcionesP1, opcionesP2, opcionesP3,opcionesP4, nuevaListaNombre, lastID;
+	var opcionesP1, opcionesP2, opcionesP3,opcionesP4,opcionesP5, nuevaListaNombre, lastID,idListaCheck,fecha = GetTodayDate();
 
 // --------------------- FIN Variables Globales ------------------//
 
@@ -70,17 +73,24 @@ function botonera1(){
 	$('#atrasGL1 > #at').on("click",function(){mostrarOcultar("tituloPrincipal","ocultaLista,.titulo1");});
 
 	// Ingreso - Primer Boton Atras 
-	$('#atrasGL2 > #atras').on("click",function(){mostrarOcultar("ocultaLista","listaMat1");});
-	$('#atrasGL2 > #at').on("click",function(){mostrarOcultar("ocultaLista","listaMat1");});
+	$('#atrasGL2 > #atras').on("click",function(){
+		mostrarOcultar("ocultaLista","listaMat1");
+	});
+	$('#atrasGL2 > #at').on("click",function(){
+		mostrarOcultar("ocultaLista","listaMat1");
+	});
 
-
+/*
 	// Ingreso - Segundo Boton Atras
-	$('#atrasGL2 > #atras').on("click",function(){mostrarOcultar("ocultaLista","listaMat1");});
+	$('#atrasGL2 > #atras').on("click",function(){mostrarOcultar("ocultaLista","listaMat1");
+	});
 	$('#atrasGL2 > #at').on("click",function(){mostrarOcultar("ocultaLista","listaMat1");});
-
+*/
 	//Ingreso - Tercer Boton Atras
-	$('#atrasGL3 > #atras').on("click",function(){mostrarOcultar("listaMat1","cedAlumno");});
-	$('#atrasGL3 > #at').on("click",function(){mostrarOcultar("listaMat1","cedAlumno");});
+	$('#atrasGL3 > #atras').on("click",function(){mostrarOcultar("listaMat1","cedAlumno");
+	$("#listTipo1 option[value='0']").attr("selected",true);});
+	$('#atrasGL3 > #at').on("click",function(){mostrarOcultar("listaMat1","cedAlumno");
+	$("#listTipo1 option[value='0']").attr("selected",true);});
 
 	//Ingreso - Cuarto Boton Atras
 	$('#atrasGL6 > #atras').on("click",function(){mostrarOcultar("nuevaLista","hideLista");});
@@ -113,16 +123,28 @@ function botonera1(){
 
 function comprobarCedula(ced){
 	ced = $('#cedAInsertar').val();
+	//comprobarCedulaLista(idListaCheck,ced);
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+	var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaLista.php?jsoncallback=?";
 	$.getJSON(url, {cedula:ced}).done(function(data){
 		if(data.num == 1){
-			$('#ingresarAlumnoCed,#ingresarAlumnoLista2,#genrarLista').prop("disabled",false);
-			$('#cedAInsertar,#cedAlumno2').css({"border":"2px solid rgb(212, 208, 186)"});
+			$.getJSON(url2,{id:idListaCheck, ced:ced}).done(function(data){
+				if(data.num == 0 && ced !=""){
+					$('#ingresarAlumnoCed,#ingresarAlumnoLista2,#genrarLista').prop("disabled",false);
+					$('#cedAInsertar,#cedAlumno2').css({"border":"2px solid rgb(212, 208, 186)"});
+				}
+				else{
+					$('#ingresarAlumnoCed').prop("disabled",true).addClass("disabled");
+				$('#cedAInsertar,#cedAlumno2').css({"border":"2px solid rgb(242,20,20)"}	);
+				$('#cedAInsertar,#cedAlumno2').val("").attr("placeholder","Existe en Lista");
+				}
+
+			});
 		}
 		else{
 			$('#ingresarAlumnoCed').prop("disabled",true).addClass("disabled");
 			$('#cedAInsertar,#cedAlumno2').css({"border":"2px solid rgb(242,20,20)"});
-			$('#cedAInsertar,#cedAlumno2').val("").attr("placeholder","Cedula Invalida");
+			$('#cedAInsertar,#cedAlumno2').val("").attr("placeholder","Cedula Invalida/Existe en Lista");
 		}
 	});
 
@@ -144,12 +166,14 @@ function comprobarLista(nom){
 		}
 	})
 }
+
 function consultarLista(id){
 	var sex,n=1;
 	var list = $('#listados2 tbody');
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarListas.php?jsoncallback=?";
 	$('#del > tr').remove();
 	$.getJSON(url,{idList:id}).done(function(data){
+		if(data.num !=0){
 		$.each(data,function(i,item){
 			if(item.sexo == 1){
 				sex = "F";
@@ -157,10 +181,33 @@ function consultarLista(id){
 			else{
 				sex = "M";
 			}
-			list.append("<tr><td value="+item.idLista+">"+n+"</td><td>"+item.nombApellido+"</td><td>"+sex+"</td><td><a href="+'#'+">Eliminar</a></td></tr>");
+			list.append("<tr><td value="+item.idLista+">"+n+"</td><td>"+item.nombApellido+"</td><td>"+sex+"</td><td><a id='delteAlum' name="+item.idLista+">Eliminar</a></td></tr>");
 			n++;
 			mostrarOcultar('listado2','a');
 			//console.log("nombre:"+item.nombApellido+"\n sexo: "+ sex +" \n id: "+item.idLista );
+		});
+		}
+		else
+		{
+			alert(data.mensaje);
+		}
+	});
+}
+function consultarListas2(){
+	var gra, n=1;
+	var list = $('#listados1 tbody');
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarListas2.php?jsoncallback=?";
+	$('#del2 > tr').remove();
+	$.getJSON(url).done(function(data){
+		$.each(data,function(i,item){
+		if(item.grado == 0){
+			gra = "-----";
+		}else{
+			gra = item.grado;
+		}
+		list.append("<tr><td value="+item.idLista+">"+n+"</td><td>"+item.nombLista+"</td><td>"+gra+"</td><td>"+item.fechaC+"</td><td><a id='verLista' name="+item.idLista+">>></a></td></tr>");
+			n++;
+		mostrarOcultar('listado1','listado2');
 		});
 	});
 }
@@ -192,7 +239,7 @@ function crearNuevaLista(){
 		$('#nuevaListaNom').val("").attr("placeholder","Inserte Nombre/Lista");
     }
     else{
-		$.getJSON(url,{idLista: lista, nomLista: nuevaListaNombre}).done(function(data){
+		$.getJSON(url,{idLista: lista, nomLista: nuevaListaNombre,fechaC: fecha}).done(function(data){
 			mostrarOcultar('hideLista','nuevaLista');
 			var last = data.ultimaID;
 			lastID = last;
@@ -235,32 +282,30 @@ function primeraLista(){
 	if(lista !=0){
 		mostrarOcultar("cedAlumno","listaMat1");
 		opcionesP1 = lista;
+		idListaCheck = lista;
+		resetear();
 	}else{
 		mostrarOcultar('','cedAlumno');
 	}
 }
 function resetear(){
 	$('input[type=text]').val("");
+	$('input[type=text]').attr("placeholder"," ");
+	$('input[type=text]').css({"border":"2px solid rgb(212, 208, 186)"});
 }
 function segundaLista(){
 	var lista = $('#listTipo2 option:selected').val();
+
 	var lista2 = $('#listTipo2 option:selected').attr("name");
-	if(lista2 == 1){
-		mostrarOcultar("listado1","listado2");
-		
+	opcionesP5 = lista2;
+
+	if(lista >=1){
 		consultarLista(lista);
-	}else
-	if(lista2 == 2){
 		mostrarOcultar("listado2","listado1");
-		consultarLista(lista);
-	}else
-	if(lista2 == 3){
-		mostrarOcultar("listado2","listado1");
-		
-		consultarLista(lista);
 	}else
 	if(lista == "T"){
-		mostrarOcultar("listado1,.listado2","a");
+		consultarListas2();
+		mostrarOcultar("listado2","listado1");
 	}
 	else{
 		mostrarOcultar('a','listado1,.listado2');
@@ -297,9 +342,61 @@ function cuartaLista(){
 		alert("Seleccione una opcion Valida")
 	}
 }
+
+function agregarPorAño(){
+	var year = $('#listaYear option:selected').val();
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/agregaryearLista.php?jsoncallback=?";
+	$.getJSON(url,{id:lastID, year:year}).done(function(data){
+		mostrarOcultar()
+		alert(data.mensaje);
+	});
+
+}
+function agregarPorSeccionA(){
+	var year = $('#listaYears option:selected').val();
+	var secc = $('#seC option:selected').val();
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/agregaryearListaSeccion.php?jsoncallback=?";
+	$.getJSON(url,{id:lastID, year:year,sec:secc}).done(function(data){
+		alert(data.mensaje);
+		//mostrarOcultar("hideLista","gradoSeccionLista");
+	});
+}
 function ValidNum() {
 	$("#cedAInsertar,#cedAlumno2").attr("onkeypress", "return ValidNum(event);")
     if (event.keyCode < 48 || event.keyCode > 57) {
         event.returnValue = false;
     }
+}
+
+function eliminarAlumnoLista(data){
+	var elim = data.currentTarget.name;
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/eliminarAlumnoLista.php?jsoncallback=?";
+	$.getJSON(url,{ids:elim}).done(function(data){
+		alert(data.mensaje);
+		consultarLista(opcionesP5);
+	});	
+}
+function mostrarListass(data){
+	var mm = data.currentTarget.name;
+	consultarLista(mm);
+	mostrarOcultar('listado1','listado2');
+}
+/*Funcion para obtener la fecha actual*/
+function GetTodayDate() {
+   var tdate = new Date();
+   var dd = tdate.getDate(); //yields day
+   var MM = tdate.getMonth(); //yields month
+   var yyyy = tdate.getFullYear(); //yields year
+  // var xxx = dd + "-" +( MM+1) + "-" + yyyy;
+  if(dd < 10){
+  	 var xxx = yyyy+ "-" +(0+MM+1)+ "-" +0+ dd;
+  }else
+  if(MM < 10){
+  	var xxx = yyyy+ "-" +0+(MM+1)+ "-" + dd;
+  }
+  else{
+  	var xxx = yyyy+ "-" +(MM+1)+ "-" + dd;
+  }
+  
+   return xxx;
 }

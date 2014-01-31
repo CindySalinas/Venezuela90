@@ -330,18 +330,18 @@
 								<label>Seleccione Grado</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>1er Año</option>
-										<option>2do Año</option>
-										<option>3er Año</option>
-										<option>4to Año</option>
-										<option>5to Año</option>
+									<select class="espLeft" id="listaYear">
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<td colspan=2 class="centrar">
-									<button class="topBB">Generar Lista</button>
+									<button class="topBB" id="genLista">Generar Lista</button>
 								</td>
 							</tr>
 						</tbody>
@@ -361,12 +361,12 @@
 								<label>Seleccione Grado</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>1er Año</option>
-										<option>2do Año</option>
-										<option>3er Año</option>
-										<option>4to Año</option>
-										<option>5to Año</option>
+									<select class="espLeft" id="listaYears">
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
 									</select>
 								</td>
 							</tr>
@@ -375,16 +375,16 @@
 								<label>Seleccione Seccion</label>
 								</td>
 								<td>
-									<select class="espLeft">
-										<option>A</option>
-										<option>B</option>
-										<option>U</option>
+									<select class="espLeft" id="seC">
+										<option value="1">A</option>
+										<option value="2">B</option>
+										<option value="3">U</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<td colspan=2 class="centrar">
-									<button class="topBB">Generar Lista</button>
+									<button class="topBB" id="genLista2">Generar Lista</button>
 								</td>
 							</tr>
 						</tbody>
@@ -426,7 +426,7 @@
 			</div>
 
 			<div class="listado1">
-				<table class="centrar">					
+				<table class="centrar" id="listados1">					
 					<thead>
 						<tr>
 							<th>N°</th>
@@ -436,8 +436,8 @@
 							<th></th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
+					<tbody id="del2">
+						<!--<tr>
 							<td>01</td>
 							<td>Lista 1</td>
 							<td>------</td>
@@ -450,7 +450,7 @@
 							<td>1er Año</td>
 							<td>20-02-2013</td>
 							<td><a href="#">>></a></td>
-						</tr>
+						</tr>-->
 					</tbody>
 				</table>
 			</div>
@@ -487,7 +487,6 @@
 					</tbody>
 				</table>
 			</div>
-				
 			</article>
 			<article id="noticias" class="listado3">
 				<header class="titulo3"><h3>Eliminar</h3></header>

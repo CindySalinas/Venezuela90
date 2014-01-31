@@ -3,17 +3,24 @@
 include("conex.php");
 //formato JSON
 header('Content-type: application/json');
+$idLista = $_GET["id"];
+$cedula= $_GET["ced"];
 
-$idLista= $_GET["idLista"];
-$nomLista= $_GET["nomLista"];
-$fecha = $_GET["fechaC"];
-//$sql = "INSERT INTO listas (id_tipo_lista) VALUES ('$idTipoLista')";
-$sql = "INSERT INTO  listas (id_tipo_lista,nombre_Lista,fecha_creacion) VALUES ('$idLista','$nomLista','$fecha')";
+$sql = "SELECT * FROM lista_estudiantes where Cedula='$cedula' AND id_lista ='$idLista'";
+
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
-$utlID = mysql_insert_id();
+$records = array();
+$i =0;
 
-$estado["mensaje"]= "Nueva lista creada";
-$estado["ultimaID"]= $utlID;
+$cantidad = mysql_num_rows($result);
+//$estado["num"]= $cantidad;
+while($row = mysql_fetch_row($result)){
+		
+	$i++;	
+}
+
+$estado["num"] = $i;
+
 //Convertir los resultados a formato json
 $estadoJson = json_encode($estado);
 
