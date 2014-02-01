@@ -1,13 +1,14 @@
-
 <?php
 // conexion bd 
 include("conex.php");
 //formato JSON
-//header('Content-type: application/json');
+header('Content-type: application/json');
 
-$cedula= $_GET["cedDocente"];
+$cedulaDocente= $_GET["cedul"];
+$asignaturaDocente= $_GET["asignatura"];
+$gradoDocente= $_GET["grado"];
 
-$sql = "SELECT * FROM docente D INNER JOIN usuario U ON D.Id_Usuario_Docente = U.Id_Usuario where Cedula='$cedula'";
+$sql = "Select M.Id_Materia, M.Nombre_Materia FROM materia M INNER JOIN materia_docente A ON M.Id_Materia = A.Id_Materia INNER JOIN docente D ON A.Id_Docente = D.Id_Docente INNER JOIN usuario U ON D.Id_Usuario_Docente = U.Id_Usuario WHERE U.Cedula = '$cedulaDocente' AND A.Id_Grado='$gradoDocente' AND A.Id_Materia = '$asignaturaDocente'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();

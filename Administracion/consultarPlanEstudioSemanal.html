@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Gestion De Libros</title>
+	<title>Venezuela 90 | Gestion Plan Estudio Semanal</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/gestionAdministracionPlanSemanal.js"></script>
 </head>
 <body class="p-admision">
 
@@ -146,80 +147,9 @@
 			</article>
 			<article id="noticias">
 				<header class="titulo"><h3>Consultar Plan De Estudio Por Lapso</h3></header>
-				<div class="planSem centrar">
-					<div class="disIn disInUno">
-						<figure>
-							<img width=200 src="../images/ministerio.png">	
-						</figure>
-					</div>
-					<div class="disIn disMe">
-						<div class="bold">REPÚBLICA BOLIVARIANA DE VENEZUELA</div>
-						<div class="bold">MINISTERIO DEL PODER POPULAR PARA LA EDUCACIÓN</div>
-						<div class="bold">UNIDAD EDUCATIVA "VENEZUELA 90"</div>
-						<div class="bold">VALENCIA-ESTADO CARABOBO</div>
-						<div class="bold">Telf. (0241) 8595806</div>
-					</div>
-					<div class="disIn disInDos">
-						<figure>
-							<img width=150 src="../images/logo.png">	
-						</figure>
-					</div>
-					<div class="borderDivPS centrar">
-						PLANES SEMANALES
-					</div>
-					<table>
-					<tr>
-						<td class="right marRig">SEMANA N:</td>
-						<td class="left marLef">_____</td>
-						<td class="right marRig">FECHA:</td>
-						<td class="left marLef">DESDE________HASTA________</td>
-						<td class="right marRig">SESIONES:</td>
-						<td class="left marLef">___________</td>
-					</tr>
-					<tr>
-						<td class="right marRig">AREA:</td>
-						<td class="left marLef">_____________</td>
-						<td class="right marRig">DOCENTE:</td>
-						<td class="left marLef">_______________</td>
-						<td class="right marRig">N° ALUMNOS:</td>
-						<td class="left marLef">________</td>
-					</tr>
-				</table>
-
-				<table border=1 class="tablaCarCon">
-					
-						<tr class="heLin">
-							<td rowspan=3 class="marObEs fontBold"><p>PRIMERA SESIÓN</p><p>FECHA: ______</p></td>
-							<td class="marTecEClass">TEMA</td>
-							<td class="marTecEClass">INICIO</td>
-							<td class="marTecEClass">DESARROLLO</td>
-							<td class="marTecEClass">CIERRE</td>
-						</tr>
-						<tr class="heightTr">
-							<td><span>Cont1</span></td>
-							<td><span>Cont2</span></td>
-							<td><span>Cont3</span></td>
-							<td><span>Cont4</span></td>
-						</tr>
-						<tr>							
-						</tr>
-						<tr class="heightTr">
-							<td rowspan=3 class="fontBold"><p>SEGUNDA SESIÓN:</p><p>FECHA: ___________</p></td>
-							<td><span>Cont5</span></td>
-							<td><span>Cont6</span></td>
-							<td><span>Cont7</span></td>
-							<td><span>Cont8</span></td>
-						</tr>
-						<tr></tr>
-						<tr></tr>
-						<tr>
-							<td colspan=5 class="ppad"><label>OBSERVACIÓN: </label><input class="weiDiv" type="text"></td>
-						</tr>
-				</table>
-				<ul id="listaGestion">
-					<li><a id="bloque2" onclick="window.print(); void 0"></a><a class="textoAbajo" onclick="window.print(); void 0">Imprimir</a></li>
-				</ul>
-				</div>				
+				<div id="divAlerta" class='alert alert-danger'>
+					No Existe Planificación
+				</div>	
 			</article>
 
 

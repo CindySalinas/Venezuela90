@@ -1,13 +1,10 @@
-
 <?php
 // conexion bd 
 include("conex.php");
 //formato JSON
-//header('Content-type: application/json');
+header('Content-type: application/json');
 
-$cedula= $_GET["cedDocente"];
-
-$sql = "SELECT * FROM docente D INNER JOIN usuario U ON D.Id_Usuario_Docente = U.Id_Usuario where Cedula='$cedula'";
+$sql = "Select Id_Materia, Nombre_Materia FROM materia";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();
@@ -17,14 +14,15 @@ $cantidad = mysql_num_rows($result);
 //$estado["num"]= $cantidad;
 while($row = mysql_fetch_row($result)){
 		
+	$estado[$i]["idMateria"]= $row[0];
+	$estado[$i]["nombreMateria"]= $row[1];
 	$i++;	
 }
-
-$estado["num"] = $i;
-
 //Convertir los resultados a formato json
+
 $estadoJson = json_encode($estado);
 
 /*Muestra el resultado en un formato que no da problemas de seguridad en browsers */
 echo $_GET['jsoncallback'] . '(' . $estadoJson . ');';
+//$sql= "SELECT Cedula,Nombre,Apellido,Correo FROM usuario WHERE Cedula='$usr'";
 ?>
