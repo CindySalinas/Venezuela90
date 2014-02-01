@@ -1,6 +1,10 @@
 $(document).on("ready",iniciar);
 
+var cantidades;
+var conceptoDe;
+
 function iniciar(){
+	resetear()
 	gestionAdministrativa();
 	$('.guardarP').on("click",guardarPago);
 	$('.preVerP').on("click",previ);
@@ -9,6 +13,9 @@ function iniciar(){
 	$('.busInAClass').on("click",cargarTabla);
 	$('#BuscarConsulta').css({"display":"block","margin":"10px auto"});
 	$('#BuscarConsulta').on("click",consultarInfoAdmin);
+
+	$('#cantMeses').on("change",generarMeses);
+	$('#conceptoP').on("change",comprobarConcepto);
 }
 
 function gestionAdministrativa(){
@@ -17,11 +24,13 @@ function gestionAdministrativa(){
 			$('.informaAdm , .mensControl,.registroCancelacion,.registroCancelacion2').hide("slide");
 			$('#canMensualidades,.asd').show("slow");
 			$('.registroCancelacion').toggle("slide");
+			resetear();
 		}
 		else{
 			$('.alert').remove();
 			$('.registroCancelacion').toggle("slide");
 			$('#canMensualidades,.asd').show("slow");
+			resetear();
 		}
 	});
 
@@ -29,21 +38,20 @@ function gestionAdministrativa(){
 		if($('.registroCancelacion').is(":visible") || $('.mensControl').is(":visible") ||$('.registroCancelacion2').is(":visible")){
 			$('.registroCancelacion,.mensControl').hide("slide");
 			$('.informaAdm').toggle("slide");
+			resetear();
 		}
-		else
+		else{
 			$('.informaAdm').toggle("slide");
+			resetear();
+		}
 	});
 	var controlM = $('.controlM').click(function(){
 		if($('.registroCancelacion').is(":visible") || $('.informaAdm').is(":visible")){
 			$('.registroCancelacion,.informaAdm').hide("slide");
-			$('.mensControl').toggle("slide");
+			$('.mensControl').toggle("slide");resetear();
 		}
-		else
-			$('.mensControl').toggle("slide");
-
-	});
-	var reporte = $('.reportesC').click(function(){
-
+		else{
+			$('.mensControl').toggle("slide");resetear();}
 
 	});
 	var atr = $('.atrasP').click(function(){
@@ -92,6 +100,10 @@ function guardarPago(){
 }
 function resetear(){
 	$('input[type=text]').val("");
+	$(".divDeLosMeses").remove();
+	$("#cantMeses option[value='0']").attr("selected",true);
+	$("#conceptoP option[value='nadaConcepto']").attr("selected",true);
+	$("#divMensualidadesOculto").css("display","none");
 
 }
 function previ(){
@@ -173,4 +185,38 @@ function cargarTabla(){
 function consultarInfoAdmin(){
 	$('.atras2 > #atras, #at').on("click",function(){ actionBotones('buscQ','tablasAdministrativa')})
 	$('#BuscarConsulta').on("click",function(){actionBotones('tablasAdministrativa','buscQ')});
+}
+
+function generarMeses () 
+{
+	cantidades = $("#cantMeses option:selected").val();
+	$(".divDeLosMeses").remove();
+	if(cantidades>0 && cantidades<12)
+	{
+		for(var x=0; x<cantidades; x++)
+		{
+			$("#meses").append("<div class='divDeLosMeses'><label class='mmL'>Mes "+(x+1)+":&nbsp;</label><select type='text' class='in1 mmL'><option value='Mes0'>------------------</option><option value='Enero'>Enero</option><option value='Febrero'>Febrero</option><option value='Marzo'>Marzo</option><option value='Abril'>Abril</option><option value='Mayo'>Mayo</option><option value='Junio'>Junio</option><option value='Julio'>Julio</option><option value='Agosto'>Agosto</option><option value='Septiembre'>Septiembre</option><option value='Octubre'>Octubre</option><option value='Noviembre'>Noviembre</option><option value='Diciembre'>Diciembre</option></select></div>")
+		}
+		
+	}	
+}
+
+function comprobarConcepto() {
+	conceptoDe = $("#conceptoP option:selected").val();
+	if(conceptoDe=='Mensualidades')
+	{
+		$("#divMensualidadesOculto").css("display","block");
+	}
+	else if(conceptoDe=='Inscripcion')
+	{
+		$("#divMensualidadesOculto").css("display","none");
+	}
+	else if(conceptoDe=='Otros')
+	{
+		$("#divMensualidadesOculto").css("display","none");
+	}
+	else
+	{
+		$("#divMensualidadesOculto").css("display","none");
+	}
 }

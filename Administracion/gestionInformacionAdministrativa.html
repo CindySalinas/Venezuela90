@@ -169,23 +169,48 @@
 						<p>Av. Soublette entre Independencia y Rondón N° 102-20 - Telf.: (0241) 859.58.06 Inscrito en el M.E.D. Pd10140814 Valencia - Edo. Carabobo</p>
 					</div>
 					<div id="divMen2">
-						Recibo N° 
-						<span>038201</span>
+						Recibo N° <input type="text" id="monto">
 						<p>POR Bs. <input type="text" id="monto"></p>
 						<p class="ocul">CEDULA <input type="text" id="ced"></p>
 					</div>
 					<div class="diCom">
 						<div>
 							<br>
-							<label>He recibido de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+							<label>He recibido de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							<input class="in1 mmL" type="text" id="personaPago">
 							<div>
-							<label class="mmL">La cantidad de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+							<label class="mmL">La cantidad de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							<input class="in1 mmL" type="text" id="monto2">
 						</div>
 						<div>
-							<label class="mmL">Por concepto de:&nbsp;</label>
-							<input class="in1 mmL"type="text" id="conceptoP">
+							<label class="mmL">Por concepto de:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+							<select class="in1 mmL" id="conceptoP">
+								<option value="nadaConcepto">-------------------------------</option>
+								<option value="Inscripcion">Inscripcion</option>
+								<option value="Mensualidades">Mensualidades</option>
+								<option value="Otros">Otros</option>
+							</select>
+						</div>
+						<div id="divMensualidadesOculto">
+							<label class="mmL">Nro Mensualidades:</label>
+							<select class="in1 mmL" type="text" id="cantMeses">
+								<option value="0">----------------------------------</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</div>
+						<div id="meses">
+
 						</div>
 						<div class="left" id="algoOcul">
 							<label id="val" class="mmL centrar">Valencia,&nbsp;</label>
