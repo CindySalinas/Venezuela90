@@ -4,21 +4,23 @@ include("conex.php");
 //formato JSON
 header('Content-type: application/json');
 
-$val1= $_GET["val1"];
-$val2= $_GET["val2"];
-$val3= $_GET["val3"];
-$val4= $_GET["val4"];
-$val5= $_GET["val5"];
-$val6= $_GET["val6"];
+$idUsuario= $_GET["idUsuario"];
+$nomRecibo= $_GET["nombreRecibidoDe"];
+$cantidad= $_GET["cantidadTexto"];
+$fecha= $_GET["fec"];
+$numeroRecibo= $_GET["numRecibo"];
+$montoBs= $_GET["montoBss"];
+$conceptoDe= $_GET["concepto"];
 
-$sql = "INSERT INTO cancelacion_mensualidades (monto_Bs,monto_txt,nombre_pago,concepto_pago,fecha,cedula) VALUES('$val1','$val4','$val3','$val5','$val6','$val2')";
+$sql = "INSERT INTO cancelacion_mensualidades (numero_factura, monto_Bs,monto_txt,nombre_pago,concepto_pago,fecha,id_usuario_cancelacion_mensualidades) VALUES('$numeroRecibo','$montoBs','$cantidad','$nomRecibo','$conceptoDe','$fecha','$idUsuario')";
+
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 
 if(mysql_affected_rows() !=0){
 	$estado["con"]=1;
 	$estado["mensaje"] = "Pago efectuado con Exito";
-	
-}else{
+}
+else{
 	$estado["con"]=0;
 	$estado["mensaje"] = "Error en generar Factura";
 }

@@ -14,11 +14,21 @@ $i =0;
 
 $cantidad = mysql_num_rows($result);
 //$estado["num"]= $cantidad;
-while($row = mysql_fetch_row($result)){		
+while($row = mysql_fetch_row($result)){
+	$estado[$i]["idUsuario"] = $row[0];	
+	$estado[$i]["nombre"] = $row[1];	
+	$estado[$i]["apellido"] = $row[2];	
+	$estado[$i]["cedula"] = $row[3];	
+	$estado[$i]["email"] = $row[4];	
+	$estado[$i]["password"] = $row[5];	
+	$estado[$i]["idgenero"] = $row[6];	
+	$estado[$i]["estadoCivil"] = $row[7];	
+	$estado[$i]["nacionalidad"] = $row[8];	
+	$estado[$i]["telefono"] = $row[9];	
+	$estado[$i]["direccion"] = $row[10];	
+	$estado[$i]["rol"] = $row[11];	
 	$i++;	
 }
-
-$estado["num"] = $i;
 
 //Convertir los resultados a formato json
 $estadoJson = json_encode($estado);

@@ -12,10 +12,44 @@ function iniciar(){
 	$('#tipoBusc').on("change",buscReporte);
 	$('.busInAClass').on("click",cargarTabla);
 	$('#BuscarConsulta').css({"display":"block","margin":"10px auto"});
-	$('#BuscarConsulta').on("click",consultarInfoAdmin);
-
+	$('.atras2 > #atras, #at').on("click",function(){ actionBotones('buscQ','tablasAdministrativa')});
+	$('#BuscarConsulta').on("click",function(){consultaInfoAd('tablasAdministrativa','buscQ')});
 	$('#cantMeses').on("change",generarMeses);
 	$('#conceptoP').on("change",comprobarConcepto);
+}
+
+function consultaInfoAd (mostrar,ocultar)
+{
+	var cedul = $("#cedulaBusc").val();
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+	$.getJSON(url,{
+	cedula:cedul
+	}).done(function(data){
+		if(data.num>0)
+		{
+			/*var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
+			$.getJSON(url,{
+			cedula:cedula
+			}).done(function(data){
+				$.each(data, function(i,item){			
+					var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidades.php?jsoncallback=?";
+					$.getJSON(url,{
+					idUsuario:item.idUsuario
+					}).done(function(data){
+						$.each(data, function(i,item){
+							});
+					});
+				});
+			});*/
+		}
+		else
+		{
+			alert("No Existe La Cedula");
+		}
+	});
+
+	/*$('.'+mostrar).show("slide");
+	$('.'+ocultar).hide("slow");*/	
 }
 
 function gestionAdministrativa(){
@@ -62,41 +96,152 @@ function gestionAdministrativa(){
 // variables globales
 
 function guardarPago(){
-	var monto = $('#monto').val(),
-	ced = $('#ced').val(),
-	personaPago = $('#personaPago').val(),
-	monto2 = $('#monto2').val(),
-	conceptoP = $('#conceptoP').val(),
-	dia = $('#dia').val(),
-	mes = $('#mes').val(),
-	year= $('#year').val();
-	$('.alert').remove();
-	//var fecha = dia+"-"+mes+"-"+"20"+year;
-	var fecha = "20"+year+"-"+mes+"-"+dia;
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/pago.php?jsoncallback=?";
-	$.getJSON(url,{
-		val1:monto,
-		val2:ced,
-		val3:personaPago,
-		val4:monto2,
-		val5:conceptoP,
-		val6:fecha
-	}).done(function(data){
-		if(data.con!=0){
-			resetear();
-			$('#msj').append("<div class='alert alert-success'>"+data.mensaje+"</div>");
-			$('#msj').show("slide");
-			$('#canMensualidades,.asd').hide("slow");
-			
+
+	var recibidoDe=$("#personaPago").val();
+	var cantidad=$("#monto2").val();	
+	var fecha=$("#dia option:selected").val() + "/" + $("#mes option:selected").val() + "/" + $("#year option:selected").val(); 
+	var numeroRecibo=$("#numRecibo").val();
+	var cedula=$("#ced").val();
+	var montoBS=$("#monto").val();
+	var conceptoDefinitivo;
+
+	if(recibidoDe=="" ||  recibidoDe==" " || cantidad=="" ||  cantidad==" " || numeroRecibo=="" ||  numeroRecibo==" " || cedula=="" ||  cedula==" " || montoBS=="" ||  montoBS==" ")
+	{
+		alert("Complete Los Campos");
+	}
+	else if(conceptoDe==undefined )
+	{
+		alert("Ingrese Un Concepto");
+	}
+	else if(conceptoDe=="nadaConcepto")
+	{
+		alert("Seleccione Un Concepto");
+	}
+	else if(conceptoDe=="Inscripcion")
+	{
+		conceptoDefinitivo=conceptoDe;
+	}
+	else if(conceptoDe=="Mensualidades")
+	{	
+		var cantidadMeses=$("#cantMeses option:selected").val();
+
+		if(cantidadMeses==0)
+		{
+			alert("Ingrese Numero De Mensualidades a Pagar");
 		}
-		else{
-			resetear();
-			$('#msj').append("<div class='alert alet-danger'>"+data.mensaje+"</div>)");
-			$('#canMensualidades,asd').hide("slow");
-			$('#msj').show("slide");
-		}
-		
-	});
+		else
+		{
+			var nombreMeses = new Array(cantidadMeses);
+
+			for (var x = 0; x < cantidadMeses; x++) {
+				nombreMeses[x]=$("#mesMen"+(x+1)).val();
+			};
+			var contando=0;
+			for (var x = 0; x < cantidadMeses; x++) {
+				if(nombreMeses[x]=="Mes0")
+					contando++;
+			};
+			if(contando>0)
+			{
+				alert("Seleccione Los Meses");
+			}
+			else
+			{
+				var nombreMesesObject={};
+
+			    for(i in nombreMeses)
+			    {
+			        nombreMesesObject[i] = nombreMeses[i];
+			    }
+			    nombreMesesObject=JSON.stringify(nombreMesesObject);
+
+			    var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+				$.getJSON(url,{
+					cedula:cedula
+				}).done(function(data){
+					if(data.num>0)
+					{
+						var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
+						$.getJSON(url,{
+							cedula:cedula
+						}).done(function(data){
+							$.each(data, function(i,item){			
+								var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarCancelacionMensualidadesPagadas.php?jsoncallback=?";
+								$.getJSON(url,{
+									idUsuario:item.idUsuario,
+									nombreRecibidoDe:recibidoDe,
+									cantidadTexto:cantidad,
+									fec:fecha,
+									numRecibo:numeroRecibo,
+									montoBss:montoBS,
+									concepto:conceptoDe,
+									mes:nombreMesesObject,
+									cant:cantidadMeses
+								}).done(function(data){
+									if(data.con>0){
+										resetear();
+										alert("Se Ha Realizado El Pago Satisfactoriamente");
+									}
+									else
+										alert(data.mensaje);
+								});
+							});
+						});
+					}
+					else
+					{
+						alert("La Cedula Es Incorrecta");
+					}
+				});
+
+			}
+		}	
+
+	}
+	else if(conceptoDe=="Otros")
+	{
+		conceptoDefinitivo=$("#conceptoOtro").val();
+	}
+
+	if(conceptoDe!="Mensualidades")
+	{
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+		$.getJSON(url,{
+		cedula:cedula
+		}).done(function(data){
+			if(data.num>0)
+			{
+				var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
+				$.getJSON(url,{
+				cedula:cedula
+				}).done(function(data){
+					$.each(data, function(i,item){			
+					var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarCancelacionMensualidades.php?jsoncallback=?";
+					$.getJSON(url,{
+					idUsuario:item.idUsuario,
+					nombreRecibidoDe:recibidoDe,
+					cantidadTexto:cantidad,
+					fec:fecha,
+					numRecibo:numeroRecibo,
+					montoBss:montoBS,
+					concepto:conceptoDefinitivo
+					}).done(function(data){
+						if(data.con>0){
+							resetear();
+							alert("Se Ha Realizado El Pago Satisfactoriamente");
+						}
+						else
+							alert("No Se Ha Podido Efectuar La Factura");
+						});
+					});
+				});
+			}
+			else
+			{
+				alert("La Cedula Es Incorrecta");
+			}
+		});
+	}
 }
 function resetear(){
 	$('input[type=text]').val("");
@@ -104,6 +249,11 @@ function resetear(){
 	$("#cantMeses option[value='0']").attr("selected",true);
 	$("#conceptoP option[value='nadaConcepto']").attr("selected",true);
 	$("#divMensualidadesOculto").css("display","none");
+	$("#conceptoOtrosOculto").css("display","none");
+
+	$("#dia option[value='"+diaaa()+"']").attr("selected",true);
+	$("#mes option[value='"+messs()+"']").attr("selected",true);
+	$("#year option[value='"+yearrr()+"']").attr("selected",true);
 
 }
 function previ(){
@@ -182,11 +332,6 @@ function cargarTabla(){
 	$('#tablaInA,#links').show();
 }
 
-function consultarInfoAdmin(){
-	$('.atras2 > #atras, #at').on("click",function(){ actionBotones('buscQ','tablasAdministrativa')})
-	$('#BuscarConsulta').on("click",function(){actionBotones('tablasAdministrativa','buscQ')});
-}
-
 function generarMeses () 
 {
 	cantidades = $("#cantMeses option:selected").val();
@@ -195,7 +340,7 @@ function generarMeses ()
 	{
 		for(var x=0; x<cantidades; x++)
 		{
-			$("#meses").append("<div class='divDeLosMeses'><label class='mmL'>Mes "+(x+1)+":&nbsp;</label><select type='text' class='in1 mmL'><option value='Mes0'>------------------</option><option value='Enero'>Enero</option><option value='Febrero'>Febrero</option><option value='Marzo'>Marzo</option><option value='Abril'>Abril</option><option value='Mayo'>Mayo</option><option value='Junio'>Junio</option><option value='Julio'>Julio</option><option value='Agosto'>Agosto</option><option value='Septiembre'>Septiembre</option><option value='Octubre'>Octubre</option><option value='Noviembre'>Noviembre</option><option value='Diciembre'>Diciembre</option></select></div>")
+			$("#meses").append("<div class='divDeLosMeses'><label class='mmL'>Mes "+(x+1)+":&nbsp;</label><select type='text' class='in1 mmL' id='mesMen"+(x+1)+"'><option value='Mes0'>------------------</option><option value='Enero'>Enero</option><option value='Febrero'>Febrero</option><option value='Marzo'>Marzo</option><option value='Abril'>Abril</option><option value='Mayo'>Mayo</option><option value='Junio'>Junio</option><option value='Julio'>Julio</option><option value='Agosto'>Agosto</option><option value='Septiembre'>Septiembre</option><option value='Octubre'>Octubre</option><option value='Noviembre'>Noviembre</option><option value='Diciembre'>Diciembre</option></select></div>")
 		}
 		
 	}	
@@ -206,17 +351,63 @@ function comprobarConcepto() {
 	if(conceptoDe=='Mensualidades')
 	{
 		$("#divMensualidadesOculto").css("display","block");
+		$(".divDeLosMeses").remove();
+		$("#conceptoOtrosOculto").css("display","none");
+		$("#conceptoOtro").val("");
 	}
 	else if(conceptoDe=='Inscripcion')
 	{
 		$("#divMensualidadesOculto").css("display","none");
+		$("#cantMeses option[value='0']").attr("selected",true);
+		$(".divDeLosMeses").remove();
+		$("#conceptoOtrosOculto").css("display","none");
+		$("#conceptoOtro").val("");
 	}
 	else if(conceptoDe=='Otros')
 	{
 		$("#divMensualidadesOculto").css("display","none");
+		$("#cantMeses option[value='0']").attr("selected",true);
+		$(".divDeLosMeses").remove();
+		$("#conceptoOtro").val("");
+		$("#conceptoOtrosOculto").css("display","block");
 	}
 	else
 	{
 		$("#divMensualidadesOculto").css("display","none");
+		$("#cantMeses option[value='0']").attr("selected",true);
+		$(".divDeLosMeses").remove();
+		$("#conceptoOtrosOculto").css("display","none");
+		$("#conceptoOtro").val("");
 	}
+}
+
+/*Funcion para obtener la fecha actual*/
+function messs()
+{
+  var f=new Date();
+  var mess = f.getMonth() + 1;
+  if(mess<10)
+  {
+  	mess="0"+mess;
+  }
+  return mess;
+}
+
+function diaaa()
+{
+  var f=new Date();
+
+  var diaa = f.getDate();
+  if(diaa<10)
+  {
+  	diaa="0"+diaa;
+  }
+  return diaa;
+}
+
+function yearrr()
+{  
+  var f=new Date();
+  var yearr = f.getFullYear();
+  return yearr;
 }
