@@ -43,7 +43,7 @@ while($row = mysql_fetch_array($result)){
 	$estado[$i]["resFechaSoli"]= $row[7];
 	$estado[$i]["estadoSoli"]= $row[10];
 	$estado[$i]["mailSoli"]= $row[11];
-	$estado[$i]["comentSoli"]=$row[2];
+	$estado[$i]["comentSoli"]=$row[8];
 	$estado[$i]["respSoli"]=$row[9];
 	$i++;	
 }

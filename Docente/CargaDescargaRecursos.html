@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link rel="stylesheet" href="../css/miEstilo2.css">
+<!--	<link rel="stylesheet" href="../css/miEstilo2.css">-->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
@@ -156,16 +156,17 @@
 			</article>	
 			<article id="noticias" class="noticiasClass">
 				<header><h3>Cargar Recursos</h3></header>
-					<form class="formReSol tabtab" enctype="multipart/form-data">
+					
+					<div class="formReSol tabtab">
 						<table border=1 class="widTab">
 							<tr>
 							<td class="right espacioRi">	
 								Materia: 
 							</td>
 							<td class="left espacioLe">
-								<select>
-									<option>Matematica</option>
-									<option>Ingles</option>
+								<select id="materias">
+									<!--<option>Matematica</option>
+									<option>Ingles</option>-->
 								</select>
 							</td>
 							</tr>
@@ -174,12 +175,12 @@
 								Grado: 
 							</td>
 							<td class="left espacioLe">
-								<select>
-									<option>1er Año</option>
+								<select id="grado">
+									<!--<option>1er Año</option>
 									<option>2do Año</option>
 									<option>3er Año</option>
 									<option>4to Año</option>
-									<option>5to Año</option>
+									<option>5to Año</option>-->
 								</select>
 							</td>
 							</tr>
@@ -188,10 +189,10 @@
 								Sección: 
 							</td>
 							<td class="left espacioLe">
-								<select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>	
+								<select id="seccion">
+									<option value="1">A</option>
+									<option value="2">B</option>
+									<option value="3">U</option>	
 								</select>
 							</td>
 							<tr>
@@ -199,14 +200,21 @@
 								Archivo: 
 							</td>
 							<td class="left espacioLe">
-								<input name="file" type="file">
+								<form enctype="multipart/form-data" class="subirArc">
+									<input id="archivos" type="file" name="archivos[]">
+								</form>
 							</td>
 							</tr>
 							<tr>
-								<td class="centrar" colspan=2><button class="bbbv">Subir</button></td>
+								<td class="centrar" colspan=2>
+									<input type="button" class="bbbv" id="iniciarCarga" value="Subir">
+									<!--<a class="bbbv" id="iniciarCarga">Subir</a>--></td>
 							</tr>	
 						</table>
-					</form>	
+						<div class="msj"></div>
+					<div class="msj2"></div>
+					<div class="msj3"></div>
+					</div>
 					<div id="atr" class="atras">
 						<a id="atras"></a>
 						<a id="at">Atrás</a>
@@ -215,7 +223,14 @@
 
 			<article id="noticias" class="noticiasClass2">
 				<header><h3>Descargar Recursos</h3></header>
-				<a href="InvestigacionDeOperaciones-Corte3.docx" target="_blank">Imagen</a>
+				<!--<a href="InvestigacionDeOperaciones-Corte3.docx" target="_blank">Imagen</a>-->
+				<!--<a id="matD">aaaa </a>-->
+				<div class="noticias">
+					<ul class="arch" id="listaGestion">
+
+					</ul>
+
+				</div>
 				<br><br><br>
 				<div id="atr" class="atras2">
 					<a id="atras"></a>
