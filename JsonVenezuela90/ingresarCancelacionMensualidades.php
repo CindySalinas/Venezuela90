@@ -11,8 +11,9 @@ $fecha= $_GET["fec"];
 $numeroRecibo= $_GET["numRecibo"];
 $montoBs= $_GET["montoBss"];
 $conceptoDe= $_GET["concepto"];
+$year= $_GET["year"];
 
-$sql = "INSERT INTO cancelacion_mensualidades (numero_factura, monto_Bs,monto_txt,nombre_pago,concepto_pago,fecha,id_usuario_cancelacion_mensualidades) VALUES('$numeroRecibo','$montoBs','$cantidad','$nomRecibo','$conceptoDe','$fecha','$idUsuario')";
+$sql = "INSERT INTO cancelacion_mensualidades (numero_factura,id_year_escolar, monto_Bs,monto_txt,nombre_pago,concepto_pago,fecha,id_usuario_cancelacion_mensualidades) VALUES('$numeroRecibo','$year','$montoBs','$cantidad','$nomRecibo','$conceptoDe','$fecha','$idUsuario')";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 

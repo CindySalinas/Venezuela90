@@ -27,9 +27,12 @@ function consultaInfoAd (mostrar,ocultar)
 	}).done(function(data){
 		if(data.num>0)
 		{
-			/*var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
-			$.getJSON(url,{
-			cedula:cedula
+			infoPago();
+			$('.'+mostrar).show("slide");
+			$('.'+ocultar).hide("slow");
+			var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
+			$.getJSON(url2,{
+			cedula:cedul
 			}).done(function(data){
 				$.each(data, function(i,item){			
 					var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidades.php?jsoncallback=?";
@@ -37,10 +40,27 @@ function consultaInfoAd (mostrar,ocultar)
 					idUsuario:item.idUsuario
 					}).done(function(data){
 						$.each(data, function(i,item){
+							var fec2 = item.fechaa;
+							var factura2 = item.facturaa;
+							var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidadesPagadas.php?jsoncallback=?";
+							$.getJSON(url,{
+							idCan:item.idd
+							}).done(function(data){
+								$.each(data, function(i,item){
+
+									$("#recibo"+item.nombreMes).text(factura2);
+									$("#fecha"+item.nombreMes).text(fec2);	
+									$("#recibo"+item.nombreMes).css("color","green");
+									$("#fecha"+item.nombreMes).css("color","green");
+									$("#recibo"+item.nombreMes).addClass("bold");
+									$("#fecha"+item.nombreMes).addClass("bold");
+								});
 							});
+
+						});
 					});
 				});
-			});*/
+			});
 		}
 		else
 		{
@@ -48,8 +68,7 @@ function consultaInfoAd (mostrar,ocultar)
 		}
 	});
 
-	/*$('.'+mostrar).show("slide");
-	$('.'+ocultar).hide("slow");*/	
+		
 }
 
 function gestionAdministrativa(){
@@ -100,6 +119,8 @@ function guardarPago(){
 	var recibidoDe=$("#personaPago").val();
 	var cantidad=$("#monto2").val();	
 	var fecha=$("#dia option:selected").val() + "/" + $("#mes option:selected").val() + "/" + $("#year option:selected").val(); 
+	var yearEscola = $("#yearP option:selected").val();
+
 	var numeroRecibo=$("#numRecibo").val();
 	var cedula=$("#ced").val();
 	var montoBS=$("#monto").val();
@@ -116,6 +137,10 @@ function guardarPago(){
 	else if(conceptoDe=="nadaConcepto")
 	{
 		alert("Seleccione Un Concepto");
+	}
+	else if(yearEscola=="nadaYear")
+	{
+		alert("Seleccione Año Escolar");
 	}
 	else if(conceptoDe=="Inscripcion")
 	{
@@ -175,6 +200,7 @@ function guardarPago(){
 									numRecibo:numeroRecibo,
 									montoBss:montoBS,
 									concepto:conceptoDe,
+									year:yearEscola,
 									mes:nombreMesesObject,
 									cant:cantidadMeses
 								}).done(function(data){
@@ -224,6 +250,7 @@ function guardarPago(){
 					fec:fecha,
 					numRecibo:numeroRecibo,
 					montoBss:montoBS,
+					year:yearEscola,
 					concepto:conceptoDefinitivo
 					}).done(function(data){
 						if(data.con>0){
@@ -248,13 +275,45 @@ function resetear(){
 	$(".divDeLosMeses").remove();
 	$("#cantMeses option[value='0']").attr("selected",true);
 	$("#conceptoP option[value='nadaConcepto']").attr("selected",true);
+	$("#yearP option[value='nadaYear']").attr("selected",true);
 	$("#divMensualidadesOculto").css("display","none");
 	$("#conceptoOtrosOculto").css("display","none");
 
 	$("#dia option[value='"+diaaa()+"']").attr("selected",true);
 	$("#mes option[value='"+messs()+"']").attr("selected",true);
 	$("#year option[value='"+yearrr()+"']").attr("selected",true);
+	$("#tbodyDeuda tr").remove();
+	infoPago();
 
+}
+
+function infoPago ()
+{
+	$("#reciboEnero").text("");
+	$("#reciboFebrero").text("");
+	$("#reciboMarzo").text("");
+	$("#reciboAbril").text("");
+	$("#reciboMayo").text("");
+	$("#reciboJunio").text("");
+	$("#reciboJulio").text("");
+	$("#reciboAgosto").text("");
+	$("#reciboSeptiembre").text("");
+	$("#reciboOctubre").text("");
+	$("#reciboNoviembre").text("");
+	$("#reciboDiciembre").text("");
+
+	$("#fechaEnero").text("");
+	$("#fechaFebrero").text("");
+	$("#fechaMarzo").text("");
+	$("#fechaAbril").text("");
+	$("#fechaMayo").text("");
+	$("#fechaJunio").text("");
+	$("#fechaJulio").text("");
+	$("#fechaAgosto").text("");
+	$("#fechaSeptiembre").text("");
+	$("#fechaOctubre").text("");
+	$("#fechaNoviembre").text("");
+	$("#fechaDiciembre").text("");
 }
 function previ(){
 
@@ -305,22 +364,35 @@ function printRecibo(){
 
 function buscReporte(){
 	var select1 = $('#tipoBusc option:selected').val();
-	//.divInCeInAClass,.divInMesInAClass, .busInAClass,#tablaInA,#links
+	
+	$('#busInA').css({"display":"block","margin":"10px auto"});
+		actionBotones('divInCeInAClass,.busInAClass','divInMesInAClass')
+
+	$("#cedulaBusc22").val("");
+	$("#meses22 option[value='0']").attr("selected",true);
+	$('#tablaInA').hide("slow");
 	if(select1 == 0){
 		$('#busInA').css({"display":"block","margin":"10px auto"});
-		actionBotones('divInCeInAClass,.busInAClass','divInMesInAClass')
+		actionBotones('divInCeInAClass,.busInAClass','divInMesInAClass');
+		$('#links').hide();
 	}else
 		if(select1 == 1){
 			$('#busInA').css({"display":"block","margin":"10px auto"});
-			actionBotones('divInMesInAClass,.busInAClass','divInCeInAClass')
+			$('.divInMesInAClass').show("slow");	
+			$('.busInAClass').show("slow");	
+			$('.divInCeInAClass').hide();
+			$('#links').hide();
 	}
 	else 
 		if(select1 ==2){
-			$('#busInA').css({"display":"block","margin":"10px auto"});
-			actionBotones('busInAClass','divInCeInAClass,.divInMesInAClass')
+			$('.divInCeInAClass').hide();	
+			$('.divInMesInAClass').hide();	
+			$('#links').hide();
 		}
 	else{
-		actionBotones('','divInCeInAClass,.divInMesInAClass,.busInAClass,#busInA');
+		$('.divInCeInAClass').hide();	
+		$('.divInMesInAClass').hide();	
+		$('#links').hide();			
 	}
 }
 function actionBotones(mostrar,ocultar)
@@ -328,8 +400,141 @@ function actionBotones(mostrar,ocultar)
 	$('.'+mostrar).show("slide");
 	$('.'+ocultar).hide("slow");	
 }
-function cargarTabla(){
-	$('#tablaInA,#links').show();
+function cargarTabla()
+{
+	var seleccionado = $('#tipoBusc option:selected').text();
+	$("#tbodyDeuda tr").remove();
+	if(seleccionado=="Alumno")
+	{
+		var cedula = $("#cedulaBusc22").val();
+		var meses9=new Array();
+		meses9[0]="Septiembre";
+		meses9[1]="Octubre";
+		meses9[2]="Noviembre";
+		meses9[3]="Diciembre";
+		meses9[4]="Enero";
+		meses9[5]="Febrero";
+		meses9[6]="Marzo";
+		meses9[7]="Abril";
+		meses9[8]="Mayo";
+		meses9[9]="Junio";
+		meses9[10]="Julio";
+		meses9[11]="Agosto";
+
+		var meses12=new Array();
+
+		meses12[0]="Enero";
+		meses12[1]="Febrero";
+		meses12[2]="Marzo";
+		meses12[3]="Abril";
+		meses12[4]="Mayo";
+		meses12[5]="Junio";
+		meses12[6]="Julio";
+		meses12[7]="Agosto";
+		meses12[8]="Septiembre";
+		meses12[9]="Octubre";
+		meses12[10]="Noviembre";
+		meses12[11]="Diciembre";
+
+		var mesActual=messs10();
+		var mes1, mes2;
+
+		for (var x=0; x<12; x++)
+		{
+			if(x==mesActual)
+			{
+				mes1=meses12[x];
+			}
+		}
+		for (var x=0; x<12; x++)
+		{
+			if(meses9[x]==mes1)
+			{
+				mes2=x;
+			}
+		}
+
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+		$.getJSON(url,{
+		cedula:cedula
+		}).done(function(data){
+			if(data.num>0)
+			{
+				$('#tablaInA,#links').show("slide");				
+				var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
+				$.getJSON(url2,{
+				cedula:cedula
+				}).done(function(data){
+					$.each(data, function(i,item){			
+						var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidades.php?jsoncallback=?";
+						var idusarioss=item.idUsuario;
+						$.getJSON(url,{
+						idUsuario:item.idUsuario
+						}).done(function(data){
+							$.each(data, function(i,item){		
+								var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidadesPagadas2.php?jsoncallback=?";
+								$.getJSON(url,{
+								idCan:item.idd
+								}).done(function(data){
+									var cont=0;
+									var messesse;							
+									$.each(data, function(i,item){
+										messesse=item.nombreMes;
+									});
+									
+									for(var y=0;y<12;y++)
+									{
+										if(meses9[y]==messesse)
+										{
+											cont=y;			
+										}						
+									}
+									var deuda=mes2-cont;
+									
+									var deudaTotal=deuda*320;
+
+									var nom, ape, ced10;
+
+									var url55 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarDatosUsuarios.php?jsoncallback=?";
+									$.getJSON(url55,{
+									id:idusarioss
+									}).done(function(data){		
+										$.each(data, function(i,item)
+										{
+											nom=item.nombre;
+											ape=item.apellido;
+											ced10=item.cedula;
+										});
+										$("#nomm"+idusarioss).remove();
+										$("#tbodyDeuda").append("<tr id='nomm"+idusarioss+"'><td>"+ape+" "+nom+"</td><td>"+ced10+"</td><td>"+deuda+"</td><td>"+deudaTotal+"</td></tr>");
+									});
+								});
+							});
+						});
+					});
+				});
+			}
+			else
+			{
+				alert("No Existe La Cedula");
+			}
+		});
+			
+	}
+	else if(seleccionado=="Mes")
+	{
+		var mesMes=$("#meses22 option:selected").text();
+		alert(mesMes);
+	}
+	else if(seleccionado=="Todos")
+	{
+		alert("Todos");
+	}
+	else
+	{
+		alert("Debe Seleccionar Una Opción");
+	}
+	/*$('#tablaInA,#links').show();*/
 }
 
 function generarMeses () 
@@ -392,7 +597,12 @@ function messs()
   }
   return mess;
 }
-
+function messs10()
+{
+  var f=new Date();
+  var mess = f.getMonth();
+  return mess;
+}
 function diaaa()
 {
   var f=new Date();
