@@ -402,12 +402,7 @@ function actionBotones(mostrar,ocultar)
 }
 function cargarTabla()
 {
-	var seleccionado = $('#tipoBusc option:selected').text();
-	$("#tbodyDeuda tr").remove();
-	if(seleccionado=="Alumno")
-	{
-		var cedula = $("#cedulaBusc22").val();
-		var meses9=new Array();
+	var meses9=new Array();
 		meses9[0]="Septiembre";
 		meses9[1]="Octubre";
 		meses9[2]="Noviembre";
@@ -436,6 +431,12 @@ function cargarTabla()
 		meses12[10]="Noviembre";
 		meses12[11]="Diciembre";
 
+	var seleccionado = $('#tipoBusc option:selected').text();
+	$("#tbodyDeuda tr").remove();
+	if(seleccionado=="Alumno")
+	{
+		var cedula = $("#cedulaBusc22").val();
+		
 		var mesActual=messs10();
 		var mes1, mes2;
 
@@ -460,59 +461,28 @@ function cargarTabla()
 		}).done(function(data){
 			if(data.num>0)
 			{
-				$('#tablaInA,#links').show("slide");				
-				var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedulaCampos.php?jsoncallback=?";
-				$.getJSON(url2,{
+				$('#tablaInA,#links').show("slide");	
+				var deudaTotal=0, deuda=0;
+				var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudas.php?jsoncallback=?";
+				$.getJSON(url,{
 				cedula:cedula
 				}).done(function(data){
-					$.each(data, function(i,item){			
-						var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidades.php?jsoncallback=?";
-						var idusarioss=item.idUsuario;
-						$.getJSON(url,{
-						idUsuario:item.idUsuario
-						}).done(function(data){
-							$.each(data, function(i,item){		
-								var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCancelacionMensualidadesPagadas2.php?jsoncallback=?";
-								$.getJSON(url,{
-								idCan:item.idd
-								}).done(function(data){
-									var cont=0;
-									var messesse;							
-									$.each(data, function(i,item){
-										messesse=item.nombreMes;
-									});
-									
-									for(var y=0;y<12;y++)
-									{
-										if(meses9[y]==messesse)
-										{
-											cont=y;			
-										}						
-									}
-									var deuda=mes2-cont;
-									
-									var deudaTotal=deuda*320;
+					$.each(data, function(i,item){	
+						var ddd;
+						for(var x=0;x<12;x++)
+						{
+							if(item.nombreMes==meses9[x])
+							{
+								ddd=x;
+							}
+						}
+						deuda=mes2-ddd;
+						deudaTotal=320*deuda;
+						$("#nomm"+item.idU).remove();
+						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td>"+item.apellido+" "+item.nombre+"</td><td>"+cedula+"</td><td>"+deuda+"</td><td>"+deudaTotal+"</td></tr>");
 
-									var nom, ape, ced10;
-
-									var url55 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarDatosUsuarios.php?jsoncallback=?";
-									$.getJSON(url55,{
-									id:idusarioss
-									}).done(function(data){		
-										$.each(data, function(i,item)
-										{
-											nom=item.nombre;
-											ape=item.apellido;
-											ced10=item.cedula;
-										});
-										$("#nomm"+idusarioss).remove();
-										$("#tbodyDeuda").append("<tr id='nomm"+idusarioss+"'><td>"+ape+" "+nom+"</td><td>"+ced10+"</td><td>"+deuda+"</td><td>"+deudaTotal+"</td></tr>");
-									});
-								});
-							});
-						});
 					});
-				});
+				});						
 			}
 			else
 			{
@@ -524,7 +494,50 @@ function cargarTabla()
 	else if(seleccionado=="Mes")
 	{
 		var mesMes=$("#meses22 option:selected").text();
-		alert(mesMes);
+		$('#tablaInA,#links').show("slide");	
+		$(".todoAl").remove();
+
+		var mesActual=messs10();
+		var mes2;
+		
+		for (var x=0; x<12; x++)
+		{
+			if(meses9[x]==mesMes)
+			{
+				mes2=x;
+			}
+		}
+
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudasMes.php?jsoncallback=?";
+		$.getJSON(url,{
+		mes:mesMes
+		}).done(function(data){
+			$.each(data, function(i,item){	
+				
+				var cee=item.cedula;
+
+				var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudas.php?jsoncallback=?";
+				$.getJSON(url,{
+				cedula:item.cedula
+				}).done(function(data){
+					$.each(data, function(i,item){
+						var ddd;
+						for(var x=0;x<12;x++)
+						{
+							if(item.nombreMes==meses9[x])
+							{
+								ddd=x;
+							}
+						}
+						/*if(ddd>=mes2)*/
+						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td>"+item.apellido+" "+item.nombre+"</td><td>"+cee+"</td><td>1</td><td>320</td></tr>");
+					});
+				});
+
+				
+			});
+		});
+
 	}
 	else if(seleccionado=="Todos")
 	{
