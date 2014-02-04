@@ -122,6 +122,8 @@ function mat(){
 	});
 }
 
+// rege = /[.jpg,]$/
+
 function algo(){
 	$('.alert').remove();
 	var file = $('#archivos')[0].files[0];
@@ -132,7 +134,7 @@ function algo(){
     var fileSize = file.size;
         //obtenemos el tipo de archivo image/png ejemplo
     var fileType = file.type;
-
+   // console.log(fileName.replace(" ","_"));
     var extenciones = new Array("jpg","gif","png","PNG","JPG","jpeg","pdf","docx","odt","doc","xlxs","xlx","ppt","pptx");
     for (var i = 0 ; i < extenciones.length ; i++){
     	if(extenciones[i] == fileExtension){
