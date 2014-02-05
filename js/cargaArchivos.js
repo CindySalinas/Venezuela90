@@ -2,11 +2,12 @@ $(document).on("ready", empezar);
 
 function empezar(){
 botonesCargaAction();
-disableds();
+$('#iniciarCarga').prop("disabled",true).addClass("disabled");
+//disableds();
 llenarMaterias();
 llenarGrado();
 $('#iniciarCarga').on("click",subir);
-$('#archivos').on("change",algo);
+$('#archivos').on("change",validar);
 //mat();
 } 
 // ---------------------------  Variables globales ----------------------------//
@@ -123,7 +124,7 @@ function mat(){
 }
 
 // rege = /[.jpg,]$/
-
+/*
 function algo(){
 	$('.alert').remove();
 	var file = $('#archivos')[0].files[0];
@@ -149,6 +150,29 @@ function algo(){
     }
 
  }
+*/
+
+
+ function validar(){
+
+ 	$('.alert').remove();
+ 	var file = $('#archivos')[0].files[0];
+ 	var fileName = file.name;
+	//var extenciones = ["jpg","gif","png","PNG","JPG","jpeg","pdf","docx","odt","doc","xlxs","xlx","ppt","pptx"];
+ 	fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+
+ 	if(fileExtension == "jpg" || fileExtension == "png" || fileExtension == "gif" || fileExtension == "PNG" || fileExtension == "JPG" || fileExtension == "jpeg" || fileExtension == "pdf" || fileExtension == "doc" || fileExtension == "docx" || fileExtension == "pdf" || fileExtension == "odt" ||fileExtension == "xls" || fileExtension == "ppt" || fileExtension == "pptx" || fileExtension == "xlsx"){
+ 		$('#iniciarCarga').prop("disabled",false).removeClass("disabled");
+ 		console.log("coincide");
+ 	}
+ 	else{
+ 		$('#iniciarCarga').prop("disabled",true).addClass("disabled");
+
+ 		$('.msj3').append("<div class='alert alert-danger'>Tipo de Archivo no Valido</div>");
+ 		console.log("no coincide");
+ 	}
+ }
+
  function resetear(){
  	$('input[type=file]').val("");
  }
