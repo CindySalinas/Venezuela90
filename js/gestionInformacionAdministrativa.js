@@ -2,6 +2,7 @@ $(document).on("ready",iniciar);
 
 var cantidades;
 var conceptoDe;
+var seleccionandolo, cantidadesAlumnos=0;
 
 function iniciar(){
 	resetear()
@@ -16,6 +17,88 @@ function iniciar(){
 	$('#BuscarConsulta').on("click",function(){consultaInfoAd('tablasAdministrativa','buscQ')});
 	$('#cantMeses').on("change",generarMeses);
 	$('#conceptoP').on("change",comprobarConcepto);
+	$("#linkEnviarReporte").on("click", reportes);
+}
+
+function reportes()
+{
+	var meses9=new Array();
+		meses9[0]="Septiembre";
+		meses9[1]="Octubre";
+		meses9[2]="Noviembre";
+		meses9[3]="Diciembre";
+		meses9[4]="Enero";
+		meses9[5]="Febrero";
+		meses9[6]="Marzo";
+		meses9[7]="Abril";
+		meses9[8]="Mayo";
+		meses9[9]="Junio";
+		meses9[10]="Julio";
+		meses9[11]="Agosto";
+
+	var meses12=new Array();
+
+		meses12[0]="Enero";
+		meses12[1]="Febrero";
+		meses12[2]="Marzo";
+		meses12[3]="Abril";
+		meses12[4]="Mayo";
+		meses12[5]="Junio";
+		meses12[6]="Julio";
+		meses12[7]="Agosto";
+		meses12[8]="Septiembre";
+		meses12[9]="Octubre";
+		meses12[10]="Noviembre";
+		meses12[11]="Diciembre";
+
+	var mesActual=messs10();
+	var mes1, mes2;
+
+	for (var x=0; x<12; x++)
+	{
+		if(x==mesActual)
+		{
+			mes1=meses12[x];
+		}
+	}
+	for (var x=0; x<12; x++)
+	{
+		if(meses9[x]==mes1)
+		{
+			mes2=x;
+		}
+	}
+	
+	if(seleccionandolo=="Alumno" || seleccionandolo=="Todos")
+	{
+		var nombre, cedula, mesesAdeudados;
+
+		for(var x=0; x<cantidadesAlumnos; x++)
+		{
+			nombre11 = $("#nombres"+x).text();
+			cedula11 = $("#cedulas"+x).text();
+			mesesAdeudados11 = $("#deudas"+x).text();
+
+			var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajesPagosRepresentantes.php?jsoncallback=?";
+			$.getJSON(url2,{
+			nombre:nombre11,
+			cedula:cedula11,
+			mesesAdeudados:mesesAdeudados11,
+			mesActualizado:mes2
+			}).done(function(data){
+				alert("Se Ha Enviado Los Reportes");
+			});
+		}
+	}
+	else if(seleccionandolo=="Mes")
+	{
+		alert("Mes");
+	}
+	else
+	{
+		alert("No ha seleccionado alumnos");
+	}
+	
 }
 
 function consultaInfoAd (mostrar,ocultar)
@@ -430,11 +513,12 @@ function cargarTabla()
 		meses12[9]="Octubre";
 		meses12[10]="Noviembre";
 		meses12[11]="Diciembre";
-
+		cantidadesAlumnos=0;
 	var seleccionado = $('#tipoBusc option:selected').text();
 	$("#tbodyDeuda tr").remove();
 	if(seleccionado=="Alumno")
 	{
+		seleccionandolo="Alumno";
 		var cedula = $("#cedulaBusc22").val();
 		
 		var mesActual=messs10();
@@ -467,6 +551,7 @@ function cargarTabla()
 				$.getJSON(url,{
 				cedula:cedula
 				}).done(function(data){
+					var contadolo=0;
 					$.each(data, function(i,item){	
 						var ddd;
 						for(var x=0;x<12;x++)
@@ -479,8 +564,9 @@ function cargarTabla()
 						deuda=mes2-ddd;
 						deudaTotal=320*deuda;
 						$("#nomm"+item.idU).remove();
-						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td>"+item.apellido+" "+item.nombre+"</td><td>"+cedula+"</td><td>"+deuda+"</td><td>"+deudaTotal+"</td></tr>");
-
+						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td><label id='nombres"+contadolo+"'>"+item.apellido+" "+item.nombre+"</label></td><td><label id='cedulas"+contadolo+"'>"+cedula+"</label></td><td><label id='deudas"+contadolo+"'>"+deuda+"</label></td><td><label id='deudasTotal"+contadolo+"'>"+deudaTotal+"</label></td></tr>");
+						cantidadesAlumnos++;
+						contadolo++;
 					});
 				});						
 			}
@@ -493,6 +579,7 @@ function cargarTabla()
 	}
 	else if(seleccionado=="Mes")
 	{
+		seleccionandolo="Mes";
 		var mesMes=$("#meses22 option:selected").text();
 		$('#tablaInA,#links').show("slide");	
 		$(".todoAl").remove();
@@ -507,49 +594,97 @@ function cargarTabla()
 				mes2=x;
 			}
 		}
-
 		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudasMes.php?jsoncallback=?";
 		$.getJSON(url,{
 		mes:mesMes
 		}).done(function(data){
+			var contadolo=0;
 			$.each(data, function(i,item){	
-				
-				var cee=item.cedula;
-
-				var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudas.php?jsoncallback=?";
-				$.getJSON(url,{
-				cedula:item.cedula
-				}).done(function(data){
-					$.each(data, function(i,item){
-						var ddd;
-						for(var x=0;x<12;x++)
+				if(item.mes!=undefined)
+				{
+					var mes3;
+					for (var x=0; x<12; x++)
+					{
+						if(meses9[x]==item.mes)
 						{
-							if(item.nombreMes==meses9[x])
-							{
-								ddd=x;
-							}
+							mes3=x;
 						}
-						/*if(ddd>=mes2)*/
-						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td>"+item.apellido+" "+item.nombre+"</td><td>"+cee+"</td><td>1</td><td>320</td></tr>");
-					});
-				});
-
-				
-			});
+					}	
+					$("#nomm"+item.idU).remove();		
+					if(mes3<mes2)
+					{	
+						var mesdDD = mes2-mes3;	
+						var mesTO = mesdDD*320;				
+						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td><label id='nombres"+contadolo+"'>"+item.apellido+" "+item.nombre+"</label></td><td><label id='cedulas"+contadolo+"'>"+item.cedula+"</label></td><td><label id='deudas"+contadolo+"'>"+mesdDD+"</label></td><td><label id='deudasTotal"+contadolo+"'>"+mesTO+"</label></td></tr>");
+						cantidadesAlumnos++;
+						contadolo++;
+					}							
+					
+				}				
+			});					
 		});
-
 	}
 	else if(seleccionado=="Todos")
 	{
-		alert("Todos");
+		seleccionandolo="Todos";
+		$('#tablaInA,#links').show("slide");	
+		$(".todoAl").remove();
+
+		var mesActual=messs10();
+		var mes1, mes2;
+
+		for (var x=0; x<12; x++)
+		{
+			if(x==mesActual)
+			{
+				mes1=meses12[x];
+			}
+		}
+		for (var x=0; x<12; x++)
+		{
+			if(meses9[x]==mes1)
+			{
+				mes2=x;
+			}
+		}
+
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/deudasMes2.php?jsoncallback=?";
+		$.getJSON(url,{		
+		}).done(function(data){
+			var contadolo=0;
+			$.each(data, function(i,item){	
+
+				if(item.mes!=undefined)
+				{
+					var mes3;
+					for (var x=0; x<12; x++)
+					{
+						if(meses9[x]==item.mes)
+						{
+							mes3=x;
+						}
+					}	
+					$("#nomm"+item.idU).remove();		
+					if(mes3<mes2)
+					{	
+						var mesdDD = mes2-mes3;	
+						var mesTO = mesdDD*320;				
+						$("#tbodyDeuda").append("<tr class='todoAl' id='nomm"+item.idU+"'><td><label id='nombres"+contadolo+"'>"+item.apellido+" "+item.nombre+"</label></td><td><label id='cedulas"+contadolo+"'>"+item.cedula+"</label></td><td><label id='deudas"+contadolo+"'>"+mesdDD+"</label></td><td><label id='deudasTotal"+contadolo+"'>"+mesTO+"</label></td></tr>");
+						cantidadesAlumnos++;
+						contadolo++;
+					}							
+					
+				}				
+			});					
+		});
 	}
 	else
 	{
+		seleccionandolo="Nada";
 		alert("Debe Seleccionar Una Opción");
 	}
 	/*$('#tablaInA,#links').show();*/
 }
-
 function generarMeses () 
 {
 	cantidades = $("#cantMeses option:selected").val();

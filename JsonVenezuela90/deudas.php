@@ -6,7 +6,7 @@ header('Content-type: application/json');
 
 $cedula= $_GET["cedula"];
 
-$sql = "Select M.mesPagado, U.Nombre, U.Apellido, U.Id_Usuario FROM mensualidad_pagada M INNER JOIN cancelacion_mensualidades C ON M.id_RegistroCanM=C.id_registroCanM INNER JOIN usuario U ON C.id_usuario_cancelacion_mensualidades = U.Id_Usuario WHERE U.Cedula='$cedula' ORDER BY M.id_MP DESC LIMIT 1" ;
+$sql = "Select M.mesPagado, U.Nombre, U.Apellido, U.Id_Usuario FROM mensualidad_pagada M INNER JOIN cancelacion_mensualidades C ON M.id_RegistroCanM=C.id_registroCanM INNER JOIN usuario U ON C.id_usuario_cancelacion_mensualidades = U.Id_Usuario INNER JOIN year_escolar Y ON C.id_year_escolar=Y.Id_Year_Escolar INNER JOIN year_actual A ON Y.Id_Year_Escolar=A.Id_Year_Escolar WHERE U.Cedula='$cedula' AND A.Id_Year_Actual=1 ORDER BY M.id_MP DESC LIMIT 1" ;
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();
