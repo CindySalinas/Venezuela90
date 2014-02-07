@@ -79,20 +79,46 @@ function reportes()
 			cedula11 = $("#cedulas"+x).text();
 			mesesAdeudados11 = $("#deudas"+x).text();
 
-			var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajesPagosRepresentantes.php?jsoncallback=?";
+			var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajesPagoRepresentantes.php?jsoncallback=?";
 			$.getJSON(url2,{
 			nombre:nombre11,
 			cedula:cedula11,
 			mesesAdeudados:mesesAdeudados11,
 			mesActualizado:mes2
 			}).done(function(data){
-				alert("Se Ha Enviado Los Reportes");
 			});
 		}
+		alert("Reportes Enviados");
 	}
 	else if(seleccionandolo=="Mes")
 	{
-		alert("Mes");
+		var nombre, cedula, mesesAdeudados;
+		var mesSelect=$("#meses22 option:selected").text();
+		var mm2;
+		
+		for (var x=0; x<12; x++)
+		{
+			if(meses9[x]==mesSelect)
+			{
+				mm2=x;
+			}
+		}
+		for(var x=0; x<cantidadesAlumnos; x++)
+		{
+			nombre11 = $("#nombres"+x).text();
+			cedula11 = $("#cedulas"+x).text();
+			mesesAdeudados11 = $("#deudas"+x).text();
+
+			var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mensajesPagoRepresentantes.php?jsoncallback=?";
+			$.getJSON(url2,{
+			nombre:nombre11,
+			cedula:cedula11,
+			mesesAdeudados:mesesAdeudados11,
+			mesActualizado:mm2
+			}).done(function(data){
+			});
+		}
+		alert("Reportes Enviados");
 	}
 	else
 	{
