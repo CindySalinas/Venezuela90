@@ -8,8 +8,9 @@ $nombre= $_GET["nombre"];
 $cedula= $_GET["cedula"];
 $mesesConDeudas= $_GET["mesesAdeudados"];
 $mesActual= $_GET["mesActualizado"];
-$fecha="06/02/2014";
-$hora="10:00pm";
+$fecha=$_GET["fecha"];
+$hora=$_GET["hora"];
+$fecha2=$_GET["fecha2"];
 $sql = "SELECT G.Grado, S.Seccion, R.Id_Representante FROM usuario U INNER JOIN estudiante E ON U.Id_Usuario=E.Id_Usuario INNER JOIN grado G ON E.Id_Grado=G.Id_Grado INNER JOIN seccion S ON E.Id_Seccion=S.Id_Seccion INNER JOIN representante_estudiante R ON E.Id_Estudiante=R.Id_Estudiante WHERE U.Cedula='$cedula'";
 
 
@@ -43,7 +44,7 @@ while($row = mysql_fetch_row($result)){
 	$seccionn= $row[1];
 	$repre= $row[2];
 
-	$menmen="<center>U.E VENEZUELA 90 ----- Valencia, 06 de Febredo de 2014</center></br><center>Valencia - Edo. Carabobo</center></br>Sr. Representante de <u>" . $nombre . "</u> curso <u>" . $gradoo . "</u> sección <u>" . $seccionn . "</u> a través de la presente se le notifica el vencimiento de la (as) siguientes mensualidades: <u> " . $mesesNombres . "</u>. Sirvase pasar por la administración.</br></br><b>NOTA</b></br>-- El compromiso adquirido es cancelar <b>los primeros CINCO (5) días de cada mes.</b></br>-- Una vez vencido el plazo del segundo aviso de cobro, se tomarán las medidas pertinentes.</br>-- Se le agradece responder al mensaje con la mayor prontitud posible.";
+	$menmen="<center>U.E VENEZUELA 90 ----- Valencia, " . $fecha2 . "</center></br><center>Valencia - Edo. Carabobo</center></br>Sr. Representante de <u>" . $nombre . "</u> curso <u>" . $gradoo . "</u> sección <u>" . $seccionn . "</u> a través de la presente se le notifica el vencimiento de la (as) siguientes mensualidades: <u> " . $mesesNombres . "</u>. Sirvase pasar por la administración.</br></br><b>NOTA</b></br>-- El compromiso adquirido es cancelar <b>los primeros CINCO (5) días de cada mes.</b></br>-- Una vez vencido el plazo del segundo aviso de cobro, se tomarán las medidas pertinentes.</br>-- Se le agradece responder al mensaje con la mayor prontitud posible.";
 
 		/*$menmen="<center>U.E 'VENEZUELA 90' ----- Valencia, 06 de Febredo de 2014</center></br><center>Valencia - Edo. Carabobo</center></br>Sr. Representante de <u>" . "$nombre" . "</u> curso <u>" . "$gradoo" . "</u> sección <u>'" . "$seccionn" . "'</u> a través de la presente se le notifica el vencimiento de la (as) siguientes mensualidades: <u> " . "$mesesNombres" . "</u>. Sirvase pasar por la administración.</br></br><b>NOTA</b></br>-- El compromiso adquirido es cancelar <b>los primeros CINCO (5) días de cada mes.</b></br>-- Una vez vencido el plazo del segundo aviso de cobro, se tomarán las medidas pertinentes.</br>-- Se le agradece responder al mensaje con la mayor prontitud posible.";*/
 

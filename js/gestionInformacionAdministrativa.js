@@ -51,6 +51,9 @@ function reportes()
 		meses12[10]="Noviembre";
 		meses12[11]="Diciembre";
 
+	var fec=fecha();
+	var fec2=fecha2();
+	var hor=hora();
 	var mesActual=messs10();
 	var mes1, mes2;
 
@@ -84,7 +87,10 @@ function reportes()
 			nombre:nombre11,
 			cedula:cedula11,
 			mesesAdeudados:mesesAdeudados11,
-			mesActualizado:mes2
+			mesActualizado:mes2,
+			fecha:fec,
+			hora:hor,
+			fecha2:fec2
 			}).done(function(data){
 			});
 		}
@@ -114,7 +120,10 @@ function reportes()
 			nombre:nombre11,
 			cedula:cedula11,
 			mesesAdeudados:mesesAdeudados11,
-			mesActualizado:mm2
+			mesActualizado:mm2,
+			fecha:fec,
+			hora:hor,
+			fecha2:fec2
 			}).done(function(data){
 			});
 		}
@@ -794,4 +803,59 @@ function yearrr()
   var f=new Date();
   var yearr = f.getFullYear();
   return yearr;
+}
+
+function hora(){
+
+	var Digital=new Date();
+	var hours=Digital.getHours();
+	var minutes=Digital.getMinutes();
+	var seconds=Digital.getSeconds();
+	var dn="am";
+
+	if (hours>12)
+	{
+		dn="pm";
+		hours=hours-12;
+	}
+
+	if (hours==0)
+		hours=12;
+
+	if (minutes<=9)
+		minutes="0"+minutes;
+
+	if (seconds<=9)
+		seconds="0"+seconds;
+
+	var hora = hours+":"+minutes+":"
+	+seconds+dn;
+
+	return hora;
+}
+/*Funcion para obtener la fecha actual*/
+function fecha()
+{
+	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+	var diasSemana = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+
+	var f=new Date();
+	var fecha;
+
+	fecha = (diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+	return fecha;
+}
+
+function fecha2()
+{
+	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+	var f=new Date();
+	var fecha;
+
+	fecha = (f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+	return fecha;
 }
