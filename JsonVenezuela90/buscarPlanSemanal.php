@@ -6,7 +6,7 @@ header('Content-type: application/json');
 
 $idMateriaDocente= $_GET["id"];
 
-$sql = "Select P.Id_Plan_Semanal, P.Numero_Semana, P.Fecha_Inicio, P.Fecha_Fin, P.Sesiones, P.Id_Materia_Docente, P.Numero_Alumnos, P.Primer_Tema, P.Primer_Inicio, P.Primer_Desarrollo, P.Primer_Cierre, P.Segundo_Tema, P.Segundo_Inicio, P.Segundo_Desarrollo, P.Segundo_Cierre, P.Observaciones, U.Nombre, U.Apellido, A.Nombre_Materia FROM plan_semanal P INNER JOIN materia_docente M ON P.Id_Materia_Docente=M.Id_Materia_Docente INNER JOIN docente D ON M.Id_Docente=D.Id_Docente INNER JOIN usuario U ON D.Id_Usuario_Docente=U.Id_Usuario INNER JOIN materia A ON M.Id_Materia=A.Id_Materia WHERE P.Id_Materia_Docente='$idMateriaDocente'";
+$sql = "Select P.Id_Plan_Semanal, P.Numero_Semana, P.Fecha_Inicio, P.Fecha_Fin, P.Sesiones, P.Id_Materia_Docente, P.Numero_Alumnos, P.Primer_Tema, P.Primer_Inicio, P.Primer_Desarrollo, P.Primer_Cierre, P.Segundo_Tema, P.Segundo_Inicio, P.Segundo_Desarrollo, P.Segundo_Cierre, P.Observaciones, U.Nombre, U.Apellido, A.Nombre_Materia FROM plan_semanal P INNER JOIN horario_materia M ON P.Id_Materia_Docente=M.Id_Horario_Materia INNER JOIN docente D ON M.Id_Docente=D.Id_Docente INNER JOIN usuario U ON D.Id_Usuario_Docente=U.Id_Usuario INNER JOIN materia A ON M.Id_Materia=A.Id_Materia WHERE P.Id_Materia_Docente='$idMateriaDocente'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();

@@ -6,7 +6,7 @@ header('Content-type: application/json');
 
 $idMateriaDocente= $_GET["id"];
 
-$sql = "SELECT P.Mencion, U.Nombre, U.Apellido, M.Nombre_Materia, G.Grado, L.Lapso, Y.Year_Escolar, P.Id_Planificacion_Por_Lapso, P.Id_Lapso FROM planificacion_por_lapso P INNER JOIN materia_docente X ON P.Id_Materia_Docente=X.Id_Materia_Docente INNER JOIN docente D ON X.Id_Docente=D.Id_Docente INNER JOIN usuario U ON D.Id_Usuario_Docente=U.Id_Usuario INNER JOIN materia M ON X.Id_Materia=M.Id_Materia INNER JOIN grado G ON X.Id_Grado=G.Id_Grado INNER JOIN lapso L ON P.Id_Lapso=L.Id_Lapso INNER JOIN year_escolar Y ON P.Id_Year=Y.Id_Year_Escolar WHERE P.Id_Materia_Docente='$idMateriaDocente'";
+$sql = "SELECT P.Mencion, U.Nombre, U.Apellido, M.Nombre_Materia, G.Grado, L.Lapso, Y.Year_Escolar, P.Id_Planificacion_Por_Lapso, P.Id_Lapso FROM planificacion_por_lapso P INNER JOIN horario_materia X ON P.Id_Materia_Docente=X.Id_Horario_Materia INNER JOIN docente D ON X.Id_Docente=D.Id_Docente INNER JOIN usuario U ON D.Id_Usuario_Docente=U.Id_Usuario INNER JOIN materia M ON X.Id_Materia=M.Id_Materia INNER JOIN grado G ON X.Id_Grado=G.Id_Grado INNER JOIN lapso L ON P.Id_Lapso=L.Id_Lapso INNER JOIN year_escolar Y ON P.Id_Year=Y.Id_Year_Escolar WHERE P.Id_Materia_Docente='$idMateriaDocente'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();

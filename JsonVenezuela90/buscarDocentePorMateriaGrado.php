@@ -7,7 +7,7 @@ header('Content-type: application/json');
 $asignaturaDocente= $_GET["mat"];
 $gradoDocente= $_GET["grad"];
 
-$sql = "Select U.Cedula FROM usuario U INNER JOIN docente D ON U.Id_Usuario=D.Id_Usuario_Docente INNER JOIN materia_docente A ON D.Id_Docente=A.Id_Docente WHERE A.Id_Materia='$asignaturaDocente' AND A.Id_Grado='$gradoDocente'";
+$sql = "Select U.Cedula FROM usuario U INNER JOIN docente D ON U.Id_Usuario=D.Id_Usuario_Docente INNER JOIN horario_materia A ON D.Id_Docente=A.Id_Docente WHERE A.Id_Materia='$asignaturaDocente' AND A.Id_Grado='$gradoDocente'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();

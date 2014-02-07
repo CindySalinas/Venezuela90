@@ -8,7 +8,7 @@ $asignaturaDocente= $_GET["mat"];
 $gradoDocente= $_GET["grad"];
 $cedulaDocente= $_GET["doc"];
 
-$sql = "Select Id_Materia_Docente FROM usuario U INNER JOIN docente D ON U.Id_Usuario=D.Id_Usuario_Docente INNER JOIN materia_docente A ON D.Id_Docente=A.Id_Docente WHERE A.Id_Materia='$asignaturaDocente' AND A.Id_Grado='$gradoDocente' AND U.Cedula='$cedulaDocente'";
+$sql = "Select A.Id_Horario_Materia FROM usuario U INNER JOIN docente D ON U.Id_Usuario=D.Id_Usuario_Docente INNER JOIN horario_materia A ON D.Id_Docente=A.Id_Docente WHERE A.Id_Materia='$asignaturaDocente' AND A.Id_Grado='$gradoDocente' AND U.Cedula='$cedulaDocente'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();
