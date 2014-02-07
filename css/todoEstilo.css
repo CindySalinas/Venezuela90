@@ -1824,3 +1824,33 @@ fieldset{
 {
 	margin-left: 2em;
 }
+
+/*GESTION HORARIOS*/
+.primerDivGH
+{
+	border-radius: 7px;
+	border: 2px solid orange;
+	margin: 1em auto;
+	width: 450px;
+}
+#botonBuscarDocenteGH, #botonBuscarAulaGH, #botonYearEscolarDocenteGH, #botonYearEscolarAulaGH, #botonConsultarDocenteGH, #botonConsultarMateriaGH, #guardarHorarioAulas, #botonConsultarAulaGH,#modificarHorarioAulas,#modificarYearEscolarAulaGH,#modificarBuscarAulaGH,#modificarHorarioDocente,#modificarYearEscolarDocenteGH,#modificarBuscarDocenteGH
+{
+	display: block;
+	margin: 1em auto;
+}
+.espacioDivTab
+{
+	padding-top: 1em
+}
+.marginTopSel
+{
+	margin-top: 1em;
+}
+.marginBottomSel
+{
+	margin-bottom: 1em;
+}
+#guardarHorarioDocente
+{
+	margin-bottom: 1em;
+}
