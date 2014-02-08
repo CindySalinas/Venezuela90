@@ -14,7 +14,7 @@
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
-	<script src="../js/docente.js"></script>
+	<script src="../js/studen.js"></script>
 	<script src="../js/registroSolicitudes2.js"></script>
 	
 </head>
@@ -31,7 +31,7 @@
 					
 				</a>
 				<ul>
-					<li><a href="intranetDocente.html">Inicio</a></li>
+					<li><a href="IntranetAlumno.html">Inicio</a></li>
 					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
 					<li><a href="../contacto.html">Contacto</a></li>
 					<li><a href="../institucion.html">La Institución</a></li>
@@ -53,13 +53,12 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
-						<li><a href="envioComunicados.html">Envio De Comunicados</a></li>
-						<li><a href="mensajeriaDocente.html">Mensajeria</a></li>
-						<li><a href="CargaConsultaPlanEstudio.html">Plan De Estudios</a></li>
-						<li><a href="cargaCalificaciones.html">Carga De Calificaciones</a></li>
-						<li><a href="HorarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
+						<li><a href="mensajeriaAlumno.html">Mensajeria</a></li>
+						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
+						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
 						<li><a href="foros.html">Foros</a></li>
-						<li><a href="CargaDescargaRecursos.html">Asignaciones y Recursos Educativos</a></li>
+						<li><a href="asignacionesRecursos.html">Asignaciones y Recursos Educativos</a></li>
 					</ul>
 				</div>
 			</article>
@@ -166,8 +165,8 @@
 							<td>Estatus</td>
 						</tr>
 					</thead>
-					<tbody id="tbodyGS">
-						<!--tr>
+					<tbody>
+						<tr>
 							<td>13090</td>
 							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
@@ -178,11 +177,11 @@
 							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
 							<td>Respondida</td>
-						</tr-->
+						</tr>
 					</tbody>
 				</table>	
 				<div class="centrar">
-					<input type="button" id="nuevaSolic" value="Nueva Solicitud">
+					<button id="nuevaSolic">Nueva Solicitud</button>
 				</div>
 				<div id="atr" class="atras">
 					<a id="atras"></a>
@@ -288,14 +287,10 @@
 					<div>
 						<label>Tipo De Constancia</label>
 						<select id="registroTipoCons">	
-							<option value="0">------------------</option>
-							<option value="1">De Buena Conducta</option>	
-							<option value="2">De Estudio</option>	
-							<option value="3">De Inscripcion</option>
-							<option value="4">De Notas</option>	
-							<option value="5">De Permiso</option>
-							<option value="6">De Retiro</option>
-							<option value="7">De Sueldo</option>
+							<option value="0">------------------</option>		
+							<option>De Trabajo</option>
+							<option>De Sueldo</option>
+							<option>De Permiso</option>
 						</select>
 					</div>
 				</form>
@@ -304,32 +299,28 @@
 						<label>Permiso Para Uso De:</label>
 						<select id="permisoRegistro">
 							<option value="0">------------------------------------------</option>
-							<option value="8">Aulas Para Eventos Estudiantiles</option>
-							<option value="9">Equipos Audiovisuales</option>
+							<option>Aulas Para Eventos Estudiantiles</option>
+							<option>Equipos Audiovisuales</option>
 						</select>
 					</div>
 				</form>
 				<form class="formReSol centrar" id="contenidoSolic">
 					<table>
-						<!--tr>
+						<tr>
 							<td>
 								<input placeholder="Nombre" class="inReSol" type="text">
 							</td>
-						</tr-->
+						</tr>
 						<tr>
 							<td>
 								<textarea placeholder="Mensaje" class="textReSol" rows=10></textarea>
 							</td>
 						</tr>	
 						<tr>
-							<td><input type="button" id="crearSoli" class="buEnReSol" value="Crear Solicitud"></td>
+							<td><input type="text" class="buEnReSol" value="Crear Solicitud"></td>
 						</tr>		
 					</table>
-					<div id="msj">
-					
-				</div>
 				</form>
-				
 				<div id="atr" class="atras3">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
