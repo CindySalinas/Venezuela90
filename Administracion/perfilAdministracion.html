@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	 class=" "<script src="../js/ftPerfil.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -67,8 +68,8 @@
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="#">Mi Perfil</a></li>
-						<li><a href="#">Editar</a></li>
+						<li><a href="perfilAdministracion.html?valid=0">Mi Perfil</a></li>
+						<li><a href="perfilAdministracion.html?valid=1">Editar</a></li>
 						<li><a href="#">Mis Notificaciones</a></li>
 					</ul>
 				</div>
@@ -153,12 +154,21 @@
 								<td colspan=2>Foto De Perfil</td>
 							</tr>
 						</thead>
-						<tr class="centrar">
+					<tr class="centrar">
 							<td colspan=2>
-								<figure>
-									<img width="70" src="../images/user.png">
+								<figure id="ftPerfil">
+									<!--img width="70" src="../images/user.png"-->
 								</figure>
-								<a href="#">Cambiar</a>
+								<a class="changeFT">Cambiar</a>
+								<div class="ftPerfil">
+									<form enctype="multipart/form-data" >
+										<input id="archivos" type="file" name="archivos[]">
+									</form>
+								<div class="msj"></div>
+								<div class="msj2"></div>
+								<div class="msj3"></div>
+								<input type="button" id="cambiarFP" value="Cambia rFoto">
+								</div>
 							</td>
 						</tr>
 									
@@ -241,21 +251,21 @@
 						</thead>
 						<tr>
 							<td class="right espacioRi">Dirección: </td>
-							<td class="left espacioLe"><input type="text" id="lugar2"> </td>
+							<td class="left espacioLe"><input type="text" id="lugar2" class="nEdit2"> </td>
 						</tr>
 						<tr>
 							<td class="right espacioRi">Telefono: </td>
-							<td class="left espacioLe"><input type="text" id="celPerfil"> </td>
+							<td class="left espacioLe"><input type="text" id="celPerfil" class="nEdit2"> </td>
 						</tr>						
 						<tr>
 							<td class="right espacioRi">Email: </td>
-							<td class="left espacioLe"><input type="text" id="mailPerfil"> </td>
+							<td class="left espacioLe"><input type="text" id="mailPerfil" class="nEdit2"> </td>
 						</tr>				
 					</tbody>
 				</table>
-				<div class="centrar">
+				<!--div class="centrar">
 					<button id="butAce">Aceptar</button>
-				</div>
+				</div-->
 			</article>
 		</div>
 	</section>

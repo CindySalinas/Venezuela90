@@ -7,18 +7,18 @@
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/todoEstilo.css">
+	<link rel="stylesheet" href="../css/todoEstilo.css"
+	<link rel="stylesheet" href="../css/miEstilo1.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
-
+	<script src="../js/ftPerfil.js"></script>
 </head>
 <body class="p-admision">
-
-	<!-- HEADERRRRRRRRRR -->
+	<!-- HEADERRRRRRRRRRRR -->
 	<header class="site-header">
 		<div class="header-image-container estilo-header">
 			<a href="../index.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
@@ -69,7 +69,7 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="perfilAdministracion.html">Mi Perfil</a></li>
-						<li><a href="perfilAdministracionEditar.html?valid=1">Editar</a></li>
+						<li><a href="perfilAdministracion.html?valid=y">Editar</a></li>
 						<li><a href="#">Mis Notificaciones</a></li>
 					</ul>
 				</div>
@@ -139,49 +139,146 @@
 			</aside>
 		</div>
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
+		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
-			<article id="intranetPrincipal">
-				<header><h2>Reinscripción</h2></header>
+			<article>
+				<header><h2>Mi Perfil</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
-				<div id="contenidoNoticias">
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>
-					<div id="numerocedula">
-						<form action="" method="get" accept-charset="utf-8">
-							<label id="labelcedula">Numero De Cedula: </label>
-							<input type="text" placeholder="Ej.: 25154875" >
-							<span id="ced"></span>
-						</form>
-						<div id="atr">
-							<a id="atras" href="#"></a>
-							<a id="at" href="#">Atrás</a>
-						</div>
-						<div id="sig">
-							<a id="siguiente" href="#"></a>
-							<a id="sit" href="#">Siguiente</a>
-						</div>
-					</div>
-				</div>				
+				<header><h3>Información Personal</h3></header>
+				<table border=1 id="tabFoto" class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr >
+								<td colspan=2>Foto De Perfil</td>
+							</tr>
+						</thead>
+						<tr class="centrar">
+							<td colspan=2>
+								<figure id="ftPerfil">
+									<!--img width="70" src="../images/user.png"-->
+								</figure>
+								<a class="changeFT">Cambiar</a>
+								<div class="ftPerfil">
+									<form enctype="multipart/form-data" >
+										<input id="archivos" type="file" name="archivos[]">
+									</form>
+								<div class="msj"></div>
+								<div class="msj2"></div>
+								<div class="msj3"></div>
+								<input type="button" id="cambiarFP" value="Cambia rFoto">
+								</div>
+							</td>
+						</tr>
+									
+					</tbody>
+				</table>
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Información Personal </td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Apellidos: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="apPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nombres: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="nomPperfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Cedula: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="cedPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Sexo: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="sexPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado Civil: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="edoCPerfil"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Fecha De Nacimiento: </td>
+							<td class="left espacioLe"><span id="nomPerfil" class="fechaPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nacionalidad: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="naciPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Lugar Nacimiento: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="lugar1"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Contraseña: </td>
+							<td class="left espacioLe"><a href="#">Cambiar Contraseña</a> </td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Lugar De Residencia</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Ciudad: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Valencia</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Carabobo</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">País: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Venezuela</span> </td>
+						</tr>				
+					</tbody>
+				</table>
+
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Información De Contacto</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Dirección: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="lugar2"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Telefono: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="celPerfil"> </td>
+						</tr>						
+						<tr>
+							<td class="right espacioRi">Email: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="mailPerfil"> </td>
+						</tr>				
+					</tbody>
+				</table>
+				<div class="centrar">
+					<button id="butAce" class="gDatos">Guardar Datos</button>
+					<br><br>
+					<div id="msj"></div>
+				</div>
 			</article>
 		</div>
 	</section>
-
-
-
-<footer class="site-footer" role="contentinfo">
-	<div class="site-info">
-		<span class="v90-logo"></span>
-		<b>Unidad Educativa Venezuela 90</b><br>
-		<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
-	</div><!-- .site-info -->
-</footer>
-
-
+	<!-- FOOTERRRRR -->
+	<footer class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<span class="v90-logo"></span>
+			<b>Unidad Educativa Venezuela 90</b><br>
+			<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
+		</div><!-- .site-info -->
+	</footer>
 
 </body>
 </html>
