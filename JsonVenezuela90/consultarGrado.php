@@ -2,7 +2,7 @@
 // conexion bd 
 include("conex.php");
 //formato JSON
-header('Content-type: application/json');
+header("Content-Type: text/html;charset=utf-8");
 
 $sql = "Select Id_Grado, Grado FROM Grado";
 
@@ -15,7 +15,7 @@ $cantidad = mysql_num_rows($result);
 while($row = mysql_fetch_row($result)){
 		
 	$estado[$i]["idGrado"]= $row[0];
-	$estado[$i]["grado"]= utf8_encode($row[1]);
+	$estado[$i]["grado"]= $row[1];
 	$i++;	
 }
 //Convertir los resultados a formato json

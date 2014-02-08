@@ -14,6 +14,8 @@
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/docente.js"></script>
+	<script src="../js/registroSolicitudes.js"></script>
 	
 </head>
 <body class="p-admision">
@@ -25,7 +27,7 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
@@ -143,164 +145,186 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Plan De Estudio</h2></header>
+				<header><h2>Registro De Solicitudes</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-					</ul>	
-
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Semanal</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Por Lapso</a></li>
+			<article id="noticias" class="listaPrincipal">
+				<header class="titulo"><h3>Solicitudes</h3></header>
+				<ul id="listaGestion">
+						<li><a id="iconoconsultar" class="nuevaSolicitud"></a><a class="textoAbajo" class="t1">Nueva Solicitud</a></li>
+						<li><a id="iconomodificar" class="misSolicitudes"></a><a class="textoAbajo" class="t2">Mis Solicitudes</a></li>
 					</ul>					
 			</article>
-			
-			<article id="noticias">
-				<header><h3>Consultar Plan De Estudio Por Lapso</h3></header>
-				<div class="planSem centrar">
-					<div class="disIn disInUno">
-						<figure>
-							<img width=200 src="../images/ministerio.png">	
-						</figure>
-					</div>
-					<div class="disIn disMe">
-						<div class="bold">REPÚBLICA BOLIVARIANA DE VENEZUELA</div>
-						<div class="bold">MINISTERIO DEL PODER POPULAR PARA LA EDUCACIÓN</div>
-						<div class="bold">UNIDAD EDUCATIVA "VENEZUELA 90"</div>
-						<div class="bold">VALENCIA-ESTADO CARABOBO</div>
-						<div class="bold">Telf. (0241) 8595806</div>
-					</div>
-					<div class="disIn disInDos">
-						<figure>
-							<img width=150 src="../images/logo.png">	
-						</figure>
-					</div>
-					<table>
-					<tr>
-						<td class="right marRig">DOCENTE:</td>
-						<td class="left marLef">Docente1</td>
-						<td class="right marRig">ASIGNATURA:</td>
-						<td class="left marLef">Ingles</td>
-						<td class="right marRig">AÑO:</td>
-						<td class="left marLef">1er Año</td>
-					</tr>
-					<tr>
-						<td class="right marRig">MENCIÓN:</td>
-						<td class="left marLef">Basica</td>
-						<td class="right marRig">LAPSO:</td>
-						<td class="left marLef">3ero</td>
-						<td class="right marRig">AÑO ESCOLAR:</td>
-						<td class="left marLef">12/13</td>
-					</tr>
-				</table>
-
-				<table border=1 class="tablaCarCon">
+			<article id="noticias" class="noticiasClass" >
+				<header><h3>Mis Solicitudes</h3></header>
+				<table class="tabReSol">
 					<thead>
-						<tr class="heLin">
-							<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
-							<td class="marCon">CONTENIDO</td>
-							<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
-							<td class="marRe">RECURSOS</td>
-							<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
-							<td class="marPon">PONDERACIÓN</td>
+						<tr>
+							<td>N° Solicitud</td>
+							<td>Tipo Solicitud</td>
+							<td>Fecha Envío</td>
+							<td>Estatus</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>3-8 y 3-9 Hablar acerca de las acciones en pasado</td>
-							<td>Talking about past</td>
-							<td>Was, were, what were you doing? I was doing somenthing good.</td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>13090</td>
+							<td><a class="linkPrueba">Constancia 1</a></td>
+							<td>29/09/2013</td>
+							<td>Respondida</td>
+						</tr>
+						<tr>
+							<td>13090</td>
+							<td><a class="linkPrueba">Constancia 1</a></td>
+							<td>29/09/2013</td>
+							<td>Respondida</td>
 						</tr>
 					</tbody>
+				</table>	
+				<div class="centrar">
+					<button id="nuevaSolic">Nueva Solicitud</button>
+				</div>
+				<div id="atr" class="atras">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>			
+			</article>
+			<p></p>
+			<article id="noticias" class="noticiasClass2">
+				<header><h3>Solicitud</h3></header>
+				<table border=1 class="tabReSolDet">
+					<thead>
+						<tr>
+							<td>Solicitud Realizada</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Constancia
+							</td>
+						</tr>
+					</tbody>	
 				</table>
-				</div>				
+				<table border=1 class="tabReSolDet">
+					<thead>
+						<tr>
+							<td>Indicaciones</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+							Debe describir la solicitud.
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</td>
+						</tr>
+					</tbody>	
+				</table>		
+				<table border=1 class="tabReSolDet">
+					<thead>
+						<tr>
+							<td>Detalles De La Solicitud</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+							Comentarios Del Docente
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</td>
+						</tr>
+					</tbody>	
+				</table>	
+				<table border=1 class="tabReSolDet">
+					<thead>
+						<tr>
+							<td>Respuesta De La Solicitud</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+							</td>
+						</tr>
+					</tbody>	
+				</table>
+				<div id="atr" class="atras2">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
+				</div>	
 			</article>
 
-			<article id="noticias">
-				<header><h3>Ingresar Plan De Estudio Por Lapso</h3></header>
-				<form >
-					<table border=1 class="tabPlanEs">
-						<thead class="centrar">
-							<tr>
-								<td colspan=2>Ingrese Datos</td>
-							</tr>
-						</thead>
-						<tr>				
-							<td class="right espacioRi">Docente: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Su Nombre"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Asignatura: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Asignatura"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Año: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Mención: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Mención"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Lapso: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Lapso"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Año Escolar: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año Escolar"></td>
-						</tr>				
-					</table>
-					<div class="centrar">
-						<a href="#">Continuar</a>
+			<article id="noticias" class="noticiasClass3">
+				<header><h3>Nueva Solicitud</h3></header>
+				<form class="formReSol centrar">
+					<div>
+						<label>Seleccione</label>
+						<select id="primerSelect">
+							<option value="0">------------------------------------------------------------</option>
+							<option value="1">Constancias</option>
+							<option value="2">Permisos Para Usos De Equipos e Instalaciones</option>
+						</select>
 					</div>
-					
 				</form>
-
-				<div class="centrar">
-							
-				<table border=1 class="tablaCarCon">
-					<thead>
-						<tr class="heLin">
-							<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
-							<td class="marCon">CONTENIDO</td>
-							<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
-							<td class="marRe">RECURSOS</td>
-							<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
-							<td class="marPon">PONDERACIÓN</td>
+				<form class="formReSol centrar" id="tipoConstRegistro">
+					<div>
+						<label>Tipo De Constancia</label>
+						<select id="registroTipoCons">	
+							<option value="0">------------------</option>		
+							<option>De Trabajo</option>
+							<option>De Sueldo</option>
+							<option>De Permiso</option>
+						</select>
+					</div>
+				</form>
+				<form class="formReSol centrar" id="permisoCons">
+					<div>
+						<label>Permiso Para Uso De:</label>
+						<select id="permisoRegistro">
+							<option value="0">------------------------------------------</option>
+							<option>Aulas Para Eventos Estudiantiles</option>
+							<option>Equipos Audiovisuales</option>
+						</select>
+					</div>
+				</form>
+				<form class="formReSol centrar" id="contenidoSolic">
+					<table>
+						<tr>
+							<td>
+								<input placeholder="Nombre" class="inReSol" type="text">
+							</td>
 						</tr>
-					</thead>
-					<tbody>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="centrar ">
-					<a href="#" class="marAA">Eliminar Ultimo</a>
-					<a href="#">Nuevo Elemento</a>
-				</div>
-				<div class="centrar">
-					<button class="guardarCarCon">Guardar</button>
+						<tr>
+							<td>
+								<textarea placeholder="Mensaje" class="textReSol" rows=10></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td><button class="buEnReSol">Enviar</button></td>
+						</tr>		
+					</table>
+				</form>
+				<div id="atr" class="atras3">
+					<a id="atras"></a>
+					<a id="at">Atrás</a>
 				</div>
 			</article>
 		</div>

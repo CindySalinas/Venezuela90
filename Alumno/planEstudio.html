@@ -8,13 +8,13 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link rel="stylesheet" href="../css/miEstilo2.css">
+	<link rel="stylesheet" href="../css/miEstilo4.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
-	
+	<script src="../js/studen.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -25,11 +25,11 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="#" class="search-form" id="nombreUsuario">
+				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
-					<li><a href="intranetDocente.html">Inicio</a></li>
+					<li><a href="IntranetAlumno.html">Inicio</a></li>
 					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
 					<li><a href="../contacto.html">Contacto</a></li>
 					<li><a href="../institucion.html">La Institución</a></li>
@@ -51,13 +51,12 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
-						<li><a href="envioComunicados.html">Envio De Comunicados</a></li>
-						<li><a href="mensajeriaDocente.html">Mensajeria</a></li>
-						<li><a href="CargaConsultaPlanEstudio.html">Plan De Estudios</a></li>
-						<li><a href="cargaCalificaciones.html">Carga De Calificaciones</a></li>
-						<li><a href="HorarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
+						<li><a href="mensajeriaAlumno.html">Mensajeria</a></li>
+						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
+						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
 						<li><a href="foros.html">Foros</a></li>
-						<li><a href="CargaDescargaRecursos.html">Asignaciones y Recursos Educativos</a></li>
+						<li><a href="asignacionesRecursos.html">Asignaciones y Recursos Educativos</a></li>
 					</ul>
 				</div>
 			</article>
@@ -147,18 +146,27 @@
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-					</ul>	
+				<header><h3>Seleccionar Una Opcion</h3></header>
 
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Semanal</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Por Lapso</a></li>
-					</ul>					
-			</article>
-			
+						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Plan Semanal</a></li>
+						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Planificación Por Lapso</a></li>
+					</ul>	
+
+					<div class="centrar primerDivGH marPE2">
+						<label>Materia</label>
+						<select>
+							<option>--------------------</option>
+						</select>
+						<button class="classBotonesECDoc">Buscar</button>
+					</div>									
+			</article>	
+			<!-- <article id="noticias">
+				<header><h3>Seleccionar Una Opcion</h3></header>
+				<div class='planSem centrar'><div class='disIn disInUno'><figure><img width=200 src='../images/ministerio.png'></figure></div><div class='disIn disMe'><div class='bold'>REPÚBLICA BOLIVARIANA DE VENEZUELA</div><div class='bold'>MINISTERIO DEL PODER POPULAR PARA LA EDUCACIÓN</div><div class='bold'>UNIDAD EDUCATIVA 'VENEZUELA 90'</div><div class='bold'>VALENCIA-ESTADO CARABOBO</div><div class='bold'>Telf. (0241) 8595806</div></div><div class='disIn disInDos'><figure><img width=150 src='../images/logo.png'></figure></div><div class='borderDivPS centrar'>PLANES SEMANALES</div><table><tr><td class='right marRig'>SEMANA N:</td><td class='left marLef'></td><td class='right marRig'>FECHA:</td><td class='left marLef'>DESDE:  HASTA: </td><td class='right marRig'>SESIONES:</td><td class='left marLef'></td></tr><tr><td class='right marRig'>AREA:</td><td class='left marLef'></td><td class='right marRig'>DOCENTE:</td><td class='left marLef'></td><td class='right marRig'>N° ALUMNOS:</td><td class='left marLef'></td></tr></table><table border=1 class='tablaCarCon'><tr class='heLin'><td rowspan=3 class='marObEs fontBold'><p>PRIMERA SESIÓN</p><p>FECHA: </p></td><td class='marTecEClass'>TEMA</td><td class='marTecEClass'>INICIO</td><td class='marTecEClass'>DESARROLLO</td><td class='marTecEClass'>CIERRE</td></tr><tr class='heightTr'><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr><tr></tr><tr class='heightTr'><td rowspan=3 class='fontBold'><p>SEGUNDA SESIÓN:</p><p>FECHA: </p></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr><tr></tr><tr></tr><tr><td colspan=5 class='ppad'><label class='bold marRig'>OBSERVACIÓN: </label></td></tr></table><ul id='listaGestion'><li><a id='bloque2' onclick='window.print(); void 0'></a><a class='textoAbajo' onclick='window.print(); void 0'>Imprimir</a></li></ul></div>
+								
+			</article>	
+
 			<article id="noticias">
 				<header><h3>Consultar Plan De Estudio Por Lapso</h3></header>
 				<div class="planSem centrar">
@@ -221,88 +229,7 @@
 					</tbody>
 				</table>
 				</div>				
-			</article>
-
-			<article id="noticias">
-				<header><h3>Ingresar Plan De Estudio Por Lapso</h3></header>
-				<form >
-					<table border=1 class="tabPlanEs">
-						<thead class="centrar">
-							<tr>
-								<td colspan=2>Ingrese Datos</td>
-							</tr>
-						</thead>
-						<tr>				
-							<td class="right espacioRi">Docente: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Su Nombre"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Asignatura: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Asignatura"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Año: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Mención: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Mención"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Lapso: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Lapso"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Año Escolar: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año Escolar"></td>
-						</tr>				
-					</table>
-					<div class="centrar">
-						<a href="#">Continuar</a>
-					</div>
-					
-				</form>
-
-				<div class="centrar">
-							
-				<table border=1 class="tablaCarCon">
-					<thead>
-						<tr class="heLin">
-							<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
-							<td class="marCon">CONTENIDO</td>
-							<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
-							<td class="marRe">RECURSOS</td>
-							<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
-							<td class="marPon">PONDERACIÓN</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="centrar ">
-					<a href="#" class="marAA">Eliminar Ultimo</a>
-					<a href="#">Nuevo Elemento</a>
-				</div>
-				<div class="centrar">
-					<button class="guardarCarCon">Guardar</button>
-				</div>
-			</article>
+			</article> -->			
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->

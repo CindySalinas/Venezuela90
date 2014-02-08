@@ -1825,6 +1825,22 @@ fieldset{
 	margin-left: 2em;
 }
 
+.tablaPerfilUsuario
+{
+	margin: 1.5em auto;
+	width: 60%;
+}
+.tablaPerfilUsuario .tamTDtam
+{
+	width: 150px;
+}
+.tablaPerfilUsuario thead, .tabMenNav thead, .tabMenTodo thead
+{
+	background-color: #e9612c;
+	color: white;	
+	text-align: center;
+}
+
 /*GESTION HORARIOS*/
 .primerDivGH
 {
@@ -1853,4 +1869,32 @@ fieldset{
 #guardarHorarioDocente
 {
 	margin-bottom: 1em;
+}
+
+/*Docente - Envio De Comunicadps*/
+
+.classBotonesECDoc
+{
+	display: block;
+	margin: 1em auto;
+}
+.marPE2
+{
+	padding-top: 1em;
+}
+.divTopPE
+{
+	margin-top: 1em;
+}
+.textDocEC
+{
+	height: 150px;
+	width: 400px;
+}
+.tamInEC
+{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.2em;
+	width: 400px;
 }

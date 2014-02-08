@@ -77,7 +77,7 @@ function consultarForosRespuestas()
 					{
 						iddd="arr2";
 					}
-					$("#respuestasForos").append("<div id='"+iddd+"'><div id='foroTema'><figure><img src='user.png'></figure><div id='nombreTema'><p>"+item.titulo+"</p><span>De "+item.nombre+" "+item.apellido+" - "+item.fecha + ", "+item.hora+"</span></div></div><p id='tex2'>"+item.mensaje+"</p></div><hr>");
+					$("#respuestasForos").append("<div id='"+iddd+"'><div id='foroTema'><figure><img src='../images/user.png'></figure><div id='nombreTema'><p>"+item.titulo+"</p><span>De "+item.nombre+" "+item.apellido+" - "+item.fecha + ", "+item.hora+"</span></div></div><p id='tex2'>"+item.mensaje+"</p></div><hr>");
 						
 				});
 			}

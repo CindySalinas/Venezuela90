@@ -3,22 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Intranet</title>
+	<title>Venezuela 90 | Foros</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link rel="stylesheet" href="../css/miEstilo2.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
+	<script src="../js/javascriptViewForo.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/docente.js"></script>
-
 </head>
 <body class="p-admision">
-	<!-- HEADERRRRRRRRRRRR -->
+
+	<!-- HEADERRRRRRRRRR -->
 	<header class="site-header">
 		<div class="header-image-container estilo-header">
 			<a href="../index.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
@@ -26,11 +26,11 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
+				<a href="perfilAdministracion.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
-					<li><a href="../index.html">Inicio</a></li>
+					<li><a href="intranetDocente.html">Inicio</a></li>
 					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
 					<li><a href="../contacto.html">Contacto</a></li>
 					<li><a href="../institucion.html">La Institución</a></li>
@@ -70,7 +70,7 @@
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="PerfilDocente.html">Mi Perfil</a></li>
+						<li><a href="#">Mi Perfil</a></li>
 						<li><a href="#">Editar</a></li>
 						<li><a href="#">Mis Notificaciones</a></li>
 					</ul>
@@ -141,97 +141,54 @@
 			</aside>
 		</div>
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
-		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
-			<article>
-				<header><h2>Bienvenido</h2></header>
+			<article id="intranetPrincipal">
+				<header><h2>Foro</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Noticias</h3></header>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				<div id="todoForo">
+					<div id="foroTodo">
+						<div id="foroTema">	
+							<figure>
+								<img src="../images/user2.png">			
+							</figure>
+
+							<div id="nombreTema">
+								<p id="nomTemaP">Nombre Del Tema</p>		
+								<span id="nomCreadorP">De Nombre Del Creador - Martes, 5 de Noviembre de 2013, 15:00</span>
+							</div>
+						</div>
+					</div>
+					<p id="tex">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div id="respo">
+						<a id="responderForo">Responder</a>
+					</div>
 				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
+				<div id="respuestasForos">
+					
+				</div>			
 			</article>
-		</div>
-		<!-- Informacion General -->
-		<div class="sidebar-wrap estilo-sidebar-wrap" id="info">
-			<article id="noticias">
-				<header><h3>Información General</h3></header>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-			</article>
+
 		</div>
 	</section>
-	<!-- FOOTERRRRR -->
-	<footer class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<span class="v90-logo"></span>
-			<b>Unidad Educativa Venezuela 90</b><br>
-			<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
-		</div><!-- .site-info -->
-	</footer>
+
+
+
+<footer class="site-footer" role="contentinfo">
+	<div class="site-info">
+		<span class="v90-logo"></span>
+		<b>Unidad Educativa Venezuela 90</b><br>
+		<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
+	</div><!-- .site-info -->
+</footer>
+
+
 
 </body>
 </html>
