@@ -166,8 +166,8 @@
 							<td>Estatus</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
+					<tbody id="tbodyGS">
+						<!--tr>
 							<td>13090</td>
 							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
@@ -178,11 +178,11 @@
 							<td><a class="linkPrueba">Constancia 1</a></td>
 							<td>29/09/2013</td>
 							<td>Respondida</td>
-						</tr>
+						</tr-->
 					</tbody>
 				</table>	
 				<div class="centrar">
-					<button id="nuevaSolic">Nueva Solicitud</button>
+					<input type="button" id="nuevaSolic" value="Nueva Solicitud">
 				</div>
 				<div id="atr" class="atras">
 					<a id="atras"></a>
@@ -288,10 +288,14 @@
 					<div>
 						<label>Tipo De Constancia</label>
 						<select id="registroTipoCons">	
-							<option value="0">------------------</option>		
-							<option>De Trabajo</option>
-							<option>De Sueldo</option>
-							<option>De Permiso</option>
+							<option value="0">------------------</option>
+							<option value="1">De Buena Conducta</option>	
+							<option value="2">De Estudio</option>	
+							<option value="3">De Inscripcion</option>
+							<option value="4">De Notas</option>	
+							<option value="5">De Permiso</option>
+							<option value="6">De Retiro</option>
+							<option value="7">De Sueldo</option>
 						</select>
 					</div>
 				</form>
@@ -300,28 +304,32 @@
 						<label>Permiso Para Uso De:</label>
 						<select id="permisoRegistro">
 							<option value="0">------------------------------------------</option>
-							<option>Aulas Para Eventos Estudiantiles</option>
-							<option>Equipos Audiovisuales</option>
+							<option value="8">Aulas Para Eventos Estudiantiles</option>
+							<option value="9">Equipos Audiovisuales</option>
 						</select>
 					</div>
 				</form>
 				<form class="formReSol centrar" id="contenidoSolic">
 					<table>
-						<tr>
+						<!--tr>
 							<td>
 								<input placeholder="Nombre" class="inReSol" type="text">
 							</td>
-						</tr>
+						</tr-->
 						<tr>
 							<td>
 								<textarea placeholder="Mensaje" class="textReSol" rows=10></textarea>
 							</td>
 						</tr>	
 						<tr>
-							<td><button class="buEnReSol">Enviar</button></td>
+							<td><input type="button" id="crearSoli" class="buEnReSol" value="Crear Solicitud"></td>
 						</tr>		
 					</table>
+					<div id="msj">
+					
+				</div>
 				</form>
+				
 				<div id="atr" class="atras3">
 					<a id="atras"></a>
 					<a id="at">Atrás</a>
