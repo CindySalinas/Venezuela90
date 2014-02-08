@@ -148,28 +148,28 @@
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo ingresarHorario" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo consultarHorario" href="#">Consultar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo modificarHorario" href="#">Modificar</a></li>
+						<li><a id="iconoconsultar" class="ingresarHorario"></a><a class="textoAbajo ingresarHorario" >Ingresar</a></li>
+						<li><a id="iconomodificar" class="consultarHorario"></a><a class="textoAbajo consultarHorario" >Consultar</a></li>
+						<li><a id="iconoconsultar" class="modificarHorario"></a><a class="textoAbajo modificarHorario">Modificar</a></li>
 					</ul>							
 				</div>				
 			</article>
 
-			<article id="noticias" class="ingresar1">
+			<article id="noticias" class="ingresar1 none">
 				<header><h3>Ingresar</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" class="ingresarHorarioDocente1" href="#"></a><a class="textoAbajo" href="#">Horario Docente</a></li>
-						<li><a id="iconomodificar" class="ingresarHorarioSalones1" href="#"></a><a class="textoAbajo" href="#">Horario Salones</a></li>
+						<li><a id="iconoconsultar" class="ingresarHorarioDocente1"></a><a class="textoAbajo" >Horario Docente</a></li>
+						<li><a id="iconomodificar" class="ingresarHorarioSalones1"></a><a class="textoAbajo">Horario Salones</a></li>
 					</ul>							
 				</div>		
 				<div class="divAtrasInfoIns centrar">
-					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresar1">Atras</a>
 				</div>			
 			</article>
 
-			<article id="noticias" class="ingresarHorarioDocente1">
+			<article id="noticias" class="arcticleIngresarHorarioDocente1 none">
 				<header><h3>Ingresar Horario Docente</h3></header>
 				<div class="divCedulaHorarioDocente1">
 					<div class="centrar primerDivGH ">
@@ -179,8 +179,8 @@
 						<input id="botonBuscarDocenteGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarHD1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarHD1">Atras</a>
 					</div>	
 				</div>
 
@@ -190,53 +190,54 @@
 						<label class="block">Año Escolar</label>
 						<select id="yearHorarioDocente1">
 							<option value="1">2012/2013</option>
-							<option value="2">2013/2014</option>
+							<option value="2" selected>2013/2014</option>
 							<option value="3">2014/2015</option>
 						</select>
 						<input id="botonYearEscolarDocenteGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasDivIngresarHD1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasDivIngresarHD1">Atras</a>
 					</div>	
 				</div>
 				<div class="tablaIngresarHorarioDocente1">
+					<br>
 					<table border=1 >
 						<thead>
 							<tr>
 								<th>HORA</th>
-								<th>LUNES</th>
-								<th>MARTES</th>
-								<th>MIERCOLES</th>
-								<th>JUEVES</th>
-								<th>VIERNES</th>
+								<th id="lunesIHD">LUNES</th>
+								<th id="martesIHD">MARTES</th>
+								<th id="miercolesIHD">MIERCOLES</th>
+								<th id="juevesIHD">JUEVES</th>
+								<th id="viernesIHD">VIERNES</th>
 							</tr>
 						</thead>
 						<tbody class="centrar">
 							<tr>
-								<td><span>07:15</span></td>
+								<td><span id="hora1">07:15</span></td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD01" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD02" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD03" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD04" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD05" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
@@ -244,7 +245,7 @@
 							<tr>
 								<td><span>08:35</span></td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD01" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -254,7 +255,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD02" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -264,7 +265,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD03" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -274,7 +275,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD04" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -284,7 +285,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD05" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -295,29 +296,29 @@
 								</td>
 							</tr>
 							<tr>
-								<td><span>08:50</span></td>
+								<td><span  id="hora2">08:50</span></td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD06" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD07" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD08" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD09" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD10" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
@@ -325,7 +326,7 @@
 							<tr>
 								<td><span>10:05</span></td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD06" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -335,7 +336,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD07" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -345,7 +346,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD08" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -355,7 +356,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD09" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -365,7 +366,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD10" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -376,29 +377,29 @@
 								</td>
 							</tr>
 							<tr>
-								<td><span>10:25</span></td>
+								<td><span  id="hora3">10:25</span></td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD11" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD12" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD13" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD14" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD15" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
@@ -406,7 +407,7 @@
 							<tr>
 								<td><span>11:45</span></td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD11" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -416,7 +417,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD12" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -426,7 +427,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD13" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -436,7 +437,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD14" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -446,7 +447,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD15" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -457,29 +458,29 @@
 								</td>
 							</tr>
 							<tr>
-								<td><span>11:50</span></td>
+								<td><span  id="hora4">11:50</span></td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD16" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD17" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD18" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD19" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
 								<td>
-									<select class="marginTopSel">
+									<select id="materiaInHD20" class="marginTopSel materias">
 										<option value="0">Materia</option>
 									</select>
 								</td>
@@ -487,7 +488,7 @@
 							<tr>
 								<td><span>01:00</span></td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD16" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -497,7 +498,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD17" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -507,7 +508,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD18" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -517,7 +518,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD19" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -527,7 +528,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="marginBottomSel">
+									<select id="gradoInHD20" class="marginBottomSel grados">
 										<option value="0">Grado</option>
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
@@ -541,21 +542,22 @@
 						</tbody>
 					</table>
 					<div class="centrar">
-						<button id="guardarHorarioDocente">Grardar</button>
+						<button id="guardarHorarioDocente">Guardar</button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaHD1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaHD1">Atras</a>
 					</div>	
 				</div>
 			</article>
-			<article id="noticias" class="ingresarHorarioAulas1">
+			<article id="noticias" class="articleIngresarHorarioAulas1 none">
 				<header><h3>Ingresar Horario Aulas</h3></header>
+				<br>
 				<div class="divSeleccionHorarioAulas1">
 					<div class="centrar primerDivGH">
 						<br>
 						<label class="block">Seleccione Aula</label>
-						<select >
+						<select id="selectAula111">
 							<option value="1">Aula 1er Año</option>
 							<option value="2">Aula 2do Año</option>
 							<option value="3">Aula 3er Año</option>
@@ -565,8 +567,8 @@
 						<input id="botonBuscarAulaGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarAulas1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarAulas1">Atras</a>
 					</div>	
 				</div>
 				<div class="divYearHorarioAulas1">
@@ -581,8 +583,8 @@
 						<input id="botonYearEscolarAulaGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasYearHA1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasYearHA1">Atras</a>
 					</div>	
 				</div>
 				<div class="divTablaHorarioAulas1">
@@ -749,18 +751,18 @@
 						<button id="guardarHorarioAulas">Guardar</button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaHA1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaHA1">Atras</a>
 					</div>	
 				</div>
 			</article>
-			<article id="noticias" class="consultar1">
+			<article id="noticias" class="consultar1 none">
 				<header><h3>Consultar</h3></header>
 				
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo horarioDocenteConsultar1" href="#">Horario Docente</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo horarioAulasConsultar1" href="#">Horario Salones</a></li>
+						<li><a id="iconoconsultar" class="horarioDocenteConsultar1"></a><a class="textoAbajo horarioDocenteConsultar1">Horario Docente</a></li>
+						<li><a id="iconomodificar" class="horarioAulasConsultar1"></a><a class="textoAbajo horarioAulasConsultar1">Horario Salones</a></li>
 					</ul>							
 				</div>	
 				<div class="divAtrasInfoIns centrar">
@@ -769,9 +771,9 @@
 				</div>					
 			</article>
 
-			<article id="noticias" class="consultar2">
+			<article id="noticias" class="consultar2 none">
 				<header><h3>Consultar Horario Docente</h3></header>
-				<div id="divCedulaHorarioDocenteConsultar2">
+				<div class="divCedulaHorarioDocenteConsultar2">
 					<div class="centrar primerDivGH">
 						<br>
 						<label class="block">Cedula Del Docente</label>
@@ -779,11 +781,11 @@
 						<input id="botonConsultarDocenteGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasCedulaConsultar2"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasCedulaConsultar2">Atras</a>
 					</div>	
 				</div>
-				<div id="divMateriaHorarioDocenteConsultar2">
+				<div class="divMateriaHorarioDocenteConsultar2">
 					<div class="centrar primerDivGH">
 						<br>
 						<label class="block">Asignatura</label>
@@ -793,11 +795,11 @@
 						<input id="botonConsultarMateriaGH" type="Button" value="Aceptar"> 
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasMateriaConsultar2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasMateriaConsultar2">Atras</a>
 					</div>	
 				</div>
-				<div id="divTablaHorarioDocenteConsultar2">
+				<div class="divTablaHorarioDocenteConsultar2">
 					<table border=1>
 						<thead>
 							<tr>
@@ -918,14 +920,14 @@
 						</tbody>
 					</table>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaHDConsultar2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaHDConsultar2">Atras</a>
 					</div>	
 				</div>
 				
 			</article>
 
-			<article id="noticias" class="consultar3">
+			<article id="noticias" class="consultar3 none">
 				<header><h3>Consultar Horario Aulas</h3></header>
 				<div class="divAulaHorarioAulasConsultar3">
 					<div class="centrar primerDivGH">
@@ -940,8 +942,8 @@
 						</select>
 						<input id="botonConsultarAulaGH" type="Button" value="Aceptar"> 
 						<div class="divAtrasInfoIns centrar">
-							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasSelectAulaConsultar3"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasSelectAulaConsultar3">Atras</a>
 						</div>	
 					</div>
 				</div>
@@ -1046,24 +1048,24 @@
 						</tbody>
 					</table>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaConsultar3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaConsultar3">Atras</a>
 					</div>	
 				</div>
 			</article>
 
-			<article id="noticias" class="modificar1">
+			<article id="noticias" class="modificar1 none">
 				<header><h3>Modificar Horario Docente</h3></header>
 				<div class="divCedulaHorarioDocenteModificar1">
 					<div class="centrar primerDivGH">
 						<br>
 						<label class="block">Cedula Del Docente</label>
 						<input type="text" placeholder="21029953" id="cedulaHorarioDocenteModificar1">
-						<input id="modificarBuscarDocenteGH" type="Button" value="Aceptar"> 
+						<button id="modificarBuscarDocenteGH" value="Aceptar"> Aceptar</button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasCedulaModificar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasCedulaModificar1">Atras</a>
 					</div>	
 				</div>
 				<div class="divYearHorarioDocenteModificar1">
@@ -1072,17 +1074,17 @@
 						<label class="block">Año Escolar</label>
 						<select id="yearHorarioDocenteModificar1">
 							<option value="1">2012/2013</option>
-							<option value="2">2013/2014</option>
+							<option value="2" selected>2013/2014</option>
 							<option value="3">2014/2015</option>
 						</select>
-						<input id="modificarYearEscolarDocenteGH" type="Button" value="Aceptar"> 			
+						<button id="modificarYearEscolarDocenteGH" value="Aceptar">Aceptar</button> 			
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasYearModificar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasYearModificar1">Atras</a>
 					</div>
 				</div>
-				<div id="tablaHorarioDocenteModificar1">
+				<div class="tablaHorarioDocenteModificar1">
 					<table border=1>
 						<thead>
 							<tr>
@@ -1423,16 +1425,17 @@
 						</tbody>
 					</table>
 					<div class="centrar">
-						<button id="modificarHorarioDocente">Grardar</button>
+						<button id="modificarHorarioDocente">Guardar</button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaModificar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaModificar1">Atras</a>
 					</div>
 				</div>
 			</article>
-			<article id="noticias" class="modificar2">
+			<article id="noticias" class="modificar2 none">
 				<header><h3>Modificar Horario Aulas</h3></header>
+				
 				<div class="divAulaHorarioAulasModificar2">
 					<div class="centrar primerDivGH">
 						<br>
@@ -1444,11 +1447,11 @@
 							<option>Aula 4to Año</option>
 							<option>Aula 5to Año</option>
 						</select>
-						<input id="modificarBuscarAulaGH" type="Button" value="Aceptar"> 
+						<button id="modificarBuscarAulaGH" value="Aceptar"> </button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasAulaModificar2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasAulaModificar2">Atras</a>
 					</div>
 				</div>
 				<div class="divYearHorarioAulasModificar2">
@@ -1460,11 +1463,11 @@
 							<option value="2">2013/2014</option>
 							<option value="3">2014/2015</option>
 						</select>
-						<input id="modificarYearEscolarAulaGH" type="Button" value="Aceptar"> 
+						<button id="modificarYearEscolarAulaGH" value="Aceptar"> </button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasYearModificar2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasYearModificar2">Atras</a>
 					</div>
 				</div>
 				<div id="tablaHorarioAulasModificar2">
@@ -1631,8 +1634,8 @@
 						<button id="modificarHorarioAulas">Guardar</button>
 					</div>
 					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaModificar2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaModificar2">Atras</a>
 					</div>
 				</div>
 			</article>
