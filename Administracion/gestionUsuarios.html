@@ -147,14 +147,14 @@
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">						
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Eliminar</a></li>
+						<li><a class="linkIngresar" id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
+						<li><a class="linkConsultar" id="iconoconsultar"></a><a class="textoAbajo">Consultar</a></li>
+						<li><a class="linkEliminar" id="iconomodificar"></a><a class="textoAbajo" href="#">Eliminar</a></li>
 					</ul>							
 				</div>				
 			</article>
 
-			<article id="noticias" class="consultar1">
+			<article id="noticias" class="consultar1 none">
 				<header><h3>Consultar</h3></header>
 				<div class="primerDivGH centrar">
 					<br>
@@ -168,7 +168,7 @@
 				</div>			
 			</article>
 
-			<article id="noticias" class="consultar2">
+			<article id="noticias" class="consultar2 none">
 				<header><h3>Consultar</h3></header>
 				<table border=1 class="tablaPerfilDocente">
 					<thead>
@@ -228,7 +228,7 @@
 				</div>	
 			</article>
 
-			<article id="noticias" class="ingresar1">
+			<article id="noticias" class="ingresar1 none">
 				<header><h3>Ingresar</h3></header>
 				<div class="primerDivGH centrar">
 					<br>
@@ -247,7 +247,7 @@
 				</div>			
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="ingresar2 none">
 				<header><h3>Ingresar</h3></header>
 				<table border=1 class="tablaPerfilUsuario">
 					<thead>
@@ -258,27 +258,27 @@
 					<tbody>
 						<tr>
 							<td class="tamTDtam right espacioRi">Nombre: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="nombreIngresar2" type="text"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Apellido: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="apellidoIngresar2" type="text"></td>
 						</tr>
 						<tr>
 							<td class="tamTDtam right espacioRi">Cedula: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="cedulaIngresar2" type="text"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Email: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="emailIngresar2"type="text"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Genero: </td>
 							<td class="left espacioLe">
-								<select>
+								<select id="generoIngresar2">
 									<option value="1">Femenino</option>
 									<option value="2">Masculino</option>
 								</select>
@@ -288,7 +288,7 @@
 						<tr>
 							<td class="tamTDtam right espacioRi">Edo. Civil: </td>
 							<td class="left espacioLe">
-								<select>
+								<select id="edoCivilIngresar2">
 									<option value="1">Soltero</option>
 									<option value="2">Casado</option>
 								</select>
@@ -297,18 +297,18 @@
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Telefono: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="telefonoIngresar2" type="text"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Direccion: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="direccionIngresar2"type="text"></td>
 						</tr>
 					
 					</tbody>
 				</table>	
 
-				<table border=1 class="tablaPerfilUsuario">
+				<table border=1 class="tablaPerfilUsuario none tablaAlumnoIngresar2">
 					<thead>
 						<tr>
 							<td colspan=2>Alumno</td>
@@ -317,36 +317,54 @@
 					<tbody>
 						<tr>
 							<td class="tamTDtam right espacioRi">Grado: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe">
+								<select id="gradoIngresar2">
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
+								</select>
+							</td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Seccion: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe">
+								<select id="seccionIngresar2">
+									<option value="1">A</option>
+									<option value="2">B</option>
+									<option value="3">U</option>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<td class="tamTDtam right espacioRi">Religión: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe">
+								<select id="religionIngresar2">
+									<option value="1">Catolico</option>
+									<option value="2">Cristiano</option>
+									<option value="3">Evangelico</option>
+									<option value="4">Otros</option>
+								</select>
+							</td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Fecha Nacimiento: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input type="date" id="fechaNacAlumnoIngresar2"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Lugar Nacimiento: </td>
 							<td class="left espacioLe">
-								<select>
-									<option value="1">Femenino</option>
-									<option value="2">Masculino</option>
-								</select>
+								<input type="text" id="lugarNacAlumnoIngresar2">
 							</td>
 						</tr>										
 					</tbody>
 				</table>
 
-				<table border=1 class="tablaPerfilUsuario">
+				<table border=1 class="tablaPerfilUsuario none tablaRepresentanteIngresar2">
 					<thead>
 						<tr>
 							<td colspan=2>Representante</td>
@@ -355,21 +373,21 @@
 					<tbody>
 						<tr>
 							<td class="tamTDtam right espacioRi">Paternidad: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input type="text" id="paternidadIngresar2"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Profesión: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input type="text" id="profesionIngresar2"></td>
 						</tr>
 						<tr>
 							<td class="tamTDtam right espacioRi">Lugar De Trabajo: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="lugarTrabajoIngresar2"type="text"></td>
 						</tr>								
 					</tbody>
 				</table>	
 
-				<table border=1 class="tablaPerfilUsuario">
+				<table border=1 class="tablaPerfilUsuario none tablaDocenteIngresar2">
 					<thead>
 						<tr>
 							<td colspan=2>Docente</td>
@@ -378,35 +396,35 @@
 					<tbody>
 						<tr>
 							<td class="tamTDtam right espacioRi">Fecha Nacimiento: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="fechaNacDocenteIngresar2"type="text"></td>
 						</tr>
 
 						<tr>
 							<td class="tamTDtam right espacioRi">Lugar Nacimiento: </td>
-							<td class="left espacioLe"><input type="text"></td>
+							<td class="left espacioLe"><input id="lugarNacDocenteIngresar2" type="text"></td>
 						</tr>										
 					</tbody>
 				</table>
 
-				<button class="classBotonesECDoc">Ingresar</button>
+				<button class="classBotonesECDoc" id="botonIngresar2">Ingresar</button>
 
 				<div class="divAtrasInfoIns centrar">
-					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns "></a>
-					<a class="linkAtrasParaBuscar1 textoAbajoAtras ">Atras</a>
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresar2"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresar2">Atras</a>
 				</div>	
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="eliminar1 none">
 				<header><h3>Eliminar</h3></header>
 				<div class="primerDivGH centrar">
 					<br>
 					<label>Ingrese Cedula</label>
-					<input type="text" placeholder="21029953">
-					<button class="classBotonesECDoc">Eliminar</button>
+					<input type="text" placeholder="21029953" id="cedulaEliminar1">
+					<button class="classBotonesECDoc" id="botonEliminar1">Eliminar</button>
 				</div>	
 				<div class="divAtrasInfoIns centrar">
-					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns "></a>
-					<a class="linkAtrasParaBuscar1 textoAbajoAtras ">Atras</a>
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasEliminar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasEliminar1">Atras</a>
 				</div>			
 			</article>
 

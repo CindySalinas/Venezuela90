@@ -14,6 +14,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
+	<script src="../js/gestionHorarios.js"></script>
 </head>
 <body class="p-admision">
 
@@ -143,1408 +144,1496 @@
 				<header><h2>Gestión De Horarios</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="menuPrincipal">
 				<header><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
+						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo ingresarHorario" href="#">Ingresar</a></li>
+						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo consultarHorario" href="#">Consultar</a></li>
+						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo modificarHorario" href="#">Modificar</a></li>
 					</ul>							
 				</div>				
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="ingresar1">
 				<header><h3>Ingresar</h3></header>
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Horario Docente</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Horario Salones</a></li>
+						<li><a id="iconoconsultar" class="ingresarHorarioDocente1" href="#"></a><a class="textoAbajo" href="#">Horario Docente</a></li>
+						<li><a id="iconomodificar" class="ingresarHorarioSalones1" href="#"></a><a class="textoAbajo" href="#">Horario Salones</a></li>
 					</ul>							
-				</div>				
+				</div>		
+				<div class="divAtrasInfoIns centrar">
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+				</div>			
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="ingresarHorarioDocente1">
 				<header><h3>Ingresar Horario Docente</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Cedula Del Docente</label>
-					<input type="text" placeholder="21029953">
-					<input id="botonBuscarDocenteGH" type="Button" value="Aceptar"> 
-				</div>
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Año Escolar</label>
-					<select>
-						<option value="1">2012/2013</option>
-						<option value="2">2013/2014</option>
-						<option value="3">2014/2015</option>
-					</select>
-					<input id="botonYearEscolarDocenteGH" type="Button" value="Aceptar"> 
+				<div class="divCedulaHorarioDocente1">
+					<div class="centrar primerDivGH ">
+						<br>
+						<label class="block">Cedula Del Docente</label>
+						<input type="text" placeholder="21029953" id="cedulaIngresarHorarioDocente1">
+						<input id="botonBuscarDocenteGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
 
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:35</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:05</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:25</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:45</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>01:00</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						
-					</tbody>
-				</table>
-				<div class="centrar">
-					<button id="guardarHorarioDocente">Grardar</button>
+				<div class="divYearHorarioDocente1">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Año Escolar</label>
+						<select id="yearHorarioDocente1">
+							<option value="1">2012/2013</option>
+							<option value="2">2013/2014</option>
+							<option value="3">2014/2015</option>
+						</select>
+						<input id="botonYearEscolarDocenteGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
+				</div>
+				<div class="tablaIngresarHorarioDocente1">
+					<table border=1 >
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:35</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:05</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:25</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:45</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>01:00</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="centrar">
+						<button id="guardarHorarioDocente">Grardar</button>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="ingresarHorarioAulas1">
 				<header><h3>Ingresar Horario Aulas</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Seleccione Aula</label>
-					<select>
-						<option>Aula 1er Año</option>
-						<option>Aula 2do Año</option>
-						<option>Aula 3er Año</option>
-						<option>Aula 4to Año</option>
-						<option>Aula 5to Año</option>
-					</select>
-					<input id="botonBuscarAulaGH" type="Button" value="Aceptar"> 
+				<div class="divSeleccionHorarioAulas1">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Seleccione Aula</label>
+						<select >
+							<option value="1">Aula 1er Año</option>
+							<option value="2">Aula 2do Año</option>
+							<option value="3">Aula 3er Año</option>
+							<option value="4">Aula 4to Año</option>
+							<option value="5">Aula 5to Año</option>
+						</select>
+						<input id="botonBuscarAulaGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Año Escolar</label>
-					<select>
-						<option value="1">2012/2013</option>
-						<option value="2">2013/2014</option>
-						<option value="3">2014/2015</option>
-					</select>
-					<input id="botonYearEscolarAulaGH" type="Button" value="Aceptar"> 
+				<div class="divYearHorarioAulas1">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Año Escolar</label>
+						<select id="yearHorarioAulas1">
+							<option value="1">2012/2013</option>
+							<option value="2">2013/2014</option>
+							<option value="3">2014/2015</option>
+						</select>
+						<input id="botonYearEscolarAulaGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15 - 07-50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>07:50 - 08:35</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>08:50 - 09:35</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>09:35 - 10:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>10:25 - 11:00</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:00 - 11:45</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>11:55 - 12:40</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>12:40 - 01:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						
-					</tbody>
-				</table>
-				<div class="centrar">
-					<button id="guardarHorarioAulas">Guardar</button>
+				<div class="divTablaHorarioAulas1">
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15 - 07-50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>07:50 - 08:35</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>08:50 - 09:35</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>09:35 - 10:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>10:25 - 11:00</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:00 - 11:45</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>11:55 - 12:40</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>12:40 - 01:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="centrar">
+						<button id="guardarHorarioAulas">Guardar</button>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="consultar1">
 				<header><h3>Consultar</h3></header>
 				
 				<div id="contenidoNoticias" class="estiloGestionLibros">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Horario Docente</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Horario Salones</a></li>
+						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo horarioDocenteConsultar1" href="#">Horario Docente</a></li>
+						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo horarioAulasConsultar1" href="#">Horario Salones</a></li>
 					</ul>							
 				</div>	
-
-				
+				<div class="divAtrasInfoIns centrar">
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+				</div>					
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="consultar2">
 				<header><h3>Consultar Horario Docente</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Cedula Del Docente</label>
-					<input type="text" placeholder="21029953">
-					<input id="botonConsultarDocenteGH" type="Button" value="Aceptar"> 
+				<div id="divCedulaHorarioDocenteConsultar2">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Cedula Del Docente</label>
+						<input type="text" placeholder="21029953" id="cedulaHorarioDocenteConsultar2">
+						<input id="botonConsultarDocenteGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
-
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Asignatura</label>
-					<select>
-						<option>Materia</option>
-					</select>
-					<input id="botonConsultarMateriaGH" type="Button" value="Aceptar"> 
+				<div id="divMateriaHorarioDocenteConsultar2">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Asignatura</label>
+						<select id="materiaHorarioDocenteConsultar2">
+							<option>Materia</option>
+						</select>
+						<input id="botonConsultarMateriaGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
-
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:35</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:50</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:05</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:25</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:45</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:50</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>01:00</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						
-					</tbody>
-				</table>
-
+				<div id="divTablaHorarioDocenteConsultar2">
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:35</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:50</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:05</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:25</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:45</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:50</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>01:00</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
+				</div>
 				
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="consultar3">
 				<header><h3>Consultar Horario Aulas</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Seleccione Aula</label>
-					<select>
-						<option>Aula 1er Año</option>
-						<option>Aula 2do Año</option>
-						<option>Aula 3er Año</option>
-						<option>Aula 4to Año</option>
-						<option>Aula 5to Año</option>
-					</select>
-					<input id="botonConsultarAulaGH" type="Button" value="Aceptar"> 
+				<div class="divAulaHorarioAulasConsultar3">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Seleccione Aula</label>
+						<select id="aulaHorarioAulasConsultar3">
+							<option>Aula 1er Año</option>
+							<option>Aula 2do Año</option>
+							<option>Aula 3er Año</option>
+							<option>Aula 4to Año</option>
+							<option>Aula 5to Año</option>
+						</select>
+						<input id="botonConsultarAulaGH" type="Button" value="Aceptar"> 
+						<div class="divAtrasInfoIns centrar">
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+						</div>	
+					</div>
 				</div>
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15 - 07-50</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>07:50 - 08:35</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>08:50 - 09:35</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>09:35 - 10:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>10:25 - 11:00</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:00 - 11:45</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>11:55 - 12:40</span></td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td><span>12:40 - 01:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						
-					</tbody>
-				</table>
+				<div class="tablaConsultarAulasConsultar3">
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15 - 07-50</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>07:50 - 08:35</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>08:50 - 09:35</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>09:35 - 10:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>10:25 - 11:00</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:00 - 11:45</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>11:55 - 12:40</span></td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td><span>12:40 - 01:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
+				</div>
 			</article>
 
-			<article id="noticias">
-				<header><h3>Ingresar</h3></header>
-				<div id="contenidoNoticias" class="estiloGestionLibros">
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Horario Docente</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Horario Salones</a></li>
-					</ul>							
-				</div>				
-			</article>
-
-			<article id="noticias">
+			<article id="noticias" class="modificar1">
 				<header><h3>Modificar Horario Docente</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Cedula Del Docente</label>
-					<input type="text" placeholder="21029953">
-					<input id="modificarBuscarDocenteGH" type="Button" value="Aceptar"> 
+				<div class="divCedulaHorarioDocenteModificar1">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Cedula Del Docente</label>
+						<input type="text" placeholder="21029953" id="cedulaHorarioDocenteModificar1">
+						<input id="modificarBuscarDocenteGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>	
 				</div>
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Año Escolar</label>
-					<select>
-						<option value="1">2012/2013</option>
-						<option value="2">2013/2014</option>
-						<option value="3">2014/2015</option>
-					</select>
-					<input id="modificarYearEscolarDocenteGH" type="Button" value="Aceptar"> 
+				<div class="divYearHorarioDocenteModificar1">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Año Escolar</label>
+						<select id="yearHorarioDocenteModificar1">
+							<option value="1">2012/2013</option>
+							<option value="2">2013/2014</option>
+							<option value="3">2014/2015</option>
+						</select>
+						<input id="modificarYearEscolarDocenteGH" type="Button" value="Aceptar"> 			
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>
 				</div>
-
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:35</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>08:50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:05</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>10:25</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:45</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>01:00</span></td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginBottomSel">
-									<option value="0">Grado</option>
-									<option value="1">1er Año</option>
-									<option value="2">2do Año</option>
-									<option value="3">3er Año</option>
-									<option value="4">4to Año</option>
-									<option value="5">5to Año</option>
-								</select>
-							</td>
-						</tr>
-						
-					</tbody>
-				</table>
-				<div class="centrar">
-					<button id="modificarHorarioDocente">Grardar</button>
+				<div id="tablaHorarioDocenteModificar1">
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:35</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>08:50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:05</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>10:25</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:45</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>01:00</span></td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginBottomSel">
+										<option value="0">Grado</option>
+										<option value="1">1er Año</option>
+										<option value="2">2do Año</option>
+										<option value="3">3er Año</option>
+										<option value="4">4to Año</option>
+										<option value="5">5to Año</option>
+									</select>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="centrar">
+						<button id="modificarHorarioDocente">Grardar</button>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>
 				</div>
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="modificar2">
 				<header><h3>Modificar Horario Aulas</h3></header>
-				
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Seleccione Aula</label>
-					<select>
-						<option>Aula 1er Año</option>
-						<option>Aula 2do Año</option>
-						<option>Aula 3er Año</option>
-						<option>Aula 4to Año</option>
-						<option>Aula 5to Año</option>
-					</select>
-					<input id="modificarBuscarAulaGH" type="Button" value="Aceptar"> 
+				<div class="divAulaHorarioAulasModificar2">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Seleccione Aula</label>
+						<select id="aulaHorarioAulasModificar2">
+							<option>Aula 1er Año</option>
+							<option>Aula 2do Año</option>
+							<option>Aula 3er Año</option>
+							<option>Aula 4to Año</option>
+							<option>Aula 5to Año</option>
+						</select>
+						<input id="modificarBuscarAulaGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>
 				</div>
-				<div class="centrar primerDivGH">
-					<br>
-					<label class="block">Año Escolar</label>
-					<select>
-						<option value="1">2012/2013</option>
-						<option value="2">2013/2014</option>
-						<option value="3">2014/2015</option>
-					</select>
-					<input id="modificarYearEscolarAulaGH" type="Button" value="Aceptar"> 
+				<div class="divYearHorarioAulasModificar2">
+					<div class="centrar primerDivGH">
+						<br>
+						<label class="block">Año Escolar</label>
+						<select id="yearHorarioAulasModificar2">
+							<option value="1">2012/2013</option>
+							<option value="2">2013/2014</option>
+							<option value="3">2014/2015</option>
+						</select>
+						<input id="modificarYearEscolarAulaGH" type="Button" value="Aceptar"> 
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>
 				</div>
-				<table border=1>
-					<thead>
-						<tr>
-							<th>HORA</th>
-							<th>LUNES</th>
-							<th>MARTES</th>
-							<th>MIERCOLES</th>
-							<th>JUEVES</th>
-							<th>VIERNES</th>
-						</tr>
-					</thead>
-					<tbody class="centrar">
-						<tr>
-							<td><span>07:15 - 07-50</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>07:50 - 08:35</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>08:50 - 09:35</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>09:35 - 10:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>10:25 - 11:00</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>11:00 - 11:45</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><span>11:55 - 12:40</span></td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-							<td>
-								<select class="marginTopSel">
-									<option value="0">Materia</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span>12:40 - 01:05</span></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						
-					</tbody>
-				</table>
-				<div class="centrar">
-					<button id="modificarHorarioAulas">Guardar</button>
+				<div id="tablaHorarioAulasModificar2">
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15 - 07-50</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>07:50 - 08:35</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>08:50 - 09:35</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>09:35 - 10:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>10:25 - 11:00</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>11:00 - 11:45</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><span>11:55 - 12:40</span></td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+								<td>
+									<select class="marginTopSel">
+										<option value="0">Materia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><span>12:40 - 01:05</span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="centrar">
+						<button id="modificarHorarioAulas">Guardar</button>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+					</div>
 				</div>
 			</article>
 
