@@ -304,10 +304,17 @@
 	display: inline-block;
 }
 .contenidoNoticias figure img
-{
+{	
+	margin-top: -20%;
 	height: 100px;
 	width: 100px;
 }
+.contenidoNoticias h4
+{
+	margin: 1% auto auto 12.8%;
+}
+
+
 /*Barra Lateral Izquierdo Intranet*/
 .estilo-article-wrap
 {
@@ -1796,6 +1803,12 @@ fieldset{
 	display: none;
 }
  /*FIN GESTION LISTADOS */ 
+
+ /* Envio de Comunicados*/ 
+.comunicadoRepresentante,.comunicadoReprePorAlumn,.comunicadoRepreGrado,.comunicadoAlumno,.comuAlumPorAlum,.comuAlumPorGrado{
+	display: none;
+}
+ /* fin envio comunicados*/ 
 /* FIN EDICION MANUEL*/
 
 .divDisInVer
@@ -1897,4 +1910,7 @@ fieldset{
 	margin: 0 auto;
 	margin-bottom: 0.2em;
 	width: 400px;
+}
+.mostrarCed{
+	display: none;
 }

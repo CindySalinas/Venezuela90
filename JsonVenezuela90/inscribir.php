@@ -1,7 +1,7 @@
 <?php
 //conexion a la BD
 include("conex.php");
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 // Obtener Valores enviados desde el formulario
 
@@ -13,8 +13,9 @@ $cedA = $_GET["cI"];
 $lugarA = $_GET["whereBorn"];
 $entiA = $_GET["entity"];
 $dirA = $_GET["addres"];
+$mailA = $_GET["email"];
+$gen = $_GET["genero"];
 $tlf1A = $_GET["phone1"];
-$tlf2A = $_GET["phone2"];
 $yearA = $_GET["year"];
 $aPlan = $_GET["plantel"];
 $aMatP = $_GET["matP"];
@@ -22,7 +23,8 @@ $aAct = $_GET["actividad"];
 $aRel = $_GET["religion"];
 $aEnf = $_GET["sicking"];
 $aAler = $_GET["alergy"];
-
+$ingre = $_GET["fechaIngreso"];
+$esYear = $_GET["yearEscolar"];
 // Padre
 $pNom = $_GET["firsNameFather"];
 $pAp = $_GET["lastNameFather"];
@@ -30,31 +32,137 @@ $pCed = $_GET["cIfather"];
 $pPro = $_GET["profesion"];
 $pTrb = $_GET["whereWork"];
 $pTlf1 = $_GET["phone3"];
-$pTlf2 = $_GET["phone4"];
 
 //Mandre
 $mNom = $_GET["firsNameMother"];
 $mAp = $_GET["lastNameMother"];
 $mCed = $_GET["cIMother"];
+$mail2 = $_GET["emailPadre"];
 $mPro = $_GET["profesionMother"];
 $mTrb = $_GET["whereWorkMother"];
 $mTlf1 = $_GET["phone5"];
-$mTlf2 = $_GET["phone6"];
-
+$mail3 = $_GET["emailMadre"];
 //Emergencia
 $eNom = $_GET["firsNameE"];
 $eAp = $_GET["lastNameE"];
 $eCed = $_GET["cIE"];
 $eTlf1 = $_GET["phone7"];
-$eTlf2 = $_GET["phone8"];
 
 $records = array();
 $cons;
 
-// QUERY 
-$sql2 = "INSERT INTO prueba2(id, a_nom, a_ap, a_fecha, a_lugar_n, a_entidad, a_ced, a_direcc, a_telf1, a_telf2, a_year, a_plantel, a_matP, a_actividad, a_religion, a_enf, a_aler, p_nom, p_ap, p_ced, p_pro, p_trb, p_tlf1, p_tlf2, m_nom, m_ap, m_ced, m_pro, m_trb, m_tlf1, m_tlf2, e_nom, e_ap, e_ced, e_tlf1, e_tlf2) VALUES(NULL, '$nomA','$apA','$fechaA','$lugarA','$entiA','$cedA','$dirA','$tlf1A','$tlf2A','$yearA','$aPlan','$aMatP','$aAct','$aRel','$aEnf','$aAler','$pNom','$pAp','$pCed','$pPro','$pTrb','$pTlf1','$pTlf2','$mNom','$mAp','$mCed','$mPro','$mTrb','$mTlf1','$mTlf2','$eNom','$eAp','$eCed','$eTlf1','$eTlf2')";
 
-$result = mysql_query($sql2) or die ("Query error: " . mysql_error());
+global $estado;
+global $rep;
+inscribirUsuarioAlumno();
+//inscribirUsuarioRepresentante();
+inscribirUsuarioRepresentantePadre();
+inscribirUsuarioRepresentanteMadre();
+function inscribirUsuarioAlumno(){
+	
+	global $nomA;
+	global $apA;
+	global $cedA; 
+	global $mailA;
+	global $cedA;
+	global $gen;
+	global $tlf1A;
+	global $dirA;
+	global $rep;
+	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Id_Genero,Estado_Civil,Nacionalidad,Telefono,Direccion,Id_Rol_Usuario) VALUES('$nomA','$apA','$cedA','$mailA','$cedA','$gen','1','Venezolano','$tlf1A','$dirA','3')";
+	$result = mysql_query($sql) or die ("Query error1: " . mysql_error());
+	global $utlID;
+	$utlID = mysql_insert_id();
+	insertarRepresentanteEmergencia();
+	insertarEstudiante($utlID);
+}
+function inscribirUsuarioRepresentantePadre(){
+	global $pNom;
+	global $pAp;
+	global $pCed;
+	global $mail2;
+	global $pTlf1;
+	global $dirA;
+	global $pPro;
+	global $pTrb;
+	global $cedA;
+	$pat = "Padre";
+	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$pNom','$pAp','$pCed','$mail2','$pCed','$pTlf1','$dirA','3','2')";
+	$result = mysql_query($sql) or die ("Query error2: " . mysql_error());
+	//$rep = mysql_insert_id();
+	$pa =  mysql_insert_id();
+	global $asd;
+	insertarRepresentante($pPro,$pTrb,$pCed,$pat);
+	representanteEstudiante($asd);
+
+}
+function inscribirUsuarioRepresentanteMadre(){
+	global $mNom;
+	global $mAp;
+	global $mail3;
+	global $mCed;
+	global $mTlf1;
+	global $dirA;
+	global $cedA;
+	global $mPro;
+	global $mTrb;
+	global $cedA;
+	$pat = "Madre";
+	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$mNom','$mAp','$mCed','$mail3','$mCed','$mTlf1','$dirA','3','1')";
+	$result = mysql_query($sql) or die ("Query error21: " . mysql_error());
+	//$rep = mysql_insert_id();
+	//$ma =  mysql_insert_id();
+	global $asd;
+	insertarRepresentante($mPro,$mTrb,$mCed,$pat);
+	representanteEstudiante($asd);
+
+}
+
+function insertarEstudiante($ult){
+	global $rep;
+	global $yearA;
+	global $aRel;
+	global $ingre;
+	global $repre;
+	global $cedA;
+	global $aMatP;
+	global $aAler;
+	global $aEnf;
+	global $cedA; 
+	global $lugarA;
+	global $entiA;
+	global $fechaA;
+	global $esYear;
+	//global $rep;
+	$sql = "INSERT INTO  estudiante(Id_Usuario,Id_Grado,Id_Religion,Entidad,Fecha_Nacimiento,Lugar_Nacimiento,Fecha_Ingreso,Id_Usuario_Estudiante,Materia_Pendiente,Alergia,Enfermedad,Id_Representante_Emergencia,Id_Year_Escolar) VALUES
+	 ('$ult','$yearA','$aRel','$entiA','$fechaA','$lugarA','$ingre','$cedA','$aMatP','$aAler','$aEnf','$rep','$esYear')";
+	$result = mysql_query($sql) or die ("Query error3: " . mysql_error());
+}
+
+function insertarRepresentante($a,$b,$c,$d){
+	$sql = "INSERT INTO representante (Id_Profesion,Lugar_Trabajo,Id_usuario_Representante,Rol_Paternidad) VALUES ('$a','$b','$c','$d')";
+	$result = mysql_query($sql) or die ("Query error4: " . mysql_error());
+	global $asd;
+	$asd = mysql_insert_id();
+}
+
+function insertarRepresentanteEmergencia(){
+	global $rep;
+	global $eNom;
+	global $eAp;
+	global $eCed;
+	global $eTlf1;
+	$sql = "INSERT INTO representante_emergencia(Nombre,Apellido,Telefono,cedula) VALUES ('$eNom','$eAp','$eTlf1',$eCed)";
+	$result = mysql_query($sql) or die ("Query error5: " . mysql_error());
+	
+	$rep = mysql_insert_id();
+
+}
+function representanteEstudiante($repres){
+	global $utlID;
+	$sql = "INSERT INTO representante_estudiante(Id_Estudiante,Id_Representante) VALUES('$utlID','$repres')";
+	$result = mysql_query($sql) or die ("Query error6: " . mysql_error());
+}
 
 // Verifica que la consulta no tenga error
 if(mysql_affected_rows() != -1){

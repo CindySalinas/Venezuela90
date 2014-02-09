@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/docente.js"></script>
+	<script src="../js/envioComunicados.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -146,36 +147,45 @@
 				<header><h2>Envio De Comunicados</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Comunidados</h3></header>
+			<article id="noticias" class="listadoPrincipal">
+				<header class="titulo"><h3>Comunidados</h3></header>
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Para Representantes</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Para Alumnos</a></li>
-					</ul>					
+						<li><a id="iconoconsultar" class="comuRepre"></a><a class="textoAbajo comuRepre">Para Representantes</a></li>
+						<li><a id="iconomodificar" class="comuAlumn"></a><a class="textoAbajo comuAlumn">Para Alumnos</a></li>
+					</ul>	
 			</article>	
-			<article id="noticias">
+			<article id="noticias" class="comunicadoRepresentante">
 				<header><h3>Comunicados A Representantes</h3></header>
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Enviar Por Alumno</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Enviar Por Grado</a></li>
-					</ul>					
+						<li><a id="iconoconsultar" class="reprePorAlumno"></a><a class="textoAbajo reprePorAlumno">Enviar Por Alumno</a></li>
+						<li><a id="iconomodificar" class="reprePorGrado"></a><a class="textoAbajo reprePorGrado">Enviar Por Grado</a></li>
+					</ul>
+					<div id="atrasGL1" class="atras2 atr centrar">
+						<a id="atras"></a>
+						<a id="at">Atrás</a>
+					</div>					
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="comunicadoReprePorAlumn"> 
 				<header><h3>Comunicados A Representantes Por Alumno</h3></header>
 					<div class="centrar primerDivGH">
 						<br>
 						<label>Cedula Del Alumno</label>
 						<input type="text" placeholder="21029953" id="inputParaXalumno">
-						<button id="buttonDocEC" class="classBotonesECDoc">Aceptar</button>
+						<br>
+						<input type="button"  class="classBotonesECDoc" value="Aceptar">
 					</div>	
 
 					<div class="centrar ">
 						<input type="text" class="tamInEC" value="Para: ">
 						<textarea class="textDocEC"></textarea>
 						<button class="classBotonesECDoc">Enviar</button>
+						<div id="atrasGL2" class="atras2 atr centrar">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
+						</div>	
 					</div>					
 			</article>	
-			<article id="noticias">
+			<article id="noticias" class="comunicadoRepreGrado">
 				<header><h3>Comunicados A Representantes Por Grado</h3></header>
 					<div class="centrar primerDivGH">
 						<br>
@@ -187,40 +197,56 @@
 							<option value="4">4to Año</option>
 							<option value="5">5to Año</option>
 						</select>
-						<button class="classBotonesECDoc">Aceptar</button>
+						<br>
+						<input type="button" class="classBotonesECDoc" value="Aceptar">
 					</div>	
 					<div class="centrar ">
 						<input type="text" class="tamInEC" value="Para: ">
 						<textarea class="textDocEC"></textarea>
-						<button class="classBotonesECDoc">Enviar</button>
+						<br>
+						<input type="button" class="classBotonesECDoc" value="Enviar">
+						<div id="atrasGL3" class="atras2 atr centrar">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
+						</div>	
 					</div>					
 			</article>	
 
 
-			<article id="noticias">
+			<article id="noticias" class="comunicadoAlumno">
 				<header><h3>Comunicados A Alumnos</h3></header>
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Enviar Por Alumno</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Enviar Por Grado</a></li>
-					</ul>					
+						<li><a id="iconoconsultar" class="alumPorAlum"></a><a class="textoAbajo alumPorAlum" >Enviar Por Alumno</a></li>
+						<li><a id="iconomodificar" class="alumPorGrado"></a><a class="textoAbajo alumPorGrado">Enviar Por Grado</a></li>
+					</ul>	
+					<div id="atrasGL4" class="atras2 atr centrar">
+						<a id="atras"></a>
+						<a id="at">Atrás</a>
+					</div>					
 			</article>		
 
-			<article id="noticias">
+			<article id="noticias" class="comuAlumPorAlum">
 				<header><h3>Comunicados A Alumnos</h3></header>
 					<div class="centrar primerDivGH">
 						<br>
 						<label>Cedula Del Alumno</label>
 						<input type="text" placeholder="21029953">
-						<button id="buttonDocEC" class="classBotonesECDoc">Aceptar</button>
+						<br>
+						<input type="button"  class="classBotonesECDoc" value="Aceptar">
 					</div>	
 
 					<div class="centrar ">
 						<input type="text" class="tamInEC" value="Para: ">
 						<textarea class="textDocEC"></textarea>
-						<button class="classBotonesECDoc">Enviar</button>
+						<br>
+						<input type="button" class="classBotonesECDoc" value="Enviar">
+						<div id="atrasGL5" class="atras2 atr centrar">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
+						</div>	
 					</div>					
 			</article>	
-			<article id="noticias">
+			<article id="noticias" class="comuAlumPorGrado">
 				<header><h3>Comunicados A Alumnos Por Grado</h3></header>
 					<div class="centrar primerDivGH">
 						<br>
@@ -232,12 +258,18 @@
 							<option value="4">4to Año</option>
 							<option value="5">5to Año</option>
 						</select>
-						<button class="classBotonesECDoc">Aceptar</button>
+						<br>
+						<input type="button" class="classBotonesECDoc" value="Aceptar">
 					</div>	
 					<div class="centrar ">
 						<input type="text" class="tamInEC" value="Para: ">
 						<textarea class="textDocEC"></textarea>
-						<button class="classBotonesECDoc">Enviar</button>
+						<br>
+						<input type="button" class="classBotonesECDoc" value="Enviar">
+						<div id="atrasGL6" class="atras2 atr centrar">
+							<a id="atras"></a>
+							<a id="at">Atrás</a>
+						</div>	
 					</div>					
 			</article>			
 		</div>

@@ -1,7 +1,10 @@
 $(document).on("ready", aaaaa);
-
+var si;
 function aaaaa(){
+	$('#some2').hide();
 	$('form #enviarDatos').on("click",inscripcion);
+	$('#restAtras').on("click",rst);
+	$('#fechaIng').val(GetTodayDate);
 	 //tabs 
   	$('.center-button #cambiar').on("click",changeTab);
 	$('form').validate({
@@ -27,6 +30,13 @@ function aaaaa(){
 		    },
 		    entity: {
 		    	minlength : 3,
+		    	required: true
+		    },
+		    genero:{
+		    	required:true
+		    },
+		    matP:
+		    {
 		    	required: true
 		    },
 		    cI : { 
@@ -61,12 +71,10 @@ function aaaaa(){
 		    	required: true
 		    },
 		    year: {
-		    	minlength: 4,
-		    	number: true,
 		    	required: true	
 		    },
 		    plantel:{
-		    	required: true
+		    	
 		    },
 		    matP:{
 		    	required : true
@@ -78,12 +86,12 @@ function aaaaa(){
 		    	required: true
 		    },
 		    sicking:{
-		    	minlength: 5,
-		    	required: true
+		    	minlength: 5
+		    	
 		    },
 		    alergy:{
-		    	minlength:5,
-		    	required: true
+		    	minlength:5
+		    	
 		    },
 		    //Padre
 		   lastNameFather: {
@@ -95,12 +103,11 @@ function aaaaa(){
 		        required: true
 		    },
 		    cIfather : { 
-		    	minlength: 10,
+		    	minlength: 6,
 		    	number : true,
 		    	required: true
 		    },
 		    profesion:{
-		    	minlength: 5,
 		    	required: true
 		    },
 		    whereWork:{
@@ -127,12 +134,11 @@ function aaaaa(){
 		        required: true
 		    },
 		    cIMother : { 
-		    	minlength: 10,
+		    	minlength: 6,
 		    	number : true,
 		    	required: true
 		    },
 		    profesionMother:{
-		    	minlength: 5,
 		    	required: true
 		    },
 		    whereWorkMother:{
@@ -159,7 +165,7 @@ function aaaaa(){
 		        required: true
 		    },
 		    cIE : { 
-		    	minlength: 10,
+		    	minlength: 6,
 		    	number : true,
 		    	required: true
 		    },
@@ -180,6 +186,7 @@ function aaaaa(){
 			$('#enviarDatos').attr('disabled', true);
 			$('#cambiar').attr('disabled',true);
 			$('#tabControl').hide();
+			si = 0;
 		},
 		success: function(element) {
 			element
@@ -190,6 +197,7 @@ function aaaaa(){
 			$('#cambiar').attr('disabled',false);
 			$('#tabControl').attr('disabled',false);
 			$('#tabControl').show();
+			si=1;
 		}
 	});
 	$('#enviarDatos').attr('disabled', true);
@@ -197,24 +205,52 @@ function aaaaa(){
 
 function inscripcion(){
 	// Obtiene automaticamente los valores del form
+	$('.alert').remove();
 	var datos = $('form').serialize();
+	console.log(datos);
 	//alert(datos)
  	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/inscribir.php?jsoncallback=?";
- 		$.getJSON(url, datos).done(function(respuestaServer){
+ 	$.getJSON(url, datos).done(function(respuestaServer){
  			if(respuestaServer.num != 0){
  				$('form').hide();
 				$('#tabControl').hide();
-				$('#some').append("<div class='alert alert-success'>"+respuestaServer.mensaje+"</div");
+				$('#some').append("<br><br><div class='alert alert-success'>"+respuestaServer.mensaje+"</div>");
+				$('#some2').show();
+
  			}
 			else
-				$('#some').append("<div class='alert alert-danger'>"+respuestaServer.mensaje+"</div");
+				$('#some').append("<br><br><div class='alert alert-danger'>"+respuestaServer.mensaje+"</div>");
+			$('#some2').show();
 	});
- 	
 	
 }	
+function validar(){
+	var inputs = $('input[type=text]');
+	var texts = $('textarea').val();
+
+	inputs.each(function(i,item){
+		if(item.value = ""){
+			item.closest('.movit').removeClass('success').addClass('error');
+		}
+		else{
+			inputs.text('OK!').addClass('help-inline').closest('.movit').removeClass('error').addClass('success');
+		}
+	});
+
+}
 function changeTab(data){
   var num = data.currentTarget.name;
-  $('#tabControl li:eq('+num+') a').tab('show') 
+  if(si== 1){
+  	$('#tabControl').show();
+  	$('#tabControl li:eq('+num+') a').tab('show') 
+  	$("form").submit(function(e){
+    return false;
+});
+  }
+  else{
+  	$('#tabControl').hide();
+  }
+  //$('#tabControl li:eq('+num+') a').tab('show') 
 }
 
 function soloLetras(e){
@@ -235,3 +271,28 @@ function soloLetras(e){
             return false;
         }
     }
+    /*Funcion para obtener la fecha actual*/
+function GetTodayDate() {
+   var tdate = new Date();
+   var dd = tdate.getDate(); //yields day
+   var MM = tdate.getMonth(); //yields month
+   var yyyy = tdate.getFullYear(); //yields year
+  // var xxx = dd + "-" +( MM+1) + "-" + yyyy;
+  if(dd < 10 || MM < 10){
+  	 var xxx = yyyy+ "-" +0+(MM+1)+ "-" +0+ dd;
+  }else{
+  	var xxx = yyyy+ "-" +(MM+1)+ "-" + dd;
+  }
+  
+   return xxx;
+}
+jQuery.fn.reset = function () {
+  $(this).each (function() { this.reset(); });
+}
+function rst(){
+	$('form').reset();
+	$('form').show("slide");
+	$('#some2').hide();
+	$('#tabControl li:eq(0) a').tab('show') 
+	$('.alert').remove();
+}

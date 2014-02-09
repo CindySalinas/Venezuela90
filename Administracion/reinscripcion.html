@@ -8,13 +8,13 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<!--link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'-->
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/admins.js"></script>
-
+	<script src="../js/reinscripcion.js"></script>
 </head>
 <body class="p-admision">
 
@@ -145,26 +145,28 @@
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Seleccionar Una Opción</h3></header>
+				<header class="titulo"><h3>Seleccionar Una Opción</h3></header>
 				<div id="contenidoNoticias">
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
+						<li><a id="iconoconsultar" class="consultarCed"></a><a class="textoAbajo consultarCed">Consultar</a></li>
+						<!--li><a id="iconomodificar"class="modificarCed"></a><a class="textoAbajo modificarCed">Modificar</a></li-->
 					</ul>
-					<div id="numerocedula">
+					<div id="numerocedula" class="mostrarCed">
 						<form action="" method="get" accept-charset="utf-8">
 							<label id="labelcedula">Numero De Cedula: </label>
-							<input type="text" placeholder="Ej.: 25154875" >
+							<input type="text" placeholder="Ej.: 25154875" id="cedulaAl">
 							<span id="ced"></span>
 						</form>
-						<div id="atr">
-							<a id="atras" href="#"></a>
-							<a id="at" href="#">Atrás</a>
-						</div>
+						<br>
 						<div id="sig">
-							<a id="siguiente" href="#"></a>
-							<a id="sit" href="#">Siguiente</a>
+							<a id="siguiente"></a>
+							<a id="sit" >Siguiente</a>
 						</div>
+						<div id="atr">
+							<a id="atras" ></a>
+							<a id="at" >Atrás</a>
+						</div>
+						
 					</div>
 				</div>				
 			</article>
