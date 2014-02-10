@@ -3,18 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Gestion De Libros</title>
+	<title>Venezuela 90 | Gestion De Calificaciones</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link rel="stylesheet" href="../css/miEstilo2.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
-	<script src="../js/docente.js"></script>
+	<script src="../js/admins.js"></script>
+	<script src="../js/calif.js"></script>
 </head>
 <body id="asd" class="p-admision">
 
@@ -26,11 +26,11 @@
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="perfilDocente.html" class="search-form" id="nombreUsuario">
+				<a href="perfilAdministracion.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
-					<li><a href="intranetDocente.html">Inicio</a></li>
+					<li><a href="../index.html">Inicio</a></li>
 					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
 					<li><a href="../contacto.html">Contacto</a></li>
 					<li><a href="../institucion.html">La Institución</a></li>
@@ -66,11 +66,11 @@
 							</tr>
 							<tr>
 								<td class="tam">ASIGNATURA:</td>
-								<td><input type="text"></td>
+								<td><input type="text" id="asig"></td>
 							</tr>
 							<tr>
 								<td class="tam">PROFESOR:</td>
-								<td><input type="text"></td>
+								<td><input type="text" id="nomPro"></td>
 							</tr>
 							<tr>
 								<td class="tam">AÑO ESCOLAR:</td>
@@ -142,95 +142,164 @@
 					<tr class="centrar">
 						<td class="tam1">N°</td>
 						<td class="tam2">APELLIDOS Y NOMBRES</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
-						<td>Calif</td>
-						<td>%</td>
+						<td><input type="text" id="califP1"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP1"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP2"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP2"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP3"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP3"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP4"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP4"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP5"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP5"class="inputOtroClass" placeholder="%"></td>
+						<td><input type="text" id="califP6"class="inputOtroClass" placeholder="calif"></td>
+						<td><input type="text" id="porcP6"class="inputOtroClass" placeholder="%"></td>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
 					</tr>
-					<tr>
+				<!--	<tr class="modif">
 						<td class="centrar">01</td>
 						<td>SALAZAR INAGA, LUINDER JESUS</td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot71"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass pLapso"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot30"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass masPt"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass totF"type="text"></td>
 					</tr>
 
 					<tr>
 						<td class="centrar">02</td>
 						<td>PEREZ APONTE, DENGER JESUS</td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot71"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass pLapso"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot30"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass masPt"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass totF"type="text"></td>
 					</tr>
 
 					<tr>
 						<td class="centrar">03</td>
 						<td>CABRERA GONZALEZ, EDWARD</td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-						<td class="centrar"><input class="inputOtro centrar"type="text"></td>
-					</tr>
+						<td class="centrar"><input class="inputOtroClass valid califa1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc1"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc2"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc3"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc4"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc5"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass valid califa6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass porc6"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot71"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass pLapso"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass tot30"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass masPt"type="text"></td>
+						<td class="centrar"><input class="inputOtroClass totF"type="text"></td>
+					</tr>-->
 				</table>	
-				<div class="centrar">
-					<button class="butM">Modificar</button>
-				</div>
-			</article>
 
+				<div id="msjss" class="centrar">
+						<div class="alert alert-danger">Nota no valida por favor corrija
+						</div>
+				</div>
+				<div id="msjss2" class="centrar">
+						<div class="alert alert-danger">La suma de los porcentajes no puede ser mayor, ni menor a 100%
+						</div>
+				</div>
+				<div id="msjss3" class="centrar">
+						<div class="alert alert-danger">No pueden haber porcentajes en blanco
+						</div>
+				</div>
+				<div class="centrar">
+					<button id="modif" class="butM">Modificar</button>
+					<button id="guar"  class="butM">Guardar</button>
+					<button id="calc"  class="butM">Calcular</button>
+ 				</div>
+
+			</article>
+			<table id="Toculta" >	
+				<thead>
+					<td>Nota F1</td>
+					<td>Nota F2</td>
+					<td>Nota F3</td>
+					<td>Nota F4</td>
+					<td>Nota F5</td>
+					<td>Nota F6</td>
+					<td>Total suma<td>
+					<td>70%</td>
+					<td>30%</td>
+					<td>Final</td>
+				</thead>
+				<tbody>
+				<!--	<tr class="col">
+						<td class="centrar"><input class="inputOtroClass esc rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc2 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc3 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc4 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc5 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc6 rows"></td>
+						<td class="centrar"><input class="inputOtroClass tot"></td>
+						<td class="centrar"><input class="inputOtroClass tot7"></td>
+						<td class="centrar"><input class="inputOtroClass tot32"></td>
+						<td class="centrar"><input class="inputOtroClass totF2"></td>
+					</tr>
+					<tr class="col">
+						<td class="centrar"><input class="inputOtroClass esc rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc2 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc3 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc4 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc5 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc6 rows"></td>
+						<td class="centrar"><input class="inputOtroClass tot"></td>
+						<td class="centrar"><input class="inputOtroClass tot7"></td>
+						<td class="centrar"><input class="inputOtroClass tot32"></td>
+						<td class="centrar"><input class="inputOtroClass totF2"></td>
+					</tr>
+					<tr class="col">
+						<td class="centrar"><input class="inputOtroClass esc rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc2 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc3 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc4 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc5 rows"></td>
+						<td class="centrar"><input class="inputOtroClass esc6 rows"></td>
+						<td class="centrar"><input class="inputOtroClass tot"></td>
+						<td class="centrar"><input class="inputOtroClass tot7"></td>
+						<td class="centrar"><input class="inputOtroClass tot32"></td>
+						<td class="centrar"><input class="inputOtroClass totF2"></td>
+					</tr>
+	-->
+				</tbody>
+
+			</table>
 		</div>
 	</section>
 

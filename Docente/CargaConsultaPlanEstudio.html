@@ -14,6 +14,8 @@
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/docente.js"></script>
+	<script src="../js/docentePlanEstudio.js"></script>
 	
 </head>
 <body class="p-admision">
@@ -146,162 +148,337 @@
 				<header><h2>Plan De Estudio</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="menuPrincipal">
 				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Ingresar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
+					<ul id="listaGestion" class="planEstudio">
+						<li><a id="iconoconsultar" class="ingreso"></a><a class="textoAbajo ingreso">Ingresar</a></li>
+						<li><a id="iconomodificar" class="consulta"></a><a class="textoAbajo consulta">Consultar</a></li>
 					</ul>	
-
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Semanal</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Por Lapso</a></li>
-					</ul>					
+					<div class="ingresarPSL none">
+						<ul id="listaGestion" >
+							<li><a id="iconoconsultar" class="ingresoSemanal"></a><a class="textoAbajo ingresoSemanal">Semanal</a></li>
+							<li><a id="iconomodificar" class="ingresoLapso"></a><a class="textoAbajo ingresoLapso">Por Lapso</a></li>
+						</ul>	
+						<div class="divAtrasInfoIns centrar">
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPSL1"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPSL1">Atras</a>
+						</div>	
+					</div>
+					<div class="consultarPSL none">
+						<ul id="listaGestion" >
+							<li><a id="iconoconsultar" class="consultaSemanal"></a><a class="textoAbajo consultaSemanal">Semanal</a></li>
+							<li><a id="iconomodificar" class="consultaLapso"></a><a class="textoAbajo consultaLapso">Por Lapso</a></li>
+						</ul>			
+						<div class="divAtrasInfoIns centrar">
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasconsultarPSL1"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasconsultarPSL1">Atras</a>
+						</div>	
+					</div>		
 			</article>
 			
-			<article id="noticias">
+			<article id="noticias" class="consultaPEL1 none">
 				<header><h3>Consultar Plan De Estudio Por Lapso</h3></header>
-				<div class="planSem centrar">
-					<div class="disIn disInUno">
-						<figure>
-							<img width=200 src="../images/ministerio.png">	
-						</figure>
+					<div class="primerDivGH centrar">	
+						<br>
+						<div>	
+							<label>Materia</label>
+							<select id="selectMateriaConsultaPEL1" class="materias">
+							</select>
+						</div>	<br>
+						<div>	
+							<label>Grado</label>
+							<select id="selectGradoConsultaPEL1">
+								<option value="1">1er Año</option>
+								<option value="2">2do Año</option>
+								<option value="3">3er Año</option>
+								<option value="4">4to Año</option>
+								<option value="5">5to Año</option>
+							</select>
+						</div>	<br>	
+						<div>	
+							<label>Año Escolar</label>
+							<select id="selectyearConsultaPEL1">
+								<option value="1">2012/2013</option>
+								<option value="2" selected>2013/2014</option>
+								<option value="3">2014/2015</option>
+							</select>
+						</div>	<br>
+						<div>
+							<button id="botonConsultaPEL1">Consultar</button>
+						</div><br>
 					</div>
-					<div class="disIn disMe">
-						<div class="bold">REPÚBLICA BOLIVARIANA DE VENEZUELA</div>
-						<div class="bold">MINISTERIO DEL PODER POPULAR PARA LA EDUCACIÓN</div>
-						<div class="bold">UNIDAD EDUCATIVA "VENEZUELA 90"</div>
-						<div class="bold">VALENCIA-ESTADO CARABOBO</div>
-						<div class="bold">Telf. (0241) 8595806</div>
-					</div>
-					<div class="disIn disInDos">
-						<figure>
-							<img width=150 src="../images/logo.png">	
-						</figure>
-					</div>
-					<table>
-					<tr>
-						<td class="right marRig">DOCENTE:</td>
-						<td class="left marLef">Docente1</td>
-						<td class="right marRig">ASIGNATURA:</td>
-						<td class="left marLef">Ingles</td>
-						<td class="right marRig">AÑO:</td>
-						<td class="left marLef">1er Año</td>
-					</tr>
-					<tr>
-						<td class="right marRig">MENCIÓN:</td>
-						<td class="left marLef">Basica</td>
-						<td class="right marRig">LAPSO:</td>
-						<td class="left marLef">3ero</td>
-						<td class="right marRig">AÑO ESCOLAR:</td>
-						<td class="left marLef">12/13</td>
-					</tr>
-				</table>
-
-				<table border=1 class="tablaCarCon">
-					<thead>
-						<tr class="heLin">
-							<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
-							<td class="marCon">CONTENIDO</td>
-							<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
-							<td class="marRe">RECURSOS</td>
-							<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
-							<td class="marPon">PONDERACIÓN</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>3-8 y 3-9 Hablar acerca de las acciones en pasado</td>
-							<td>Talking about past</td>
-							<td>Was, were, what were you doing? I was doing somenthing good.</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-				</div>				
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultaPEL1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultaPEL1">Atras</a>
+					</div>	
 			</article>
 
-			<article id="noticias">
+			<article id="noticias" class="consultaPES1 none">
+				<header><h3>Consultar Plan De Estudio Semanal</h3></header>
+					<div class="primerDivGH centrar">	
+						<br>
+						<div>	
+							<label>Materia</label>
+							<select id="selectMateriaconsultaPES1" class="materias">
+							</select>
+						</div>	<br>
+						<div>	
+							<label>Grado</label>
+							<select id="selectGradoconsultaPES1">
+								<option value="1">1er Año</option>
+								<option value="2">2do Año</option>
+								<option value="3">3er Año</option>
+								<option value="4">4to Año</option>
+								<option value="5">5to Año</option>
+							</select>
+						</div>	<br>	
+						<div>	
+							<label>Año Escolar</label>
+							<select id="selectyearconsultaPES1">
+								<option value="1">2012/2013</option>
+								<option value="2" selected>2013/2014</option>
+								<option value="3">2014/2015</option>
+							</select>
+						</div>	<br>
+						<div>
+							<button id="botonconsultaPES1">Consultar</button>
+						</div><br>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasconsultaPES1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasconsultaPES1">Atras</a>
+					</div>	
+			</article>
+
+			<article id="noticias" class="ingresarPEL1 none">
 				<header><h3>Ingresar Plan De Estudio Por Lapso</h3></header>
-				<form >
+				<div class="formIngresarPEL1">
 					<table border=1 class="tabPlanEs">
 						<thead class="centrar">
 							<tr>
 								<td colspan=2>Ingrese Datos</td>
 							</tr>
 						</thead>
-						<tr>				
-							<td class="right espacioRi">Docente: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Su Nombre"></td>
-						</tr>
 						<tr>
 							<td class="right espacioRi">Asignatura: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Asignatura"></td>
+							<td class="left espacioLe">
+								<select id="selectMateriaIngresarPEL1" class="materias"></select>
+							</td>
 						</tr>
 						<tr>
 							<td class="right espacioRi">Año: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año"></td>
+							<td class="left espacioLe">
+								<select id="selectGradoIngresarPEL1">
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<td class="right espacioRi">Mención: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Mención"></td>
+							<td class="left espacioLe">
+								<input type="text" id="mencionIngresarPEL1" placeholder="Indique Mencion">
+							</td>
 						</tr>
 						<tr>
 							<td class="right espacioRi">Lapso: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Lapso"></td>
+							<td class="left espacioLe">
+								<select id="selectLapsoIngresarPEL1">
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<td class="right espacioRi">Año Escolar: </td>
-							<td class="left espacioLe"><input type="text" placeholder="Indique Año Escolar"></td>
+							<td class="left espacioLe">
+								<select id="selectYearIngresarPEL1">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>
+									<option value="3">2014/2015</option>
+								</select>
+							</td>
 						</tr>				
 					</table>
 					<div class="centrar">
-						<a href="#">Continuar</a>
+						<a id="continuarIngresarPEL1">Continuar</a>
 					</div>
-					
-				</form>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPEL1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPEL1">Atras</a>
+					</div>	
+				</div>
 
-				<div class="centrar">
+				<div class="centrar divIngresarPEL1 none">
 							
-				<table border=1 class="tablaCarCon">
-					<thead>
-						<tr class="heLin">
-							<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
-							<td class="marCon">CONTENIDO</td>
-							<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
-							<td class="marRe">RECURSOS</td>
-							<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
-							<td class="marPon">PONDERACIÓN</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-						<tr class="textAr">
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="centrar ">
-					<a href="#" class="marAA">Eliminar Ultimo</a>
-					<a href="#">Nuevo Elemento</a>
+					<table border=1 class="tablaCarCon">
+						<thead>
+							<tr class="heLin">
+								<td class="marObEs">OBJETIVOS ESPECIFICOS</td>
+								<td class="marCon">CONTENIDO</td>
+								<td class="marEsMe">ESTRATEGIAS METODOLÓGICAS</td>
+								<td class="marRe">RECURSOS</td>
+								<td class="marTecE">TECNICAS DE EVALUACIÓN</td>
+								<td class="marPon">PONDERACIÓN</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="textAr">
+								<td id="plan01"><textarea></textarea></td>
+								<td id="plan02"><textarea></textarea></td>
+								<td id="plan03"><textarea></textarea></td>
+								<td id="plan04"><textarea></textarea></td>
+								<td id="plan05"><textarea></textarea></td>
+								<td id="plan06"><textarea></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="centrar">
+						<button id="guardarTablaIngresarPEL1" class="guardarCarCon">Guardar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaIngresarPEL1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaIngresarPEL1">Atras</a>
+					</div>
 				</div>
-				<div class="centrar">
-					<button class="guardarCarCon">Guardar</button>
+			</article>
+
+			<article id="noticias" class="ingresarPES1 none">
+				<header><h3>Ingresar Plan De Estudio Semanal</h3></header>
+				<div class="formIngresarPEL1">
+					<table border=1 class="tabPlanEs">
+						<thead class="centrar">
+							<tr>
+								<td colspan=2>Ingrese Datos</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Asignatura: </td>
+							<td class="left espacioLe">
+								<select id="selectMateriaIngresarPES1" class="materias"></select>
+							</td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Año: </td>
+							<td class="left espacioLe">
+								<select id="selectGradoIngresarPES1">
+									<option value="1">1er Año</option>
+									<option value="2">2do Año</option>
+									<option value="3">3er Año</option>
+									<option value="4">4to Año</option>
+									<option value="5">5to Año</option>
+								</select>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Año Escolar: </td>
+							<td class="left espacioLe">
+								<select id="selectYearIngresarPES1">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>
+									<option value="3">2014/2015</option>
+								</select>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Numero De Semana: </td>
+							<td class="left espacioLe">
+								<input id="nroSemanaIngresarPES1" type="text">
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Fecha Inicio: </td>
+							<td class="left espacioLe">
+								<input id="fiIngresarPES1" type="date">
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Fecha Fin: </td>
+							<td class="left espacioLe">
+								<input id="ffIngresarPES1" type="date">
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Sesiones: </td>
+							<td class="left espacioLe">
+								<input id="sesionesIngresarPES1" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Numero De Alumnos: </td>
+							<td class="left espacioLe">
+								<input id="nroAlumnosIngresarPES1" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Primer Tema: </td>
+							<td class="left espacioLe">
+								<textarea id="ptIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Primer Inicio: </td>
+							<td class="left espacioLe">
+								<textarea id="piIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Primer Desarrollo: </td>
+							<td class="left espacioLe">
+								<textarea id="pdIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Primer Cierre: </td>
+							<td class="left espacioLe">
+								<textarea id="pcIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Segundo Tema: </td>
+							<td class="left espacioLe">
+								<textarea id="stIngresarPES1"></textarea>
+							</td>
+						</tr>		
+						<tr>
+							<td class="right espacioRi">Segundo Inicio: </td>
+							<td class="left espacioLe">
+								<textarea id="siIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Segundo Desarrollo: </td>
+							<td class="left espacioLe">
+								<textarea id="sdIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Segundo Cierre: </td>
+							<td class="left espacioLe">
+								<textarea id="scIngresarPES1"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td class="right espacioRi">Observaciones: </td>
+							<td class="left espacioLe">
+								<textarea id="observacionesIngresarPES1"></textarea>
+							</td>
+						</tr>	
+					</table>
+					<div class="centrar">
+						<button id="guardarTablaIngresarPES1" class="guardarCarCon">Guardar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaIngresarPES1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaIngresarPES1">Atras</a>
+					</div>
 				</div>
+
+				
 			</article>
 		</div>
 	</section>
