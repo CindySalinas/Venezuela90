@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/studen.js"></script>
+	<script src="../js/planEstudio.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -148,18 +149,34 @@
 			<article id="noticias">
 				<header><h3>Seleccionar Una Opcion</h3></header>
 
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Plan Semanal</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Planificación Por Lapso</a></li>
+					<ul id="listaGestion" class="menuPrincipal">
+						<li><a id="iconoconsultar" class="planSemanal"></a><a class="textoAbajo planSemanal" >Plan Semanal</a></li>
+						<li><a id="iconomodificar" class="planLapso"></a><a class="textoAbajo planLapso" >Planificación Por Lapso</a></li>
 					</ul>	
-
-					<div class="centrar primerDivGH marPE2">
-						<label>Materia</label>
-						<select>
-							<option>--------------------</option>
-						</select>
-						<button class="classBotonesECDoc">Buscar</button>
-					</div>									
+					<div class="consultaPS none">
+						<div class="centrar primerDivGH marPE2">
+							<label>Materia</label>
+							<select id="materiaSelect1" class="materias">							
+							</select>
+							<button id="buscaPS" class="classBotonesECDoc">Buscar</button>
+						</div>	
+						<div class="divAtrasInfoIns centrar">
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultaPs"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultaPs">Atras</a>
+						</div>	
+					</div>
+					<div class="consultaPL none">
+						<div class="centrar primerDivGH marPE2">
+							<label>Materia</label>
+							<select id="materiaSelect2" class="materias">							
+							</select>
+							<button id="buscaPL" class="classBotonesECDoc">Buscar</button>
+						</div>		
+						<div class="divAtrasInfoIns centrar">
+							<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasconsultaPL"></a>
+							<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasconsultaPL">Atras</a>
+						</div>		
+					</div>					
 			</article>	
 			<!-- <article id="noticias">
 				<header><h3>Seleccionar Una Opcion</h3></header>
