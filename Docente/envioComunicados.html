@@ -172,13 +172,19 @@
 						<label>Cedula Del Alumno</label>
 						<input type="text" placeholder="21029953" id="inputParaXalumno">
 						<br>
-						<input type="button"  class="classBotonesECDoc" value="Aceptar">
+						<input type="button"  class="classBotonesECDoc" value="Aceptar" id="paraXAlumno">
 					</div>	
 
-					<div class="centrar ">
-						<input type="text" class="tamInEC" value="Para: ">
-						<textarea class="textDocEC"></textarea>
-						<button class="classBotonesECDoc">Enviar</button>
+					<div class="centrar" id="AlumnoPadre">
+						<label>Lista de Correos</label>
+						<div class="tamInEC" id="inps">
+						</div>
+						<!--input type="text" class="tamInEC" Placeholder="Para: " id="emailPadresAlumnos"-->
+						<textarea class="textDocEC" id="textoComunicado1"></textarea>
+
+						<div  id="divVerAlert">
+						</div>
+						<button class="classBotonesECDoc" id="enviarComunicado1">Enviar</button>
 						<div id="atrasGL2" class="atras2 atr centrar">
 							<a id="atras"></a>
 							<a id="at">Atrás</a>

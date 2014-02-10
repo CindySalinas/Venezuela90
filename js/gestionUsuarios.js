@@ -40,12 +40,21 @@ function resetear()
 {
 	$('input[type=text]').val("");
 	$("#tipoUsuarioIngresar1 option[value=1]").attr("selected","true");
-	
+	$('#tablaPerfilUsuario').css("display","none");
 	$(".tablaDocenteIngresar2").css("display","none");
 	$(".tablaAlumnoIngresar2").css("display","none");
 	$(".tablaRepresentanteIngresar2").css("display","none");
 
 	$('.alert').remove();
+	/*$("#nombreConsultar2").text("");
+	$("#apellidoConsultar2").text("");
+	$("#cedulaConsultar2").text("");
+    $("#emailConsultar2").text("");
+	$("#generoConsultar2").text("");
+	$("#edoCivilConsultar2").text("");
+	$("#telefonoConsultar2").text("");
+	$("#direccionConsultar2").text("");	
+	$("#rolConsultar2").text("");*/
 
 }
 
@@ -158,7 +167,7 @@ function crearUsuario(){
 			idCrear : idTipoUsuario,
 			nacion : nacional
 		}).done(function(data){
-			$('#msj').append("<div class='alert  alert-success'>Usuario Creado Con Exito</div>");
+			$('#msj').append("<div class='alert  alert-success centrar'>Usuario Administrador Creado Con Exito</div>");
 			$('#msj').show();
 		});
 	}
@@ -177,13 +186,14 @@ function crearUsuario(){
 		idCrear : idTipoUsuario,
 		nacion : nacional
 	}).done(function(data){
-		$('#msj').append("<div class='alert  alert-success'>Usuario Creado Con Exito</div>");
+		$('#msj').append("<div class='alert  alert-success centrar'>Usuario Docente Creado Con Exito</div>");
 		$('#msj').show();
 	})
 	}
 }
 else{
-	$('#msj').append("<div class='alert  alert-danger'>Inserte Datos</div>");
+	alert("Inserte Datos");
+	$('#msj').append("<div class='alert  alert-danger centrar'>Inserte Datos</div>");
 	$('#msj').show();
 }
 	

@@ -3,7 +3,7 @@
 // conexion bd 
 include("conex.php");
 //formato JSON
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 $nom= $_GET["nombre"];
 $ap = $_GET["apellido"];
@@ -13,8 +13,8 @@ $gen = $_GET["genero"];
 $edo= $_GET["edCivil"];
 $tlf =$_GET["telf"];
 $dir = $_GET["direc"];
-$fec = $_GET["fechNa"];
 
+$ids = $_GET["idCrear"];
 $nacio = $_GET["nacion"];
 if($ids == 1){
 	$sql = "INSERT INTO usuario (Nombre,Apellido,Cedula,Email,Password,Id_Genero,Estado_Civil,Nacionalidad,Telefono,Direccion,Id_Rol_Usuario) VALUES ('$nom','$ap', '$ced','$mail','$ced','$gen','$edo','$nacio','$tlf','$dir','$ids')";
@@ -24,7 +24,7 @@ $result = mysql_query($sql) or die("Error de Consulta1 ". mysql_error());
 else
 if($ids == 2){
 	$lug = $_GET["lugar"];
-	$ids = $_GET["idCrear"];
+	$fec = $_GET["fechNa"];
 	$sql2 = "INSERT INTO usuario (Nombre,Apellido,Cedula,Email,Password,Id_Genero,Estado_Civil,Nacionalidad,Telefono,Direccion,Id_Rol_Usuario) VALUES ('$nom','$ap', '$ced','$mail','$ced','$gen','$edo','$nacio','$tlf','$dir','$ids')";
 	
 	$result = mysql_query($sql2) or die("Error de Consulta2 ". mysql_error());
