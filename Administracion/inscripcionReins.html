@@ -172,31 +172,31 @@
 				    	<!--Alumnos-->
 						<section class="tab-pane tabs fade in active" id="1">
 								<label class="movit"> Apellido
-									<input type="text" class="form-control" name="lastName" value="" placeholder="Apellido" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="lastName" value="" placeholder="Apellido" onkeypress="return soloLetras(event)" id="appl">
 								</label>
 								<label class="movit"> Nombre
-									<input type="text" class="form-control" name="firsName" value="" placeholder="Nombre" onkeypress="return soloLetras(event)" >
+									<input type="text" class="form-control" name="firsName" value="" placeholder="Nombre" onkeypress="return soloLetras(event)" id="noms">
 								</label>
 								<label class="movit"> Fecha de Nacimiento
-									<input type="date" class="form-control" name="birthDay" value="" placeholder="dd/mm/aaaa">
+									<input type="date" class="form-control" name="birthDay" value="" placeholder="dd/mm/aaaa" id="fecha">
 								</label>
 								<label class="movit" > Lugar de Nacimiento
-									<input type="text" class="form-control" name="whereBorn" value="" placeholder="Lugar de Nacimiento">
+									<input type="text" class="form-control" name="whereBorn" value="" placeholder="Lugar de Nacimiento" id="dondeNa">
 								</label>
 								<label class="movit"> Entidad
-									<input type="text" class="form-control" name="entity" value="" placeholder="Entidad">
+									<input type="text" class="form-control" name="entity" value="" placeholder="Entidad" id="entida">
 								</label>
 								<label class="movit" > Cedula de Identidad
-									<input type="text" class="form-control" name="cI" value="" placeholder="Cedula de Identidad">
+									<input type="text" class="form-control" name="cI" value="" placeholder="Cedula de Identidad" id="cedAlumno">
 								</label class="movit">
 								<label class="movit"> Direccion
-									<textArea name="addres" class="form-control" value="" placeholder="Direccion"></textArea>
+									<textArea name="addres" class="form-control" value="" placeholder="Direccion" id="direcc"></textArea>
 								</label>
 								<label class="movit"> Telefonos
-									<input type="text"  class="form-control" name="phone1" value="" placeholder="Casa">
+									<input type="text"  class="form-control" name="phone1" value="" placeholder="Casa" id="telf">
 								</label>
 								<label class="movit"> Email Alumno
-									<input type="text"  class="form-control" name="email" value="" placeholder="ej:alumno@dominio.com">
+									<input type="text"  class="form-control" name="email" value="" placeholder="ej:alumno@dominio.com" id="mailAlumno">
 								</label>
 								<label class="movit"> Genero
 									<select  class="form-control" name="genero" id="genero">
@@ -205,7 +205,7 @@
 									</select>
 								</label>
 								<label class="movit"> Grado a Cursar
-									<select class="form-control" name="year">
+									<select class="form-control" name="year" id="yearss">
 										<option value="1">1er Año</option>
 										<option value="2">2do Año</option>
 										<option value="3">3er Año</option>
@@ -222,11 +222,11 @@
 									</select>
 								</label>
 								<label class="movit"> Plantel de Procedencia
-									<input type="text"  class="form-control" name="plantel" value="" placeholder="Plantel de Procedencia">
+									<input type="text"  class="form-control" name="plantel" value="" placeholder="Plantel de Procedencia" id="plantel">
 								</label>
 								<label class="movit"> ¿Posee Materias Pendientes?
 									<br>
-									<select class="form-control" name="matP" >
+									<select class="form-control" name="matP" id="matPen">
 										<option value="SI">SI</option>
 										<option value="NO">NO</option>
 									</select>
@@ -259,10 +259,10 @@
 									</select>
 								</label>
 								<label class="movit"> ¿Padece Enfermedad?
-									<input type="text" class="form-control" name="sicking" value="" placeholder="Indique Cual" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="sicking" value="" placeholder="Indique Cual" onkeypress="return soloLetras(event)" id="enf">
 								</label>
 								<label class="movit"> Alergico(a)
-									<input type="text" class="form-control" name="alergy" value="" placeholder="Indique Cual" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="alergy" value="" placeholder="Indique Cual" onkeypress="return soloLetras(event)" id="aler">
 								</label>
 								<input type="hidden" name="fechaIngreso" id="fechaIng">
 								<div class="center-button">
@@ -272,17 +272,17 @@
 						<!--Padres -->
 						<section class="tab-pane tabs fade" id="2">
 								<label class="movit"> Apellido
-									<input type="text" class="form-control" name="lastNameFather" value="" placeholder="Apellido" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="lastNameFather" value="" placeholder="Apellido" onkeypress="return soloLetras(event)" id="apPadre">
 								</label>
 								<label class="movit"> Nombre
-									<input type="text" class="form-control" name="firsNameFather" value="" placeholder="Nombre" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="firsNameFather" value="" placeholder="Nombre" onkeypress="return soloLetras(event)" id="nomPadre">
 								</label>
 								<label class="movit" > Cedula de Identidad
-									<input type="text" class="form-control" name="cIfather" value="" placeholder="Cedula de Identidad" >
+									<input type="text" class="form-control" name="cIfather" value="" placeholder="Cedula de Identidad" id="cedPadre">
 								</label>
 								<label class="movit"> Profesion
 									<!--input type="text" class="form-control" name="profesion" value="" placeholder="Profesion" onkeypress="return soloLetras(event)"-->
-									<select name="profesion" class="form-control" >
+									<select name="profesion" class="form-control" id="profPadre">
 										<option value="1">Ingeniero</option>
 										<option value="2">Contador P.</option>
 										<option value="3">Comerciante</option>
@@ -290,13 +290,13 @@
 									</select>
 								</label>
 								<label class="movit" > Empresa o Lugar de Trabajo
-									<input type="text" class ="form-control" name="whereWork" value="" placeholder="Lugar de Nacimiento" onkeypress="return soloLetras(event)">
+									<input type="text" class ="form-control" name="whereWork" value="" placeholder="Lugar de Nacimiento" onkeypress="return soloLetras(event)" id="empresaPadre">
 								</label>
 								<label class="movit"> Email Padre
-									<input type="text"  class="form-control" name="emailPadre" value="" placeholder="ej:alumno@dominio.com">
+									<input type="text"  class="form-control" name="emailPadre" value="" placeholder="ej:alumno@dominio.com" id="mailPadre">
 								</label>
 								<label class="movit"> Telefonos
-									<input type="text"  class="form-control" name="phone3" value="" placeholder="Casa">
+									<input type="text"  class="form-control" name="phone3" value="" placeholder="Casa" id="telfPadre">
 								</label>
 								
 								<div class="center-button">
@@ -307,17 +307,17 @@
 						<!-- Madre-->
 						<section class="tab-pane tabs fade" id="3">
 								<label class="movit"> Apellido
-									<input type="text" class="form-control" name="lastNameMother" value="" placeholder="Apellido" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="lastNameMother" value="" placeholder="Apellido" onkeypress="return soloLetras(event)" id="apMadre">
 								</label>
 								<label class="movit"> Nombre
-									<input type="text" class="form-control" name="firsNameMother" value="" placeholder="Nombre" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="firsNameMother" value="" placeholder="Nombre" onkeypress="return soloLetras(event)" id="nomMadre">
 								</label>
 								<label class="movit" > Cedula de Identidad
-									<input type="text" class="form-control" name="cIMother" value="" placeholder="Cedula de Identidad">
+									<input type="text" class="form-control" name="cIMother" value="" placeholder="Cedula de Identidad" id="cedMadre">
 								</label>
 								<label class="movit"> Profesion
 									<!--input type="text" class="form-control" name="profesionMother" value="" placeholder="Profesion" onkeypress="return soloLetras(event)"-->
-									<select name="profesionMother" class="form-control">
+									<select name="profesionMother" class="form-control" id="profMadre">
 										<option value="1">Ingeniero</option>
 										<option value="2">Contador P.</option>
 										<option value="3">Comerciante</option>
@@ -326,13 +326,13 @@
 									</select>
 								</label>
 								<label class="movit" > Empresa o Lugar de Trabajo
-									<input type="text" class="form-control" name="whereWorkMother" value="" placeholder="Lugar de Trabajo">
+									<input type="text" class="form-control" name="whereWorkMother" value="" placeholder="Lugar de Trabajo" id="empresaMadre">
 								</label>
 								<label class="movit"> Email Madre
-									<input type="text"  class="form-control" name="emailMadre" value="" placeholder="ej:alumno@dominio.com">
+									<input type="text"  class="form-control" name="emailMadre" value="" placeholder="ej:alumno@dominio.com" id="mailMadre">
 								</label>
 								<label class="movit"> Telefonos
-									<input type="text"  class="form-control" name="phone5" value="" placeholder="Casa">
+									<input type="text"  class="form-control" name="phone5" value="" placeholder="Casa" id="teflMadre">
 								</label>
 								
 								<div class="center-button">
@@ -343,23 +343,27 @@
 						<!-- Emergencia-->
 						<section class="tab-pane tabs fade" id="4">
 							<label class="movit"> Apellido
-									<input type="text" class="form-control" name="lastNameE" value="" placeholder="Apellido" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="lastNameE" value="" placeholder="Apellido" onkeypress="return soloLetras(event)" id="apEmer">
 								</label>
 								<label class="movit"> Nombre
-									<input type="text" class="form-control" name="firsNameE" value="" placeholder="Nombre" onkeypress="return soloLetras(event)">
+									<input type="text" class="form-control" name="firsNameE" value="" placeholder="Nombre" onkeypress="return soloLetras(event)" id="nomEmer">
 								</label>
 								<label class="movit" > Cedula de Identidad
-									<input type="text" class="form-control" name="cIE" value="" placeholder="Cedula de Identidad">
+									<input type="text" class="form-control" name="cIE" value="" placeholder="Cedula de Identidad" id="cedEmer">
 								</label>
 								<label class="movit"> Telefonos
-									<input type="text"  class="form-control" name="phone7" value="" placeholder="Casa">
+									<input type="text"  class="form-control" name="phone7" value="" placeholder="Casa" id="telfEmer">
 								</label>
 								<div class="center-button">
 									<button  id="cambiar" name="2" class="btn btn-info">Anterior</button>
 									<!--a  id="enviarDatos" class="btn btn-success">Guardar</a-->
-									<button id="enviarDatos" class="btn btn-success centrar" >Guardar</button>
+									<button id="cambiarDatos" class="btn btn-success" >Reinscribir</button>
 								</div>
 						</section>
+						<input type="hidden" name="idAl" id="almm">
+						<input type="hidden" name="idPa" id="alPa">
+						<input type="hidden" name="idMa" id="alMa">
+						<input type="hidden" name="idEm" id="alEm">
 					<!--Fin Formulario-->
 			</form>
 					<!--Fin Contenedor de Pestañas-->

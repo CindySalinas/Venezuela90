@@ -1805,7 +1805,7 @@ fieldset{
  /*FIN GESTION LISTADOS */ 
 
  /* Envio de Comunicados*/ 
-.comunicadoRepresentante,.comunicadoReprePorAlumn,.comunicadoRepreGrado,.comunicadoAlumno,.comuAlumPorAlum,.comuAlumPorGrado{
+.comunicadoRepresentante,.comunicadoReprePorAlumn,.comunicadoRepreGrado,.comunicadoAlumno,.comuAlumPorAlum,.comuAlumPorGrado,#AlumnoPadre{
 	display: none;
 }
  /* fin envio comunicados*/ 
@@ -1913,4 +1913,14 @@ fieldset{
 }
 .mostrarCed{
 	display: none;
+}
+#inps{
+border: 2px solid rgb(212, 208, 186);
+}
+
+.correoSa{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	border: 0;
 }

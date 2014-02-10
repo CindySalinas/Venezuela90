@@ -89,10 +89,11 @@ function inscribirUsuarioRepresentantePadre(){
 	$pat = "Padre";
 	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$pNom','$pAp','$pCed','$mail2','$pCed','$pTlf1','$dirA','3','2')";
 	$result = mysql_query($sql) or die ("Query error2: " . mysql_error());
-	//$rep = mysql_insert_id();
+	$repP = mysql_insert_id();
 	$pa =  mysql_insert_id();
 	global $asd;
-	insertarRepresentante($pPro,$pTrb,$pCed,$pat);
+	global $asd2;
+	insertarRepresentante($pPro,$pTrb,$repP,$pat);
 	representanteEstudiante($asd);
 
 }
@@ -110,10 +111,11 @@ function inscribirUsuarioRepresentanteMadre(){
 	$pat = "Madre";
 	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$mNom','$mAp','$mCed','$mail3','$mCed','$mTlf1','$dirA','3','1')";
 	$result = mysql_query($sql) or die ("Query error21: " . mysql_error());
-	//$rep = mysql_insert_id();
+	$repM = mysql_insert_id();
 	//$ma =  mysql_insert_id();
 	global $asd;
-	insertarRepresentante($mPro,$mTrb,$mCed,$pat);
+	global $asd2;
+	insertarRepresentante($mPro,$mTrb,$repM,$pat);
 	representanteEstudiante($asd);
 
 }
@@ -133,10 +135,14 @@ function insertarEstudiante($ult){
 	global $entiA;
 	global $fechaA;
 	global $esYear;
+	global $aAct;
+	global $aPlan;
 	//global $rep;
-	$sql = "INSERT INTO  estudiante(Id_Usuario,Id_Grado,Id_Religion,Entidad,Fecha_Nacimiento,Lugar_Nacimiento,Fecha_Ingreso,Id_Usuario_Estudiante,Materia_Pendiente,Alergia,Enfermedad,Id_Representante_Emergencia,Id_Year_Escolar) VALUES
-	 ('$ult','$yearA','$aRel','$entiA','$fechaA','$lugarA','$ingre','$cedA','$aMatP','$aAler','$aEnf','$rep','$esYear')";
+	$sql = "INSERT INTO  estudiante(Id_Usuario,Id_Grado,Id_Religion,Entidad,Fecha_Nacimiento,Lugar_Nacimiento,Fecha_Ingreso,Id_Usuario_Estudiante,Materia_Pendiente,Alergia,Enfermedad,Id_Representante_Emergencia,Id_Year_Escolar,Id_Actividad,Plantel_Procendecia) VALUES
+	 ('$ult','$yearA','$aRel','$entiA','$fechaA','$lugarA','$ingre','$cedA','$aMatP','$aAler','$aEnf','$rep','$esYear','$aAct','$aPlan')";
 	$result = mysql_query($sql) or die ("Query error3: " . mysql_error());
+	global $asd2;
+	$asd2 = mysql_insert_id();
 }
 
 function insertarRepresentante($a,$b,$c,$d){
@@ -159,8 +165,9 @@ function insertarRepresentanteEmergencia(){
 
 }
 function representanteEstudiante($repres){
-	global $utlID;
-	$sql = "INSERT INTO representante_estudiante(Id_Estudiante,Id_Representante) VALUES('$utlID','$repres')";
+	//global $utlID;
+	global $asd2;
+	$sql = "INSERT INTO representante_estudiante(Id_Estudiante,Id_Representante) VALUES('$asd2','$repres')";
 	$result = mysql_query($sql) or die ("Query error6: " . mysql_error());
 }
 
