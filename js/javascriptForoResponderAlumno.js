@@ -35,10 +35,9 @@ function ingresarRespuestaForo()
   var nom = $('#inputResForo').val();
   //var men = $('#mensajeFN').val();
   var men = $('.nicEdit-main').html();
-  var nomUser = $.cookie("cedulaAdmin");
+  var nomUser = $.cookie("cedulaStudent");
   var fec = fecha();
   var hor = hora();
-  
   if(nom=="" || nom==" ")
   {
     $("#inputResForo").attr("placeholder", "Ingrese Un Asunto").blur();

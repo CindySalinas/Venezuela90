@@ -65,7 +65,7 @@ function ingresarForo()
 	var nom = $('#asuntoFn').val();
 	//var men = $('#mensajeFN').val();
 	var men = $('.nicEdit-main').html();
-	var nomUser = $.cookie("cedulaAdmin");
+	var nomUser = $.cookie("cedulaStudent");
 	var fec = fecha();
 	var hor = hora();
 	
@@ -235,7 +235,7 @@ function ingresarNoticia()
 	var fec = fecha();
 	var hor = hora();
 	/*Colocar la cookie*/
-	var usuario = $.cookie("cedulaAdmin");
+	var usuario = $.cookie("cedulaProf");
 	
 	/*INVESTIGAR COMO USAR EL INPUT TYPE FILE*/
 	var archivoNoticia = $("#archivoIngNot").val();

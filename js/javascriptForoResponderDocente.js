@@ -35,7 +35,7 @@ function ingresarRespuestaForo()
   var nom = $('#inputResForo').val();
   //var men = $('#mensajeFN').val();
   var men = $('.nicEdit-main').html();
-  var nomUser = $.cookie("cedulaAdmin");
+  var nomUser = $.cookie("cedulaProf");
   var fec = fecha();
   var hor = hora();
   

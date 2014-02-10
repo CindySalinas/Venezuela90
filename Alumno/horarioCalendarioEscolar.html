@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/studen.js"></script>
+	<script src="../js/horarioEstudiante.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -142,16 +143,87 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Plan De Estudio</h2></header>
+				<header><h2>Horario Calendario Escolar</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
+			<article id="noticias" class="menuPrincipal">
+				<header><h3>Seleccionar Una Opción</h3></header>
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
+						<li><a id="iconoconsultar" class="consultaHorario"></a><a class="textoAbajo consultaHorario">Horario</a></li>
+						<li><a id="iconomodificar" href="viewCalendarioEscolar2.html"></a><a class="textoAbajo" href="viewCalendarioEscolar2.html">Calendario Escolar</a></li>
 					</ul>					
-			</article>						
+			</article>
+			<article id="noticias" class="elHorario none">
+				<header><h3>Horario</h3></header>
+					<div class="tablaConsultarAulasConsultar3">
+					<br>
+					<table border=1>
+						<thead>
+							<tr>
+								<th>HORA</th>
+								<th>LUNES</th>
+								<th>MARTES</th>
+								<th>MIERCOLES</th>
+								<th>JUEVES</th>
+								<th>VIERNES</th>
+							</tr>
+						</thead>
+						<tbody class="centrar">
+							<tr>
+								<td><span>07:15 - 07-50</span></td>
+								<td rowspan=2><span id="materiCnHA01" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA02" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA03" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA04" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA05" class="spanConsultar"></span></td>
+							</tr>
+							<tr>
+								<td><span>07:50 - 08:35</span></td>
+								
+							</tr>
+							<tr>
+								<td><span>08:50 - 09:35</span></td>
+								<td rowspan=2><span id="materiCnHA06" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA07" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA08" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA09" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA10" class="spanConsultar"></span></td>
+							</tr>
+							<tr>
+								<td><span>09:35 - 10:05</span></td>	
+							</tr>
+							<tr>
+								<td><span>10:25 - 11:00</span></td>
+								<td rowspan=2><span id="materiCnHA11" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA12" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA13" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA14" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA15" class="spanConsultar"></span></td>
+							</tr>
+							<tr>
+								<td><span>11:00 - 11:45</span></td>
+							</tr>
+							<tr>
+								<td><span>11:55 - 12:40</span></td>
+								<td rowspan=2><span id="materiCnHA16" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA17" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA18" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA19" class="spanConsultar"></span></td>
+								<td rowspan=2><span id="materiCnHA20" class="spanConsultar"></span></td>
+							</tr>
+							<tr>
+								<td><span>12:40 - 01:05</span></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaConsultar3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaConsultar3">Atras</a>
+					</div>	
+				</div>				
+			</article>
+
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->
