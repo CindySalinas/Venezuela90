@@ -2,14 +2,12 @@
 // conexion bd 
 include("conex.php");
 
-	  $grado = $_GET["idGrado"];
       $seccion = $_GET["idSeccion"];
-      $materia = $_GET["idMateria"];
-      $prof = $_GET["idPro"];
+      $materia = $_GET["horarioMaterias"];
       $rt  = $_GET["path"];
  	
 	if($rt != ""){
-			$sql = "INSERT INTO  material_estudio (id_materia,material,id_grado,id_seccion,id_profesor) VALUES ('$materia','$rt','$grado','$seccion','$prof')";
+			$sql = "INSERT INTO  material_estudio (material,id_seccion,Id_Horario_Materia) VALUES ('$rt','$seccion','$materia')";
 		 	$result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 		 	$estado["mensaje"] = "Guardado";
 		 	$estado["num"] = 1;

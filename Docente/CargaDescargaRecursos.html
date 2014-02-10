@@ -147,9 +147,9 @@
 				<header class="titulo"><h2>Carga y Descarga De Recursos</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header class="titulo" ><h3>Recursos</h3></header>
-					<ul id="listaGestion" class="listaPrincipal">
+			<article id="noticias" class="listaPrincipal">
+				<header ><h3>Recursos</h3></header>
+					<ul id="listaGestion">
 						<li><a id="iconoconsultar"  class="cargarR"></a><a class="textoAbajo" class="t1">Cargar</a></li>
 						<li><a id="iconomodificar" class="descargarR"></a><a class="textoAbajo" class="t2">Descargar</a></li>
 					</ul>					
@@ -196,6 +196,18 @@
 								</select>
 							</td>
 							<tr>
+								<tr>
+							<td class="right espacioRi">	
+								Año: 
+							</td>
+							<td class="left espacioLe">
+								<select id="yearEscolar">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>
+									<option value="3">2014/2015</option>	
+								</select>
+							</td>
+							<tr>
 							<td class="right espacioRi">	
 								Archivo: 
 							</td>
@@ -222,6 +234,61 @@
 			</article>	
 
 			<article id="noticias" class="noticiasClass2">
+				<header><h3>Cargar Recursos</h3></header>
+					
+					<div class="formReSol tabtab divConsultar1">
+						<table border=1 class="widTab">
+							<tr>
+							<td class="right espacioRi">	
+								Materia: 
+							</td>
+							<td class="left espacioLe">
+								<select id="materiasConsulta" class="materias">
+									<!--<option>Matematica</option>
+									<option>Ingles</option>-->
+								</select>
+							</td>
+							</tr>
+							<tr>
+							<td class="right espacioRi">	
+								Grado: 
+							</td>
+							<td class="left espacioLe">
+								<select id="gradoConsulta" class="grados">
+									<!--<option>1er Año</option>
+									<option>2do Año</option>
+									<option>3er Año</option>
+									<option>4to Año</option>
+									<option>5to Año</option>-->
+								</select>
+							</td>
+							</tr>
+							<tr>
+								<tr>
+							<td class="right espacioRi">	
+								Año: 
+							</td>
+							<td class="left espacioLe">
+								<select id="yearEscolarConsulta">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>
+									<option value="3">2014/2015</option>	
+								</select>
+							</td>
+							<tr>
+								<td class="centrar" colspan=2>
+									<input type="button" class="bbbv" id="consultarDescargar" value="Aceptar">
+									<td>
+							</tr>	
+						</table>
+					</div>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasNoticias2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasNoticias2">Atras</a>
+					</div>			
+			</article>	
+
+			<article id="noticias" class="noticiasClass3">
 				<header><h3>Descargar Recursos</h3></header>
 				<!--<a href="InvestigacionDeOperaciones-Corte3.docx" target="_blank">Imagen</a>-->
 				<!--<a id="matD">aaaa </a>-->
@@ -231,11 +298,11 @@
 					</ul>
 
 				</div>
-				<br><br><br>
-				<div id="atr" class="atras2">
-					<a id="atras"></a>
-					<a id="at">Atrás</a>
-				</div>	
+				<br>
+				<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasNoticias3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasNoticias3">Atras</a>
+					</div>	
 			</article>	
 
 		</div>

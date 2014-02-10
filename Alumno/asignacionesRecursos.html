@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/studen.js"></script>
+	<script src="../js/asignacionesAlumno.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -142,15 +143,63 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Plan De Estudio</h2></header>
+				<header><h2>Asignaciones y Recursos Educativos</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>					
+			<article id="noticias" class="notnot">
+				<header><h3>Descarga Recursos</h3></header>
+					
+					<div class="formReSol tabtab divConsultar1">
+						<table border=1 class="widTab">
+							<tr>
+							<td class="right espacioRi">	
+								Materia: 
+							</td>
+							<td class="left espacioLe">
+								<select id="materiasConsulta" class="materias">
+									<!--<option>Matematica</option>
+									<option>Ingles</option>-->
+								</select>
+							</td>
+							</tr>
+							
+							<tr>
+								<tr>
+							<td class="right espacioRi">	
+								Año: 
+							</td>
+							<td class="left espacioLe">
+								<select id="yearEscolarConsulta">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>
+									<option value="3">2014/2015</option>	
+								</select>
+							</td>
+							<tr>
+								<td class="centrar" colspan=2>
+									<input type="button" class="bbbv" id="consultarDescargar" value="Aceptar">
+									<td>
+							</tr>	
+						</table>
+					</div>	
+			</article>	
+
+			<article id="noticias" class="noticiasClass3">
+				<header><h3>Descargar Recursos</h3></header>
+				<!--<a href="InvestigacionDeOperaciones-Corte3.docx" target="_blank">Imagen</a>-->
+				<!--<a id="matD">aaaa </a>-->
+				<div class="noticias">
+					<ul class="arch" id="listaGestion">
+
+					</ul>
+
+				</div>
+				<br>
+				<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasNoticias3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasNoticias3">Atras</a>
+					</div>	
+			</article>					
 			</article>						
 		</div>
 	</section>
