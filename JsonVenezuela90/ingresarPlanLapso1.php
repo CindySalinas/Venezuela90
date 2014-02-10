@@ -4,14 +4,19 @@ include("conex.php");
 //formato JSON
 //header('Content-type: application/json');
 
-$idTipoLista= $_GET["id"];
-$ced= $_GET["cedula"];
+$idPlanificacion= $_GET["planificacion"];
+$ob= $_GET["objetivos"];
+$con= $_GET["contenido"];
+$est= $_GET["estrategias"];
+$rec= $_GET["recursos"];
+$tec= $_GET["tecnicas"];
+$pon= $_GET["ponderacion"];
+$fec= $_GET["fecha"];
 
-//$sql = "INSERT INTO listas (id_tipo_lista) VALUES ('$idTipoLista')";
-$sql = "INSERT INTO  lista_estudiantes (id_lista,cedula) VALUES ('$idTipoLista','$ced')";
+$sql = "INSERT INTO actividades_planificacion_por_lapso (Id_Planificacion_Por_Lapso, Objetivos_Especificos, Contenido, Estrategias_Metodologicas, Recurso, Ponderacion, Tecnica_Evaluacion, Fecha) VALUES ('$idPlanificacion','$ob','$con','$est','$rec','$pon','$tec','$fec')";
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 
-$estado["mensaje"]= "Alumno Agregado";
+$estado["mensaje"]= "Actividad Agregada";
 //Convertir los resultados a formato json
 $estadoJson = json_encode($estado);
 

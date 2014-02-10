@@ -2,7 +2,9 @@ $(document).on("ready", empezar);
 
 var idDocente, seleccionado, idHorario, idPlanificacionPL;
 
-var materiaIngresarPL, gradoIngresarPL, mencionIngresarPL, lapsoIngresarPL, yearIngresarPL;
+var materiaIngresarPL, gradoIngresarPL, mencionIngresarPL, lapsoIngresarPL, yearIngresarPL, idHorarioMateriaComprobado;
+
+var idHorarioPS;
 
 function empezar(){
    $('.ingreso').on("click",function(){actionBotones('ingresarPSL','planEstudio');}); 
@@ -132,21 +134,53 @@ function continuarIngresar ()
 	lapsoIngresarPL=$("#selectLapsoIngresarPEL1 option:selected").val();
 	mencionIngresarPL=$("#mencionIngresarPEL1").val();
 	seleccionado="nuevo";
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultaPlanLapso2.php?jsoncallback=?";
+
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG.php?jsoncallback=?";
 	$.getJSON(url,{
 		docente:idDocente,
 		materia:materiaIngresarPL,
 		grado:gradoIngresarPL,
-		year:yearIngresarPL,
-		lapso:lapsoIngresarPL
+		year:yearIngresarPL
 	}).done(function(data){
-		$.each(data, function(i,item){	
-			seleccionado="viejo";
-			idHorario=item.idHorarioMateria;
-			idPlanificacionPL=item.idPlanificacion;
-		});
+		if(data.num>0)
+		{
+			var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG2.php?jsoncallback=?";
+			$.getJSON(url,{
+				docente:idDocente,
+				materia:materiaIngresarPL,
+				grado:gradoIngresarPL,
+				year:yearIngresarPL,
+				lapso:lapsoIngresarPL
+			}).done(function(data){
+				$.each(data, function(i,item){	
+					idHorarioMateriaComprobado=item.idHorarioMateria;
+				});
+			});
+
+			var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultaPlanLapso2.php?jsoncallback=?";
+			$.getJSON(url,{
+				docente:idDocente,
+				materia:materiaIngresarPL,
+				grado:gradoIngresarPL,
+				year:yearIngresarPL,
+				lapso:lapsoIngresarPL
+			}).done(function(data){
+				$.each(data, function(i,item){	
+					seleccionado="viejo";
+					idHorario=item.idHorarioMateria;
+					idPlanificacionPL=item.idPlanificacion;
+				});
+			});
+			actionBotones('divIngresarPEL1','formIngresarPEL1');
+		}
+		else
+		{
+			alert("Los Datos Seleccionados Son Incorrectos");
+		}
 	});
-	actionBotones('divIngresarPEL1','formIngresarPEL1');
+
+	
+	
 }
 function botonIngresarPlanLapso () 
 {
@@ -157,6 +191,7 @@ function botonIngresarPlanLapso ()
 	var plan4 = $("#plan04").val();
 	var plan5 = $("#plan05").val();
 	var plan6 = $("#plan06").val();
+	var plan7 = $("#plan07").val();
 
 	if(seleccionado=="viejo")
 	{
@@ -168,17 +203,30 @@ function botonIngresarPlanLapso ()
 			estrategias:plan3,
 			recursos:plan4,
 			tecnicas:plan5,
-			ponderacion:plan6
+			ponderacion:plan6,
+			fecha:plan7
 		}).done(function(data){
-			$.each(data, function(i,item){	
-				seleccionado="viejo";
-				idHorario=item.idHorarioMateria;
-			});
+			alert("Se Ha Ingresado Correctamente");
 		});
 	}
 	else if (seleccionado=="nuevo")
 	{
-
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarPlanLapso2.php?jsoncallback=?";
+		$.getJSON(url,{
+			idHorarioDocenteMateria:idHorarioMateriaComprobado,
+			mencion:mencionIngresarPL,
+			lapso:lapsoIngresarPL,
+			yearEscolar:yearIngresarPL,
+			objetivos:plan1,
+			contenido:plan2,
+			estrategias:plan3,
+			recursos:plan4,
+			tecnicas:plan5,
+			ponderacion:plan6,
+			fecha:plan7
+		}).done(function(data){
+			alert("Se Ha Ingresado Correctamente");
+		});
 	}
 }
 
@@ -203,6 +251,52 @@ function ingresarPlanSemanal ()
 	var segundoCierre=$("#scIngresarPES1").val();
 	var observaciones=$("#observacionesIngresarPES1").val();
 
-	alert(materia+"-"+grado+"-"+year+"-"+numSemana+"-"+fechaInicio+"-"+fechaFin+"-"+sesiones+"-"+numAlumnos+"-"+primerTema+"-"+primerInicio+"-"+primerDesarrollo+"-"+primerCierre+"-"+segundoTema+"-"+segundoInicio+"-"+segundoDesarrollo+"-"+segundoCierre+"-"+observaciones);
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG.php?jsoncallback=?";
+	$.getJSON(url,{
+		docente:idDocente,
+		materia:materiaIngresarPL,
+		grado:gradoIngresarPL,
+		year:yearIngresarPL
+	}).done(function(data){
+		if(data.num>0)
+		{
+			var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG2.php?jsoncallback=?";
+			$.getJSON(url,{
+				docente:idDocente,
+				materia:materiaIngresarPL,
+				grado:gradoIngresarPL,
+				year:yearIngresarPL,
+				lapso:lapsoIngresarPL
+			}).done(function(data){
+				$.each(data, function(i,item){	
+					idHorarioPS=item.idHorarioMateria;
+					var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresaPlanSemanal.php?jsoncallback=?";
+					$.getJSON(url,{
+						docenteHorario:item.idHorarioMateria,
+						numSemana:numSemana,
+						fi:fechaInicio,
+						ff:fechaFin,
+						sesiones:sesiones,
+						numAlumnos:numAlumnos,
+						pt:primerTema,
+						pi:primerInicio,
+						pd:primerDesarrollo,
+						pc:primerCierre,
+						st:segundoTema,
+						si:segundoInicio,
+						sd:segundoDesarrollo,
+						sc:segundoCierre,
+						obser:observaciones
+					}).done(function(data){
+						alert("Se Ha Ingresado Los Datos");
+					});
+				});
+			});
+		}
+		else
+		{
+			alert("Los Valores Seleccionado No Son Validos");
+		}
+	});
 
 }
