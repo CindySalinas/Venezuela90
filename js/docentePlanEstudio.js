@@ -250,29 +250,28 @@ function ingresarPlanSemanal ()
 	var segundoDesarrollo=$("#sdIngresarPES1").val();
 	var segundoCierre=$("#scIngresarPES1").val();
 	var observaciones=$("#observacionesIngresarPES1").val();
-
+	alert(idDocente);
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG.php?jsoncallback=?";
 	$.getJSON(url,{
 		docente:idDocente,
-		materia:materiaIngresarPL,
-		grado:gradoIngresarPL,
-		year:yearIngresarPL
+		materia:materia,
+		grado:grado,
+		year:year
 	}).done(function(data){
 		if(data.num>0)
 		{
 			var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarHDG2.php?jsoncallback=?";
 			$.getJSON(url,{
 				docente:idDocente,
-				materia:materiaIngresarPL,
-				grado:gradoIngresarPL,
-				year:yearIngresarPL,
-				lapso:lapsoIngresarPL
+				materia:materia,
+				grado:grado,
+				year:year
 			}).done(function(data){
 				$.each(data, function(i,item){	
-					idHorarioPS=item.idHorarioMateria;
+					idHorarioPS=item.idHorarioMateria;				
 					var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresaPlanSemanal.php?jsoncallback=?";
 					$.getJSON(url,{
-						docenteHorario:item.idHorarioMateria,
+						docenteHorario:idHorarioPS,
 						numSemana:numSemana,
 						fi:fechaInicio,
 						ff:fechaFin,

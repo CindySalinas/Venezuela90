@@ -3,7 +3,7 @@
 // conexion bd 
 include("conex.php");
 //formato JSON
-//header('Content-type: application/json');
+header('Content-type: application/json');
 
 $idDocenteMateria= $_GET["docenteHorario"];
 $numeroSemana= $_GET["numSemana"];
