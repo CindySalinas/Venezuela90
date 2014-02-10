@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
 	<link rel="stylesheet" href="../css/miEstilo2.css">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<!--link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'-->
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
@@ -180,23 +180,25 @@
 						<div class="tamInEC" id="inps">
 						</div>
 						<!--input type="text" class="tamInEC" Placeholder="Para: " id="emailPadresAlumnos"-->
-						<textarea class="textDocEC" id="textoComunicado1"></textarea>
-
-						<div  id="divVerAlert">
+						<textarea class="textDocEC" id="textoComunicado1"></textarea>	
+						<br><br>
+						<div  id="msj">
 						</div>
+						<br>
 						<button class="classBotonesECDoc" id="enviarComunicado1">Enviar</button>
-						<div id="atrasGL2" class="atras2 atr centrar">
+					</div>	
+					<div id="atrasGL2" class="atras2 atr centrar">
 							<a id="atras"></a>
 							<a id="at">Atrás</a>
-						</div>	
-					</div>					
+						</div>		
+
 			</article>	
 			<article id="noticias" class="comunicadoRepreGrado">
 				<header><h3>Comunicados A Representantes Por Grado</h3></header>
-					<div class="centrar primerDivGH">
+					<div class="centrar primerDivGH" id="pruebaError">
 						<br>
 						<label>Grado</label>
-						<select>
+						<select id="selectGrado1">
 							<option value="1">1er Año</option>
 							<option value="2">2do Año</option>
 							<option value="3">3er Año</option>
@@ -204,18 +206,26 @@
 							<option value="5">5to Año</option>
 						</select>
 						<br>
-						<input type="button" class="classBotonesECDoc" value="Aceptar">
+						<input type="button" class="classBotonesECDoc" value="Aceptar" id="enviarComunicadoGrado1">
 					</div>	
-					<div class="centrar ">
-						<input type="text" class="tamInEC" value="Para: ">
-						<textarea class="textDocEC"></textarea>
+					<div class="centrar" id="textoComunicadoss2">
+						<label>Lista de Correos</label>
+						<div class="tamInEC" id="inps2">
+						</div>
+						<!--input type="text" class="tamInEC" placeholder="Para: "-->
+						<textarea class="textDocEC"  id="textoComunicado2"></textarea>
 						<br>
-						<input type="button" class="classBotonesECDoc" value="Enviar">
-						<div id="atrasGL3" class="atras2 atr centrar">
+						<input type="button" class="classBotonesECDoc" value="Enviar" id="enviarComunicado2">
+					</div>	
+
+					<br><br>
+					<div  id="msj2">
+					</div>
+					<br>	
+					<div id="atrasGL3" class="atras2 atr centrar">
 							<a id="atras"></a>
 							<a id="at">Atrás</a>
-						</div>	
-					</div>					
+					</div>				
 			</article>	
 
 
@@ -236,28 +246,33 @@
 					<div class="centrar primerDivGH">
 						<br>
 						<label>Cedula Del Alumno</label>
-						<input type="text" placeholder="21029953">
+						<input type="text" placeholder="21029953"  id="inputParaXalumno2">
 						<br>
-						<input type="button"  class="classBotonesECDoc" value="Aceptar">
+						<input type="button"  class="classBotonesECDoc" value="Aceptar" id="paraXAlumno2">
 					</div>	
 
-					<div class="centrar ">
-						<input type="text" class="tamInEC" value="Para: ">
-						<textarea class="textDocEC"></textarea>
+					<div class="centrar " id="esconder2">
+						<div class="tamInEC" id="inps3">
+						</div>
+						<!--input type="text" class="tamInEC" value="Para: "-->
+						<textarea class="textDocEC" id="textoComunicado3"></textarea>
 						<br>
-						<input type="button" class="classBotonesECDoc" value="Enviar">
-						<div id="atrasGL5" class="atras2 atr centrar">
+						<input type="button" class="classBotonesECDoc" value="Enviar" id="enviarComunicado3" >
+						<br><br>
+						<div  id="msj3">
+						</div>	
+					</div>	
+					<div id="atrasGL5" class="atras2 atr centrar">
 							<a id="atras"></a>
 							<a id="at">Atrás</a>
-						</div>	
-					</div>					
+					</div>				
 			</article>	
 			<article id="noticias" class="comuAlumPorGrado">
 				<header><h3>Comunicados A Alumnos Por Grado</h3></header>
-					<div class="centrar primerDivGH">
+					<div class="centrar primerDivGH" id="pruebaError2">
 						<br>
 						<label>Grado</label>
-						<select>
+						<select id="selectGrado2">
 							<option value="1">1er Año</option>
 							<option value="2">2do Año</option>
 							<option value="3">3er Año</option>
@@ -267,15 +282,20 @@
 						<br>
 						<input type="button" class="classBotonesECDoc" value="Aceptar">
 					</div>	
-					<div class="centrar ">
-						<input type="text" class="tamInEC" value="Para: ">
-						<textarea class="textDocEC"></textarea>
+					<div class="centrar" id="esconder3">
+						<div class="tamInEC" id="inps4">
+						</div>
+						<!--input type="text" class="tamInEC" value="Para: "-->
+						<textarea class="textDocEC" id="textoComunicado4"></textarea>
 						<br>
-						<input type="button" class="classBotonesECDoc" value="Enviar">
-						<div id="atrasGL6" class="atras2 atr centrar">
+						<input type="button" class="classBotonesECDoc" value="Enviar" id="enviarComunicado4">
+						<br><br>
+						<div  id="msj4">
+						</div>	
+					</div>	
+					<div id="atrasGL6" class="atras2 atr centrar">
 							<a id="atras"></a>
 							<a id="at">Atrás</a>
-						</div>	
 					</div>					
 			</article>			
 		</div>

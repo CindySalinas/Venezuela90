@@ -1916,11 +1916,21 @@ fieldset{
 }
 #inps{
 border: 2px solid rgb(212, 208, 186);
+border-radius: 4px;
 }
-
-.correoSa{
+#inps2,#inps4{
+border: 2px solid rgb(212, 208, 186);
+height: 100px;
+overflow: scroll;
+border-radius: 4px;
+}
+.correoSa,.correoGra,.correoSa2,.correoGra2{
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 	border: 0;
+}
+
+#textoComunicadoss2,#esconder2,#esconder3{
+	display: none;
 }
