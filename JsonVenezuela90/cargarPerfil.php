@@ -4,7 +4,7 @@ include("conex.php");
 //formato JSON
 //header('Content-type: application/json');
 
-$ced = $_COOKIE["cedulaAdmin"];
+$ced = $_GET["cedula"];
 
 $sql = "SELECT U.Apellido, U.Nombre,U.Cedula,U.Nacionalidad,U.Direccion,U.Email, E.Edo_Civil,G.genero,U.Telefono FROM usuario U INNER JOIN estado_civil E ON U.Estado_Civil = E.id_Edo_civil INNER JOIN genero G ON U.Id_Genero = G.id_Genero WHERE U.Cedula = $ced";
 

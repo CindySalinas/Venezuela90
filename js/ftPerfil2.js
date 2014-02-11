@@ -56,7 +56,7 @@ function subir(){
 }
 
 function guardarRuta(ruta){
-	var cedu = $.cookie("cedulaAdmin");
+	var cedu = $.cookie("cedulaProf");
 	var url2 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/guardarRutaPerfil.php?jsoncallback=?";
 	$.getJSON(url2,{
   		path : ruta,

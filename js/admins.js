@@ -23,8 +23,9 @@ function admins(){
 		
 }
 function perfil(){
+	var cedu = $.cookie("cedulaAdmin");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
-	$.getJSON(url).done(function(data){
+	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
 			$.each(data,function(i,item){		
 				$('.apPerfil').text(item.apll);
@@ -48,8 +49,9 @@ function perfil(){
 }
 
 function perfil2(){
+	var cedu = $.cookie("cedulaAdmin");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
-	$.getJSON(url).done(function(data){
+	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
 			$.each(data,function(i,item){		
 				$('#apPerfil').attr("value",item.apll);
@@ -130,8 +132,9 @@ function getQueryVariable(variable)
 
 }
 function cargarFoto(){
+	var cedu = $.cookie("cedulaAdmin");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarFotoPerfil.php?jsoncallback=?";
-	$.getJSON(url).done(function(data){
+	$.getJSON(url,{cedula:cedu}).done(function(data){
 		console.log(data.ruta);
 		if(data.num != 0){
 			$('#ftPerfil').append("<img width='70' src='../FotosPerfil/"+data.ruta+"'>")		

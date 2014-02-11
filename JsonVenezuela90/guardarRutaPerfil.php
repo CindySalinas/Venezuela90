@@ -3,7 +3,7 @@
 include("conex.php");
 	 
       $rt  = $_GET["path"];
- 		$ced = $_COOKIE["cedulaAdmin"];
+ 		$ced = $_GET["cedula"];
 	if($rt != ""){
 			$sql = "INSERT INTO  foto_perfil_usuario (Ruta_Foto_Perfil) VALUES ('$rt')";
 		 	$result = mysql_query($sql) or die("Error de Consulta". mysql_error());

@@ -8,14 +8,14 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
-	<link rel="stylesheet" href="../css/miEstilo4.css">
+	<link rel="stylesheet" href="../css/miEstilo2.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
-	<script src="../js/studen.js"></script>
-	<script src="../js/horarioEstudiante.js"></script>
+	<script src="../js/docente.js"></script>
+	<script src="../js/ftPerfil2.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -30,7 +30,7 @@
 					
 				</a>
 				<ul>
-					<li><a href="IntranetAlumno.html">Inicio</a></li>
+					<li><a href="../index.html">Inicio</a></li>
 					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
 					<li><a href="../contacto.html">Contacto</a></li>
 					<li><a href="../institucion.html">La Institución</a></li>
@@ -52,12 +52,13 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
-						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
-						<li><a href="mensajeriaAlumno.html">Mensajeria</a></li>
-						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
-						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="envioComunicados.html">Envio De Comunicados</a></li>
+						<li><a href="mensajeriaDocente.html">Mensajeria</a></li>
+						<li><a href="CargaConsultaPlanEstudio.html">Plan De Estudios</a></li>
+						<li><a href="cargaCalificaciones.html">Carga De Calificaciones</a></li>
+						<li><a href="HorarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
 						<li><a href="foros.html">Foros</a></li>
-						<li><a href="asignacionesRecursos.html">Asignaciones y Recursos Educativos</a></li>
+						<li><a href="CargaDescargaRecursos.html">Asignaciones y Recursos Educativos</a></li>
 					</ul>
 				</div>
 			</article>
@@ -69,8 +70,8 @@
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="perfilAlumno.html">Mi Perfil</a></li>
-						<li><a href="perfilAlumnoEditar.html?valid=y">Editar</a></li>
+						<li><a href="perfilAdministracion.html">Mi Perfil</a></li>
+						<li><a href="perfilDocente.html?valid=y">Editar</a></li>
 						<li><a href="#">Mis Notificaciones</a></li>
 					</ul>
 				</div>
@@ -143,87 +144,129 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Horario Calendario Escolar</h2></header>
+				<header><h2>Mi Perfil</h2></header>
 				<hr />
 			</article>
-			<article id="noticias" class="menuPrincipal">
-				<header><h3>Seleccionar Una Opción</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" class="consultaHorario"></a><a class="textoAbajo consultaHorario">Horario</a></li>
-						<li><a id="iconomodificar" href="viewCalendarioEscolar2.html"></a><a class="textoAbajo" href="viewCalendarioEscolar2.html">Calendario Escolar</a></li>
-					</ul>					
-			</article>
-			<article id="noticias" class="elHorario none">
-				<header><h3>Horario</h3></header>
-					<div class="tablaConsultarAulasConsultar3">
-					<br>
-					<table border=1>
+			<article id="noticias">
+				<header><h3>Información Personal</h3></header>
+				<table border=1 id="tabFoto" class="tablaPerfilDocente">
+					<tbody>
 						<thead>
-							<tr>
-								<th>HORA</th>
-								<th>LUNES</th>
-								<th>MARTES</th>
-								<th>MIERCOLES</th>
-								<th>JUEVES</th>
-								<th>VIERNES</th>
+							<tr >
+								<td colspan=2>Foto De Perfil</td>
 							</tr>
 						</thead>
-						<tbody class="centrar">
+						<tr class="centrar">
+							<td colspan=2>
+								<figure id="ftPerfil">
+									<!--img width="70" src="../images/user.png"-->
+								</figure>
+								<a class="changeFT">Cambiar</a>
+								<div class="ftPerfil">
+									<form enctype="multipart/form-data" >
+										<input id="archivos" type="file" name="archivos[]">
+									</form>
+								<div class="msj"></div>
+								<div class="msj2"></div>
+								<div class="msj3"></div>
+								<input type="button" id="cambiarFP" value="Cambia rFoto">
+								</div>
+							</td>
+						</tr>
+									
+					</tbody>
+				</table>
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
 							<tr>
-								<td><span>07:15 - 07-50</span></td>
-								<td rowspan=2><span id="materiCnHA01" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA02" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA03" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA04" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA05" class="spanConsultar"></span></td>
+								<td colspan=2>Información Personal </td>
 							</tr>
-							<tr>
-								<td><span>07:50 - 08:35</span></td>
-								
-							</tr>
-							<tr>
-								<td><span>08:50 - 09:35</span></td>
-								<td rowspan=2><span id="materiCnHA06" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA07" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA08" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA09" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA10" class="spanConsultar"></span></td>
-							</tr>
-							<tr>
-								<td><span>09:35 - 10:05</span></td>	
-							</tr>
-							<tr>
-								<td><span>10:25 - 11:00</span></td>
-								<td rowspan=2><span id="materiCnHA11" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA12" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA13" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA14" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA15" class="spanConsultar"></span></td>
-							</tr>
-							<tr>
-								<td><span>11:00 - 11:45</span></td>
-							</tr>
-							<tr>
-								<td><span>11:55 - 12:40</span></td>
-								<td rowspan=2><span id="materiCnHA16" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA17" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA18" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA19" class="spanConsultar"></span></td>
-								<td rowspan=2><span id="materiCnHA20" class="spanConsultar"></span></td>
-							</tr>
-							<tr>
-								<td><span>12:40 - 01:05</span></td>
-							</tr>
-							
-						</tbody>
-					</table>
-					<div class="divAtrasInfoIns centrar">
-						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasTablaConsultar3"></a>
-						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasTablaConsultar3">Atras</a>
-					</div>	
-				</div>				
-			</article>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Apellidos: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="apPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nombres: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="nomPperfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Cedula: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="cedPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Sexo: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="sexPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado Civil: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="edoCPerfil"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Fecha De Nacimiento: </td>
+							<td class="left espacioLe"><span id="nomPerfil" class="fechaPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nacionalidad: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="naciPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Lugar Nacimiento: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="lugar1"></td>
+						</tr>
+					</tbody>
+				</table>
 
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Lugar De Residencia</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Ciudad: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Valencia</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Carabobo</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">País: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Venezuela</span> </td>
+						</tr>				
+					</tbody>
+				</table>
+
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Información De Contacto</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Dirección: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="lugar2"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Telefono: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="celPerfil"> </td>
+						</tr>						
+						<tr>
+							<td class="right espacioRi">Email: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="mailPerfil"> </td>
+						</tr>				
+					</tbody>
+				</table>
+				<div class="centrar">
+					<button id="butAce" class="gDatos">Guardar Datos</button>
+					<br><br>
+					<div id="msj"></div>
+				</div>
+			</article>
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->

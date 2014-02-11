@@ -3,7 +3,7 @@
 include("conex.php");
 
 header('Content-type: application/json');
-$ced = $_COOKIE["cedulaAdmin"];
+$ced = $_GET["cedula"];
 	
 $sql = "SELECT U.Id_Foto_Perfil,F.Ruta_Foto_Perfil FROM Usuario U INNER JOIN foto_perfil_usuario F ON F.Id_Foto_Perfil = U.Id_Foto_Perfil WHERE U.Cedula = '$ced'";
 

@@ -9,12 +9,12 @@ function empezar(){
    $('#butAce').on("click",guardarDatos);
    $('.nEdit2').prop("disabled",true).addClass("disabled");
    $('#butAce').prop("disabled",true).addClass("disabled");
-   $('#msj').on('click','#prf',function(){window.location="perfilDocente.html"});
+   $('#msj').on('click','#prf',function(){window.location="perfilAdministracion.html"});
   cargarFoto();
 } 
 
 function prof(){
-	var galleta = $.cookie("profName")
+	var galleta = $.cookie("studentName");
 	if(galleta == undefined){
 		window.location = "../index.html";
 	}
@@ -23,7 +23,7 @@ function prof(){
 		
 }
 function perfil(){
-	var cedu = $.cookie("cedulaProf");
+	var cedu = $.cookie("cedulaStudent");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
@@ -48,7 +48,7 @@ function perfil(){
 	});
 }
 function perfil2(){
-	var cedu = $.cookie("cedulaProf");
+	var cedu = $.cookie("cedulaStudent");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
@@ -131,7 +131,7 @@ function getQueryVariable(variable)
 
 }
 function cargarFoto(){
-	var cedu = $.cookie("cedulaProf");
+	var cedu = $.cookie("cedulaStudent");
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarFotoPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		console.log(data.ruta);

@@ -49,6 +49,13 @@ else
 	setcookie("studentName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
 }
+else
+	if($cantidad>0 &&  $resultados["T"]== 4){
+	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
+	setcookie("cedulaPadre",$c,time()+36000,"/");
+	setcookie("padreName",$nom." ".$app,time()+36000,"/");
+	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
+}
 else{
 	$resultados["mensaje"] = "Usuario o Password Incorrectos";
 	//$resultados["validacion"] = 0;
