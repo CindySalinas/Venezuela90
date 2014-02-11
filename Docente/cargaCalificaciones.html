@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/docente.js"></script>
+	<script src="../js/cargaCalificacionesDocente.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -146,16 +147,40 @@
 				<header><h2>Carga De Calificaciones</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="menuPrincipal">
 				<header><h3>Seleccionar Una Opción</h3></header>
 					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
+						<li><a id="iconomodificar" class="ingresarMP"></a><a class="textoAbajo ingresarMP" href="#">Ingresar</a></li>
+						<li><a id="iconoconsultar" class="consultarMP"></a><a class="textoAbajo consultarMP" href="#">Consultar</a></li>
+						<li><a id="iconomodificar" class="modificarMP"></a><a class="textoAbajo modificarMP">Modificar</a></li>
 					</ul>					
 			</article>	
-			<article id="noticias">
-				<header><h3>Consultar Calificaciones</h3></header>
-				<form id="tabCC" class="formReSol">
+			<article id="noticias" class="ingresarMenu">
+				<header><h3>Ingresar Calificaciones</h3></header>
+				<ul id="listaGestion">
+					<li><a id="iconomodificar" class="ingresarMP"></a><a class="textoAbajo ingresarMP" href="#">Ingresar Por Alumno</a></li>
+					<li><a id="iconoconsultar" class="consultarMP"></a><a class="textoAbajo consultarMP" href="#">Ingresar Por Grado</a></li>
+				</ul>
+				<div class="divAtrasInfoIns centrar">
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresar1">Atras</a>
+				</div>	
+			</article>	
+			<article id="noticias" class="ingresarAlumno">
+				<header><h3>Ingresar Por Alumno</h3></header>
+				<div class="formReSol centrar divIngresarPA1">
+					<label>Cedula</label>
+					<input type="text" placeholder="21029953" id="inputCedulaIngresarPA">
+					<br><br>
+					<div>
+						<button id="aceptarCedulaIngresarPA">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPA1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPA1">Atras</a>
+					</div>	
+				</div>
+				<div id="tabCC" class="formReSol tablaIngresarPA1">
 					<table class="widTab" border=1>
 						<thead>
 							<tr>
@@ -164,123 +189,97 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="right espacioRi"><label>Buscar Por:</label></td>
-								<td class="left espacioLe"><select>
-									<option>Estudiante</option>
-									<option>Materia</option>
+								<td class="right espacioRi"><label>Materia:</label></td>
+								<td class="left espacioLe">
+								<select id="selectMateriaIngresarPA">
+									<option value="0">Materia</option>
 								</select></td>
 							</tr>
-							<div id="opcionesEst">
-								<tr>
-									<td class="right espacioRi">Grado: </td>
-									<td class="left espacioLe"><select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
-									<option>4to Año</option>
-									<option>5to Año</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Sección: </td>
-									<td class="left espacioLe"><select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>	
-								</select></td>
-								</tr>
 								<tr>
 									<td class="right espacioRi">Año Escolar: </td>
-									<td class="left espacioLe"><select>
-									<option>2012/2013</option>
-									<option>2013/2014</option>	
+									<td class="left espacioLe">
+										<select id="selectYearIngresarPA">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>	
+									<option value="3">2014/2015</option>	
 								</select></td>
 								</tr>
 								<tr>
 									<td class="right espacioRi">Lapso: </td>
-									<td class="left espacioLe"><select>
+									<td class="left espacioLe">
+										<select id="selectLapsoIngresarPA">
 									<option>I</option>
 									<option>II</option>	
 									<option>III</option>
 								</select></td>
 								</tr>
 								<tr>
-									<td class="right espacioRi">Planilla: </td>
-									<td class="left espacioLe"><select>
-									<option>De Calificaciones</option>
-									<option>De Asistencia De Evaluación</option>	
-								</select></td>
+									<td class="conBoton"colspan=2>
+										<button id="consultarDatosIngresaPA">Consultar</button>
+									</td>
 								</tr>
-								<tr>
-									<td class="right espacioRi">Asignatura: </td>
-									<td class="left espacioLe"><select>
-									<option>Matematica</option>
-									<option>Ingles</option>	
-								</select></td>
-								</tr>
-							</div>
-							<div id="opcionesMat">
-								<tr>
-									<td class="right espacioRi">Asignatura: </td>
-									<td class="left espacioLe"><select>
-									<option>Matematica</option>
-									<option>Ingles</option>	
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Año Escolar: </td>
-									<td class="left espacioLe"><select>
-									<option>2012/2013</option>
-									<option>2013/2014</option>	
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Grado: </td>
-									<td class="left espacioLe"><select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
-									<option>4to Año</option>
-									<option>5to Año</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Sección: </td>
-									<td class="left espacioLe"><select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>	
-								</select></td>
-								</tr>								
-								<tr>
-									<td class="right espacioRi">Lapso: </td>
-									<td class="left espacioLe"><select>
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Planilla: </td>
-									<td class="left espacioLe"><select>
-									<option>De Calificaciones</option>
-									<option>De Asistencia De Evaluación</option>	
-								</select></td>
-								</tr>
-							</div>
-							<tr>
-								<td class="conBoton"colspan=2>
-									<button>Consultar</button>
-								</td>
-							</tr>
 						</tbody>
 					</table>
-				</form>
-			</article>		
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPA2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPA2">Atras</a>
+					</div>	
+				</div>
 
-			<article id="noticias">
-				<header><h3>Modificar Calificaciones</h3></header>
-				<form id="formCC" class="formReSol">
+				<div class=" centrar divIngresarPA2">
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Alumno</th>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span id="spanCedula">21029953</span></td>
+								<td><input type="text" id="descrip"></td>
+								<td><input type="text" id="nota"></td>
+								<td><input type="text" id="porc"></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<div>
+						<button id="aceptarCedulaIngresarPA">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPA3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPA3">Atras</a>
+					</div>	
+				</div>
+				
+			</article>	
+			<article id="noticias" class="ingresarGrado">
+				<header><h3>Ingresar Por Grado</h3></header>
+
+				<div class="formReSol centrar divIngresarPG1">
+					<label>Seleccione Cedula</label>
+						<select id="gradoIngresarPG">
+							<option value="1">1er Año</option>
+							<option value="2">2do Año</option>
+							<option value="3">3er Año</option>
+							<option value="4">4to Año</option>
+							<option value="5">5to Año</option>
+						</select>
+					<br><br>
+					<div>
+						<button id="aceptarGradoIngresarPG">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPG1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPG1">Atras</a>
+					</div>	
+				</div>
+				<div id="tabCC" class="formReSol tablaIngresarPG1">
 					<table class="widTab" border=1>
 						<thead>
 							<tr>
@@ -289,119 +288,275 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="right espacioRi"><label>Buscar Por:</label></td>
-								<td class="left espacioLe"><select>
-									<option>Estudiante</option>
-									<option>Materia</option>
+								<td class="right espacioRi"><label>Materia:</label></td>
+								<td class="left espacioLe">
+								<select id="selectMateriaIngresarPG">
+									<option value="0">Materia</option>
 								</select></td>
 							</tr>
-							<div id="opcionesEst">
-								<tr>
-									<td class="right espacioRi">Grado: </td>
-									<td class="left espacioLe"><select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
-									<option>4to Año</option>
-									<option>5to Año</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Sección: </td>
-									<td class="left espacioLe"><select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>	
-								</select></td>
-								</tr>
 								<tr>
 									<td class="right espacioRi">Año Escolar: </td>
-									<td class="left espacioLe"><select>
-									<option>2012/2013</option>
-									<option>2013/2014</option>	
+									<td class="left espacioLe">
+										<select id="selectYearIngresarPG">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>	
+									<option value="3">2014/2015</option>	
 								</select></td>
 								</tr>
 								<tr>
 									<td class="right espacioRi">Lapso: </td>
-									<td class="left espacioLe"><select>
+									<td class="left espacioLe">
+										<select id="selectLapsoIngresarPG">
 									<option>I</option>
 									<option>II</option>	
 									<option>III</option>
 								</select></td>
 								</tr>
 								<tr>
-									<td class="right espacioRi">Planilla: </td>
-									<td class="left espacioLe"><select>
-									<option>De Calificaciones</option>
-									<option>De Asistencia De Evaluación</option>	
-								</select></td>
+									<td class="conBoton"colspan=2>
+										<button id="consultarDatosIngresaPG">Consultar</button>
+									</td>
 								</tr>
-								<tr>
-									<td class="right espacioRi">Asignatura: </td>
-									<td class="left espacioLe"><select>
-									<option>Matematica</option>
-									<option>Ingles</option>	
-								</select></td>
-								</tr>
-							</div>
-							<div id="opcionesMat">
-								<tr>
-									<td class="right espacioRi">Asignatura: </td>
-									<td class="left espacioLe"><select>
-									<option>Matematica</option>
-									<option>Ingles</option>	
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Año Escolar: </td>
-									<td class="left espacioLe"><select>
-									<option>2012/2013</option>
-									<option>2013/2014</option>	
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Grado: </td>
-									<td class="left espacioLe"><select>
-									<option>1er Año</option>
-									<option>2do Año</option>
-									<option>3er Año</option>
-									<option>4to Año</option>
-									<option>5to Año</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Sección: </td>
-									<td class="left espacioLe"><select>
-									<option>A</option>
-									<option>B</option>
-									<option>U</option>	
-								</select></td>
-								</tr>								
-								<tr>
-									<td class="right espacioRi">Lapso: </td>
-									<td class="left espacioLe"><select>
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
-								</select></td>
-								</tr>
-								<tr>
-									<td class="right espacioRi">Planilla: </td>
-									<td class="left espacioLe"><select>
-									<option>De Calificaciones</option>
-									<option>De Asistencia De Evaluación</option>	
-								</select></td>
-								</tr>
-							</div>
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPG2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPG2">Atras</a>
+					</div>	
+				</div>
+
+				<div class=" centrar divIngresarPG2">
+					
+					<table>
+						<thead>
 							<tr>
-								<td class="conBoton"colspan=2>
-									<button>Modificar</button>
-								</td>
+								<th>Alumno</th>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span id="spanCedula">21029953</span></td>
+								<td><input type="text" id="descrip"></td>
+								<td><input type="text" id="nota"></td>
+								<td><input type="text" id="porc"></td>
 							</tr>
 						</tbody>
 					</table>
-				</form>
-			</article>				
+
+					<br>
+					<div>
+						<button id="aceptarCedulaIngresarPG">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasIngresarPG3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasIngresarPG3">Atras</a>
+					</div>	
+				</div>	
+			</article>	
+			<article id="noticias" class="consultarMenu">
+				<header><h3>Consultar Calificaciones</h3></header>
+				<ul id="listaGestion">
+					<li><a id="iconomodificar" class="consultarAlumnoMP"></a><a class="textoAbajo consultarAlumnoMP">Consultar Por Alumno</a></li>
+					<li><a id="iconoconsultar" class="consultarGradoMP"></a><a class="textoAbajo consultarGradoMP" href="#">Consultar Por Grado</a></li>
+				</ul>
+				<div class="divAtrasInfoIns centrar">
+					<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultar1"></a>
+					<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultar1">Atras</a>
+				</div>	
+			</article>	
+			<article id="noticias" class="consultarPorAlumno">
+				<header><h3>Consultar Por Alumno</h3></header>
+				<div class="formReSol centrar divConsultarPA1">
+					<label>Cedula</label>
+					<input type="text" placeholder="21029953" id="inputCedulaConsultarPA">
+					<br><br>
+					<div>
+						<button id="aceptarCedulaConsultarPA">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPA1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPA1">Atras</a>
+					</div>	
+				</div>
+				<div id="tabCC" class="formReSol tablaConsultarPA1">
+					<table class="widTab" border=1>
+						<thead>
+							<tr>
+								<td colspan="2">Seleccione</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="right espacioRi"><label>Materia:</label></td>
+								<td class="left espacioLe">
+								<select id="selectMateriaConsultarPA">
+									<option value="0">Materia</option>
+								</select></td>
+							</tr>
+								<tr>
+									<td class="right espacioRi">Año Escolar: </td>
+									<td class="left espacioLe">
+										<select id="selectYearConsultarPA">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>	
+									<option value="3">2014/2015</option>	
+								</select></td>
+								</tr>
+								<tr>
+									<td class="right espacioRi">Lapso: </td>
+									<td class="left espacioLe">
+										<select id="selectLapsoConsultarPA">
+									<option>I</option>
+									<option>II</option>	
+									<option>III</option>
+								</select></td>
+								</tr>
+								<tr>
+									<td class="conBoton"colspan=2>
+										<button id="consultarDatosConsultarPA">Consultar</button>
+									</td>
+								</tr>
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPA2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPA2">Atras</a>
+					</div>	
+				</div>
+
+				<div class=" centrar divConsultarPA2">
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Alumno</th>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span id="spanCedulaConsultar">21029953</span></td>
+								<td><span id="descripConsultar"></span></td>
+								<td><span id="notaConsultar"></span></td>
+								<td><span id="porcConsultar"></span></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<div>
+						<button id="aceptarCedulaConsultarPA">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPA3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPA3">Atras</a>
+					</div>	
+				</div>
+				
+			</article>	
+			<article id="noticias" class="consultarGrado">
+				<header><h3>Consultar Por Grado</h3></header>
+
+				<div class="formReSol centrar divConsultarPG1">
+					<label>Seleccione Cedula</label>
+						<select id="gradoConsultarPG">
+							<option value="1">1er Año</option>
+							<option value="2">2do Año</option>
+							<option value="3">3er Año</option>
+							<option value="4">4to Año</option>
+							<option value="5">5to Año</option>
+						</select>
+					<br><br>
+					<div>
+						<button id="aceptarGradoConsultarPG">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPG1"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPG1">Atras</a>
+					</div>	
+				</div>
+				<div id="tabCC" class="formReSol tablaIngresarPG1">
+					<table class="widTab" border=1>
+						<thead>
+							<tr>
+								<td colspan="2">Seleccione</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="right espacioRi"><label>Materia:</label></td>
+								<td class="left espacioLe">
+								<select id="selectMateriaConsultarPG">
+									<option value="0">Materia</option>
+								</select></td>
+							</tr>
+								<tr>
+									<td class="right espacioRi">Año Escolar: </td>
+									<td class="left espacioLe">
+										<select id="selectYearConsultarPG">
+									<option value="1">2012/2013</option>
+									<option value="2" selected>2013/2014</option>	
+									<option value="3">2014/2015</option>	
+								</select></td>
+								</tr>
+								<tr>
+									<td class="right espacioRi">Lapso: </td>
+									<td class="left espacioLe">
+										<select id="selectLapsoConsultarPG">
+									<option>I</option>
+									<option>II</option>	
+									<option>III</option>
+								</select></td>
+								</tr>
+								<tr>
+									<td class="conBoton"colspan=2>
+										<button id="consultarDatosConsultarPG">Consultar</button>
+									</td>
+								</tr>
+						</tbody>
+					</table>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPG2"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPG2">Atras</a>
+					</div>	
+				</div>
+
+				<div class=" centrar divConsultarPG2">
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Alumno</th>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span id="spanCedulaConsultar2">21029953</span></td>
+								<td><input type="text" id="descripCon2"></td>
+								<td><input type="text" id="notaCon2"></td>
+								<td><input type="text" id="porcCon2"></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<div>
+						<button id="aceptarCedulaConsultarPG">Aceptar</button>
+					</div><br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPG3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPG3">Atras</a>
+					</div>	
+				</div>	
+			</article>			
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->
