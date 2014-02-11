@@ -12,7 +12,7 @@ function empezar(){
          else{
             img = item.imagenNoticia;
          }
-         noti.append('<div class="contenidoNoticias"><h4><a id="'+item.idNoticia+'"><b>'+item.tituloNoticia+'</b></a></h4> <figure><img width="70" src="../Noticias/'+img+'"></figure><p>'+item.noticia+'</p><hr></div>');
+         noti.append('<div class="contenidoNoticias"><h4><a id="'+item.idNoticia+'"><b>'+item.tituloNoticia+'</b></a></h4> <figure class="imgNoticia"><img width="70" src="../Noticias/'+img+'"></figure><p>'+item.noticia+'</p><hr></div>');
       })
   });
 } 

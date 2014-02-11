@@ -303,9 +303,14 @@
 {
 	display: inline-block;
 }
+.contenidoNoticias .imgNoticia img
+{	
+	margin-top: -25%;
+	height: 100px;
+	width: 100px;
+}
 .contenidoNoticias figure img
 {	
-	margin-top: -20%;
 	height: 100px;
 	width: 100px;
 }
