@@ -2,11 +2,13 @@ $(document).on("ready", empezar);
 
 function empezar(){
  
-$('#iconoconsultar').on("click",function(){actionBotones("mostrarCed","consultarCed,.titulo")});
+//$('#iconoconsultar').on("click",function(){actionBotones("mostrarCed","consultarCed,.titulo")});
+$('.mostrarCed').show();
 $('#atr > #atras, #atr > #at').on("click",function(){actionBotones("consultarCed,.titulo","mostrarCed")});
 //$('#sigw > #siguiente,#sigw > #sit').on("click",comprobarCedula);
-$('#siguiente,#sit').prop("disabled",true).addClass("disabled");
-$('#cedulaAl').on("change",comprobarCedula);
+
+$('#reins').on("click",comprobarCedula);
+//$('#cedulaAl').on("change",comprobarCedula);
 cargarDatos();
 $('#cambiarDatos').on("click",reinscribir);
 $('#restAtras2').on("click",function(){window.location ="reinscripcion.html"});
@@ -21,25 +23,32 @@ function actionBotones(mostrar,ocultar)
 }
 
 function comprobarCedula(){
+  $('.alert').remove();
    var ced= $('#cedulaAl').val();
-   var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula.php?jsoncallback=?";
+   var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula2.php?jsoncallback=?";
     if(ced != " " || ced !=""){
       $.getJSON(url,{cedula:ced}).done(function(data){
-         if(data.num !=0){
-               $('#sig').show("slide");
+        console.log(data.rol);
+         if(data.num !=0 && data.rol == 3){
+             // $('#reins').on("click",function(){
+                 window.location = "inscripcionReins.html?cedu="+ced
+            //   });
+              // $('#sig').show("slide");
          }else{
             $('#sig').hide("slow");
             $('#cedulaAl').val("").attr("placeholder","Cedula No Valida");
+            $('#msj').append("<div class='alert alert-danger centrar'> Esta cedula no es de un Alumno</div>");
          }
       });
    }else{
             $('#cedulaAl').css({"border":"2px solid rgb(242,20,20)"}   );
-            $('#cedulaAl').val("").attr("placeholder","Cedula No Valida");
+            $('#cedulaAl').val("").attr("placeholder","Cedula No Existe");
+            $('#msj').append("<div class='alert alert-danger centrar'> Esta cedula no es de un Alumno</div>");
    }
 
-   $('#sig > #siguiente,#sig > #sit').on("click",function(){
+   /*$('#sig > #siguiente,#sig > #sit').on("click",function(){
          window.location = "inscripcionReins.html?cedu="+ced
-   });
+   });*/
 }
 function cargarDatos(){
    var cc = getQueryVariable("cedu");
