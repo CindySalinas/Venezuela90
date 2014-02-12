@@ -87,7 +87,7 @@ function inscribirUsuarioRepresentantePadre(){
 	global $pTrb;
 	global $cedA;
 	$pat = "Padre";
-	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$pNom','$pAp','$pCed','$mail2','$pCed','$pTlf1','$dirA','4','2')";
+	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero,Estado_Civil,Nacionalidad) VALUES('$pNom','$pAp','$pCed','$mail2','$pCed','$pTlf1','$dirA','4','2','2','Venezolano')";
 	$result = mysql_query($sql) or die ("Query error2: " . mysql_error());
 	$repP = mysql_insert_id();
 	$pa =  mysql_insert_id();
@@ -109,7 +109,7 @@ function inscribirUsuarioRepresentanteMadre(){
 	global $mTrb;
 	global $cedA;
 	$pat = "Madre";
-	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero) VALUES('$mNom','$mAp','$mCed','$mail3','$mCed','$mTlf1','$dirA','4','1')";
+	$sql = "INSERT INTO  usuario(Nombre,Apellido,Cedula,Email,Password,Telefono,Direccion,Id_Rol_Usuario,Id_Genero,Estado_Civil,Nacionalidad) VALUES('$mNom','$mAp','$mCed','$mail3','$mCed','$mTlf1','$dirA','4','1','2','Venezolano')";
 	$result = mysql_query($sql) or die ("Query error21: " . mysql_error());
 	$repM = mysql_insert_id();
 	//$ma =  mysql_insert_id();

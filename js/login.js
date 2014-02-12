@@ -30,6 +30,12 @@ function logged(){
         {   
            /// Si La Validacion Es Correcta, Muestra La Página Principal de Alumnos 
            location.href='Alumno/IntranetAlumno.html';             
+        } 
+        else
+          if(datos.validacion > 0 && datos.T== 4)
+        {   
+           /// Si La Validacion Es Correcta, Muestra La Página Principal de Alumnos 
+           location.href='Representantes/IntranetRepresentante.html';             
         }
 
      if(datos.validacion == 0)
