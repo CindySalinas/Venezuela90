@@ -88,7 +88,7 @@ function GetTodayDate() {
    var yyyy = tdate.getFullYear(); //yields year
   // var xxx = dd + "-" +( MM+1) + "-" + yyyy;
   if(dd < 10 || MM < 10){
-  	 var xxx = yyyy+ "-" +0+(MM+1)+ "-" +0+ dd;
+  	 var xxx = yyyy+ "-" +0+(MM+1)+ "-" + dd;
   }else{
   	var xxx = yyyy+ "-" +(MM+1)+ "-" + dd;
   }

@@ -3,23 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Intranet</title>
+	<title>Venezuela 90 | Gestion De Libros</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/todoEstilo.css">
 	<link rel="stylesheet" href="../css/miEstilo4.css">
+	<link rel="stylesheet" href="../css/planSemanalPrint.css" media="print">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<script src="../js/jquery-1.10.2.min.js"></script>
 	<script src="../js/script.min.js"></script>
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/representante.js"></script>
-	<script src="../js/mostrarNoticias.js"></script>
-	
+	<script src="../js/gestionAdministracionPlanLapso.js"></script>
+
 </head>
 <body class="p-admision">
-	<!-- HEADERRRRRRRRRRRR -->
+
+	<!-- HEADERRRRRRRRRR -->
 	<header class="site-header">
 		<div class="header-image-container estilo-header">
 			<a href="../index.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
@@ -56,7 +58,7 @@
 						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
 						<li><a href="mensajeriaRepre.html">Mensajeria</a></li>
 						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
-						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>				
 					</ul>
 				</div>
 			</article>
@@ -138,97 +140,31 @@
 			</aside>
 		</div>
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
-		<!-- Noticias -->
-		<div class=" colorDiv sidebar-wrap estilo-sidebar-wrap">
-			<article>
-				<header><h2>Bienvenido</h2></header>
+		<div class="sidebar-wrap estilo-sidebar-wrap">
+			<article id="intranetPrincipal">
+				<header class="titulo"><h2>Plan De Estudio Por Lapso</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Noticias</h3></header>
-				<!--div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div-->
+				<header class="titulo"><h3>Consultar Plan De Estudio Por Lapso</h3></header>
+							
 			</article>
-		</div>
-		<!-- Informacion General -->
-		<div class="sidebar-wrap estilo-sidebar-wrap" id="info">
-			<article id="noticias">
-				<header><h3>Información General</h3></header>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-			</article>
+
+
 		</div>
 	</section>
-	<!-- FOOTERRRRR -->
-	<footer class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<span class="v90-logo"></span>
-			<b>Unidad Educativa Venezuela 90</b><br>
-			<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
-		</div><!-- .site-info -->
-	</footer>
+
+
+
+<footer class="site-footer" role="contentinfo">
+	<div class="site-info">
+		<span class="v90-logo"></span>
+		<b>Unidad Educativa Venezuela 90</b><br>
+		<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
+	</div><!-- .site-info -->
+</footer>
+
+
 
 </body>
 </html>

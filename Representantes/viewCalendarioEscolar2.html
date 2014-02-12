@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Venezuela 90 | Gestion De Libros</title>
+	<link rel="stylesheet" href="../css/genericons.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/todoEstilo.css">
+	<link rel="stylesheet" href="../css/miEstilo4.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/script.min.js"></script>
+	<script src="../js/swipe.min.js"></script>
+	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/representante.js"></script>
+	<script src="../js/gestionVisualizarCalendarioEscolar.js"></script>
+</head>
+<body class="p-admision">
+
+	<!-- HEADERRRRRRRRRR -->
+	<header class="site-header">
+		<div class="header-image-container estilo-header">
+			<a href="../index.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
+		</div>
+		<div class="nav-wrap">
+			<nav>
+				<span class="toggle-menu">Menú</span>
+				<a href="perfilRepresentante.html" class="search-form" id="nombreUsuario">
+					
+				</a>
+				<ul>
+					<li><a href="../index.html">Inicio</a></li>
+					<li><a href="../admision.html" class="a-admision">Admisión</a></li>
+					<li><a href="../contacto.html">Contacto</a></li>
+					<li><a href="../institucion.html">La Institución</a></li>
+					<li><a href="../propuesta.html">Propuesta Educativa</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="main-wrap estilo-main-wrap">
+		<!-- LADOOOO IZQUIERDAOOOO -->
+		<div class="article-wrap estilo-article-wrap">
+			<!-- Navegación -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Navegación</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content" >
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<ul class="navegacion">
+						<ul class="navegacion">
+						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
+						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
+						<li><a href="mensajeriaAlumno.html">Mensajeria</a></li>
+						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
+						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+					</ul>
+					</ul>
+				</div>
+			</article>
+			<!-- Perfil -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Perfil</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content">
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<ul class="navegacion">
+						<li><a href="perfilRepresentante.html">Mi Perfil</a></li>
+						<li><a href="perfilRepresentanteEditar.html?valid=y">Editar</a></li>
+					</ul>
+				</div>
+			</article>
+			<!-- Ultimos Usuarios En Linea -->
+			<article class="blogpost">
+				<header>
+					<h1 class="entry-title estilo-entry-title"><a href="#">Ultimos Usuarios En Linea</a></h1>
+				</header>
+				<div class="entry-content estilo-entry-content">
+					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
+					<p>Ultimos Conectanos</p>
+					<ul class="navegacion">
+						<li><a href="#">(Ninguno)</a></li>
+					</ul>
+				</div>
+			</article>
+			<!-- Calendario -->
+			<aside class="widget widget_calendar">
+				<h3 class="widget-title">Calendario</h3>
+				<div id="calendar_wrap">
+					<table id="wp-calendar">
+						<caption>Diciembre 2013</caption>
+						<thead>
+							<tr>
+								<th scope="col" title="Lunes">L</th>
+								<th scope="col" title="Martes">M</th>
+								<th scope="col" title="Miércoles">X</th>
+								<th scope="col" title="Jueves">J</th>
+								<th scope="col" title="Viernes">V</th>
+								<th scope="col" title="Sábado">S</th>
+								<th scope="col" title="Domingo">D</th>
+							</tr>
+						</thead>									
+						<tbody>
+							<tr>
+								<td colspan="6" class="pad">&nbsp;</td><td>1</td>
+							</tr>
+							<tr>
+								<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+							</tr>
+							<tr>
+								<td>9</td><td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td>
+							</tr>
+							<tr>
+								<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+							</tr>
+							<tr>
+								<td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+							</tr>
+							<tr>
+								<td>30</td><td>31</td>
+								<td class="pad" colspan="5">&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>		
+			</aside>
+		</div>
+		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
+		<div class="sidebar-wrap estilo-sidebar-wrap">
+			<article id="intranetPrincipal">
+				<header><h2>Gestión Del Calendario Escolar</h2></header>
+				<hr />
+			</article>
+			<article id="noticias">
+				<header><h3>Calendario</h3></header>
+				<div class="centrar">
+
+					<table id="calenPrincipal">
+						<caption id="calenCap">Calendario <span>2014</span></caption>
+						<tr class="primera">
+							<td>
+								<table id="tabEnero" class="tablaCalendario">
+								<caption>ENERO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="2" >&nbsp;</td>
+										<td value="01/01/2014">1</td>
+										<td value="02/01/2014">2</td>
+										<td value="03/01/2014">3</td>
+										<td value="04/01/2014">4</td>
+										<td value="05/01/2014">5</td>
+									</tr>
+									<tr>
+										<td value="06/01/2014">6</td>
+										<td value="07/01/2014">7</td>
+										<td value="08/01/2014">8</td>
+										<td value="09/01/2014">9</td>
+										<td value="10/01/2014">10</td>
+										<td value="11/01/2014">11</td>
+										<td value="12/01/2014">12</td>
+									</tr>
+									<tr>
+										<td value="13/01/2014">13</td><td value="14/01/2014">14</td><td value="15/01/2014">15</td><td value="16/01/2014">16</td><td value="17/01/2014">17</td><td value="18/01/2014">18</td><td value="19/01/2014">19</td>
+									</tr>
+									<tr>
+										<td value="20/01/2014">20</td><td value="21/01/2014">21</td><td value="22/01/2014">22</td><td value="23/01/2014">23</td><td value="24/01/2014">24</td><td value="25/01/2014">25</td><td value="26/01/2014">26</td>
+									</tr>
+									<tr>
+										<td value="27/01/2014">27</td><td value="28/01/2014">28</td><td value="29/01/2014">29</td><td value="30/01/2014">30</td><td value="31/01/2014">31</td><td></td><td></td>
+									</tr>
+									<tr>
+										<td colspan=7>&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabEnero" class="tablaCalendario">
+								<caption>FEBRERO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="5" >&nbsp;</td><td value="01/02/2014">1</td>
+										<td value="02/02/2014" value="02/02/2014">2</td>
+
+									</tr>
+									<tr>
+										<td value="03/02/2014">3</td><td value="04/02/2014">4</td><td value="05/02/2014">5</td><td value="06/02/2014">6</td><td value="07/02/2014">7</td><td value="08/02/2014">8</td><td value="09/02/2014">9</td>
+									</tr>
+									<tr>
+										<td value="10/02/2014">10</td><td value="11/02/2014">11</td><td value="12/02/2014">12</td><td value="13/02/2014">13</td><td value="14/02/2014">14</td><td value="15/02/2014">15</td><td value="16/02/2014">16</td>
+									</tr>
+									<tr>
+										<td value="17/02/2014">17</td><td value="18/02/2014">18</td><td value="19/02/2014">19</td><td value="20/02/2014">20</td><td value="21/02/2014">21</td><td value="22/02/2014">22</td><td value="23/02/2014">23</td>
+									</tr>
+									<tr>
+										<td value="24/02/2014">24</td><td value="25/02/2014">25</td><td value="26/02/2014">26</td><td value="27/02/2014">27</td><td value="28/02/2014">28</td><td></td><td></td>
+									</tr>
+									<tr>						
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+								<td>
+									<table id="tabEnero" class="tablaCalendario">
+								<caption>MARZO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>							
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="5" >&nbsp;</td><td value="01/03/2014">1</td>
+										<td value="02/03/2014">2</td>
+									</tr>
+									<tr>
+										<td value="03/03/2014">3</td><td value="04/03/2014">4</td><td value="05/03/2014">5</td value="06/03/2014"><td>6</td><td value="07/03/2014">7</td><td value="08/03/2014">8</td><td value="09/03/2014">9</td>
+									</tr>
+									<tr>
+										<td value="10/03/2014">10</td><td value="11/03/2014">11</td><td value="12/03/2014">12</td><td value="13/03/2014" 
+										>13</td><td value="14/03/2014">14</td><td value="15/03/2014">15</td><td value="16/03/2014">16</td>
+									</tr>
+									<tr>
+										<td value="17/03/2014">17</td><td value="18/03/2014">18</td><td value="19/03/2014">19</td><td value="20/03/2014">20</td><td value="21/03/2014">21</td><td value="22/03/2014">22</td><td value="23/03/2014">23</td>
+									</tr>
+									<tr>
+										<td value="24/03/2014">24</td><td value="25/03/2014">25</td><td value="26/03/2014">26</td><td value="27/03/2014">27</td><td value="28/03/2014">28</td><td value="29/03/2014">29</td><td value="30/03/2014">30</td>
+									</tr>
+									<tr>
+										<td value="31/03/2014">31</td>
+										<td colspan="6">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+								</td>
+							</tr>
+							<tr>
+							<td>
+								<table id="tabFebrero" class="tablaCalendario">
+								<caption>ABRIL</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td>&nbsp;</td><td value="01/03/2014">1</td>
+										<td value="02/04/2014">2</td><td value="03/04/2014">3</td><td value="04/04/2014">4</td><td value="05/04/2014">5</td><td value="06/04/2014">6</td>
+									</tr>
+									<tr>
+										<td value="07/04/2014">7</td><td value="08/04/2014">8</td><td value="09/04/2014">9</td><td value="10/04/2014">10</td><td value="11/04/2014">11</td><td value="12/04/2014">12</td><td value="13/04/2014">13</td>
+									</tr>
+									<tr>
+										<td value="14/04/2014">14</td><td value="15/04/2014">15</td><td value="16/04/2014">16</td><td value="17/04/2014">17</td><td value="18/04/2014">18</td><td value="19/04/2014">19</td><td value="20/04/2014">20</td>
+									</tr>
+									<tr>
+										<td value="21/04/2014">21</td><td value="22/04/2014">22</td><td value="23/04/2014">23</td><td value="24/04/2014">24</td><td value="25/04/2014">25</td><td value="26/04/2014">26</td><td value="27/04/2014">27</td>
+									</tr>
+									<tr>
+										<td value="28/04/2014">28</td><td value="29/04/2014">29</td><td value="30/04/2014">30</td><td colspan=3>&nbsp;</td>
+									</tr>
+									<tr>										<td colspan=7>&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td><table id="tabFebrero" class="tablaCalendario">
+								<caption>MAYO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="3" >&nbsp;</td><td value="01/05/2014">1</td><td value="02/05/2014">2</td><td value="03/05/2014">3</td><td value="04/05/2014">4</td>
+									</tr>
+									<tr>
+										<td value="05/05/2014">5</td><td value="06/05/2014">6</td><td value="07/05/2014">7</td><td value="08/05/2014">8</td><td value="09/05/2014">9</td><td value="10/05/2014">10</td><td value="11/05/2014">11</td>
+									</tr>
+									<tr>
+										<td value="12/05/2014">12</td><td value="13/05/2014">13</td><td value="14/05/2014">14</td><td value="15/05/2014">15</td><td value="16/05/2014">16</td><td value="17/05/2014">17</td><td value="18/05/2014">18</td>
+									</tr>
+									<tr>
+										<td value="19/05/2014">19</td><td value="20/05/2014">20</td><td value="21/05/2014">21</td><td value="22/05/2014">22</td><td value="23/05/2014">23</td><td value="24/05/2014">24</td><td value="25/05/2014">25</td>
+									</tr>
+									<tr>
+										<td value="26/05/2014">26</td><td value="27/05/2014">27</td><td value="28/05/2014">28</td><td value="29/05/2014">29</td><td value="30/05/2014">30</td><td value="31/05/2014">31</td><td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+								<td><table id="tabFebrero" class="tablaCalendario">
+								<caption>JUNIO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="6" >&nbsp;</td><td value="01/06/2014">1</td>
+									</tr>
+									<tr>
+										<td value="02/06/2014">2</td><td value="03/06/2014">3</td><td value="04/06/2014">4</td><td value="05/06/2014">5</td><td value="06/06/2014">6</td><td value="07/06/2014">7</td><td value="08/06/2014">8</td>
+									</tr>
+									<tr>
+										<td value="09/06/2014">9</td><td value="10/06/2014">10</td><td value="11/06/2014">11</td><td value="12/06/2014">12</td><td value="13/06/2014">13</td><td value="14/06/2014">14</td><td value="15/06/2014">15</td>
+									</tr>
+									<tr>
+										<td value="16/06/2014">16</td><td value="17/06/2014">17</td><td value="18/06/2014">18</td><td value="19/06/2014">19</td><td value="20/06/2014">20</td><td value="21/06/2014">21</td><td value="22/06/2014">22</td>
+									</tr>
+									<tr>
+										<td value="23/06/2014">23</td><td value="24/06/2014">24</td><td value="25/06/2014">25</td><td value="26/06/2014">26</td><td value="27/06/2014">27</td><td value="28/06/2014">28</td><td value="29/06/2014">29</td>
+									</tr>
+									<tr>
+										<td value="30/06/2014">30</td>
+										<td colspan="6">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table></td>
+							</tr>
+							
+						
+						<tr class="primera">							
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>JULIO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td>&nbsp;</td><td value="01/07/2014">1</td><td value="02/07/2014">2</td><td value="03/07/2014">3</td><td value="04/07/2014">4</td><td value="05/07/2014">5</td><td value="06/07/2014">6</td>
+									</tr>
+									<tr>
+										<td value="07/07/2014">7</td><td value="08/07/2014">8</td><td value="09/07/2014">9</td><td value="10/07/2014">10</td><td value="11/07/2014">11</td><td value="12/07/2014">12</td><td value="13/07/2014">13</td>
+									</tr>
+									<tr>
+										<td value="14/07/2014">14</td><td value="15/07/2014">15</td><td value="16/07/2014">16</td><td value="17/07/2014">17</td><td value="18/07/2014">18</td><td value="19/07/2014">19</td><td value="20/07/2014">20</td>
+									</tr>
+									<tr>
+										<td value="21/07/2014">21</td><td value="22/07/2014">22</td><td value="23/07/2014">23</td><td value="24/07/2014">24</td><td value="25/07/2014">25</td><td value="26/07/2014">26</td><td value="27/07/2014">27</td>
+									</tr>
+									<tr>
+										<td value="28/07/2014">28</td><td value="29/07/2014">29</td><td value="30/07/2014">30</td><td value="31/07/2014">31</td><td colspan=2>&nbsp;</td>
+									</tr>
+									<tr>
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>AGOSTO</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="4" >&nbsp;</td><td value="01/08/2014">1</td><td value="02/08/2014">2</td><td value="03/08/2014">3</td>
+									</tr>
+									<tr>
+										<td value="04/08/2014">4</td><td value="05/08/2014">5</td><td value="06/08/2014">6</td><td value="07/08/2014">7</td><td value="08/08/2014">8</td><td value="09/08/2014">9</td><td value="10/08/2014">10</td>
+									</tr>
+									<tr>
+										<td value="11/08/2014">11</td><td value="12/08/2014">12</td><td value="13/08/2014">13</td><td value="14/08/2014">14</td><td value="15/08/2014">15</td><td value="16/08/2014">16</td><td value="17/08/2014">17</td>
+									</tr>
+									<tr>
+										<td value="18/08/2014">18</td><td value="19/08/2014">19</td><td value="20/08/2014">20</td><td value="21/08/2014">21</td><td value="22/08/2014">22</td><td value="23/08/2014">23</td><td value="24/08/2014">24</td>
+									</tr>
+									<tr>
+										<td value="25/08/2014">25</td><td value="26/08/2014">26</td><td value="27/08/2014">27</td><td value="28/08/2014">28</td><td value="29/08/2014">29</td><td value="30/08/2014">30</td><td value="31/08/2014">31</td>
+									</tr>
+									<tr>
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabAgosto" class="tablaCalendario">
+								<caption>SEPTIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td value="01/09/2014">1</td><td value="02/09/2014">2</td><td value="03/09/2014">3</td><td value="04/09/2014">4</td><td value="05/09/2014">5</td><td value="06/09/2014">6</td><td value="07/09/2014">7</td>
+									</tr>
+									<tr>
+										<td value="08/09/2014">8</td><td value="09/09/2014">9</td><td value="10/09/2014">10</td><td value="11/09/2014">11</td><td value="12/09/2014">12</td><td value="13/09/2014">13</td><td value="14/09/2014">14</td>
+									</tr>
+									<tr>
+										<td value="15/09/2014">15</td><td value="16/09/2014">16</td><td value="17/09/2014">17</td><td value="18/09/2014">18</td><td value="19/09/2014">19</td><td value="20/09/2014">20</td><td value="21/09/2014">21</td>
+									</tr>
+									<tr>
+										<td value="22/09/2014">22</td><td value="23/09/2014">23</td><td value="24/09/2014">24</td><td value="25/09/2014">25</td><td value="26/09/2014">26</td><td value="27/09/2014">27</td><td value="28/09/2014">28</td>
+									</tr>
+									<tr>
+										<td value="29/09/2014">29</td><td value="30/09/2014">30</td><td colspan=5>&nbsp;</td>
+									</tr>
+									<tr>									
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>OCTUBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="2" >&nbsp;</td><td value="01/10/2014">1</td><td value="02/10/2014">2</td><td value="03/10/2014">3</td><td value="04/10/2014">4</td><td value="05/10/2014">5</td>
+									</tr>
+									<tr>
+										<td value="06/10/2014">6</td><td value="07/10/2014">7</td><td value="08/10/2014">8</td><td value="09/10/2014">9</td><td value="10/10/2014">10</td><td value="11/10/2014">11</td><td value="12/10/2014">12</td>
+									</tr>
+									<tr>
+										<td value="13/10/2014">13</td><td value="14/10/2014">14</td><td value="15/10/2014">15</td><td value="16/10/2014">16</td><td value="17/10/2014">17</td><td value="18/10/2014">18</td><td value="19/10/2014">19</td>
+									</tr>
+									<tr>
+										<td value="20/10/2014">20</td><td value="21/10/2014">21</td><td value="22/10/2014">22</td><td value="23/10/2014">23</td><td value="24/10/2014">24</td><td value="25/10/2014">25</td><td value="26/10/2014">26</td>
+									</tr>
+									<tr>
+										<td value="27/10/2014">27</td><td value="28/10/2014">28</td><td value="29/10/2014">29</td><td value="30/10/2014">30</td><td value="31/10/2014">31</td><td colspan=2>&nbsp;</td>
+									</tr>
+									<tr>									
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>NOVIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td colspan="5" >&nbsp;</td><td value="01/11/2014">1</td><td value="02/11/2014">2</td>
+									</tr>
+									<tr>
+										<td value="03/11/2014">3</td><td value="04/11/2014">4</td><td value="05/11/2014">5</td><td value="06/11/2014">6</td><td value="07/11/2014">7</td><td value="08/11/2014">8</td><td value="09/11/2014">9</td>
+									</tr>
+									<tr>
+										<td value="10/11/2014">10</td><td value="11/11/2014">11</td><td value="12/11/2014">12</td><td value="13/11/2014">13</td><td value="14/11/2014">14</td><td value="15/11/2014">15</td><td value="16/11/2014">16</td>
+									</tr>
+									<tr>
+										<td value="17/11/2014">17</td><td value="18/11/2014">18</td><td value="19/11/2014">19</td><td value="20/11/2014">20</td><td value="21/11/2014">21</td><td value="22/11/2014">22</td><td value="23/11/2014">23</td>
+									</tr>
+									<tr>
+										<td value="24/11/2014">24</td><td value="25/11/2014">25</td><td value="26/11/2014">26</td><td value="27/11/2014">27</td><td value="28/11/2014">28</td><td value="29/11/2014">29</td><td value="30/11/2014">30</td>
+									</tr>
+									<tr>									
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+							<td>
+								<table id="tabMarzo" class="tablaCalendario">
+								<caption>DICIEMBRE</caption>
+								<thead>
+									<tr>
+										<th title="Lunes">L</th>
+										<th title="Martes">M</th>
+										<th title="Miércoles">X</th>
+										<th title="Jueves">J</th>
+										<th title="Viernes">V</th>
+										<th title="Sábado">S</th>
+										<th title="Domingo">D</th>
+									</tr>
+								</thead>
+								
+								<tbody class="tbodys">
+									<tr>
+										<td value="01/12/2014">1</td><td value="02/12/2014">2</td><td value="03/12/2014">3</td><td value="04/12/2014">4</td><td value="05/12/2014">5</td><td value="06/12/2014">6</td><td value="07/12/2014">7</td>
+									</tr>
+									<tr>
+										<td value="08/12/2014">8</td><td value="09/12/2014">9</td><td value="10/12/2014">10</td><td value="11/12/2014">11</td><td value="12/12/2014">12</td><td value="13/12/2014">13</td><td value="14/12/2014">14</td>
+									</tr>
+									<tr>
+										<td value="15/12/2014">15</td><td value="16/12/2014">16</td><td value="17/12/2014">17</td><td value="18/12/2014">18</td><td value="19/12/2014">19</td><td value="20/12/2014">20</td><td value="21/12/2014">21</td>
+									</tr>
+									<tr>
+										<td value="22/12/2014">22</td><td value="23/12/2014">23</td><td value="24/12/2014">24</td><td value="25/12/2014">25</td><td value="26/12/2014">26</td><td value="27/12/2014">27</td><td value="28/12/2014">28</td>
+									</tr>
+									<tr>
+										<td value="29/12/2014">29</td><td value="30/12/2014">30</td><td value="31/12/2014">31</td><td colspan=3>&nbsp;</td>
+									</tr>
+									<tr>
+										<td colspan="7">&nbsp;</td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>	
+						<tfoot>
+							<tr>
+								<td colspan=3 id="tfoot"></td>
+							</tr>
+						</tfoot>
+					</table>
+
+				</div>
+					
+			</article>
+		</div>
+	</section>
+
+
+
+<footer class="site-footer" role="contentinfo">
+	<div class="site-info">
+		<span class="v90-logo"></span>
+		<b>Unidad Educativa Venezuela 90</b><br>
+		<address>Carabobo, Valencia, Av. Soublette, <a href="tel:0241-859-5806">0241-859-5806</a></address>
+	</div><!-- .site-info -->
+</footer>
+
+
+
+</body>
+</html>

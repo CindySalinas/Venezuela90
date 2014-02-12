@@ -88,7 +88,7 @@ function GetTodayDate() {
    var yyyy = tdate.getFullYear(); //yields year
   // var xxx = dd + "-" +( MM+1) + "-" + yyyy;
   if(dd < 10 || MM < 10){
-  	 var xxx = yyyy+ "-" +0+(MM+1)+ "-" +dd;
+  	 var xxx = yyyy+ "-" +0+(MM+1)+ "-" + dd;
   }else{
   	var xxx = yyyy+ "-" +(MM+1)+ "-" + dd;
   }
@@ -105,7 +105,7 @@ function crearSolicitud(){
 	var mensaje= $('.textReSol').val();
 	//var nombre = $('.inReSol').val();
 	var estado = "Por Responder";
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/crearSolicitud.php?jsoncallback=?";
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/crearSolicitud3.php?jsoncallback=?";
 	$('#del > tr').remove();
 	if(mensaje != ""){
 		if(primer == 1){
@@ -135,7 +135,7 @@ function realizarBusqueda(){
 	$('.nooooo').remove();
 	var tablas = $('#tbodyGS');
 	/*var resp;*/
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mostrarSolicitudes.php?jsoncallback=?"; 
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/mostrarSolicitudes3.php?jsoncallback=?"; 
 	
 	$.getJSON(url).done(function(data){
 		if(data.num != 0){

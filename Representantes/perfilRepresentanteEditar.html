@@ -15,8 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/representante.js"></script>
-	<script src="../js/mostrarNoticias.js"></script>
-	
+	<script src="../js/ftPerfil4.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -53,10 +52,11 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
-						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
-						<li><a href="mensajeriaRepre.html">Mensajeria</a></li>
-						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
-						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="envioComunicados.html">Envio De Comunicados</a></li>
+						<li><a href="mensajeriaDocente.html">Mensajeria</a></li>
+						<li><a href="CargaConsultaPlanEstudio.html">Plan De Estudios</a></li>
+						<li><a href="cargaCalificaciones.html">Carga De Calificaciones</a></li>
+						<li><a href="HorarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
 					</ul>
 				</div>
 			</article>
@@ -139,84 +139,129 @@
 		</div>
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
 		<!-- Noticias -->
-		<div class=" colorDiv sidebar-wrap estilo-sidebar-wrap">
+		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Bienvenido</h2></header>
+				<header><h2>Mi Perfil</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Noticias</h3></header>
-				<!--div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div-->
-			</article>
-		</div>
-		<!-- Informacion General -->
-		<div class="sidebar-wrap estilo-sidebar-wrap" id="info">
-			<article id="noticias">
-				<header><h3>Información General</h3></header>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">			
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="contenidoNoticias">
-					<figure>
-						<img src="../images/post1.jpg">							
-					</figure>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<header><h3>Información Personal</h3></header>
+				<table border=1 id="tabFoto" class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr >
+								<td colspan=2>Foto De Perfil</td>
+							</tr>
+						</thead>
+						<tr class="centrar">
+							<td colspan=2>
+								<figure id="ftPerfil">
+									<!--img width="70" src="../images/user.png"-->
+								</figure>
+								<a class="changeFT">Cambiar</a>
+								<div class="ftPerfil">
+									<form enctype="multipart/form-data" >
+										<input id="archivos" type="file" name="archivos[]">
+									</form>
+								<div class="msj"></div>
+								<div class="msj2"></div>
+								<div class="msj3"></div>
+								<input type="button" id="cambiarFP" value="Cambia rFoto">
+								</div>
+							</td>
+						</tr>
+									
+					</tbody>
+				</table>
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Información Personal </td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Apellidos: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="apPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nombres: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="nomPperfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Cedula: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="cedPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Sexo: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="sexPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado Civil: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="edoCPerfil"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Fecha De Nacimiento: </td>
+							<td class="left espacioLe"><span id="nomPerfil" class="fechaPerfil"></span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Nacionalidad: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="naciPerfil"></td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Lugar Nacimiento: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit2" id="lugar1"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Lugar De Residencia</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Ciudad: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Valencia</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Estado: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Carabobo</span> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">País: </td>
+							<td class="left espacioLe"><span id="nomPerfil">Venezuela</span> </td>
+						</tr>				
+					</tbody>
+				</table>
+
+				<table border=1 class="tablaPerfilDocente">
+					<tbody>
+						<thead>
+							<tr>
+								<td colspan=2>Información De Contacto</td>
+							</tr>
+						</thead>
+						<tr>
+							<td class="right espacioRi">Dirección: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="lugar2"> </td>
+						</tr>
+						<tr>
+							<td class="right espacioRi">Telefono: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="celPerfil"> </td>
+						</tr>						
+						<tr>
+							<td class="right espacioRi">Email: </td>
+							<td class="left espacioLe"><input type="text" class="nEdit" id="mailPerfil"> </td>
+						</tr>				
+					</tbody>
+				</table>
+				<div class="centrar">
+					<button id="butAce" class="gDatos">Guardar Datos</button>
+					<br><br>
+					<div id="msj"></div>
 				</div>
 			</article>
 		</div>
