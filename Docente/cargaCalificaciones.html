@@ -208,9 +208,9 @@
 									<td class="right espacioRi">Lapso: </td>
 									<td class="left espacioLe">
 										<select id="selectLapsoIngresarPA">
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
+									<option value="1">I</option>
+									<option value="2">II</option>	
+									<option value="3">III</option>
 								</select></td>
 								</tr>
 								<tr>
@@ -314,9 +314,9 @@
 									<td class="right espacioRi">Lapso: </td>
 									<td class="left espacioLe">
 										<select id="selectLapsoIngresarPG">
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
+									<option value="1">I</option>
+									<option value="2">II</option>	
+									<option value="3">III</option>
 								</select></td>
 								</tr>
 								<tr>
@@ -339,8 +339,11 @@
 						<div>
 							<label><b>Grado:</b> <span id="gradoPG2"></span></label>
 						</div>
-						<div>
+						<div class="centrar">
 							<label><b>Nombre Del Examen:</b> <input type="text" id="nombreExamenPG"></label>
+						</div><br>
+						<div class="centrar">
+							<label><b>Porcentaje Del Examen:</b> <input class='inputsGrados1' onkeypress='return justNumbers(event);' type='number' id='porcentaPG2'> <b>%</b></label>
 						</div>
 					</div>
 					<br>
@@ -349,7 +352,6 @@
 							<tr>
 								<th>Alumno</th>
 								<th>Calificación</th>
-								<th>Porcentaje</th>
 							</tr>
 						</thead>
 						<tbody id="tbodyGradoIngresar">

@@ -276,7 +276,7 @@ function llenarAlumnos ()
 		var contando=0;
 		$.each(data3, function(i,item){	
 			contando++;
-			$("#tbodyGradoIngresar").append("<tr class='filaAlumnos'><td><span value='"+item.idEstudiante+"' id=alumno'"+contando+"'>"+item.cedula+"</span></td><td><input onkeypress='return justNumbers(event);' type='number' id='nota"+contando+"'></td><td><input onkeypress='return justNumbers(event);' type='number' id='porcentaje"+contando+"'></td></tr>");
+			$("#tbodyGradoIngresar").append("<tr class='filaAlumnos'><td><span class='"+item.idEstudiante+"' id='alumno"+contando+"'>"+item.cedula+"</span></td><td><input class='inputsGrados1' onkeypress='return justNumbers(event);' type='number' id='nota"+contando+"'></td></tr>");
 		});	
 		contandoGrado=contando;
 	});
@@ -284,7 +284,70 @@ function llenarAlumnos ()
 
 function guardarDatosPG() 
 {
-	alert(contandoGrado);
+	var nombreExamen = $("#nombreExamenPG").val();
+	$(".inputsGrados1").removeClass("rojosIC");
+	if(nombreExamen!="" && nombreExamen!=" ")
+	{
+		var porcenExamen = $("#porcentaPG2").val();
+		if(porcenExamen!="" && porcenExamen!=" " && porcenExamen<=70)
+		{
+			var contarValidar=0;
+			for (var x=1; x<=contandoGrado; x++)
+			{
+				if($("#nota"+x).val()=="" || $("#nota"+x).val()==" ")
+				{				
+					$("#nota"+x).addClass("rojosIC");
+					contarValidar++;
+				}
+				else if($("#nota"+x).val()>20)
+				{
+					$("#nota"+x).addClass("rojosIC");
+					contarValidar++;
+				}
+			}
+
+			if(contarValidar==0)
+			{
+				for (var x=1; x<=contandoGrado; x++)
+				{
+					var calif=$("#nota"+x).val();
+					var punto=(calif*porcenExamen)/100;
+					var alum=$("#alumno"+x).attr("class");
+					ingresaLasNotas(alum, hmIngresarPG, lapsoIngresarPG, calif, porcenExamen, punto, nombreExamen)
+				}
+				alert("Se Ha Ingresado Los Datos Correctamente");	
+				
+				$('input[type=text]').val("");
+
+				$('input[type=number]').val("");
+			}
+		}
+		else
+		{
+			alert("Ingrese Porcentaje Valido");
+		}
+		
+	}
+	else
+	{
+		alert("Ingrese Nombre Del Examen");
+	}
+}
+
+function ingresaLasNotas(alumno, idhm, lapso, califi, porcenta, puntos, nombreExamen)
+{
+	var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarNotas.php?jsoncallback=?";
+	$.getJSON(url3,{
+		estudiante:alumno, 
+		horarioMateria:idhm,
+		lapso:lapso, 
+		calificacion:califi,
+		porcentaje:porcenta,
+		puntos:puntos,
+		descripcion:nombreExamen
+	}).done(function(data3){
+		
+	});
 }
 
 function guardarCedulaPA() 
