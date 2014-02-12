@@ -1,9 +1,9 @@
 $(document).on("ready", empezar);
 var idDocente;
 
-var cedulaIngresarPA, materiaIngresarPA, yearIngresarPA, lapsoIngresarPA;
+var cedulaIngresarPA, materiaIngresarPA, yearIngresarPA, lapsoIngresarPA, gradoIngresarPA, hmIngresarPA, idAlumnoIngresarPA;
 
-var gradoIngresarPG, materiaIngresarPG, yearIngresarPG, lapsoIngresarPG;
+var gradoIngresarPG, materiaIngresarPG, yearIngresarPG, lapsoIngresarPG, hmIngresarPG, contandoGrado;
 
 var cedulaConsultarPA, materiaConsultarPA, yearConsultarPA, lapsoConsultarPA;
 
@@ -89,6 +89,7 @@ function empezar(){
 function resetear()
 {
 	$('input[type=text]').val("");
+	$('input[type=number]').val("");
 	$('textarea').val("");
 
 }
@@ -119,6 +120,8 @@ function ingresarCedulaAlumnoPA()
 					cedula:cedulaIngresarPA
 				}).done(function(data){
 					$("#gradoPA2").text(data.grado);
+					gradoIngresarPA=data.grado;
+					idAlumnoIngresarPA=data.idEs;
 					llenarMateriarPorGrado(data.grado,"#selectMateriaIngresarPA")
 				});
 				actionBotones('tablaIngresarPA1','divIngresarPA1');	
@@ -154,7 +157,25 @@ function consultarIngresarDatosAlumnoPA()
 	if(materiaIngresarPA!=0)
 	{
 		$("#materiaPA2").text($("#selectMateriaIngresarPA option:selected").text());
-		actionBotones('divIngresarPA2','tablaIngresarPA1');	
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarHorarioMateriaIN1.php?jsoncallback=?";
+		$.getJSON(url,{
+			docente:idDocente,
+			grado:gradoIngresarPA,
+			year:yearIngresarPA,
+			materia:materiaIngresarPA
+			}).done(function(data){
+				if(data.num>0)
+				{
+					hmIngresarPA=data.idHorarioMateria;
+					actionBotones('divIngresarPA2','tablaIngresarPA1');	
+				}
+				else
+				{
+					alert("Datos Incorrectos");
+				}
+			});				
+		
+
 	}
 	else
 		alert("Seleccione Una Materia");
@@ -168,13 +189,45 @@ function ingresarNotasPA()
 
 	if(descripcion!="" && descripcion!=" " && nota!="" && nota!=" " && porcen!="" && porcen!=" ")
 	{
-		
+		if(nota<=20 && porcen<=70)
+		{			
+			var pun = (nota*porcen)/100;
+			var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ingresarNotas.php?jsoncallback=?";
+			$.getJSON(url3,{
+				estudiante:idAlumnoIngresarPA, 
+				horarioMateria:hmIngresarPA,
+				lapso:lapsoIngresarPA, 
+				calificacion:nota,
+				porcentaje:porcen,
+				puntos:pun,
+				descripcion:descripcion
+			}).done(function(data3){
+				alert("Se Ha Ingresado Los Datos Correctamente");
+				$('input[type=text]').val("");
+				$('input[type=number]').val("");
+			});
+		}
+		else
+		{
+			alert("Calificacion o Porcentaje Incorrecto");
+		}		
 	}
+}
+
+function justNumbers(e)
+{
+	var keynum = window.event ? window.event.keyCode : e.which;
+	if ((keynum == 8))
+	return true;
+	 
+	return /\d/.test(String.fromCharCode(keynum));
 }
 
 function consultarIngresarDatosYearPG() 
 {
 	gradoIngresarPG=$("#gradoIngresarPG option:selected").val();
+	$(".materiasGradosIngresar").remove();
+	llenarMateriarPorGrado(gradoIngresarPG,"#selectMateriaIngresarPG");
 	actionBotones("tablaIngresarPG1","divIngresarPG1");
 }
 
@@ -183,12 +236,55 @@ function consultarIngresarDatosPG()
 	materiaIngresarPG=$("#selectMateriaIngresarPG option:selected").val();
 	yearIngresarPG=$("#selectYearIngresarPG option:selected").val();
 	lapsoIngresarPG=$("#selectLapsoIngresarPG option:selected").val();
-	actionBotones("divIngresarPG2","tablaIngresarPG1");
+	if(materiaIngresarPG!=0)
+	{
+		$("#materiaPG2").text($("#selectMateriaIngresarPG option:selected").text());
+		$("#gradoPG2").text(gradoIngresarPG);
+		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarHorarioMateriaIN1.php?jsoncallback=?";
+		$.getJSON(url,{
+			docente:idDocente,
+			grado:gradoIngresarPG,
+			year:yearIngresarPG,
+			materia:materiaIngresarPG
+		}).done(function(data){
+			if(data.num>0)
+			{
+				hmIngresarPG=data.idHorarioMateria;
+				llenarAlumnos();
+				actionBotones("divIngresarPG2","tablaIngresarPG1");	
+			}
+			else
+			{
+				alert("Datos Incorrectos");
+			}
+		});		
+	}
+	else
+	{
+		alert("Seleccione Una Materia");
+	}
+	
+}
+
+function llenarAlumnos () 
+{
+	$(".filaAlumnos").remove();
+	var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarAlumnosPorGrado.php?jsoncallback=?";
+	$.getJSON(url3,{
+		grado:gradoIngresarPG
+	}).done(function(data3){
+		var contando=0;
+		$.each(data3, function(i,item){	
+			contando++;
+			$("#tbodyGradoIngresar").append("<tr class='filaAlumnos'><td><span value='"+item.idEstudiante+"' id=alumno'"+contando+"'>"+item.cedula+"</span></td><td><input onkeypress='return justNumbers(event);' type='number' id='nota"+contando+"'></td><td><input onkeypress='return justNumbers(event);' type='number' id='porcentaje"+contando+"'></td></tr>");
+		});	
+		contandoGrado=contando;
+	});
 }
 
 function guardarDatosPG() 
 {
-	
+	alert(contandoGrado);
 }
 
 function guardarCedulaPA() 

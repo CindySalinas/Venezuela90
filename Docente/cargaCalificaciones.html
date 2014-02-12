@@ -248,8 +248,8 @@
 							<tr>
 								<td><span id="spanCedula">21029953</span></td>
 								<td><input type="text" id="descrip"></td>
-								<td><input type="number" id="nota"></td>
-								<td><input type="number" id="porc"><span class="bold">%</span></td>
+								<td><input onkeypress="return justNumbers(event);" type="number" id="nota"></td>
+								<td><input onkeypress="return justNumbers(event);" type="number" id="porc"><span class="bold">%</span></td>
 							</tr>
 						</tbody>
 					</table>
@@ -333,23 +333,27 @@
 				</div>
 
 				<div class=" centrar divIngresarPG2 none">
-					
-					<table>
+					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaPG2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoPG2"></span></label>
+						</div>
+						<div>
+							<label><b>Nombre Del Examen:</b> <input type="text" id="nombreExamenPG"></label>
+						</div>
+					</div>
+					<br>
+					<table id="tablaPG1" border=1>
 						<thead>
 							<tr>
 								<th>Alumno</th>
-								<th>Nombre Del Examen</th>
 								<th>Calificación</th>
 								<th>Porcentaje</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td><span id="spanCedula">21029953</span></td>
-								<td><input type="text" id="descrip"></td>
-								<td><input type="text" id="nota"></td>
-								<td><input type="text" id="porc"></td>
-							</tr>
+						<tbody id="tbodyGradoIngresar">
+							
 						</tbody>
 					</table>
 

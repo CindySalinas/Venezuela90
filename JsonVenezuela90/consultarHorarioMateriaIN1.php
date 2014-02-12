@@ -4,9 +4,12 @@ include("conex.php");
 //formato JSON
 header('Content-type: application/json');
 
-$cedula= $_GET["cedula"];
+$idDocente= $_GET["docente"];
+$idGrado= $_GET["grado"];
+$idYear= $_GET["year"];
+$idMateria= $_GET["materia"];
 
-$sql = "SELECT E.Id_Grado, E.Id_Estudiante FROM estudiante E INNER JOIN usuario U ON E.Id_Usuario=U.Id_Usuario where U.Cedula='$cedula'";
+$sql = "SELECT Id_Horario_Materia FROM horario_materia WHERE Id_Docente='$idDocente' AND Id_Materia='$idMateria' AND Id_Grado='$idGrado' AND Id_Year_Escolar_MateriaDocente='$idYear'";
 
 $result = mysql_query($sql) or die("Error de Consulta". mysql_error());
 $records = array();
@@ -14,13 +17,11 @@ $i =0;
 
 $cantidad = mysql_num_rows($result);
 //$estado["num"]= $cantidad;
-while($row = mysql_fetch_row($result)){		
-	$estado["grado"] = $row[0];
-	$estado["idEs"] = $row[1];
+while($row = mysql_fetch_row($result)){
+	$estado["idHorarioMateria"] = $row[0];	
 	$i++;	
 }
-
-
+$estado["num"] = $i;	
 //Convertir los resultados a formato json
 $estadoJson = json_encode($estado);
 

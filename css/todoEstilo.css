@@ -142,6 +142,11 @@
 	margin: 0 auto;
 	width: 70%;
 }
+#tablaPG1
+{
+	margin: 0 auto;
+	width: 500px;
+}
 .tamaTable td, .tamaTable th
 {
 	border-left: 1px solid #808080;
