@@ -22,13 +22,13 @@ function empezar(){
 	}).done(function(data){
 		$.each(data, function(i,item){	
 			idDocente = item.idDocente;	
-			var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarMateriasDocenteHorario.php?jsoncallback=?";
-			$.getJSON(url3,{
+			/*var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarMateriasDocenteHorario.php?jsoncallback=?";
+			$.getJSON(url3,{docente:item.idDocente
 			}).done(function(data3){
 				$.each(data3, function(i,item){	
 					$(".materias").append("<option class='optionConsultar2' value='"+item.idMateria+"'>"+item.nombreMateria+"</option>");
 				});												
-			});			
+			});	*/		
 		});
 	});
 	$('.ingresarMP').on("click",function(){actionBotones('ingresarMenu','menuPrincipal');});
@@ -103,7 +103,47 @@ function actionBotones(mostrar,ocultar)
 function ingresarCedulaAlumnoPA() 
 {
 	cedulaIngresarPA=$("#inputCedulaIngresarPA").val();
-	actionBotones('tablaIngresarPA1','divIngresarPA1');	
+	$("#spanCedula").text(cedulaIngresarPA);
+
+	$(".materiasGradosIngresar").remove();
+	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/comprobarCedula2.php?jsoncallback=?";
+	$.getJSON(url,{
+		cedula:cedulaIngresarPA
+	}).done(function(data){
+		if(data.num>0)
+		{
+			if(data.rol=="3")
+			{
+				var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarDatosEstudiante.php?jsoncallback=?";
+				$.getJSON(url,{
+					cedula:cedulaIngresarPA
+				}).done(function(data){
+					$("#gradoPA2").text(data.grado);
+					llenarMateriarPorGrado(data.grado,"#selectMateriaIngresarPA")
+				});
+				actionBotones('tablaIngresarPA1','divIngresarPA1');	
+			}	
+			else
+			{
+				alert("La Cedula No Pertenece a Ningun Alumno");
+			}				
+		}
+		else
+		{
+			alert("Cedula Invalida");
+		}
+		
+	});
+	
+}
+function llenarMateriarPorGrado (grado2, idMate) {
+	var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarMateriasDocenteHorarioPorGrado.php?jsoncallback=?";
+	$.getJSON(url3,{docente:idDocente, grado:grado2
+	}).done(function(data3){
+		$.each(data3, function(i,item){	
+			$(idMate).append("<option class='materiasGradosIngresar' value='"+item.idMateria+"'>"+item.nombreMateria+"</option>");
+		});	
+	});
 }
 
 function consultarIngresarDatosAlumnoPA() 
@@ -111,14 +151,25 @@ function consultarIngresarDatosAlumnoPA()
 	materiaIngresarPA=$("#selectMateriaIngresarPA option:selected").val();
 	yearIngresarPA=$("#selectYearIngresarPA option:selected").val();
 	lapsoIngresarPA=$("#selectLapsoIngresarPA option:selected").val();
-
-	actionBotones('divIngresarPA2','tablaIngresarPA1');	
+	if(materiaIngresarPA!=0)
+	{
+		$("#materiaPA2").text($("#selectMateriaIngresarPA option:selected").text());
+		actionBotones('divIngresarPA2','tablaIngresarPA1');	
+	}
+	else
+		alert("Seleccione Una Materia");
+	
 }
 function ingresarNotasPA()
 {
 	var descripcion = $("#descrip").val();
 	var nota = $("#nota").val();
 	var porcen = $("#porc").val();
+
+	if(descripcion!="" && descripcion!=" " && nota!="" && nota!=" " && porcen!="" && porcen!=" ")
+	{
+		
+	}
 }
 
 function consultarIngresarDatosYearPG() 
