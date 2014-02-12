@@ -24,8 +24,8 @@ function empezar()
 	});*/
 	//$('#listAlum').on("change",guardarIdGrado);
 	$('.consultaHorario').on("click",clickConsultaHorario); 
-	$('#horarioHijo').on("click",consultarAulaHA3);
-	$('.linkAtrasTablaConsultar3').on("click",function(){actionBotones('menuPrincipal','elHorario');}); 
+	$('#horarioHijo').on("click",guardarIdGrado);
+	$('.linkAtrasTablaConsultar3').on("click",function(){actionBotones('menuPrincipal','elHorario,.esconderHorario');}); 
 
 	
 }
@@ -65,20 +65,27 @@ function guardarIdGrado(){
 	}).done(function(data){
 		$.each(data, function(i,item){
 			idGrados=item.idGrado;
+			if(cedula2 != 0){
+				consultarAulaHA3(idGrados);
+			}
+			else
+			{
+				//$('.esconderHorario').hide("slow");
+				alert("Elija un Alumno");
+			}
 			//console.log(idGrados);
 		});
 	});
 }
-function consultarAulaHA3()
+function consultarAulaHA3(grado)
 {/*consultarHorarioSalones.php*/
-	
+	$('.spanConsultar').text("");
 	var ced = $('#listAlum option:selected').val();
 	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarHorarioEstudiante.php?jsoncallback=?";
-	if(ced != 0){
-		guardarIdGrado();
-	console.log(idGrados);
+		//guardarIdGrado();
+	console.log(grado);
 		$.getJSON(url,{
-			grado:idGrados,
+			grado:grado,
 			cedula:ced
 		}).done(function(data){
 			
@@ -122,13 +129,11 @@ function consultarAulaHA3()
 							var diaMas4=diaNum+15;
 							$("#materiCnHA"+diaMas4).text(item.nombreMateria);
 						}
+						$('.esconderHorario').show("slide");
 					}
 				}
 			});
+
 		});
-		}
-		else
-		{
-			alert("No valido");
-		}
+
 }
