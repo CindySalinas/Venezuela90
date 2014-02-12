@@ -76,7 +76,7 @@ $sql6 = "UPDATE representante SET Id_Profesion = '$mPro', Lugar_Trabajo = '$mTrb
 
 $result = mysql_query($sql6) or die("Error de Consulta 6 ". mysql_error());
 
-$sql7 = "UPDATE representante_emergencia  SET Nombre = 'eNom', Apellido = 'eAp', Telefono = 'eTlf1', Cecula = 'eCed' WHERE Id_Representante_Emergencia = '$id4'";
+$sql7 = "UPDATE representante_emergencia  SET Nombre = '$eNom', Apellido = '$eAp', Telefono = '$eTlf1', Cedula = '$eCed' WHERE Id_Representante_Emergencia = '$id4'";
 
 $result = mysql_query($sql7) or die("Error de Consulta 7 ". mysql_error());
 

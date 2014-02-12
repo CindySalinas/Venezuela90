@@ -9,6 +9,7 @@ $('#siguiente,#sit').prop("disabled",true).addClass("disabled");
 $('#cedulaAl').on("change",comprobarCedula);
 cargarDatos();
 $('#cambiarDatos').on("click",reinscribir);
+$('#restAtras2').on("click",function(){window.location ="reinscripcion.html"});
 } 
 
 
