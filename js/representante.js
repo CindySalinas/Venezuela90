@@ -18,8 +18,10 @@ function admins(){
 	if(galleta == undefined){
 		window.location = "../index.html";
 	}
-	else
+	else{
 		$('#nombreUsuario').text(galleta);
+		$('#nombreUsuario').append(" "+"<a href='../index.html' >(Salir)</a>");
+	}
 		
 }
 function perfil(){
