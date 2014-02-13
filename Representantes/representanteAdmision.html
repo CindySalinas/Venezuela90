@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Intranet</title>
+	<title>Venezuela 90 | Admisión</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
@@ -15,7 +15,6 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/representante.js"></script>
-	<script src="../js/ftPerfil4.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -52,11 +51,10 @@
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
-						<li><a href="envioComunicados.html">Envio De Comunicados</a></li>
-						<li><a href="mensajeriaDocente.html">Mensajeria</a></li>
-						<li><a href="CargaConsultaPlanEstudio.html">Plan De Estudios</a></li>
-						<li><a href="cargaCalificaciones.html">Carga De Calificaciones</a></li>
-						<li><a href="HorarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
+						<li><a href="mensajeriaRepre.html">Mensajeria</a></li>
+						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
+						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
 					</ul>
 				</div>
 			</article>
@@ -139,132 +137,23 @@
 		</div>
 		<!-- LADOOOO DERECHOOOOOOOOOOOOOOOOOO -->
 		<!-- Noticias -->
-		<div class="sidebar-wrap estilo-sidebar-wrap">
+	<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Mi Perfil</h2></header>
+				<header><h2>Admisión</h2></header>
 				<hr />
 			</article>
 			<article id="noticias">
-				<header><h3>Información Personal</h3></header>
-				<table border=1 id="tabFoto" class="tablaPerfilDocente">
-					<tbody>
-						<thead>
-							<tr >
-								<td colspan=2>Foto De Perfil</td>
-							</tr>
-						</thead>
-						<tr class="centrar">
-							<td colspan=2>
-								<figure id="ftPerfil">
-									<!--img width="70" src="../images/user.png"-->
-								</figure>
-								<a class="changeFT">Cambiar</a>
-								<div class="ftPerfil">
-									<form enctype="multipart/form-data" >
-										<input id="archivos" type="file" name="archivos[]">
-									</form>
-								<div class="msj"></div>
-								<div class="msj2"></div>
-								<div class="msj3"></div>
-								<input type="button" id="cambiarFP" value="Cambia rFoto">
-								</div>
-							</td>
-						</tr>
-									
-					</tbody>
-				</table>
-				<table border=1 class="tablaPerfilDocente">
-					<tbody>
-						<thead>
-							<tr>
-								<td colspan=2>Información Personal </td>
-							</tr>
-						</thead>
-						<tr>
-							<td class="right espacioRi">Apellidos: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit" id="apPerfil"></span> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Nombres: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit" id="nomPperfil"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Cedula: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit2" id="cedPerfil"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Sexo: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit2" id="sexPerfil"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Estado Civil: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit2" id="edoCPerfil"> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Fecha De Nacimiento: </td>
-							<td class="left espacioLe"><span id="nomPerfil" class="fechaPerfil"></span> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Nacionalidad: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit2" id="naciPerfil"></td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Lugar Nacimiento: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit2" id="lugar1"></td>
-						</tr>
-					</tbody>
-				</table>
-
-				<table border=1 class="tablaPerfilDocente">
-					<tbody>
-						<thead>
-							<tr>
-								<td colspan=2>Lugar De Residencia</td>
-							</tr>
-						</thead>
-						<tr>
-							<td class="right espacioRi">Ciudad: </td>
-							<td class="left espacioLe"><span id="nomPerfil">Valencia</span> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Estado: </td>
-							<td class="left espacioLe"><span id="nomPerfil">Carabobo</span> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">País: </td>
-							<td class="left espacioLe"><span id="nomPerfil">Venezuela</span> </td>
-						</tr>				
-					</tbody>
-				</table>
-
-				<table border=1 class="tablaPerfilDocente">
-					<tbody>
-						<thead>
-							<tr>
-								<td colspan=2>Información De Contacto</td>
-							</tr>
-						</thead>
-						<tr>
-							<td class="right espacioRi">Dirección: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit" id="lugar2"> </td>
-						</tr>
-						<tr>
-							<td class="right espacioRi">Telefono: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit" id="celPerfil"> </td>
-						</tr>						
-						<tr>
-							<td class="right espacioRi">Email: </td>
-							<td class="left espacioLe"><input type="text" class="nEdit" id="mailPerfil"> </td>
-						</tr>				
-					</tbody>
-				</table>
-				<div class="centrar">
-					<button id="butAce" class="gDatos">Guardar Datos</button>
-					<br><br>
-					<div id="msj"></div>
-				</div>
-			</article>
+			<div class="entry-content">
+				<p>
+					Vivamus tristique risus tellus, dictum tempor orci lobortis at. Aenean placerat congue ligula nec mollis. Donec nec sagittis velit. Vestibulum condimentum turpis lacus, varius accumsan quam vestibulum nec. Suspendisse purus arcu, faucibus at elementum ac, fringilla quis erat. Pellentesque vulputate nisi purus, rhoncus tempus orci pharetra cursus. Nunc vel dignissim elit. Duis aliquam sollicitudin euismod. Nulla iaculis egestas auctor. Cras fermentum erat in ante accumsan sodales. Ut at venenatis nisi. Integer porttitor ullamcorper ipsum, nec hendrerit quam pellentesque nec.
+				</p>
+				<p>
+					In massa felis, suscipit a nisl eget, posuere tempus arcu. Duis dolor nibh, hendrerit eu accumsan sit amet, ultricies dapibus sem. Vivamus nec dictum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed scelerisque mauris tellus, vitae molestie sapien porta ut. Fusce laoreet id lorem suscipit bibendum. Fusce vitae porta ipsum.
+				</p>
+			</div>		
+			</article>						
 		</div>
+
 	</section>
 	<!-- FOOTERRRRR -->
 	<footer class="site-footer" role="contentinfo">
