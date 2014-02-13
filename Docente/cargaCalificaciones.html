@@ -422,9 +422,9 @@
 									<td class="right espacioRi">Lapso: </td>
 									<td class="left espacioLe">
 										<select id="selectLapsoConsultarPA">
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
+									<option value="1">I</option>
+									<option value="2">II</option>	
+									<option value="3">III</option>
 								</select></td>
 								</tr>
 								<tr>
@@ -441,23 +441,28 @@
 				</div>
 
 				<div class=" centrar divConsultarPA2 none">
+					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaConsultarPA2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoConsultarPA2"></span></label>
+						</div>
+						<div>
+							<label><b>Alumno:</b> <span id="spanCedulaConsultar"></span></label>
+						</div>
+					</div>
 					<br>	
 					<table>
 						<thead>
 							<tr>
-								<th>Alumno</th>
 								<th>Nombre Del Examen</th>
 								<th>Calificación</th>
 								<th>Porcentaje</th>
+								<th>Puntos Obtenidos</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td><span id="spanCedulaConsultar">21029953</span></td>
-								<td><span id="descripConsultar"></span></td>
-								<td><span id="notaConsultar"></span></td>
-								<td><span id="porcConsultar"></span></td>
-							</tr>
+						<tbody id="tbodyConsultarPA">
+							
 						</tbody>
 					</table>
 
@@ -519,9 +524,9 @@
 									<td class="right espacioRi">Lapso: </td>
 									<td class="left espacioLe">
 										<select id="selectLapsoConsultarPG">
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
+									<option value="1">I</option>
+									<option value="2">II</option>	
+									<option value="3">III</option>
 								</select></td>
 								</tr>
 								<tr>
@@ -538,7 +543,14 @@
 				</div>
 
 				<div class=" centrar divConsultarPG2 none">
-					
+					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaConsultarPG2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoConsultarPG2"></span></label>
+						</div>
+					</div>
+					<br>
 					<table>
 						<thead>
 							<tr>
@@ -546,15 +558,10 @@
 								<th>Nombre Del Examen</th>
 								<th>Calificación</th>
 								<th>Porcentaje</th>
+								<th>Puntos Obtenidos</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td><span id="spanCedulaConsultar2">21029953</span></td>
-								<td><input type="text" id="descripCon2"></td>
-								<td><input type="text" id="notaCon2"></td>
-								<td><input type="text" id="porcCon2"></td>
-							</tr>
+						<tbody id="tbodyConsultarPG">
 						</tbody>
 					</table>
 					<br>
@@ -617,9 +624,9 @@
 									<td class="right espacioRi">Lapso: </td>
 									<td class="left espacioLe">
 										<select id="selectLapsoModificarPA">
-									<option>I</option>
-									<option>II</option>	
-									<option>III</option>
+									<option value="1">I</option>
+									<option value="2">II</option>	
+									<option value="3">III</option>
 								</select></td>
 								</tr>
 								<tr>
@@ -637,21 +644,28 @@
 
 				<div class=" centrar divModificarPA2 none">
 					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaModificarPG2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoModificarPG2"></span></label>
+						</div>
+						<div>
+							<label><b>Alumno:</b> <span id="alumnoModificarPG2"></span></label>
+						</div>
+					</div>
+					<br>
 					<table>
 						<thead>
 							<tr>
-								<th>Alumno</th>
 								<th>Nombre Del Examen</th>
 								<th>Calificación</th>
 								<th>Porcentaje</th>
+								<th>Puntos</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tbodyModificarPA">
 							<tr>
-								<td><span id="spanCedulaModificar">21029953</span></td>
-								<td><span id="descripModificar"></span></td>
-								<td><span id="notaModificar"></span></td>
-								<td><span id="porcModificar"></span></td>
+								
 							</tr>
 						</tbody>
 					</table>
