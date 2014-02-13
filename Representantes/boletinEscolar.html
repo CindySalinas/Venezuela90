@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Venezuela 90 | Boletin</title>
+	<title>Venezuela 90 | Boletin Escolar</title>
 	<link rel="stylesheet" href="../css/genericons.css">
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
@@ -15,25 +15,27 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/representante.js"></script>
+	<script src="../js/notasRepresentantes.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
 	<header class="site-header">
 		<div class="header-image-container estilo-header">
-			<a href="intranetRepresentante.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
+			<a href="IntranetAlumno.html" class="header_image"><img src="../images/v90_header.jpg" alt="Venezuela 90"></a>
 		</div>
 		<div class="nav-wrap">
 			<nav>
 				<span class="toggle-menu">Menú</span>
-				<a href="perfilRepresentante.html" class="search-form" id="nombreUsuario">
+				<a href="perfilAlumno.html" class="search-form" id="nombreUsuario">
 					
 				</a>
 				<ul>
-					<li><a href="intranetRepresentante.html">Inicio</a></li>
-					<li><a href="representanteAdmision.html" class="a-admision">Admisión</a></li>
-					<li><a href="representanteContacto.html">Contacto</a></li>
-					<li><a href="representanteInstitucion.html">La Institución</a></li>
-					<li><a href="representantePropuesta.html">Propuesta Educativa</a></li>
+					<li><a href="IntranetAlumno.html">Inicio</a></li>
+					<li><a href="alumnoAdmision.html" class="a-admision">Admisión</a></li>
+					<li><a href="alumnoContacto.html">Contacto</a></li>
+					<li><a href="alumnoInstitucion.html">La Institución</a></li>
+					<li><a href="alumnoPropuesta.html">Propuesta Educativa</a></li>
+				</ul>
 			</nav>
 		</div>
 	</header>
@@ -51,9 +53,11 @@
 					<ul class="navegacion">
 						<li><a href="RegistroSolicitudes.html">Registro De Solicitudes</a></li>
 						<li><a href="boletinEscolar.html">Boletin Escolar</a></li>
-						<li><a href="mensajeriaRepre.html">Mensajeria</a></li>
+						<li><a href="mensajeriaAlumno.html">Mensajeria</a></li>
 						<li><a href="planEstudio.html">Consultar Plan De Estudio</a></li>
 						<li><a href="horarioCalendarioEscolar.html">Horario y Calendario Escolar</a></li>
+						<li><a href="foros.html">Foros</a></li>
+						<li><a href="asignacionesRecursos.html">Asignaciones y Recursos Educativos</a></li>
 					</ul>
 				</div>
 			</article>
@@ -65,8 +69,9 @@
 				<div class="entry-content estilo-entry-content">
 					<p><img src="../images/post1.jpg" alt="Chicos jugando futbol"></p>
 					<ul class="navegacion">
-						<li><a href="perfilRepresentante.html">Mi Perfil</a></li>
-						<li><a href="perfilRepresentanteEditar.html?valid=y">Editar</a></li>
+						<li><a href="perfilAlumno.html">Mi Perfil</a></li>
+						<li><a href="perfilAlumnoEditar.html?valid=y">Editar</a></li>
+						<li><a href="#">Mis Notificaciones</a></li>
 					</ul>
 				</div>
 			</article>
@@ -138,16 +143,77 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Plan De Estudio</h2></header>
+				<header><h2>Notas De Evaluaciones</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>					
-			</article>						
+			<article id="noticias" class="ocularAlClick">
+				<header><h3>Seleccione un Alumno</h3></header>
+				<br>
+						<div class="centrar">
+							<label>Seleccione</label>
+							<br><br>
+							<select  id="listAlum">
+							<option value="0">----------------------</option>
+								
+							</select>
+							<br><br>
+							<input type="button" value="Aceptar" id="horarioHijo">
+						</div>
+					<br>
+			</article>
+			<article id="noticias" class="mp none">
+				<header><h3>Notas</h3></header>
+					<div class="consultaPS">
+						<div class="centrar primerDivGH marPE2">
+							<label>Materia</label>
+							<select id="materiaSelect1" class="materias">						
+							</select><br><br><div>
+							<label>Lapso</label>
+							<select id="lapsoSelect1" >	
+								<option value="1">I</option>					
+								<option value="2">II</option>					
+								<option value="3">III</option>					
+							</select></div>
+							<button id="buscaPS" class="classBotonesECDoc">Buscar</button>
+						</div>	
+						<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtras3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtras3">Atras</a>
+					</div>	
+					</div>								
+			</article>		
+			<article id="noticias" class="materiaNotas none">
+				<header><h3>Materia Notas</h3></header>
+					<div class=" centrar divConsultarPA2">
+					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaConsultarPA2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoConsultarPA2"></span></label>
+						</div>
+					</div>
+					<br>	
+					<table>
+						<thead>
+							<tr>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+								<th>Puntos Obtenidos</th>
+							</tr>
+						</thead>
+						<tbody id="tbodyConsultarPA">
+							
+						</tbody>
+					</table>
+
+					<br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPA3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPA3">Atras</a>
+					</div>	
+				</div>					
+			</article>					
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->
