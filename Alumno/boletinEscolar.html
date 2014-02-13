@@ -15,6 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/studen.js"></script>
+	<script src="../js/notasEstudiantes.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -142,16 +143,58 @@
 		<!-- Noticias -->
 		<div class="sidebar-wrap estilo-sidebar-wrap">
 			<article>
-				<header><h2>Plan De Estudio</h2></header>
+				<header><h2>Notas De Evaluaciones</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
-				<header><h3>Carga y Consulta De Plan De Estudio</h3></header>
-					<ul id="listaGestion">
-						<li><a id="iconoconsultar" href="#"></a><a class="textoAbajo" href="#">Consultar</a></li>
-						<li><a id="iconomodificar" href="#"></a><a class="textoAbajo" href="#">Modificar</a></li>
-					</ul>					
-			</article>						
+			<article id="noticias" class="mp">
+				<header><h3>Notas</h3></header>
+					<div class="consultaPS">
+						<div class="centrar primerDivGH marPE2">
+							<label>Materia</label>
+							<select id="materiaSelect1" class="materias">						
+							</select><br><br><div>
+							<label>Lapso</label>
+							<select id="lapsoSelect1" >	
+								<option value="1">I</option>					
+								<option value="2">II</option>					
+								<option value="3">III</option>					
+							</select></div>
+							<button id="buscaPS" class="classBotonesECDoc">Buscar</button>
+						</div>	
+					</div>								
+			</article>		
+			<article id="noticias" class="materiaNotas none">
+				<header><h3>Materia Notas</h3></header>
+					<div class=" centrar divConsultarPA2">
+					<br>
+					<div class="left">
+						<label><b>Materia:</b> <span id="materiaConsultarPA2"></span></label>
+						<div>
+							<label><b>Grado:</b> <span id="gradoConsultarPA2"></span></label>
+						</div>
+					</div>
+					<br>	
+					<table>
+						<thead>
+							<tr>
+								<th>Nombre Del Examen</th>
+								<th>Calificación</th>
+								<th>Porcentaje</th>
+								<th>Puntos Obtenidos</th>
+							</tr>
+						</thead>
+						<tbody id="tbodyConsultarPA">
+							
+						</tbody>
+					</table>
+
+					<br>
+					<div class="divAtrasInfoIns centrar">
+						<a class="linkAtrasParaBuscar1 linkAtrasInfoIns linkAtrasConsultarPA3"></a>
+						<a class="linkAtrasParaBuscar1 textoAbajoAtras linkAtrasConsultarPA3">Atras</a>
+					</div>	
+				</div>					
+			</article>					
 		</div>
 	</section>
 	<!-- FOOTERRRRR -->
