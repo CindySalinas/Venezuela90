@@ -2,7 +2,7 @@
 // conexion bd 
 include("conex.php");
 //formato JSON
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 $idMateria= $_GET["materia"];
 $idGrado= $_GET["grado"];

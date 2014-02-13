@@ -15,7 +15,7 @@
 	<script src="../js/swipe.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/representante.js"></script>
-	<script src="../js/planEstudio.js"></script>
+	<script src="../js/planEstudio2.js"></script>
 </head>
 <body class="p-admision">
 	<!-- HEADERRRRRRRRRRRR -->
@@ -143,13 +143,32 @@
 				<header><h2>Plan De Estudio</h2></header>
 				<hr />
 			</article>
-			<article id="noticias">
+			<article id="noticias" class="ocularAlClick">
+				<header><h3>Seleccione un Alumno</h3></header>
+				<br>
+						<div class="centrar">
+							<label>Seleccione</label>
+							<br><br>
+							<select  id="listAlum">
+							<option value="0">----------------------</option>
+								
+							</select>
+							<br><br>
+							<input type="button" value="Aceptar" id="horarioHijo">
+						</div>
+					<br>
+			</article>
+			<article id="noticias" class="ocultarOtroMenu">
 				<header><h3>Seleccionar Una Opcion</h3></header>
 
 					<ul id="listaGestion" class="menuPrincipal">
 						<li><a id="iconoconsultar" class="planSemanal"></a><a class="textoAbajo planSemanal" >Plan Semanal</a></li>
 						<li><a id="iconomodificar" class="planLapso"></a><a class="textoAbajo planLapso" >Planificación Por Lapso</a></li>
 					</ul>	
+					<div id="atrasGL1" class="atras2 atr centrar">
+						<a id="atras"></a>
+						<a id="at">Atrás</a>
+					</div>	
 					<div class="consultaPS none">
 						<div class="centrar primerDivGH marPE2">
 							<label>Materia</label>
