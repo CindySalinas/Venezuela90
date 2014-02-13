@@ -9,7 +9,7 @@ var cedulaConsultarPA, materiaConsultarPA, yearConsultarPA, lapsoConsultarPA, gr
 
 var gradoConsultarPG, materiaConsultarPG, yearConsultarPG, lapsoConsultarPG, hmConsultarPG, contandoConsultarGrado;
 
-var cedulaModificarPA, materiaModificarPA, yearModificarPA, lapsoModificarPA, gradoModificarPA, idAlumnoModificarPA, hmModificarPA;
+var cedulaModificarPA, materiaModificarPA, yearModificarPA, lapsoModificarPA, gradoModificarPA, idAlumnoModificarPA, hmModificarPA, arrayIdModificarPa;
 
 var gradoModificarPG, materiaModificarPG, yearModificarPG, lapsoModificarPG;
 
@@ -532,6 +532,8 @@ function consultaDatosModificarPA()
 
 	if(materiaModificarPA!=0)
 	{
+
+		arrayIdModificarPa=new Array();
 		$("#materiaModificarPG2").text($("#selectMateriaModificarPA option:selected").text());
 		var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarHorarioMateriaIN1.php?jsoncallback=?";
 		$.getJSON(url,{
@@ -543,19 +545,19 @@ function consultaDatosModificarPA()
 				if(data.num>0)
 				{
 					hmModificarPA=data.idHorarioMateria;
-					alert(hmModificarPA);
 					$(".filaAlumnosConsultar").remove();
-					var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/consultarCalificacionesEstudiantePA.php?jsoncallback=?";
+					var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/ccepa.php?jsoncallback=?";
 					$.getJSON(url3,{
 						estudiante:idAlumnoModificarPA,
 						horarioMateria:hmModificarPA,
 						lapso:lapsoModificarPA
 					}).done(function(data3){
+						var contando2=0;
 						$.each(data3, function(i,item){	
-							$("#tbodyModificarPA").append("<td><input id=></td>
-								<td><input id=''></td>
-								<td><input id=''></td>
-								<td><input id=''></td>")
+							contando2++;
+							$("#tbodyModificarPA").append("<tr class='filaAlumnosConsultar'><td><input id='descripModi"+contando2+"' value='"+item.descipcion+"'></td><td><input id='notaModi"+contando2+"' value='"+item.calificacion+"'></td><td><input id='porcModi"+contando2+"' value='"+item.porcentaje+"'></td><td><input id='puntopModi"+contando2+"' value='"+item.puntos+"'></td><td><input id='lapsoModi"+contando2+"' value='"+item.lapso+"'></td></tr>");
+							arrayIdModificarPa[contando2]=item.idEMN;
+							contandoGradoModificar=contando2;
 						});	
 					});
 					actionBotones('divModificarPA2','tablaModificarPA1');	
@@ -569,6 +571,36 @@ function consultaDatosModificarPA()
 	else
 		alert("Seleccione Una Materia");
 	
+}
+function aceptarTodoModificarPA()
+{
+	for(var x=1;x<=contandoGradoModificar;x++)
+	{
+		var des=$("#descripModi"+x).val();
+		var cal=$("#notaModi"+x).val();
+		var por=$("#porcModi"+x).val();
+		var pun=$("#puntopModi"+x).val();
+		var lap=$("#lapsoModi"+x).val();
+		var idEstCalMat=arrayIdModificarPa[x];
+
+		modificarDatosPA(des, cal, por, pun, lap, idEstCalMat);
+	}
+	
+}
+
+function modificarDatosPA(des, cal, por, pun, lap, idEstCalMat)
+{
+	var url3 = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/updateNota.php?jsoncallback=?";
+	$.getJSON(url3,{
+		idhora:idEstCalMat, 
+		lapso:lap, 
+		calificacion:cal,
+		porcentaje:por,
+		puntos:pun,
+		descripcion:des
+	}).done(function(data3){
+		alert("Se Han Modificado Los Datos");
+	});
 }
 function aceptarCedulaModificarPG() 
 {
@@ -585,8 +617,4 @@ function consultarDatosModificarPG()
 	yearModificarPG=$("#selectYearModificarPG option:selected").val();
 	lapsoModificarPG=$("#selectLapsoModificarPG option:selected").val();
 	actionBotones('divModificarPG2','tablaModificarPG1');
-}
-function aceptarTodoModificarPA()
-{
-	alert("hol");
 }
