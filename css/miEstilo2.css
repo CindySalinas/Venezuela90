@@ -66,14 +66,14 @@ body{
 .site-header nav ul li a:hover {
 	background-color: #e9612c;
 }
-body.p-inicio .a-inicio,
+/*body.p-inicio .a-inicio,
 body.p-admision .a-admision,
 body.p-contacto .a-contacto,
 body.p-institucion .a-institucion,
 body.p-propuesta .a-propuesta {
   background: #e9612c;
   
-}
+}*/
 @media screen and (max-width: 1000px) {
 	.header-image-container a img
 	{

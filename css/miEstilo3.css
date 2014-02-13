@@ -1,14 +1,14 @@
 body{
 
 }
-body.p-inicio .a-inicio,
+/*body.p-inicio .a-inicio,
 body.p-admision .a-admision,
 body.p-contacto .a-contacto,
 body.p-institucion .a-institucion,
 body.p-propuesta .a-propuesta {
   background: #A62822;
   
-}
+}*/
 #navegacion
 {
 	list-style: none;

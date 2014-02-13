@@ -14,7 +14,7 @@ body {
 }
 
 /*Color de la pestaña seleccionada*/
-body.p-inicio .a-inicio,
+/*body.p-inicio .a-inicio,
 body.p-admision .a-admision,
 body.p-contacto .a-contacto,
 body.p-institucion .a-institucion,
@@ -22,7 +22,7 @@ body.p-propuesta .a-propuesta {
   background: #00b09b;
   
 }
-
+*/
 ul {
 	padding: 0;
 }
