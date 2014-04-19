@@ -27,7 +27,7 @@ function admins(){
 }
 function perfil(){
 	var cedu = $.cookie("cedulaAdmin");
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
+	var url = "http://venezuela90.260mb.net/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
 			$.each(data,function(i,item){		
@@ -53,7 +53,7 @@ function perfil(){
 
 function perfil2(){
 	var cedu = $.cookie("cedulaAdmin");
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
+	var url = "http://venezuela90.260mb.net/Venezuela90/JsonVenezuela90/cargarPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		if(data.num !=0){
 			$.each(data,function(i,item){		
@@ -97,7 +97,7 @@ function guardarDatos(){
 	var lugar2 = $('#lugar2').val();
 	var cell = $('#celPerfil').val();
 	var mail = $('#mailPerfil').val();
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/editarPerfil.php?jsoncallback=?";
+	var url = "http://venezuela90.260mb.net/Venezuela90/JsonVenezuela90/editarPerfil.php?jsoncallback=?";
 	if(apll != " " || nom != " " || naci != " " || lugar2 != " " || cell != " " || mail != " "){
 		$.getJSON(url,{ap:apll,nom:nom,lug2:lugar2,cell:cell,mail:mail}).done(function(data){
 		$('#msj').append("<div class='alert alert-success'>"+data.mensaje+"<br><br><button id='prf'>Volver al Perfil</button></div>");
@@ -136,7 +136,7 @@ function getQueryVariable(variable)
 }
 function cargarFoto(){
 	var cedu = $.cookie("cedulaAdmin");
-	var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/cargarFotoPerfil.php?jsoncallback=?";
+	var url = "http://venezuela90.260mb.net/Venezuela90/JsonVenezuela90/cargarFotoPerfil.php?jsoncallback=?";
 	$.getJSON(url,{cedula:cedu}).done(function(data){
 		console.log(data.ruta);
 		if(data.num != 0){
