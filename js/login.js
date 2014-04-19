@@ -11,7 +11,7 @@ function logged(){
 	 // Realizar la petición
     var user1 = $('#user_login').val();
     var pass1 = $('#user_pass').val();
-    var url = "http://venezuela90.260mb.net/Venezuela90/JsonVenezuela90/iniciarSesion.php?jsoncallback=?";
+    var url = "http://127.0.0.1:8080/Venezuela90/JsonVenezuela90/iniciarSesion.php?jsoncallback=?";
     
     $.getJSON(url,{ user:user1,pass:pass1}).done(function(datos) {
 

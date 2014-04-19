@@ -31,29 +31,29 @@ else {
 
 
 if($cantidad>0 && $resultados["T"] == 1){
-	setcookie("cedulaAdmin",$c,time()+36000,"/","cindys-5.github.io");
-	setcookie("adminName",$nom." ".$app,time()+36000,"/",'cindys-5.github.io');
+	setcookie("cedulaAdmin",$c,time()+36000,"/");
+	setcookie("adminName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Admin $nom $app";
 }
 else
 if($cantidad>0 &&  $resultados["T"]== 2){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
-	setcookie("cedulaProf",$c,time()+36000,"/","cindys-5.github.io");
-	setcookie("profName",$nom." ".$app,time()+36000,"/","cindys-5.github.io");
+	setcookie("cedulaProf",$c,time()+36000,"/");
+	setcookie("profName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Profesor $nom $app";
 }
 else
 	if($cantidad>0 &&  $resultados["T"]== 3){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
-	setcookie("cedulaStudent",$c,time()+36000,"/","cindys-5.github.io");
+	setcookie("cedulaStudent",$c,time()+36000,"/");
 	setcookie("studentName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
 }
 else
 	if($cantidad>0 &&  $resultados["T"]== 4){
 	//$resultados["mensaje"] = "Administrador $usuarioEnviado";
-	setcookie("cedulaPadre",$c,time()+36000,"/","cindys-5.github.io");
-	setcookie("padreName",$nom." ".$app,time()+36000,"/","cindys-5.github.io");
+	setcookie("cedulaPadre",$c,time()+36000,"/");
+	setcookie("padreName",$nom." ".$app,time()+36000,"/");
 	$resultados["mensaje"] = "Bienvenido Alumno $nom $app";
 }
 else{
