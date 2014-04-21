@@ -700,3 +700,11 @@ address a {
 .fix {
   zoom: 1;
 }
+/* ///////////////// Lista de valores ////////////*/
+
+.valores-list{
+	margin-left: 5%;
+	width: 80%;
+	text-align:  justify;
+
+}
